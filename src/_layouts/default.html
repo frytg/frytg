@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
-
 		<title>{{ page.title }}</title>
 
+		<meta charset="utf-8" />
 		<meta name="HandheldFriendly" content="True" />
 		<meta name="MobileOptimized" content="320" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,13 +11,6 @@
 
 		<link rel="apple-touch-icon" href="{% picture direct favicon.png %}" />
 		<link rel="shortcut icon" href="{% picture direct favicon.png %}" />
-
-		<link
-			rel="stylesheet"
-			href="/assets/bootstrap-grid.min.css?{{ site.data['hash']}}"
-			type="text/css"
-			media="all"
-		/>
 		<link rel="stylesheet" href="/assets/style.css?{{ site.data['hash']}}" type="text/css" media="all" />
 
 		<meta name="twitter:card" content="summary_large_image" />
@@ -108,5 +100,12 @@
 				beoriginal/white.svg %} {% endif %}
 			</div>
 		</footer>
+
+		<link
+			rel="stylesheet"
+			href="/assets/bootstrap-grid.min.css?{{ site.data['hash']}}"
+			type="text/css"
+			media="all"
+		/>
 	</body>
 </html>
