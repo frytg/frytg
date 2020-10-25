@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+
+		<title>{{ page.title }}</title>
+
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="MobileOptimized" content="320" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="msvalidate.01" content="E4150B8FFD6A7CD45A31148F4BED24CD" />
+
+		<link rel="apple-touch-icon" href="{% picture direct favicon.png %}" />
+		<link rel="shortcut icon" href="{% picture direct favicon.png %}" />
+
+		<link
+			rel="stylesheet"
+			href="/assets/bootstrap-grid.min.css?{{ site.data['hash']}}"
+			type="text/css"
+			media="all"
+		/>
+		<link rel="stylesheet" href="/assets/style.css?{{ site.data['hash']}}" type="text/css" media="all" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@FRYTG" />
+		<meta name="twitter:creator" content="@FRYTG" />
+		<meta name="twitter:creator:id" content="46650115" />
+	</head>
+	<body id="{{ page.bodyId }}">
+		<header id="mastheader">
+			<a href="/" class="logo noSlide">
+				{% if page.logoColor == 'black' %} {% include logo/black.svg %} {% elsif page.logoColor
+				== 'yellow' %} {% include logo/yellow.svg %} {% else %} {% include logo/white.svg %} {%
+				endif %}
+			</a>
+
+			<ul>
+				<li><a href="/">About me</a></li>
+				<li><a href="/social">Social</a></li>
+				<div style="clear: both"></div>
+			</ul>
+		</header>
+
+		{{ content }}
+
+		<footer>
+			{% if page.enableSocials %}
+			<div class="social">
+				<a
+					href="https://twitter.com/FRYTG"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="noSlide"
+				>
+					{% include social/sm/tw.svg %}
+				</a>
+
+				<a href="https://t.me/FRYTG" target="_blank" rel="noopener noreferrer" class="noSlide">
+					{% include social/sm/tg.svg %}
+				</a>
+
+				<a
+					href="https://github.com/frytg"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="noSlide"
+				>
+					{% include social/sm/gh.svg %}
+				</a>
+
+				<a
+					href="mailto:contact@frytg.com"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="noSlide"
+				>
+					{% include social/sm/em.svg %}
+				</a>
+
+				<a
+					href="https://instagram.com/danslashmedia"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="noSlide"
+				>
+					{% include social/sm/ig.svg %}
+				</a>
+
+				<a
+					href="https://www.youtube.com/channel/UCyM3eiaRkKyXlvv9bRadwqQ?sub_confirmation=1"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="noSlide"
+				>
+					{% include social/sm/yt.svg %}
+				</a>
+			</div>
+			{% endif %}
+
+			<p>&copy; Daniel Freytag</p>
+
+			<p>🍪 No Cookies were stored during this visit.</p>
+
+			<p><a href="/legal" title="Impressum">Legal Notices & Data Privacy</a></p>
+
+			<div class="beoriginal">
+				{% if page.logoColor == 'black' %} {% include beoriginal/black.svg %} {% elsif
+				page.logoColor == 'yellow' %} {% include beoriginal/yellow.svg %} {% else %} {% include
+				beoriginal/white.svg %} {% endif %}
+			</div>
+		</footer>
+	</body>
+</html>

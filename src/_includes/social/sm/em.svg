@@ -1,0 +1,10 @@
+<svg viewBox="0 0 857 1200" version="1.1"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g id="Social" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		<g id="social-email-sm" fill-rule="nonzero">
+			<rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="857" height="1200"></rect>
+			<path d="M369.5,922 L621,731.714286 C621,714.122768 607.000488,700 589.5625,700 L149.4375,700 C131.999512,700 118,714.122768 118,731.714286 L369.5,922 Z M589.5625,1081 C607.000488,1081 621,1066.91935 621,1049.38031 L621,790 L369.5,979.718166 L118,790 L118,1049.38031 C118,1066.91935 131.999512,1081 149.4375,1081 L589.5625,1081 Z" id="✉" fill="#000000"></path>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,47 @@
+# More configuration examples at:
+# https://jekyllrb.com/docs/configuration/
+
+source: src
+destination: dist
+timezone: Europe/Amsterdam
+permalink: /:title
+markdown: kramdown
+include: ['_pages']
+exclude: ['_pages/themes']
+
+port: 8080
+future: false
+
+kramdown:
+        input: GFM
+        auto_ids: true
+        footnote_nr: 1
+        entity_output: as_char
+        toc_levels: 1
+        smart_quotes: lsquo,rsquo,ldquo,rdquo
+        enable_coderay: false
+        hard_wrap: false
+        syntax_highlighter: rouge
+        syntax_highlighter_opts:
+                css_class: 'highlight'
+        transliterated_header_ids: true
+        footnote_backlink: '&#8617;&#xfe0e;'
+
+sass:
+        style: compressed
+
+dev: false
+name: Daniel Freytag
+name_short: '@FRYTG'
+description: Digital Storytelling
+
+assets: /assets
+url: https://www.frytg.com
+
+force_utf_8: true
+rss_excerpt: false
+robots: 'User-agent: *'
+
+picture:
+        source: _images/
+        output: images/

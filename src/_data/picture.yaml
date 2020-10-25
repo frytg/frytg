@@ -1,0 +1,16 @@
+presets:
+  default:
+    widths: [600, 900, 1200]
+    formats: [webp, original]
+
+  banner:
+    widths: [900, 1200, 1800, 2500]
+    formats: [webp, original]
+    attributes: 
+      img: loading="lazy"
+      picture: class="banner"
+
+  direct:
+    markup: direct_url
+    fallback_width: 512
+    fallback_format: png
