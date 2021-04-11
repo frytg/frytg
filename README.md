@@ -1,16 +1,25 @@
-### Hi there 👋
+# ✨ Hello world ✨
 
-<!--
-**frytg/frytg** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## 👋 Hi, I'm Daniel
 
-Here are some ideas to get you started:
+```js
+const config = {
+  pronouns: ['he', 'him'],
+  location: 'Black Forest, Germany',
+  techStack: [
+    'javascript',
+    'nodeJS',
+    'google-cloud-platform',
+  ],
+  interests: [
+    'cloud-native',
+    'performance',
+    'scaling',
+    'audio-video',
+    'metadata',
+    'vue',
+  ]
+}
+```
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Let's be friends on 🐥 Twitter: [@FRYTG](https://twitter.com/FRYTG) or check out my other socials [frytg.com/social](https://www.frytg.com/social) 🤝  
