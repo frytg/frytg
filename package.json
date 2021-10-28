@@ -7,7 +7,8 @@
 	"scripts": {
 		"test": "grunt test",
 		"local": "jekyll serve --livereload",
-		"build": "jekyll build"
+		"build": "jekyll build",
+		"postbuild": "mv dist/headers.txt dist/_headers && mv dist/redirects.txt dist/_redirects"
 	},
 	"license": "MIT",
 	"devDependencies": {
