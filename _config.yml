@@ -2,7 +2,7 @@
 # https://jekyllrb.com/docs/configuration/
 
 source: src
-destination: docs
+destination: dist
 timezone: Europe/Amsterdam
 permalink: /:title
 markdown: kramdown

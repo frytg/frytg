@@ -1,18 +1,19 @@
 {
 	"name": "frytgdigital",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "www.frytg.com website",
 	"author": "Daniel Freytag",
 	"homepage": "https://www.frytg.com",
 	"scripts": {
 		"test": "grunt test",
 		"local": "jekyll serve --livereload",
-		"build": "jekyll build"
+		"build": "jekyll build",
+		"postbuild": "mv dist/headers.txt dist/_headers && mv dist/redirects.txt dist/_redirects"
 	},
 	"license": "MIT",
 	"devDependencies": {
-		"@swrlab/swr-prettier-config": "^0.0.2",
-		"node-sass": "4.13.0"
+		"@swrlab/swr-prettier-config": "^0.1.2",
+		"node-sass": "6.0.1"
 	},
 	"prettier": "@swrlab/swr-prettier-config"
 }
