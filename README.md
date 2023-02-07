@@ -10,7 +10,7 @@ One will need Jekyll installed, for us [Mac](https://jekyllrb.com/docs/installat
 xcode-select --install
 ```
 
-If Ruby is not installed, this need to be done next: [jekyllrb.com/docs/insrutallation/macos/#brew](https://jekyllrb.com/docs/installation/macos/#brew).
+If Ruby is not installed, this need to be done next: [jekyllrb.com/docs/installation/macos/#brew](https://jekyllrb.com/docs/installation/macos/#brew).
 
 Finally, installed Jekyll:
 
