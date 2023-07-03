@@ -34,3 +34,4 @@ typings/
 
 .jekyll-cache/
 .jekyll-metadata
+.DS_Store
