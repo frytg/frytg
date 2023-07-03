@@ -1,6 +1,6 @@
 # frytg.com website
 
-This repo holds the content for my [www.frytg.com](https://www.frytg.com) personal website. It uses Jekyll to build a Jamstack-style site, currently hosted on [Cloudflare Pages](https://developers.cloudflare.com/pages/).  
+This repo holds the content for my [frytg.com](https://www.frytg.com) personal website. It uses Jekyll to build a Jamstack-style site, currently hosted on [bunny.net](https://bunny.net).
 
 ## Local Setup
 
