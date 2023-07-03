@@ -2,6 +2,12 @@
 
 This repo holds the content for my [frytg.com](https://www.frytg.com) personal website. It uses Jekyll to build a Jamstack-style site, currently hosted on [bunny.net](https://bunny.net).
 
+- [frytg.com website](#frytgcom-website)
+  - [Local Setup](#local-setup)
+  - [Build](#build)
+  - [M1](#m1)
+  - [Local Development](#local-development)
+
 ## Local Setup
 
 One will need Jekyll installed, for us [Mac](https://jekyllrb.com/docs/installation/macos/) users this requires the Xcode tools:
@@ -46,3 +52,11 @@ Possible fixes for M1 Macs:
 
 - `brew list openssl` / `brew install openssl`
 - `gem install eventmachine -v '1.2.7' -- --with-openssl-dir=$(brew --prefix libressl)`
+
+## Local Development
+
+To improve or update the site locally use this command to start a hot-reloading server:
+
+```sh
+yarn local
+```
