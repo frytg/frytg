@@ -45,3 +45,4 @@ The output will be in the [/dist](/dist) folder.
 Possible fixes for M1 Macs:
 
 - `brew list openssl` / `brew install openssl`
+- `gem install eventmachine -v '1.2.7' -- --with-openssl-dir=$(brew --prefix libressl)`
