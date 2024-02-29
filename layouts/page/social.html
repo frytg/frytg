@@ -1,0 +1,120 @@
+{{ define "main" }}
+
+<div
+  class="container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+>
+  <div class="">
+    <a
+      class=""
+      href="https://beoriginal.social/@FRYTG"
+      target="_blank"
+      rel="me noopener noreferrer"
+      alt="Link to Mastodon on beoriginal.social"
+    >
+      <img
+        class="rounded-lg shadow-none hover:shadow-2xl"
+        src='{{ with resources.Get "svg/social/lg/mas.svg" }}{{.RelPermalink}}{{end}}'
+      />
+    </a>
+  </div>
+
+  <div class="">
+    <a
+      href="https://github.com/frytg/"
+      target="_blank"
+      rel="noopener noreferrer"
+      alt="Link to GitHub @FRYTG"
+    >
+      <img
+        class="rounded-lg shadow-none hover:shadow-2xl"
+        src='{{ with resources.Get "svg/social/lg/gh.svg" }}{{.RelPermalink}}{{end}}'
+      />
+    </a>
+  </div>
+
+  <div class="">
+    <a
+      href="https://www.strava.com/athletes/7693180"
+      target="_blank"
+      rel="noopener noreferrer"
+      alt="Link to Strava"
+    >
+      <img
+        class="rounded-lg"
+        src='{{ with resources.Get "svg/social/lg/strv.svg" }}{{.RelPermalink}}{{end}}'
+      />
+    </a>
+  </div>
+
+  <div class="">
+    <a
+      href="https://www.instagram.com/dan.frytg/"
+      target="_blank"
+      rel="noopener noreferrer"
+      alt="Link to Instagram "
+    >
+      <img
+        class="rounded-lg"
+        src='{{ with resources.Get "svg/social/lg/ig.svg" }}{{.RelPermalink}}{{end}}'
+      />
+    </a>
+  </div>
+
+  <div class="">
+    <a
+      href="mailto:contact@frytg.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      alt="Email Link"
+    >
+      <img
+        class="rounded-lg"
+        src='{{ with resources.Get "svg/social/lg/em.svg" }}{{.RelPermalink}}{{end}}'
+      />
+    </a>
+  </div>
+
+  <div class="">
+    <a
+      href="https://t.me/FRYTG"
+      target="_blank"
+      rel="noopener noreferrer"
+      alt="Link to Telegram"
+    >
+      <img
+        class="rounded-lg"
+        src='{{ with resources.Get "svg/social/lg/tg.svg" }}{{.RelPermalink}}{{end}}'
+      />
+    </a>
+  </div>
+
+  <div class="">
+    <a
+      href="https://twitter.com/FRYTG"
+      target="_blank"
+      rel="noopener noreferrer"
+      alt="Link to Twitter"
+    >
+      <img
+        class="rounded-lg"
+        src='{{ with resources.Get "svg/social/lg/tw.svg" }}{{.RelPermalink}}{{end}}'
+      />
+    </a>
+  </div>
+
+  <div class="">
+    <a
+      href="https://www.youtube.com/channel/UCyM3eiaRkKyXlvv9bRadwqQ?sub_confirmation=1"
+      target="_blank"
+      rel="noopener noreferrer"
+      alt="Link to YouTube"
+    >
+      <img
+        class="rounded-lg"
+        src='{{ with resources.Get "svg/social/lg/yt.svg" }}{{.RelPermalink}}{{end}}'
+      />
+    </a>
+  </div>
+</div>
+
+{{ end }}

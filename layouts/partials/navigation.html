@@ -1,0 +1,8 @@
+<div
+  class="px-4 py-6 w-full flex gap-2 flex-wrap flex-col justify-center justify-items-center content-center items-center"
+>
+  <div class="w-48"><a href="/">
+ <img src="{{ with resources.Get "svg/logo-white.svg" }} {{ .RelPermalink }} {{ end }}"></a></div>
+
+  {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+</div>
