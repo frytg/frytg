@@ -6,6 +6,7 @@ module.exports = {
         greeny: '#3E4939',
         yellow: '#FFFF11',
         orange: '#F09139',
+        'social-instagram': '#F66C32',
       },
     },
     fontFamily: {
