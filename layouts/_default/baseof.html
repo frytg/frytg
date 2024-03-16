@@ -3,12 +3,10 @@
   lang="{{ or site.Language.LanguageCode site.Language.Lang }}"
   dir="{{ or site.Language.LanguageDirection `ltr` }}"
 >
-  <head>
-    {{ partial "head.html" . }}
-  </head>
-  <body class="bg-greeny">
+  {{ partial "html/head/head.html" . }}
+  <body class="bg-greeny text-white">
     <header>{{ partial "navigation.html" . }}</header>
     <main>{{ block "main" . }}{{ end }}</main>
-    <footer>{{ partial "footer.html" . }}</footer>
+    <footer>{{ partial "html/footer.html" . }}</footer>
   </body>
 </html>

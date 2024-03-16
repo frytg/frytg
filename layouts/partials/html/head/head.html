@@ -1,9 +1,10 @@
+<head>
 <title>
   {{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title
   site.Title }}{{ end }}
 </title>
 
-{{ partialCached "head/css.html" . }} {{ partialCached "head/js.html" . }}
+{{ partialCached "html/head/css.html" . }} {{ partialCached "html/head/js.html" . }}
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
@@ -59,3 +60,4 @@
 <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}">
 <meta property="og:description" content="{{ if .IsHome }}{{ .Description }}{{ else }}{{ htmlEscape .Summary }}{{ end }}">
 <meta property="og:site_name" content="{{ .Site.Title }}" />
+</head>

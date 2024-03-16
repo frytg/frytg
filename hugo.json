@@ -58,6 +58,9 @@
       }
     ]
   },
+  "imaging": {
+    "quality": 85
+  },
   "minify": {
     "disableCSS": false,
     "disableHTML": false,
