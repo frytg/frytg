@@ -14,7 +14,7 @@
   "menus": {
     "main": [
       {
-        "name": "About me",
+        "name": "/about",
         "pageRef": "/",
         "weight": 10
       },

@@ -7,17 +7,27 @@
     } /* If using the variable font */
   }
 
+  html {
+    @apply bg-greeny;
+    @apply text-white;
+    @apply font-sans;
+    @apply selection:bg-yellow selection:text-black;
+  }
+
   h1 {
     @apply text-7xl;
     @apply font-black;
+    @apply mt-8 mb-1;
   }
   h2 {
     @apply text-6xl;
     @apply font-bold;
+    @apply mt-6 mb-1;
   }
   h3 {
     @apply text-5xl;
     @apply font-bold;
+    @apply mt-4 mb-1;
   }
   h4 {
     @apply text-3xl;
@@ -31,8 +41,48 @@
     @apply text-xl;
     @apply font-bold;
   }
+
   a {
     @apply text-grey underline;
+    @apply transition-all;
+
+    &:hover {
+      @apply text-yellow;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply mx-auto;
+    @apply w-3/4;
+  }
+
+  p,
+  ul {
+    @apply my-4;
+    @apply mx-auto;
+    @apply w-2/3;
+  }
+
+  ul {
+    @apply px-7;
+    @apply list-disc;
+  }
+
+  .clickable-button {
+    @apply cursor-pointer;
+    @apply mx-1 my-4;
+    @apply px-3 py-2;
+    @apply text-lg;
+    @apply rounded-sm;
+    @apply no-underline;
+    @apply font-black;
+    @apply transition-all;
+    @apply hover:bg-yellow hover:text-black hover:shadow-lg;
   }
 }
 

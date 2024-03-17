@@ -2,7 +2,8 @@
 title = 'Legal - Impressum'
 draft = false
 type = 'page'
-layout = 'uses'
+layout = 'plain'
+
 [sitemap]
   changefreq = 'monthly'
   priority = 0.7

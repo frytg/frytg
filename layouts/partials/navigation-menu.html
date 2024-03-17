@@ -2,8 +2,8 @@
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav>
-    <ul class="flex flex-row gap-1">
+  <nav class="mx-2">
+    <ul class="flex flex-row gap-1 list-none p-0 m-0 w-full">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
   </nav>
@@ -25,8 +25,7 @@
       {{- end }}
     {{- end }}
     <li>
-      <a
-      class="p-4"
+      <a class="clickable-button block"
         {{- range $k, $v := $attrs }}
           {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}

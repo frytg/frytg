@@ -1,15 +1,21 @@
-<div
-  class="px-4 py-6 w-full flex gap-2 flex-wrap flex-col justify-center justify-items-center content-center items-center"
->
-	<p>&copy; Daniel Freytag</p>
+<div class="mx-4 my-16 w-full flex gap-2 flex-wrap flex-col justify-center justify-items-center content-center items-center">
+	<p class="text-sm text-center my-0">&copy; Daniel Freytag</p>
+	<p class="text-sm text-center my-0">🍪 No Cookies were stored during this visit.</p>
+	<p class="text-sm text-center my-0"><a href="/legal/" title="Impressum">Legal Notices & Data Privacy</a></p>
 
-<p>🍪 No Cookies were stored during this visit.</p>
-
-<p><a href="/legal/" title="Impressum">Legal Notices & Data Privacy</a></p>
-
-<div class="w-64">
-	<a href="/"><img
-        src="{{ with resources.Get "svg/beoriginal/white.svg" }}{{.RelPermalink}}{{end}}"
-      /></a>
+	<div class="mx-2 my-3 w-64">
+		<a href="/"><img
+	        src="{{ with resources.Get "svg/beoriginal/white.svg" }}{{.RelPermalink}}{{end}}"
+	      /></a>
+	</div>
 </div>
-</div>
+
+{{- with resources.Get "css/compiled/fonts.css" | minify | fingerprint }}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ .RelPermalink }}"
+  integrity="{{ .Data.Integrity }}"
+  crossorigin="anonymous"
+/>
+{{- end }}

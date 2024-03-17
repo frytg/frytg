@@ -1,3 +1,20 @@
-{{ define "main" }}list.html {{ .Content }} {{ range .Pages }}
-<h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-{{ .Summary }} {{ end }} {{ end }}
+{{ define "main" }}
+<div class="container mx-auto my-4">
+  <h1>{{.Title}}</h1>
+  {{ .Content }} {{ range .Pages }} {{ $dateMachine := .Date | time.Format
+  "2006-01-02T15:04:05-07:00" }} {{ $dateHuman := .Date | time.Format
+  "2006-01-02" }}
+
+  <h2>
+    <a class="no-underline" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+  </h2>
+  <p><time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></p>
+  <p>{{ .Summary }}</p>
+  <p>
+    <a class="clickable-button inline-block m-0" href="{{ .RelPermalink }}"
+      >Read article...</a
+    >
+  </p>
+  {{ end }}
+</div>
+{{ end }}

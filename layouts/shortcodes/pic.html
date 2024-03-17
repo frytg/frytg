@@ -9,7 +9,7 @@
 
 {{- $actualImg := $src.Resize "640x" -}}
 
-	<div class="relative bg-center">
+	<div class="relative bg-center my-4">
 	<picture>
 		<source
 			type="image/webp"
@@ -17,7 +17,7 @@
 			{{- with $respSizes -}}
 				{{- range $i, $e := . -}}
 					{{- if ge $src.Width . -}}
-						{{- if $i }}, {{ end -}}{{- ($src.Resize (printf "%sx%s" . " webp") ).RelPermalink }} {{ . }}w
+						{{- if $i }}, {{ end -}}{{- ($src.Resize (printf "%sx%s" . " webp Lanczos") ).RelPermalink }} {{ . }}w
 					{{- end -}}
 				{{- end -}}
 			{{- end -}}"
@@ -29,7 +29,7 @@
 			{{- with $respSizes -}}
 				{{- range $i, $e := . -}}
 					{{- if ge $src.Width . -}}
-						{{- if $i }}, {{ end -}}{{- ($src.Resize ((printf "%sx%s" . "")) ).RelPermalink }} {{ . }}w
+						{{- if $i }}, {{ end -}}{{- ($src.Resize ((printf "%sx%s" . " Lanczos")) ).RelPermalink }} {{ . }}w
 					{{- end -}}
 				{{- end -}}
 			{{- end -}}"
