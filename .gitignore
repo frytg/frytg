@@ -31,7 +31,7 @@ todo.md
 .DS_Store
 
 # tailwind files
-assets/css/out.*
+assets/css/main-tailwind-compiled.*
 
 # vite output files
 assets/css/compiled/**

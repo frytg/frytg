@@ -6,8 +6,6 @@ type = 'page'
 layout = 'social'
 
 [sitemap]
-  changefreq = 'weekly'
+  changefreq = 'monthly'
   priority = 0.8
 +++
-
-ss

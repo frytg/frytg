@@ -19,6 +19,7 @@ export default defineConfig({
 
     rollupOptions: {
       input: {
+        main: resolve(__dirname, './assets/css/main-tailwind-compiled.css'),
         fonts: resolve(__dirname, './assets/css/fonts.scss'),
       },
 

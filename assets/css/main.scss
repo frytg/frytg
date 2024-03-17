@@ -90,14 +90,18 @@
 
   .clickable-button {
     @apply cursor-pointer;
-    @apply mx-1 my-4;
-    @apply px-3 py-2;
+    @apply px-4 py-2;
     @apply text-lg;
     @apply rounded-sm;
     @apply no-underline;
     @apply font-black;
     @apply transition-all;
     @apply hover:bg-yellow hover:text-black hover:shadow-lg;
+  }
+
+  .clickable-button-active,
+  .clickable-button-ancestor {
+    @apply bg-yellow text-black shadow-lg;
   }
 }
 

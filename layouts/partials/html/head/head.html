@@ -4,7 +4,8 @@
   site.Title }}{{ end }}
 </title>
 
-{{ partialCached "html/head/css.html" . }} {{ partialCached "html/head/js.html" . }}
+{{ partialCached "html/head/css.html" . }}
+{{/* partialCached "html/head/js.html" . */}}
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
@@ -15,6 +16,15 @@
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 />
 <meta name="msvalidate.01" content="E4150B8FFD6A7CD45A31148F4BED24CD" />
+
+{{/* Add RSS if available */}}
+{{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ end }}
+
+{{ if isset .Params "noindex" }}
+<meta name="robots" content="noindex">
+{{ end }}
 
 {{/* Favicon */}}
 <link rel="apple-touch-icon" href="/favicon.png" />

@@ -1,6 +1,7 @@
 +++
 title = 'Legal - Impressum'
 draft = false
+noindex = true
 type = 'page'
 layout = 'plain'
 
