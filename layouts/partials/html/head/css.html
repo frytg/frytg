@@ -1,0 +1,13 @@
+{{- if eq hugo.Environment "development" }}{{- with resources.Get
+"css/main-tailwind-compiled.css" }}
+<link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}" />{{- end }}
+{{- else }} {{- with resources.Get "css/compiled/main.css" | minify |
+fingerprint }}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ .RelPermalink }}"
+  integrity="{{ .Data.Integrity }}"
+  crossorigin="anonymous"
+/>
+{{- end }} {{- end }}

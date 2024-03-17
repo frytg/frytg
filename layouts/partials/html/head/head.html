@@ -1,0 +1,67 @@
+<head>
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+
+{{ partialCached "html/head/css.html" . }}
+{{/* partialCached "html/head/js.html" . */}}
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="MobileOptimized" content="320" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
+<meta name="msvalidate.01" content="E4150B8FFD6A7CD45A31148F4BED24CD" />
+
+{{/* Add RSS if available */}}
+{{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+{{ end }}
+
+{{ if isset .Params "noindex" }}
+<meta name="robots" content="noindex">
+{{ end }}
+
+{{/* Favicon */}}
+<link rel="apple-touch-icon" href="/favicon.png" />
+<link rel="shortcut icon" href="/favicon.png" />
+
+{{/* Theme Color */}}
+<meta name="theme-color" content="#3E4939" />
+<meta name="msapplication-TileColor" content="#3E4939" />
+
+{{/* Links */}}
+<link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
+<meta name="url" content="{{ .Permalink }}" />
+<meta name="twitter:url" content="{{ .Permalink }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+
+{{/* Language */}}
+<meta property="og:locale" content="{{ or site.Language.LanguageCode site.Language.Lang }}" />
+<meta name="language" content="{{ .Language.LanguageName }}" />
+
+{{/* Date */}}
+{{ if isset .Params "date" }}
+<meta property="article:published_time" content="{{ (time .Date).Format "2006-01-02T15:04:05Z" }}" />
+<meta property="og:article:published_time" content="{{ (time .Date).Format "2006-01-02T15:04:05Z" }}" />
+<meta property="article:published_time" content="{{ (time .Date).Format "2006-01-02T15:04:05Z" }}" />
+{{ end }}
+
+{{/* Description (not summary!) */}}
+<meta name="description" content="{{ if .IsHome }}{{ .Description }}{{ else }}{{ htmlEscape .Summary }}{{ end }}" />
+<meta name="twitter:description" content="{{ if .IsHome }}{{ .Description }}{{ else }}{{ htmlEscape .Summary }}{{ end }}" />
+<meta property="og:description" content="{{ if .IsHome }}{{ .Description }}{{ else }}{{ htmlEscape .Summary }}{{ end }}" />
+
+{{/* Twitter */}}
+<meta name="twitter:card" content="{{ if .Params.featured_image }}summary_large_image{{else}}summary{{end}}" />
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
+<meta name="twitter:site" content="@FRYTG" />
+<meta name="twitter:creator" content="@FRYTG" />
+<meta name="twitter:creator:id" content="46650115" />
+
+{{/* OG meta */}}
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+</head>

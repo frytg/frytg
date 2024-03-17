@@ -1,0 +1,70 @@
+{
+  "title": "Daniel Freytag",
+  "baseURL": "https://www.frytg.com/",
+  "languageCode": "en-US",
+  "params": {},
+  "disableHugoGeneratorInject": true,
+  "enableRobotsTXT": true,
+  "menus": {
+    "main": [
+      {
+        "name": "/about",
+        "pageRef": "/",
+        "weight": 10
+      },
+      {
+        "name": "/social",
+        "pageRef": "/social",
+        "weight": 20
+      },
+      {
+        "name": "/uses",
+        "pageRef": "/uses",
+        "weight": 30
+      },
+      {
+        "name": "/blog",
+        "pageRef": "/blog",
+        "weight": 30
+      }
+    ]
+  },
+  "build": {
+    "buildStats": {
+      "enable": true
+    },
+    "cachebusters": [
+      {
+        "source": "assets/watching/hugo_stats\\.json",
+        "target": "styles\\.css"
+      },
+      {
+        "source": "(postcss|tailwind)\\.config\\.js",
+        "target": "css"
+      },
+      {
+        "source": "assets/.*\\.(js|ts|jsx|tsx)",
+        "target": "js"
+      },
+      {
+        "source": "assets/.*\\.(.*)$",
+        "target": "$1"
+      }
+    ]
+  },
+  "imaging": {
+    "quality": 85
+  },
+  "minify": {
+    "disableCSS": false,
+    "disableHTML": false,
+    "disableJS": false,
+    "disableJSON": false,
+    "disableSVG": false,
+    "disableXML": false,
+    "minifyOutput": false
+  },
+  "sitemap": {
+    "changeFreq": "monthly"
+  }
+}
