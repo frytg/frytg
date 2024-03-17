@@ -3,7 +3,7 @@
 
 {{- with index site.Menus $menuID }}
   <nav class="mx-2">
-    <ul class="flex flex-row gap-1 list-none p-0 m-0 w-full">
+    <ul class="flex flex-row flex-wrap justify-center gap-1 list-none p-0 m-0 w-full">
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>
   </nav>
@@ -12,11 +12,11 @@
 {{- define "partials/inline/menu/walk.html" }}
   {{- $page := .page }}
   {{- range .menuEntries }}
-    {{- $attrs := dict "href" .URL "class" "clickable-button mx-1 block" }}
+    {{- $attrs := dict "href" .URL "class" "clickable-button block" }}
     {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "clickable-button mx-1 block clickable-button-active" "aria-current" "page") }}
+      {{- $attrs = merge $attrs (dict "class" "clickable-button block clickable-button-active" "aria-current" "page") }}
     {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "clickable-button mx-1 block clickable-button-ancestor" "aria-current" "true") }}
+      {{- $attrs = merge $attrs (dict "class" "clickable-button block clickable-button-ancestor" "aria-current" "true") }}
     {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}

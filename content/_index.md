@@ -1,7 +1,7 @@
 +++
 title = 'About me'
 draft = false
-description = 'bla'
+description = 'About Daniel Freytag, Audio Cloud & Innovation Manager at SWR Audio Lab.'
 date = 2024-03-01T08:00:00+00:00
 type = 'page'
 layout = 'plain'

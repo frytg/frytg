@@ -2,13 +2,7 @@
   "title": "Daniel Freytag",
   "baseURL": "https://www.frytg.com/",
   "languageCode": "en-US",
-  "params": {
-    "contact": {
-      "email": "info@example.org",
-      "phone": "+1 202-555-1212"
-    },
-    "subtitle": "The Best Widgets on Earth"
-  },
+  "params": {},
   "disableHugoGeneratorInject": true,
   "enableRobotsTXT": true,
   "menus": {

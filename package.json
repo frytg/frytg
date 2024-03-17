@@ -5,7 +5,7 @@
     "hugo:build": "hugo --minify",
     "vite:build": "vite build && cp -r static/compiled assets/css",
     "tailwind:local": "yarn tailwind:build --watch",
-    "tailwind:build": "npx tailwindcss -i ./assets/css/main.scss -o ./assets/css/main-tailwind-compiled.css",
+    "tailwind:build": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/main-tailwind-compiled.css",
     "build:prod": "yarn clean && yarn tailwind:build && yarn vite:build && yarn hugo:build",
     "outdated": "yarn upgrade-interactive"
   },

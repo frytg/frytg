@@ -1,7 +1,7 @@
 +++
 title = 'Social Media'
 draft = false
-description = 'bla'
+description = 'Social Media links for Daniel Freytag'
 type = 'page'
 layout = 'social'
 

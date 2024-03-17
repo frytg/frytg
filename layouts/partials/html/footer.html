@@ -1,20 +1,18 @@
-<div class="mx-4 my-16 w-full flex gap-2 flex-wrap flex-col justify-center justify-items-center content-center items-center">
-	<div class="mx-2 my-3 w-64">
-		<a href="/"><img
-	        src="{{ with resources.Get "svg/beoriginal/white.svg" }}{{.RelPermalink}}{{end}}"
-	      /></a>
+<div class="my-16 w-full flex gap-2 flex-wrap flex-col justify-center justify-items-center content-center items-center">
+	<div class="mx-4 my-3 w-64">
+		<img src="{{ with resources.Get "svg/beoriginal/white.svg" }}{{.RelPermalink}}{{end}}" alt="Be Original Claim"/>
 	</div>
 
-	<p class="text-sm text-center my-0">
+	<p class="mx-4 text-sm text-center my-0">
 		Follow me on
 		<a href="https://beoriginal.social/@FRYTG" target="_blank" rel="me noopener" alt="Link to Mastodon" title="Mastodon: @FRYTG@beoriginal.social">Mastodon</a> &#x2022;
 		<a href="https://www.instagram.com/dan.frytg/" target="_blank" rel="me noopener noreferrer" alt="Link to Instagram" title="Instagram: @dan.frytg">Instagram</a> &#x2022;
 		<a href="https://threads.net/@dan.frytg/" target="_blank" rel="me noopener noreferrer" alt="Link to Threads" title="Threads: @dan.frytg">Threads</a> &#x2022;
 		<a href="https://twitter.com/FRYTG" target="_blank" rel="me noopener noreferrer" alt="Link to Twitter" title="Twitter: @FRYTG">Twitter</a>
 	</p>
-	<p class="text-sm text-center my-0">🍪 No Cookies were stored during this visit.</p>
-	<p class="text-sm text-center my-0"><a href="/legal/" title="Impressum">Legal Notices & Data Privacy</a></p>
-	<p class="text-sm text-center my-0">&copy; Daniel Freytag</p>
+	<p class="mx-4 text-sm text-center my-0">🍪 No Cookies were stored during this visit.</p>
+	<p class="mx-4 text-sm text-center my-0"><a href="/legal/" title="Impressum">Legal Notices & Data Privacy</a></p>
+	<p class="mx-4 text-sm text-center my-0">&copy; Daniel Freytag</p>
 </div>
 
 {{- with resources.Get "css/compiled/fonts.css" | minify | fingerprint }}

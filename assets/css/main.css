@@ -11,21 +11,24 @@
     @apply bg-greeny;
     @apply text-white;
     @apply font-sans;
-    @apply selection:bg-yellow selection:text-black;
+    @apply selection:bg-yellow selection:text-greeny;
   }
 
   h1 {
-    @apply text-7xl;
+    @apply text-5xl;
+    @apply sm:text-7xl;
     @apply font-black;
     @apply mt-8 mb-1;
   }
   h2 {
-    @apply text-6xl;
+    @apply text-4xl;
+    @apply sm:text-6xl;
     @apply font-bold;
     @apply mt-6 mb-1;
   }
   h3 {
-    @apply text-5xl;
+    @apply text-3xl;
+    @apply sm:text-5xl;
     @apply font-bold;
     @apply mt-4 mb-1;
   }
@@ -57,15 +60,17 @@
   h4,
   h5,
   h6 {
-    @apply mx-auto;
-    @apply w-3/4;
+    @apply w-full mx-0;
+    @apply lg:mx-auto;
+    @apply lg:w-3/4;
   }
 
   p,
   ul {
+    @apply w-full mx-0;
     @apply my-4;
-    @apply mx-auto;
-    @apply w-2/3;
+    @apply lg:mx-auto;
+    @apply lg:w-2/3;
   }
 
   p,
@@ -88,20 +93,35 @@
     }
   }
 
+  .container-special {
+    @apply mx-auto my-6;
+    @apply px-4;
+    @apply lg:px-0;
+  }
+
   .clickable-button {
+    /* padding */
+    @apply px-3 py-2 mx-0;
+    @apply sm:px-4 sm:py-2 sm:mx-1;
+
+    /* text size */
+    @apply text-base;
+    @apply sm:text-lg;
+
+    /* button style */
     @apply cursor-pointer;
-    @apply px-4 py-2;
-    @apply text-lg;
     @apply rounded-sm;
     @apply no-underline;
     @apply font-black;
     @apply transition-all;
-    @apply hover:bg-yellow hover:text-black hover:shadow-lg;
+
+    /* color */
+    @apply hover:bg-yellow hover:text-greeny hover:shadow-lg;
   }
 
   .clickable-button-active,
   .clickable-button-ancestor {
-    @apply bg-yellow text-black shadow-lg;
+    @apply bg-yellow text-greeny shadow-lg;
   }
 }
 

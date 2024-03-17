@@ -1,7 +1,7 @@
 +++
 title = 'Tech Stack - What I Use'
 draft = false
-description = 'bla'
+description = 'A continously-updated list of the tools, apps, and hardware I use for my work and personal projects.'
 date = 2024-03-02T08:00:00+00:00
 type = 'page'
 layout = 'plain'
