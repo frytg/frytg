@@ -1,12 +1,12 @@
 {
   "scripts": {
-    "clean": "rm -rf public && rm -rf assets/css/compiled",
+    "clean": "rm -rf public && rm -rf assets/css/compiled && rm assets/css/main-tailwind-compiled.css",
     "hugo:local": "hugo server",
     "hugo:build": "hugo --minify",
     "vite:build": "vite build && cp -r static/compiled assets/css",
     "tailwind:local": "yarn tailwind:build --watch",
     "tailwind:build": "npx tailwindcss -i ./assets/css/main.scss -o ./assets/css/main-tailwind-compiled.css",
-    "build:prod": "yarn clean && yarn vite:build && yarn hugo:build && yarn tailwind:build",
+    "build:prod": "yarn clean && yarn tailwind:build && yarn vite:build && yarn hugo:build",
     "outdated": "yarn upgrade-interactive"
   },
   "packageManager": "yarn@4.1.0",
