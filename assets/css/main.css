@@ -68,9 +68,24 @@
     @apply w-2/3;
   }
 
+  p,
+  ul,
+  li {
+    @apply text-lg;
+    @apply font-normal;
+  }
+
   ul {
     @apply px-7;
     @apply list-disc;
+
+    li {
+      @apply my-2;
+
+      ul {
+        @apply mx-2 my-2;
+      }
+    }
   }
 
   .clickable-button {
