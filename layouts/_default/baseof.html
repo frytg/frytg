@@ -4,7 +4,7 @@
   dir="{{ or site.Language.LanguageDirection `ltr` }}"
 >
   {{ partial "html/head/head.html" . }}
-  <body class="bg-greeny text-white">
+  <body class="bg-greeny text-white font-sans">
     <header>{{ partial "navigation.html" . }}</header>
     <main>{{ block "main" . }}{{ end }}</main>
     <footer>{{ partial "html/footer.html" . }}</footer>

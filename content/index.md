@@ -11,9 +11,38 @@ layout = 'home'
   priority = 1
 +++
 
-# Hello world
-
-{{< pic src="images/home/home-2020-q4-1.jpg" alt="Photo of a cat named " >}}
-{{< pic src="images/home/notion-header-be-original@2x.png" alt="Photo of a cat named " >}}
+# h1 Hello world
 
 This is a text
+
+## h2 text
+
+### h3 text
+
+#### h4 text
+
+##### h5 text
+
+###### h6 text
+
+normal text
+
+```shell {class="font-mono"}
+code
+```
+
+> quote
+
+**bold** text
+
+---
+
+...
+
+~222~
+
+rrr
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
