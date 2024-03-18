@@ -21,9 +21,9 @@ I am an Audio Cloud & Innovation Manager at [SWR Audio Lab](https://lab.swr.de/)
 
 My work at the moment focuses on the improvement of [ARD Audiothek](https://www.ardaudiothek.de/), a platform for audio content from public broadcasters in Germany. I especially work on the integration and improvement of ARD Audiothek on voice assistants and platforms right now.
 
-Our team also manages the apps for _SWR_'s radio stations, like the popular [SWR3](https://www.swr3.de/app) mobile apps for iOS and Android. For these apps I also built the backend infrastructure, providing live meta data, podcasts, and all other content through our own _SWR Radiohub_ APIs.
+Our team also manages the apps for _SWR_'s radio stations, like the popular [_SWR3_](https://www.swr3.de/app) mobile apps for iOS and Android. For these apps I also built the backend infrastructure, providing live meta data, podcasts, and all other content through our own central _SWR Radiohub_ APIs, serving billions of API requests per month.
 
-When not working you can often find me in nature or on a bike. I also enjoy photography, design, listening to podcasts and discovering new stuff on the internet. Climate change and sustainability are also important topics for me.
+When not working you can often find me in **nature** or on a **bike**. I also enjoy photography, design, listening to music & podcasts and discovering new stuff on the internet. Climate change and sustainability are also important topics for me.
 
 {{< pic src="images/about/web-about-2024-q1-2@2x.webp" alt="Pictures of me at work and events" >}}
 

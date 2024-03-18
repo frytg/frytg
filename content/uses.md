@@ -33,7 +33,9 @@ For **Browsers** I mostly use [_Arc_](https://arc.net/), a customizable Chromium
 
 **Search** on all browsers has been replaced by [_DuckDuckGo_](https://duckduckgo.com/). I like their privacy policy and the search results are less cluttered and cleaner. Toggling location-based search results is also a nice feature.
 
-[_1Password_](https://1password.com/), [_Figma_](https://www.figma.com/), [_Affinity_](https://affinity.serif.com/en-us/), [_Warp CLI_](https://www.warp.dev/), [_Apple Music_](https://music.apple.com/), _Proton_ (both [Mail](https://proton.me/mail) and [VPN](https://protonvpn.com/)) are also frequent daily apps.
+When understanding or searching for more than just a link or tool [_Perplexity_](https://perplexity.ai/pro?referral_code=EZP8QMA2) has been a fantastic tool. It's a search engine that understands natural language and can answer questions in a more human way (with links and credits for the results).
+
+[_1Password_](https://1password.com/), [_Figma_](https://www.figma.com/), [_Affinity_](https://affinity.serif.com/en-us/), [_Warp CLI_](https://www.warp.dev/), [_Apple Music_](https://music.apple.com/), [_mymind_](https://mymind.com/), _Proton_ (both [Mail](https://proton.me/mail) and [VPN](https://protonvpn.com/)) are also frequent daily apps.
 
 [_Obsidian_](https://obsidian.md/) is a fantastic tool to organize notes and thoughts in **Markdown**. I like their approach over _Notion_, since files are local ([and therefore owned!](https://stephango.com/file-over-app)) and can easily be transferred or synced.
 
@@ -43,9 +45,17 @@ Work and development-wise I'm a big fan of [_Scaleway_](https://www.scaleway.com
 
 Monitoring tech deployments works best with [_Datadog_](https://www.datadoghq.com/) and [_Better Uptime_](https://betterstack.com/).
 
+## xxx
+
+For _SWR Audio Lab_ we also wrote a set of [Engineering Principles](https://github.com/swrlab/swrlab/blob/main/PRINCIPLES.md) to guide our development work and decisions.
+
 ## EDC
 
 Stuff that I also always carry with me (besides iPhone and the usual stuff) include a [_Whoop_](https://join.whoop.com/3AC604) fitness and recovery tracker, a pair of _AirPods Pro_, a _Leatherman_ multitool, and _Freitag_ wallet.
+
+## Podcasts
+
+I listen to a lot of podcasts. Some of my favorites are:
 
 ## This Website
 
