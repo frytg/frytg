@@ -3,7 +3,7 @@
   "baseURL": "https://www.frytg.com/",
   "languageCode": "en-US",
   "params": {
-    "ogImage": "images/og-card/about-2024-Q1-A-2x1@3x.jpg"
+    "og_image": "images/og-card/about-2024-Q1-A-2x1@3x.jpg"
   },
   "disableHugoGeneratorInject": true,
   "enableRobotsTXT": true,
