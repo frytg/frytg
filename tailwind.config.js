@@ -5,12 +5,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        white: '#ECEBE3',
-        yellow: '#FFFF11',
-        orange: '#F09139',
-        grey: '#D7E2CC',
-        greengrey: '#B2BAAA',
-        greeny: '#3E4939',
+        white: 'var(--frytg-color-off-white)',
+        yellow: 'var(--frytg-color-yellow)',
+        orange: 'var(--frytg-color-orange)',
+        grey: 'var(--frytg-color-grey)',
+        greeny: 'var(--frytg-color-greeny)',
         'social-instagram': '#F66C32',
       },
     },

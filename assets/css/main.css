@@ -1,6 +1,20 @@
 @tailwind base;
 
 @layer base {
+  :root {
+    --frytg-color-off-white: #ecebe3;
+    --frytg-color-yellow: rgb(255, 255, 17);
+    --frytg-color-orange: #f09139;
+    --frytg-color-grey: #d7e2cc;
+    --frytg-color-greeny: #3e4939;
+  }
+
+  @media (color-gamut: srgb) {
+    :root {
+      --frytg-color-yellow: color(display-p3 1 1 0.0666666667);
+    }
+  }
+
   @supports (font-variation-settings: normal) {
     html {
       font-family: 'InterVariable', 'Inter', 'system-ui';
@@ -61,16 +75,14 @@
   h5,
   h6 {
     @apply w-full mx-0;
-    @apply lg:mx-auto;
-    @apply lg:w-3/4;
+    @apply lg:w-3/4 lg:mx-auto;
   }
 
   p,
   ul {
-    @apply w-full mx-0;
     @apply my-4;
-    @apply lg:mx-auto;
-    @apply lg:w-2/3;
+    @apply w-full mx-0;
+    @apply lg:w-2/3 lg:mx-auto;
   }
 
   p,
@@ -91,6 +103,13 @@
         @apply mx-2 my-2;
       }
     }
+  }
+
+  hr {
+    opacity: 0.3;
+    @apply my-14;
+    @apply w-full mx-0;
+    @apply lg:w-2/3 lg:mx-auto;
   }
 
   .container-special {

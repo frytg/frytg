@@ -1,15 +1,14 @@
-+++
-title = 'Tech Stack - What I Use'
-draft = false
-description = 'A continously-updated list of the tools, apps, and hardware I use for my work and personal projects.'
-date = 2024-03-02T08:00:00+00:00
-type = 'page'
-layout = 'plain'
-
-[sitemap]
-  changefreq = 'monthly'
-  priority = 0.7
-+++
+---
+title: 'Tech Stack - What I Use'
+date: 2024-03-02T08:00:00+00:00
+seo_description: 'A continously-updated list of the tools, apps, and hardware I use for my work and personal projects.'
+image: 'images/og-card/uses-2024-Q1-A-2x1@3x.jpg'
+type: 'page'
+layout: 'plain'
+sitemap:
+  changefreq: 'monthly'
+  priority: 0.7
+---
 
 # Tech Stack & What I Use
 
@@ -45,17 +44,31 @@ Work and development-wise I'm a big fan of [_Scaleway_](https://www.scaleway.com
 
 Monitoring tech deployments works best with [_Datadog_](https://www.datadoghq.com/) and [_Better Uptime_](https://betterstack.com/).
 
-## xxx
+### Principles
 
 For _SWR Audio Lab_ we also wrote a set of [Engineering Principles](https://github.com/swrlab/swrlab/blob/main/PRINCIPLES.md) to guide our development work and decisions.
 
 ## EDC
 
-Stuff that I also always carry with me (besides iPhone and the usual stuff) include a [_Whoop_](https://join.whoop.com/3AC604) fitness and recovery tracker, a pair of _AirPods Pro_, a _Leatherman_ multitool, and _Freitag_ wallet.
+Stuff that I also always carry with me (besides iPhone and the usual stuff) include a [_Whoop_] fitness and recovery tracker, a pair of _AirPods Pro_, a _Leatherman_ multitool, and _Freitag_ wallet.
+
+---
 
 ## Podcasts
 
 I listen to a lot of podcasts. Some of my favorites are:
+
+- [**Kraig Adams**](https://www.instagram.com/kraigadams/), behind the scenes talks from Kraig around his solo-hiking adventures – [_Apple Podcasts_](https://podcasts.apple.com/de/podcast/kraig-adams/id1661690561) / [_Spotify_](https://open.spotify.com/show/4kp0CXGby5IDlrJxTlJzNC)
+- The [**Josh Lynott**](https://www.instagram.com/joshlynott/) Project, an Australian runner talking about sports and personal development – [_Apple Podcasts_](https://podcasts.apple.com/de/podcast/the-josh-lynott-project/id1501898670) / [_Website_](https://www.joshualynott.com)
+- Life and Lessions by [**Sean Spooner**](https://twitter.com/spoonersean), talks and solo episodes of the weekly life lessons from building a business – [_Apple Podcasts_](https://podcasts.apple.com/de/podcast/life-and-lessons-by-sean-spooner/id1490711078) / [_Website_](https://shows.acast.com/life-and-lessons-by-sean-spooner)
+- [**Lenny's**](https://twitter.com/lennysan) Podcast, great interviews with interesting people in the tech world – [_Apple Podcasts_](https://podcasts.apple.com/de/podcast/lennys-podcast-product-growth-career/id1627920305)
+- **Gefühlte Fakten**, very funny German-speaking duo of writers from known TV shows and book – [_Apple Podcasts_](https://podcasts.apple.com/de/podcast/gef%C3%BChlte-fakten/id1467289205) / [_Website_](https://www.gefuehltefakten.de/)
+- [**Whoop**](https://join.whoop.com/3AC604) Podcast, great talks and health insights from the makers of the wearable fitness and recovery tracker – [_Apple Podcasts_](https://podcasts.apple.com/de/podcast/whoop-podcast/id1445509665) / [_Spotify_](https://open.spotify.com/show/0yFoBgekRMM9lN0xMMczL7)
+- **Kriss Kross Amsterdam**, great DJ mixes from the Dutch trio – [_Apple Podcasts_](https://podcasts.apple.com/de/podcast/kris-kross-amsterdam-kris-kross-mixtape/id1412638125)
+
+_Do you have more great recommendations? Please [let me know](/social)!_
+
+---
 
 ## This Website
 

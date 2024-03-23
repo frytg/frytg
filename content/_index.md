@@ -1,15 +1,13 @@
-+++
-title = 'About me'
-draft = false
-description = 'About Daniel Freytag, Audio Cloud & Innovation Manager at SWR Audio Lab.'
-date = 2024-03-01T08:00:00+00:00
-type = 'page'
-layout = 'plain'
-
-[sitemap]
-  changefreq = 'weekly'
-  priority = 1
-+++
+---
+title: 'About me'
+date: 2024-03-01T08:00:00+00:00
+seo_description: 'About Daniel Freytag, Audio Cloud & Innovation Manager at SWR Audio Lab.'
+type: 'page'
+layout: 'plain'
+sitemap:
+  changefreq: 'weekly'
+  priority: 1
+---
 
 # Hello, I'm Daniel
 

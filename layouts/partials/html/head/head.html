@@ -41,6 +41,16 @@
 <meta property="og:locale" content="{{ or site.Language.LanguageCode site.Language.Lang }}" />
 <meta name="language" content="{{ .Language.LanguageName }}" />
 
+{{/* Teaser Image */}}
+{{- $ogImage := "" -}}
+{{ if isset .Params "image" }}
+	{{- $ogImage = resources.Get .Params.image -}}
+{{ else }}
+	{{ $ogImage = resources.Get .Site.Params.ogImage }}
+{{ end }}
+<meta property="og:image" content="{{ ($ogImage.Process "1200x630 jpg fill Center Lanczos").Permalink }}"/>
+<meta property="twitter:image" content="{{ ($ogImage.Process "2048x1024 webp fill q90 Center Lanczos").Permalink }}"/>
+
 {{/* Date */}}
 {{ if isset .Params "date" }}
 <meta property="article:published_time" content="{{ (time .Date).Format "2006-01-02T15:04:05Z" }}" />
@@ -49,12 +59,18 @@
 {{ end }}
 
 {{/* Description (not summary!) */}}
-<meta name="description" content="{{ if .IsHome }}{{ .Description }}{{ else }}{{ htmlEscape .Summary }}{{ end }}" />
-<meta name="twitter:description" content="{{ if .IsHome }}{{ .Description }}{{ else }}{{ htmlEscape .Summary }}{{ end }}" />
-<meta property="og:description" content="{{ if .IsHome }}{{ .Description }}{{ else }}{{ htmlEscape .Summary }}{{ end }}" />
+{{ if isset .Params "seo_description" }}
+<meta name="description" content="{{ htmlEscape .Params.seo_description }}" />
+<meta name="twitter:description" content="{{ htmlEscape .Params.seo_description }}" />
+<meta property="og:description" content="{{ htmlEscape .Params.seo_description }}" />
+{{ else }}
+<meta name="description" content="{{ htmlEscape .Summary }}" />
+<meta name="twitter:description" content="{{ htmlEscape .Summary }}" />
+<meta property="og:description" content="{{ htmlEscape .Summary }}" />
+{{ end }}
 
 {{/* Twitter */}}
-<meta name="twitter:card" content="{{ if .Params.featured_image }}summary_large_image{{else}}summary{{end}}" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
 <meta name="twitter:site" content="@FRYTG" />
 <meta name="twitter:creator" content="@FRYTG" />

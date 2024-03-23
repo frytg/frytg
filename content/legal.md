@@ -1,16 +1,14 @@
-+++
-title = 'Legal - Impressum'
-draft = false
-noindex = true
-type = 'page'
-layout = 'plain'
-
-[sitemap]
-  changefreq = 'monthly'
-  priority = 0.7
-[params]
-  date = false
-+++
+---
+title: 'Legal - Impressum'
+date: 2024-01-01T08:00:00+00:00
+seo_description: ''
+noindex: true
+type: 'page'
+layout: 'plain'
+sitemap:
+  changefreq: 'monthly'
+  priority: 0.7
+---
 
 ## Impressum/ Legal
 
