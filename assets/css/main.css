@@ -73,7 +73,8 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  .title-style {
     @apply w-full mx-0;
     @apply lg:w-3/4 lg:mx-auto;
   }

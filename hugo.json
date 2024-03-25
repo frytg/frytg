@@ -31,6 +31,22 @@
       }
     ]
   },
+
+  "imaging": {
+    "quality": 85
+  },
+  "minify": {
+    "disableCSS": false,
+    "disableHTML": false,
+    "disableJS": false,
+    "disableJSON": false,
+    "disableSVG": false,
+    "disableXML": false,
+    "minifyOutput": false
+  },
+  "sitemap": {
+    "changeFreq": "monthly"
+  },
   "build": {
     "buildStats": {
       "enable": true
@@ -54,19 +70,14 @@
       }
     ]
   },
-  "imaging": {
-    "quality": 85
-  },
-  "minify": {
-    "disableCSS": false,
-    "disableHTML": false,
-    "disableJS": false,
-    "disableJSON": false,
-    "disableSVG": false,
-    "disableXML": false,
-    "minifyOutput": false
-  },
-  "sitemap": {
-    "changeFreq": "monthly"
+  "markup": {
+    "goldmark": {
+      "parser": {
+        "attribute": {
+          "block": true,
+          "title": true
+        }
+      }
+    }
   }
 }

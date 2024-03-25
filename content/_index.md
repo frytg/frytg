@@ -9,7 +9,10 @@ sitemap:
   priority: 1
 ---
 
-# Hello, I'm Daniel
+# Hello, I'm Daniel,
+
+or _Dan_ for short.
+{.text-3xl .title-style}
 
 I am an Audio Cloud & Innovation Manager at [SWR Audio Lab](https://lab.swr.de/). In the past, I have also worked on live and film productions for local and international companies, events, and TV & radio stations.
 
