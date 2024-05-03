@@ -2,7 +2,7 @@
 
 ## Local Setup
 
-### Install Hugo
+Install [Bun](https://bun.sh/docs/installation) and [Hugo](https://gohugo.io/installation/).
 
 ```sh
 brew install hugo
@@ -10,16 +10,10 @@ brew install hugo
 
 ### Install Dependencies
 
-If Node (>=v20) or Yarn are not set:
+Use bun to install everything:
 
 ```sh
-corepack enable && yarn set version stable
-```
-
-Then install the dependencies:
-
-```sh
-yarn install
+bun install
 ```
 
 ### Run local server
@@ -27,19 +21,19 @@ yarn install
 First make sure fonts are compiled with Vite (we need to build tailwind simply to have the output file and prevent Vite from initially failing):
 
 ```sh
-yarn tailwind:build && yarn vite:build
+bun tailwind:build && bun vite:build
 ```
 
 Then run the Tailwind local server
 
 ```sh
-yarn tailwind:local
+bun tailwind:local
 ```
 
 And the Hugo server:
 
 ```sh
-yarn hugo:local
+bun hugo:local
 ```
 
 Visit the site at [localhost:1313](http://localhost:1313).
@@ -47,7 +41,7 @@ Visit the site at [localhost:1313](http://localhost:1313).
 You can clean temporary files with:
 
 ```sh
-yarn clean
+bun run clean
 ```
 
 ## Production Build
@@ -55,7 +49,7 @@ yarn clean
 This will run all required commands and build the site for production in `/public`:
 
 ```sh
-yarn build:prod
+bun build:prod
 ```
 
 ## Image Configuration
