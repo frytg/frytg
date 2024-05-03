@@ -1,7 +1,7 @@
 {{- if eq hugo.Environment "development" }}{{- with resources.Get
 "css/main-tailwind-compiled.css" }}
 <link rel="stylesheet" type="text/css" href="{{ .RelPermalink }}" />{{- end }}
-{{- else }} {{- with resources.Get "css/compiled/main.css" | minify |
+{{- else }} {{- with resources.Get "css/compiled/main.scss" | minify |
 fingerprint }}
 <link
   rel="stylesheet"

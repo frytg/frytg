@@ -2,7 +2,7 @@
 title: 'Tech Stack - What I Use'
 date: 2024-03-02T08:00:00+00:00
 seo_description: 'A continously-updated list of the tools, apps, and hardware I use for my work and personal projects.'
-image: 'images/og-card/uses-2024-Q1-A-2x1@3x.jpg'
+image: 'images/og-card/uses-2024-Q1-A-2x1.jpg'
 type: 'page'
 layout: 'plain'
 sitemap:

@@ -4,7 +4,9 @@
 
   {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }} {{
   $dateHuman := .Date | time.Format "2006-01-02" }}
-  <p><time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time></p>
+  <p class="text-sm italic">
+    <time datetime="{{ $dateMachine }}">Posted {{ $dateHuman }}</time>
+  </p>
 
   {{ .Content }} {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 </div>

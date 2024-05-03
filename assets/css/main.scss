@@ -107,10 +107,31 @@
   }
 
   hr {
-    opacity: 0.3;
+    @apply opacity-80;
+    @apply border-0 border-t;
     @apply my-14;
+    @apply w-1/2 mx-auto;
+  }
+
+  blockquote {
+    @apply my-4;
     @apply w-full mx-0;
     @apply lg:w-2/3 lg:mx-auto;
+    @apply border-l-2 border-yellow pl-4;
+    @apply opacity-90;
+    @apply italic;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul {
+      @apply mx-2;
+      @apply w-full;
+    }
   }
 
   .container-special {
