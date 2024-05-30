@@ -75,6 +75,7 @@
   h5,
   h6,
   .title-style {
+    @apply text-balance;
     @apply w-full mx-0;
     @apply lg:w-3/4 lg:mx-auto;
   }
