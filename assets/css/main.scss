@@ -165,6 +165,13 @@
   .clickable-button-ancestor {
     @apply bg-yellow text-greeny shadow-lg;
   }
+
+  .anchor-link {
+    &::after {
+      content: '#';
+      cursor: pointer;
+    }
+  }
 }
 
 @tailwind components;

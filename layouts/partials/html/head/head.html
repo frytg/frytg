@@ -1,5 +1,5 @@
 <head>
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title site.Title }}{{ end }}</title>
+<title>{{ printf "%s | %s" .Title site.Title }}</title>
 
 {{ partialCached "html/head/css.html" . }}
 {{/* partialCached "html/head/js.html" . */}}
@@ -19,9 +19,7 @@
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{ end }}
 
-{{ if isset .Params "noindex" }}
-<meta name="robots" content="noindex">
-{{ end }}
+{{ if isset .Params "noindex" }}<meta name="robots" content="noindex">{{ end }}
 
 {{/* Favicon */}}
 <link rel="apple-touch-icon" href="/favicon.png" />
