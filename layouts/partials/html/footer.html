@@ -4,11 +4,8 @@
 	</div>
 
 	<p class="mx-4 text-sm text-center my-0">
-		Follow me on
-		<a href="https://beoriginal.social/@FRYTG" target="_blank" rel="me noopener" alt="Link to Mastodon" title="Mastodon: @FRYTG@beoriginal.social">Mastodon</a> &#x2022;
-		<a href="https://www.instagram.com/dan.frytg/" target="_blank" rel="me noopener noreferrer" alt="Link to Instagram" title="Instagram: @dan.frytg">Instagram</a> &#x2022;
-		<a href="https://threads.net/@dan.frytg/" target="_blank" rel="me noopener noreferrer" alt="Link to Threads" title="Threads: @dan.frytg">Threads</a> &#x2022;
-		<a href="https://twitter.com/FRYTG" target="_blank" rel="me noopener noreferrer" alt="Link to Twitter" title="Twitter: @FRYTG">Twitter</a>
+		Follow me on {{- range site.Menus.social }}
+<a href="{{.URL}}" target="_blank" rel="me noopener" alt="Link to {{.Name}}" title="{{.Name}}: {{.Params.handle}}">{{.Name}}</a> {{.Post}} {{- end }}
 	</p>
 	<p class="mx-4 text-sm text-center my-0">🍪 No Cookies were stored during this visit.</p>
 	<p class="mx-4 text-sm text-center my-0"><a href="/legal/" title="Impressum">Legal Notices & Data Privacy</a></p>

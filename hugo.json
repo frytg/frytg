@@ -29,9 +29,45 @@
 				"pageRef": "/blog",
 				"weight": 30
 			}
+		],
+		"social": [
+			{
+				"name": "Mastodon",
+				"url": "https://beoriginal.social/@FRYTG",
+				"weight": 10,
+				"post": "&#x2022;",
+				"params": {
+					"handle": "@FRYTG@beoriginal.social"
+				}
+			},
+			{
+				"name": "Twitter",
+				"url": "https://twitter.com/FRYTG",
+				"weight": 20,
+				"post": "&#x2022;",
+				"params": {
+					"handle": "@FRYTG"
+				}
+			},
+			{
+				"name": "Instagram",
+				"url": "https://www.instagram.com/dan.frytg/",
+				"weight": 30,
+				"post": "&#x2022;",
+				"params": {
+					"handle": "dan.frytg"
+				}
+			},
+			{
+				"name": "Threads",
+				"url": "https://threads.net/@dan.frytg/",
+				"weight": 40,
+				"params": {
+					"handle": "dan.frytg"
+				}
+			}
 		]
 	},
-
 	"imaging": {
 		"quality": 85
 	},
