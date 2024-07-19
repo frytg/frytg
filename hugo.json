@@ -50,9 +50,18 @@
 				}
 			},
 			{
+				"name": "GitHub",
+				"url": "https://github.com/FRYTG",
+				"weight": 30,
+				"post": "&#x2022;",
+				"params": {
+					"handle": "@FRYTG"
+				}
+			},
+			{
 				"name": "Instagram",
 				"url": "https://www.instagram.com/dan.frytg/",
-				"weight": 30,
+				"weight": 40,
 				"post": "&#x2022;",
 				"params": {
 					"handle": "dan.frytg"
@@ -61,7 +70,7 @@
 			{
 				"name": "Threads",
 				"url": "https://threads.net/@dan.frytg/",
-				"weight": 40,
+				"weight": 50,
 				"params": {
 					"handle": "dan.frytg"
 				}
