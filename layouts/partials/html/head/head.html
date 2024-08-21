@@ -39,8 +39,36 @@
 <meta property="og:url" content="{{ .Permalink }}" />
 
 {{/* Language */}}
-<meta property="og:locale" content="{{ or site.Language.LanguageCode site.Language.Lang }}" />
-<meta name="language" content="{{ .Language.LanguageName }}" />
+{{- with or .Params.locale site.Language.LanguageCode }}
+<meta property="og:locale" content="{{ replace . `-` `_` }}">
+{{- end }}
+
+{{- with .WordCount }}
+<meta itemprop="wordCount" content="{{ . }}">
+{{- end }}
+
+{{- /*
+Keywords precedence:
+
+1. Use "keywords" term page titles.
+2. Use "keywords" from front matter if "keywords" is not a taxonomy.
+3. Use "tags" term page titles.
+4. Use term page titles from all taxonomies.
+
+*/}}
+{{- $keywords := slice }}
+{{- range .GetTerms "tags" }}
+  {{- $keywords = $keywords | append .Title }}
+{{- else }}
+  {{- range $taxonomy, $_ := site.Taxonomies }}
+    {{- range $.GetTerms $taxonomy }}
+      {{- $keywords = $keywords | append .Title }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- with $keywords }}
+<meta itemprop="keywords" content="{{ delimit . `,` }}">
+{{- end -}}
 
 {{/* Teaser Image */}}
 {{- $ogImage := "" -}}
@@ -54,10 +82,24 @@
 
 {{/* Date */}}
 {{ if isset .Params "date" }}
-<meta property="article:published_time" content="{{ (time .Date).Format "2006-01-02T15:04:05Z" }}" />
-<meta property="og:article:published_time" content="{{ (time .Date).Format "2006-01-02T15:04:05Z" }}" />
-<meta property="article:published_time" content="{{ (time .Date).Format "2006-01-02T15:04:05Z" }}" />
+
 {{ end }}
+
+{{- $datePublished := "" }}
+{{- $ISO8601 := "2006-01-02T15:04:05-07:00" }}
+{{- with .PublishDate }}
+{{ $datePublished = .Format $ISO8601  }}
+{{ $datePublishedHtml := $datePublished | printf "content=%q" }}
+<meta property="article:published_time" {{ $datePublishedHtml | safeHTMLAttr }} />
+<meta property="og:article:published_time" {{ $datePublishedHtml | safeHTMLAttr }} />
+<meta itemprop="datePublished" {{ $datePublishedHtml | safeHTMLAttr }}>
+{{- end }}
+
+{{- $dateModified := "" }}
+{{- with .Lastmod }}
+{{ $dateModified = .Format $ISO8601  }}
+<meta itemprop="dateModified" {{ $dateModified | printf "content=%q" | safeHTMLAttr }}>
+{{- end }}
 
 {{/* Description (not summary!) */}}
 {{ if isset .Params "seo_description" }}
@@ -81,4 +123,22 @@
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "headline": {{ printf "%s | %s" .Title site.Title }},
+  "image": {{ ($ogImage.Process "1200x630 jpg fill Center Lanczos").Permalink }},
+  "datePublished": {{ $datePublished }},
+  "dateModified": {{ $dateModified }},
+  "keywords": [{{ range $i, $e := $keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}],
+  {{ if isset .Params "seo_description" }}"description": {{ htmlEscape .Params.seo_description }},{{ end }}
+  "author": {
+    "@type": "Person",
+    "name": "Daniel Freytag"
+  }
+}
+</script>
+
 </head>
