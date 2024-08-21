@@ -2,7 +2,12 @@
 	"title": "Daniel Freytag",
 	"baseURL": "https://www.frytg.com/",
 	"languageCode": "en-US",
+	"copyright": "© 2024 Daniel Freytag",
 	"params": {
+		"author": {
+			"email": "contact@frytg.com",
+			"name": "Daniel Freytag"
+		},
 		"og_image": "images/og-card/about-2024-Q1-A-2x1.jpg"
 	},
 	"disableHugoGeneratorInject": true,
@@ -125,6 +130,12 @@
 				"target": "$1"
 			}
 		]
+	},
+	"outputs": {
+		"home": ["html"],
+		"section": ["html", "rss"],
+		"taxonomy": ["html"],
+		"term": ["html"]
 	},
 	"markup": {
 		"goldmark": {

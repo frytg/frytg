@@ -5,7 +5,7 @@ $titlePrefix = "Tag: " }} {{ end }}
   <h1>{{ $titlePrefix }}{{ .Title }}</h1>
 
   {{/* Add RSS if available */}} {{ with .OutputFormats.Get "rss" -}}
-  <p class="hidden">
+  <p class="">
     <a
       class="clickable-button inline-block m-0 -ml-3 sm:-ml-4"
       href="{{ .RelPermalink }}"
