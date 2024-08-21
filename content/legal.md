@@ -7,6 +7,7 @@ type: 'page'
 layout: 'plain'
 sitemap:
   changefreq: 'monthly'
+  disable: true
   priority: 0.7
 ---
 

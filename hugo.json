@@ -95,7 +95,13 @@
 		}
 	},
 	"sitemap": {
-		"changeFreq": "monthly"
+		"changeFreq": "monthly",
+		"disable": false,
+		"filename": "sitemap.xml"
+	},
+	"taxonomies": {
+		"category": "categories",
+		"tag": "tags"
 	},
 	"build": {
 		"buildStats": {
