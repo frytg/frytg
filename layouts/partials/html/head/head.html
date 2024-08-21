@@ -8,6 +8,7 @@
 <meta name="viewport" content="width=device-width" />
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
+<meta name="author" content="Daniel Freytag"/>
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -47,15 +48,7 @@
 <meta itemprop="wordCount" content="{{ . }}">
 {{- end }}
 
-{{- /*
-Keywords precedence:
-
-1. Use "keywords" term page titles.
-2. Use "keywords" from front matter if "keywords" is not a taxonomy.
-3. Use "tags" term page titles.
-4. Use term page titles from all taxonomies.
-
-*/}}
+{{/* Keywords */}}
 {{- $keywords := slice }}
 {{- range .GetTerms "tags" }}
   {{- $keywords = $keywords | append .Title }}
@@ -85,6 +78,7 @@ Keywords precedence:
 
 {{ end }}
 
+{{/* Date Published and Modified */}}
 {{- $datePublished := "" }}
 {{- $ISO8601 := "2006-01-02T15:04:05-07:00" }}
 {{- with .PublishDate }}
@@ -127,11 +121,12 @@ Keywords precedence:
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Blog",
+  "@type": "BlogPosting",
   "headline": {{ printf "%s | %s" .Title site.Title }},
   "image": {{ ($ogImage.Process "1200x630 jpg fill Center Lanczos").Permalink }},
   "datePublished": {{ $datePublished }},
   "dateModified": {{ $dateModified }},
+  "wordCount": {{ .WordCount }},
   "keywords": [{{ range $i, $e := $keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}],
   {{ if isset .Params "seo_description" }}"description": {{ htmlEscape .Params.seo_description }},{{ end }}
   "author": {

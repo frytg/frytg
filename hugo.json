@@ -78,7 +78,7 @@
 		]
 	},
 	"imaging": {
-		"quality": 85
+		"quality": 87
 	},
 	"minify": {
 		"disableCSS": false,
