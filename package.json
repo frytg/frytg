@@ -9,7 +9,6 @@
 		"build:prod": "bun run clean && bun run tailwind:build && bun run vite:build && bun run hugo:build"
 	},
 	"packageManager": "yarn@4.1.0",
-	"prettier": "@vercel/style-guide/prettier",
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.0",
 		"@vercel/style-guide": "^6.0.0",
