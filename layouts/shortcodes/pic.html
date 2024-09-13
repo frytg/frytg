@@ -17,7 +17,7 @@
 			{{- with $respSizes -}}
 				{{- range $i, $e := . -}}
 					{{- if ge $src.Width . -}}
-						{{- if $i }}, {{ end -}}{{- ($src.Resize (printf "%sx%s" . " webp Lanczos") ).RelPermalink }} {{ . }}w
+						{{- if $i }}, {{ end -}}{{- ($src.Resize (printf "%sx%s" . " webp q92 Lanczos") ).RelPermalink }} {{ . }}w
 					{{- end -}}
 				{{- end -}}
 			{{- end -}}"
