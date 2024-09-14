@@ -6,9 +6,9 @@
 		"vite:build": "vite build && cp -r static/compiled assets/css",
 		"tailwind:local": "bun run tailwind:build --watch",
 		"tailwind:build": "bunx tailwindcss -i ./assets/css/main.scss -o ./assets/css/main-tailwind-compiled.css",
-		"build:prod": "bun run clean && bun run tailwind:build && bun run vite:build && bun run hugo:build"
+		"build:prod": "bun run clean && bun run tailwind:build && bun run vite:build && bun run hugo:build",
+		"rsync": "bun run .scripts/rsync-to-bunny-storage.js"
 	},
-	"packageManager": "yarn@4.1.0",
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.0",
 		"@vercel/style-guide": "^6.0.0",
