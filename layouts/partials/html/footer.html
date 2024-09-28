@@ -11,7 +11,7 @@
 	<p class="mx-4 text-sm text-center my-0">&copy; Daniel Freytag</p>
 </div>
 
-{{- with resources.Get "css/compiled/fonts.css" | minify | fingerprint }}
+{{- with resources.Get "css/dist/fonts.css" | minify | fingerprint }}
 <link
   rel="stylesheet"
   type="text/css"

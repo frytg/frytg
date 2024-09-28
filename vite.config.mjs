@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
 	mode: 'production',
 	publicDir: false,
-	base: '/compiled',
+	base: '/css/dist',
 
 	build: {
 		// set primary output and asset config
@@ -19,14 +19,14 @@ export default defineConfig({
 
 		rollupOptions: {
 			input: {
-				main: resolve(__dirname, './assets/css/main-tailwind-compiled.css'),
+				main: resolve(__dirname, './assets/css/_main-compiled.scss'),
 				fonts: resolve(__dirname, './assets/css/fonts.scss'),
 			},
 
 			makeAbsoluteExternalsRelative: true,
 
 			output: {
-				dir: 'static/compiled',
+				dir: 'assets/css/dist',
 				entryFileNames: 'entry/[name]-[hash].js',
 				chunkFileNames: 'chunks/[name]-[hash].js',
 				assetFileNames: '[name].[ext]',

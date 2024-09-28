@@ -15,7 +15,7 @@ module.exports = {
 		},
 		fontFamily: {
 			...fontFamily,
-			sans: ['Inter', ...fontFamily.sans],
+			sans: ['InterVariable', ...fontFamily.sans],
 		},
 		fontSize: {
 			xs: ['0.75rem'],

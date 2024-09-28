@@ -11,15 +11,7 @@
 
 	@media (color-gamut: srgb) {
 		:root {
-			--frytg-color-yellow: color(
-				display-p3 1 1 0.0666666667
-			);
-		}
-	}
-
-	@supports (font-variation-settings: normal) {
-		html {
-			font-family: "InterVariable", "Inter", "system-ui";
+			--frytg-color-yellow: color(display-p3 1 1 0.0666666667);
 		}
 	}
 

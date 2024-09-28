@@ -1,22 +1,25 @@
 {
 	"scripts": {
-		"clean": "rm -rf public && rm -rf assets/css/compiled && rm assets/css/main-tailwind-compiled.css",
+		"clean": "rm -rf public && rm -f assets/css/_main-compiled.scss",
+		"dev": "concurrently 'bun run tailwind:local' 'bun run vite --watch' 'bun run hugo:local'",
 		"hugo:local": "hugo server",
 		"hugo:build": "hugo --minify",
-		"vite:build": "vite build && cp -r static/compiled assets/css",
+		"vite": "vite build",
+		"postvite": "mkdir -p static/css/dist && cp -r assets/css/dist/ static/css/dist",
 		"tailwind:local": "bun run tailwind:build --watch",
-		"tailwind:build": "bunx tailwindcss -i ./assets/css/main.scss -o ./assets/css/main-tailwind-compiled.css",
-		"build:prod": "bun run clean && bun run tailwind:build && bun run vite:build && bun run hugo:build",
+		"tailwind:build": "tailwindcss -i ./assets/css/main.scss -o ./assets/css/_main-compiled.scss",
+		"build:prod": "bun run clean && bun run tailwind:build && bun run vite && bun run hugo:build",
 		"rsync": "bun run .scripts/rsync-to-bunny-storage.js"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.0",
+		"@biomejs/biome": "^1.9.2",
 		"@vercel/style-guide": "^6.0.0",
-		"eslint": "^9.10.0",
+		"concurrently": "^9.0.1",
+		"eslint": "^9.11.1",
 		"inter-ui": "^4.0.2",
 		"prettier": "^3.3.3",
-		"sass": "^1.78.0",
-		"tailwindcss": "^3.4.11",
-		"vite": "^5.4.5"
+		"sass": "^1.79.4",
+		"tailwindcss": "^3.4.13",
+		"vite": "^5.4.8"
 	}
 }
