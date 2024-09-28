@@ -1,11 +1,11 @@
 ---
-title: 'About me'
+title: "About me"
 date: 2024-03-01T08:00:00+00:00
-seo_description: 'About Daniel Freytag, Audio Cloud & Innovation Manager at SWR Audio Lab.'
-type: 'page'
-layout: 'plain'
+seo_description: "About Daniel Freytag, Audio Cloud & Innovation Manager at SWR Audio Lab."
+type: "page"
+layout: "plain"
 sitemap:
-  changefreq: 'weekly'
+  changefreq: "weekly"
   priority: 1
 ---
 
@@ -14,13 +14,17 @@ sitemap:
 or _Dan_ for short.
 {.text-3xl .title-style}
 
-I am an Audio Cloud & Innovation Manager at [SWR Audio Lab](https://lab.swr.de/). In the past, I have also worked on live and film productions for local and international companies, events, and TV & radio stations.
+I am an **Audio Cloud & Innovation Manager** at [SWR Audio Lab](https://www.swr.de/unternehmen/audiolab/index.html). Read more below about my current work and projects.
+
+In the past, I have also worked on live and film productions for local and international companies, events, and TV & radio stations.
 
 {{< pic src="images/about/web-about-2024-q1-1@2x.webp" alt="Photo collection of profile pictures" >}}
 
 ## Currently
 
-My work at the moment focuses on the improvement of [ARD Audiothek](https://www.ardaudiothek.de/), a platform for audio content from public broadcasters in Germany. I especially work on the integration and improvement of ARD Audiothek on voice assistants and platforms right now.
+At the moment my work focuses on the improvement of [ARD Audiothek](https://www.ardaudiothek.de/), a platform for audio content from public broadcasters in Germany. I especially work on the integration and improvement of ARD Audiothek on voice assistants and platforms right now.
+
+Additionally, we're working on the [responsible integration](https://www.swr.de/unternehmen/ki-guidelines-100.pdf) of AI into our internal and external products and services.
 
 Our team also manages the apps for _SWR_'s radio stations, like the popular [_SWR3_](https://www.swr3.de/app) mobile apps for iOS and Android. For these apps I also built the backend infrastructure, providing live meta data, podcasts, and all other content through our own central _SWR Radiohub_ APIs, serving billions of API requests per month.
 
