@@ -49,7 +49,7 @@ bun run clean
 This will run all required commands and build the site for production in `/public`:
 
 ```sh
-bun build:prod
+bun run build
 ```
 
 ## Image Configuration

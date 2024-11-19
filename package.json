@@ -8,18 +8,19 @@
 		"postvite": "mkdir -p static/css/dist && cp -r assets/css/dist/ static/css/dist",
 		"tailwind:local": "bun run tailwind:build --watch",
 		"tailwind:build": "tailwindcss -i ./assets/css/main.scss -o ./assets/css/_main-compiled.scss",
-		"build:prod": "bun run clean && bun run tailwind:build && bun run vite && bun run hugo:build",
+		"build": "bun run clean && bun run tailwind:build && bun run vite && bun run hugo:build",
 		"rsync": "bun run .scripts/rsync-to-bunny-storage.js"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.2",
-		"@vercel/style-guide": "^6.0.0",
-		"concurrently": "^9.0.1",
-		"eslint": "^9.11.1",
+		"@biomejs/biome": "^1.9.4",
+		"@swrlab/style-guide": "^1.0.3",
+		"concurrently": "^9.1.0",
+		"eslint": "^9.15.0",
 		"inter-ui": "^4.0.2",
 		"prettier": "^3.3.3",
-		"sass": "^1.79.4",
-		"tailwindcss": "^3.4.13",
-		"vite": "^5.4.8"
-	}
+		"sass": "^1.81.0",
+		"tailwindcss": "^3.4.15",
+		"vite": "^5.4.11"
+	},
+	"prettier": "@swrlab/style-guide/prettier"
 }
