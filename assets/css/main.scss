@@ -129,6 +129,14 @@
 		}
 	}
 
+	pre {
+		@apply p-2 rounded-md;
+	}
+
+	code:not(pre code) {
+		@apply font-mono rounded-sm bg-grey text-greeny p-1;
+	}
+
 	.container-special {
 		@apply mx-auto my-6;
 		@apply px-4;
@@ -167,7 +175,7 @@
 
 	.anchor-link {
 		&::after {
-			content: "#";
+			content: '#';
 			cursor: pointer;
 		}
 	}
