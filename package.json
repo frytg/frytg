@@ -9,7 +9,7 @@
 		"tailwind:local": "bun run tailwind:build --watch",
 		"tailwind:build": "tailwindcss -i ./assets/css/main.scss -o ./assets/css/_main-compiled.scss",
 		"build": "bun run clean && bun run tailwind:build && bun run vite && bun run hugo:build",
-		"rsync": "bun run .scripts/rsync-to-bunny-storage.js"
+		"rsync": "dotenvx run -- bun run .scripts/rsync-to-bunny-storage.js"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
@@ -21,6 +21,9 @@
 		"sass": "^1.81.0",
 		"tailwindcss": "^3.4.15",
 		"vite": "^5.4.11"
+	},
+	"engines": {
+		"node": ">=20"
 	},
 	"prettier": "@swrlab/style-guide/prettier"
 }

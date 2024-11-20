@@ -52,6 +52,12 @@ This will run all required commands and build the site for production in `/publi
 bun run build
 ```
 
+## Sync to Bunny Storage
+
+```bash
+bun run rsync
+```
+
 ## Image Configuration
 
 Main inspiration for the template

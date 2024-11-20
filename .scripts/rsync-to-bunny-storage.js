@@ -1,12 +1,11 @@
 // load packages
-import { readdir, stat, readFile } from 'node:fs/promises'
+import { readFile, readdir, stat } from 'node:fs/promises'
 import { join, relative } from 'node:path'
-import { execSync } from 'node:child_process'
+import process from 'node:process'
 
 // Bunny Storage API configuration
-const readOpKey = (path) => execSync(`op read "${path}"`).toString().trim()
-const BUNNY_STORAGE_API_KEY = readOpKey(process.env.BUNNY_STORAGE_API_KEY_PATH)
-const BUNNY_STORAGE_ZONE = readOpKey(process.env.BUNNY_STORAGE_ZONE_PATH)
+const BUNNY_STORAGE_API_KEY = process.env.BUNNY_STORAGE_API_KEY
+const BUNNY_STORAGE_ZONE = process.env.BUNNY_STORAGE_ZONE
 const STORAGE_ENDPOINT = 'https://storage.bunnycdn.com' // Change this based on your primary storage region
 
 async function getLocalFiles(localPath) {
@@ -42,7 +41,7 @@ async function getRemoteFiles(remotePath) {
 	console.log('remote data', url, data.length, remotePath)
 
 	// walk through the data
-	for (const item of data) {
+	for await (const item of data) {
 		// if it's a directory, recurse
 		if (item.IsDirectory) {
 			const fullPath = join(remotePath, item.ObjectName)
@@ -97,7 +96,7 @@ async function syncFolders(localPath, remotePath) {
 	await Bun.write('./temp/rsync-remote-files.json', JSON.stringify(remoteFiles, null, 2))
 
 	// Upload new or modified files
-	for (const [relPath, localInfo] of Object.entries(localFiles)) {
+	for await (const [relPath, localInfo] of Object.entries(localFiles)) {
 		const remoteFile = remoteFiles[relPath]
 		const isUploadRequired = !remoteFile || localInfo.mtime > remoteFile.mtime || localInfo.size !== remoteFile.size
 		console.log('upload file?', isUploadRequired, relPath)
@@ -106,7 +105,7 @@ async function syncFolders(localPath, remotePath) {
 	console.log('=== uploaded new or modified files ===')
 
 	// Delete files that exist remotely but not locally
-	for (const relPath of Object.keys(remoteFiles)) {
+	for await (const relPath of Object.keys(remoteFiles)) {
 		const isLocalFileDeleted = !localFiles[relPath]
 		console.log('delete?', isLocalFileDeleted, relPath)
 		if (isLocalFileDeleted) await deleteRemoteFile(`${remotePath}/${relPath}`)
