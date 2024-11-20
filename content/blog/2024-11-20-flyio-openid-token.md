@@ -5,8 +5,8 @@ seo_description: How to use OpenID Workload Identity Tokens with Fly.io.
 summary: A Go utility that decodes Fly.io OpenID tokens to enable Google Cloud Workload Identity Federation integration without managing service account keys.
 image: 'images/blog/2024-11-20-flyio-openid-token/flyio-gcp-og-image.jpg'
 date: '2024-11-20T14:08:17+00:00'
-categories: [Tech, Europe]
-tags: [fly.io, OIDC, OpenID, Google Cloud, Workload Identity Federation]
+categories: [Tech, Cloud]
+tags: [fly.io, OIDC, OpenID, OSS, Google Cloud, Workload Identity Federation]
 ---
 
 _A Go utility to decode Fly.io OpenID tokens for Google Cloud Workload Identity Federation integration._

@@ -22,11 +22,11 @@ I'm a **Mac fanboy**, so this is being typed on a Mac mini. When traveling a com
 
 ### Software
 
-Most of the current projects are written in **Javascript** ([_Node.js_](https://nodejs.org/en) - with an eye on [_Bun_](https://bun.sh/)) (still want/ need to learn [_Rust_](https://www.rust-lang.org/) or [_Go_](https://go.dev/). For frontend stuff I like using [_Vue.js_](https://vuejs.org/) along with [_Vite_](https://vitejs.dev/) for bundling.
+Most of the current projects are written in **Javascript/ Typescript** (running on [_Node.js_](https://nodejs.org/en), [_Bun_](https://bun.sh/), or [_Deno_](https://deno.com)). Currently also very interested and learning the ins and outs of [_Rust_](https://www.rust-lang.org/) and [_Go_](https://go.dev/). For frontend stuff I like using [_Vue.js_](https://vuejs.org/) along with [_Vite_](https://vitejs.dev/) for bundling.
 
-For code editing/ **IDE** I'm currently trying to switch over to [_Zed_](https://zed.dev/), a new Rust-based super fast code editor. For features that they don't support (yet), I still use [_Visual Studio Code_](https://code.visualstudio.com/).
+For code editing/ **IDE** I'm currently very happy with [_Visual Studio Code_](https://code.visualstudio.com/) and my own color theme.
 
-[_Raycast_](https://www.raycast.com/) is a super helpful tool for Mac, which I use for quick access to all kinds of things. The plugin to search [_NPM_](https://www.raycast.com/mrmartineau/search-npm) or [_Can I Use_](https://www.raycast.com/thomaslombart/can-i-use) are must-haves. The [_GitHub_](https://www.raycast.com/raycast/github) plugin also saves a lot of time.
+[_Raycast_](https://www.raycast.com/?via=frytg) is a super helpful tool for Mac, which I use for quick access to all kinds of things. The plugin to search [_NPM_](https://www.raycast.com/mrmartineau/search-npm?via=frytg) or [_Can I Use_](https://www.raycast.com/thomaslombart/can-i-use?via=frytg) are must-haves. The [_GitHub_](https://www.raycast.com/raycast/github?via=frytg) plugin also saves a lot of time.
 
 For **Browsers** I mostly use [_Arc_](https://arc.net/), a customizable Chromium browser on desktop and [_Safari_](https://www.apple.com/safari/) on mobile.
 
@@ -40,9 +40,11 @@ When understanding or searching for more than just a link or tool [_Perplexity_]
 
 After the shutdown of _Tweetbot_ (rest in peace), I switched over to [_Ivory_](https://tapbots.com/ivory/) and my own Mastodon instance [beoriginal.social](https://beoriginal.social/).
 
-Work and development-wise I'm a big fan of [_Scaleway_](https://www.scaleway.com/), with their EU-based public cloud platform. For all the other stuff [_Google Cloud Platform_](https://cloud.google.com/) and [_AWS_](https://aws.amazon.com/) are the usual options. CDN is mostly [_Bunny_](https://bunnycdn.com/) or [_Fastly_](https://www.fastly.com/). [_Terraform_](https://www.terraform.io/) is great to make infrastructure reproducible and abstract bad cloud UIs.
+Work and development-wise I'm a big fan of [_Scaleway_](https://www.scaleway.com/), with their EU-based public cloud platform. For some applications [_fly.io_](http://fly.io) is also a great choice. For all the other stuff [_Google Cloud Platform_](https://cloud.google.com/) and [_AWS_](https://aws.amazon.com/) are the usual options. CDN is mostly [_Bunny_](https://bunnycdn.com/) or [_Fastly_](https://www.fastly.com/). [_Terraform_](https://www.terraform.io/) is great to make infrastructure reproducible and abstract bad cloud UIs.
 
 Monitoring tech deployments works best with [_Datadog_](https://www.datadoghq.com/) and [_Better Uptime_](https://betterstack.com/).
+
+[dns0.eu](https://www.dns0.eu) is currently my go-to European public DNS provider.
 
 ### Principles
 
