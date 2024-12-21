@@ -18,7 +18,7 @@ Also check out [`/uses`](/uses) for a list of tools that I use daily.
 
 ## GitHub Charts in Rust
 
-![GitHub chart](https://githubchart-rust.deno.dev/frytg/dark)
+[![GitHub Contributions](https://githubchart-rust.deno.dev/frytg/dark)](https://github.com/FRYTG)
 
 This little project idea led me to forking [a Ruby project](https://github.com/akerl/githubchart) that parses the GitHub contribution data and generates an SVG output. [`githubchart-rust`](https://github.com/frytg/githubchart-rust) is a Rust rewrite of the same idea. Compiling it to WASM, also makes it easier to embed it in a website by throwing it on a serverless environment using [a simple Deno script](https://github.com/frytg/githubchart-rust/blob/main/web/deno.ts).
 
