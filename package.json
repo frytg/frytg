@@ -1,5 +1,7 @@
 {
 	"scripts": {
+		"build": "bun run clean && bun run tailwind:build && bun run vite && bun run hugo:build",
+		"rsync": "dotenvx run -- bun run .scripts/rsync-to-bunny-storage.js",
 		"clean": "rm -rf public && rm -f assets/css/_main-compiled.scss",
 		"dev": "concurrently 'bun run tailwind:local' 'bun run vite --watch' 'bun run hugo:local'",
 		"hugo:local": "hugo server",
@@ -7,19 +9,17 @@
 		"vite": "vite build",
 		"postvite": "mkdir -p static/css/dist && cp -r assets/css/dist/ static/css/dist",
 		"tailwind:local": "bun run tailwind:build --watch",
-		"tailwind:build": "tailwindcss -i ./assets/css/main.scss -o ./assets/css/_main-compiled.scss",
-		"build": "bun run clean && bun run tailwind:build && bun run vite && bun run hugo:build",
-		"rsync": "dotenvx run -- bun run .scripts/rsync-to-bunny-storage.js"
+		"tailwind:build": "tailwindcss -i ./assets/css/main.scss -o ./assets/css/_main-compiled.scss"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
 		"@swrlab/style-guide": "^1.0.3",
 		"concurrently": "^9.1.0",
-		"eslint": "^9.15.0",
+		"eslint": "^9.17.0",
 		"inter-ui": "^4.1.0",
-		"prettier": "^3.3.3",
-		"sass": "^1.81.0",
-		"tailwindcss": "^3.4.15",
+		"prettier": "^3.4.2",
+		"sass": "^1.83.0",
+		"tailwindcss": "^3.4.17",
 		"vite": "^5.4.11"
 	},
 	"engines": {
