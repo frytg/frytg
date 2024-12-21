@@ -24,7 +24,7 @@ This little project idea led me to forking [a Ruby project](https://github.com/a
 
 ## Scripts and Tools
 
-I recently started to collect some useful everyday scripts that I use for my work and personal projects in a new repository: 🔗 [`frytg/scripty`](https://github.com/frytg/scripty). Also some useful wrappers or dependencies in [`frytg/js-utils`](https://github.com/frytg/js-utils). Both are somewhat work in progress and will hopefully grow over time.
+I recently started to collect some useful everyday scripts that I use for my work and personal projects in a new repository: 🔗 [`frytg/scripty`](https://github.com/frytg/scripty). Also some useful wrappers or dependencies in [`frytg/utility`](https://github.com/frytg/utility). Both are somewhat work in progress and will hopefully grow over time.
 
 Scripty also includes a little endpoint to get or test the current connection: 🔗 [ip.srv.earth](https://ip.srv.earth/?pretty)
 
