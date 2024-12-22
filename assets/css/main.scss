@@ -5,7 +5,7 @@
 		--frytg-color-off-white: #ecebe3;
 		--frytg-color-yellow: rgb(255, 255, 17);
 		--frytg-color-orange: #f09139;
-		--frytg-color-grey: #d7e2cc;
+		--frytg-color-gray: #d7e2cc;
 		--frytg-color-greeny: #3e4939;
 	}
 
@@ -54,7 +54,7 @@
 	}
 
 	a {
-		@apply text-grey underline;
+		@apply text-gray underline;
 		@apply transition-all;
 
 		&:hover {
@@ -134,7 +134,7 @@
 	}
 
 	code:not(pre code) {
-		@apply font-mono rounded-sm bg-grey text-greeny p-1;
+		@apply font-mono rounded-sm bg-gray text-greeny p-1;
 	}
 
 	.container-special {

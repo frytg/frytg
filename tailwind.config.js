@@ -8,9 +8,9 @@ module.exports = {
 				white: 'var(--frytg-color-off-white)',
 				yellow: 'var(--frytg-color-yellow)',
 				orange: 'var(--frytg-color-orange)',
-				grey: 'var(--frytg-color-grey)',
+				gray: 'var(--frytg-color-gray)',
+
 				greeny: 'var(--frytg-color-greeny)',
-				'social-instagram': '#F66C32',
 			},
 		},
 		fontFamily: {
@@ -29,9 +29,8 @@ module.exports = {
 			'5xl': ['3rem', '3.5rem'],
 			'6xl': ['3.75rem', '4rem'],
 			'7xl': ['4.5rem', '5rem'],
-			'8xl': ['6rem'],
-			'9xl': ['8rem'],
+			'8xl': ['6rem', '6.5rem'],
+			'9xl': ['8rem', '8.5rem'],
 		},
 	},
-	plugins: [],
 }

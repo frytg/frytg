@@ -23,7 +23,7 @@ _that's usually when the ideas, the dreams, the visions for future products, fea
 **companies have historically chosen central locations (in big urban cities) for their headquarters. however, remote work showed us that hiring nationally (or internationally) instead of locally widens the talent pool immensely.**
 
 i think for us knowledge/tech workers we need to get away from the traditional thinking of headquarters. the solution likely is something like distributed hubs which employees can use to meet, ideate and connect.  
-those again need to be attractive. people understandably hate return to office (rto) if it is just an endless sea of ugly grey rooms with outdated furniture in a badly connected suburb.  
+those again need to be attractive. people understandably hate return to office (rto) if it is just an endless sea of ugly gray rooms with outdated furniture in a badly connected suburb.  
 _think more colorful, more loungy, more living space than cubicle._
 
 encourage people to travel and visit other hubs. the loss of travel expenses will be worth the stronger community.
