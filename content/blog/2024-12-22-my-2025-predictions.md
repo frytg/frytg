@@ -9,7 +9,7 @@ categories: [Tech, Cloud, World]
 tags: [ai, startups, space, regulation, sovereignty, open source, privacy, health, security]
 ---
 
-**think of this as a bingo card for the next year.** (_listed points are neither endorsements nor judgments._)
+think of this as a bingo card for the next year. (_listed points are neither endorsements nor judgments._)
 
 - by the end of the year **technical solutions** will be possible that we could not have imagined or thought of at the beginning of the year - _sounds obvious, but will be groundbreaking_
   - this includes - _but is not limited to_ - the world of AI
