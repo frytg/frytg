@@ -1,4 +1,5 @@
 import { resolve } from 'node:path'
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
@@ -19,7 +20,7 @@ export default defineConfig({
 
 		rollupOptions: {
 			input: {
-				main: resolve(__dirname, './assets/css/_main-compiled.scss'),
+				main: resolve(__dirname, './assets/css/main.css'),
 				fonts: resolve(__dirname, './assets/css/fonts.scss'),
 			},
 
@@ -37,4 +38,6 @@ export default defineConfig({
 	},
 
 	devSourcemap: false,
+
+	plugins: [tailwindcss()],
 })

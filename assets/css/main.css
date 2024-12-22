@@ -1,20 +1,18 @@
-@tailwind base;
+@import 'tailwindcss';
+@source '../../content/**/*.{html,js,md}';
+@source '../../layouts/**/*.{html,js}';
+
+@theme {
+	--color-white: hsl(53.33, 19.15%, 90.78%);
+	--color-yellow: oklch(96.5% 0.24275517479740738 110.19968594371046);
+	--color-orange: hsl(28.85, 85.92%, 58.24%);
+	--color-gray: hsl(90, 27.5%, 84.31%);
+	--color-greeny: hsl(101.25, 12.31%, 25.49%);
+
+	--font-sans: 'InterVariable', sans-serif;
+}
 
 @layer base {
-	:root {
-		--frytg-color-off-white: #ecebe3;
-		--frytg-color-yellow: rgb(255, 255, 17);
-		--frytg-color-orange: #f09139;
-		--frytg-color-gray: #d7e2cc;
-		--frytg-color-greeny: #3e4939;
-	}
-
-	@media (color-gamut: srgb) {
-		:root {
-			--frytg-color-yellow: color(display-p3 1 1 0.0666666667);
-		}
-	}
-
 	html {
 		@apply bg-greeny;
 		@apply text-white;
@@ -54,7 +52,7 @@
 	}
 
 	a {
-		@apply text-gray underline;
+		@apply text-gray underline bg-yellow/10 px-1 rounded-sm;
 		@apply transition-all;
 
 		&:hover {
@@ -86,6 +84,10 @@
 	li {
 		@apply text-lg;
 		@apply font-normal;
+
+		strong {
+			@apply bg-yellow/10 px-1 rounded-sm;
+		}
 	}
 
 	ul {
@@ -160,17 +162,17 @@
 		@apply transition-all;
 
 		/* color */
-		@apply hover:bg-yellow hover:text-greeny hover:shadow-lg;
+		@apply bg-transparent hover:bg-yellow hover:text-greeny;
 	}
 
 	.clickable-button-inactive {
 		@apply cursor-default;
-		@apply hover:bg-transparent hover:text-white hover:shadow-none;
+		@apply hover:bg-transparent hover:text-white;
 	}
 
 	.clickable-button-active,
 	.clickable-button-ancestor {
-		@apply bg-yellow text-greeny shadow-lg;
+		@apply bg-yellow text-greeny;
 	}
 
 	.anchor-link {
