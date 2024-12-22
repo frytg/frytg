@@ -118,7 +118,7 @@
 			&:not(:has(img)):not(:has(code)) {
 				@apply underline;
 				@apply px-2 py-1 rounded-sm;
-				@apply bg-yellow/5;
+				@apply bg-yellow/10;
 				@apply transition-all;
 				@apply hover:bg-yellow hover:text-greeny;
 
@@ -127,6 +127,7 @@
 					@apply !bg-transparent !p-0;
 				}
 
+				/* remove background from footer links */
 				footer & {
 					@apply !bg-transparent !p-0;
 					@apply hover:text-yellow;
@@ -134,8 +135,9 @@
 			}
 		}
 
+		/* bold text in paragraphs */
 		strong {
-			@apply font-bold bg-dark-greeny/50 px-2 py-1 rounded-sm;
+			@apply font-bold bg-dark-greeny/40 px-2 py-1 rounded-sm;
 		}
 	}
 
@@ -206,8 +208,7 @@
 		@apply sm:px-4 sm:py-2 sm:mx-1;
 
 		/* text size */
-		@apply text-base;
-		@apply sm:text-lg;
+		@apply text-base sm:text-lg;
 
 		/* button style */
 		@apply cursor-pointer;
