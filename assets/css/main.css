@@ -161,6 +161,7 @@
 
 	pre {
 		@apply whitespace-pre-wrap break-all;
+		@apply p-2 rounded-md;
 	}
 
 	blockquote {
@@ -184,10 +185,6 @@
 		}
 	}
 
-	pre {
-		@apply p-2 rounded-md;
-	}
-
 	code:not(pre code) {
 		@apply font-mono rounded-sm bg-dark-greeny  px-2 py-1;
 
@@ -209,7 +206,8 @@
 		@apply font-bold bg-dark-greeny/40 px-2 py-1 rounded-sm;
 	}
 
-	.clickable-button {
+	.clickable-button,
+	.clickable-button-inactive {
 		/* padding */
 		@apply px-3 py-2 mx-0;
 		@apply sm:px-4 sm:py-1 sm:mx-1;
@@ -218,19 +216,16 @@
 		@apply text-base sm:text-lg;
 
 		/* button style */
-		@apply cursor-pointer;
 		@apply rounded-sm;
 		@apply no-underline;
 		@apply font-black;
-		@apply transition-all;
-
-		/* color */
-		@apply bg-transparent hover:bg-yellow hover:text-greeny;
 	}
 
-	.clickable-button-inactive {
-		@apply cursor-default;
-		@apply hover:bg-transparent hover:text-white;
+	/* only apply animation on hover to active buttons */
+	.clickable-button {
+		@apply cursor-pointer;
+		@apply transition-all;
+		@apply bg-transparent hover:bg-yellow hover:text-greeny;
 	}
 
 	.clickable-button-active,
