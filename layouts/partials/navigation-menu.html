@@ -3,7 +3,7 @@
 
 {{- with index site.Menus $menuID }}
   <nav class="mx-2 my-12">
-    <ul class="flex flex-row flex-wrap justify-center content-evenly gap-2 list-none p-0 m-0 w-full">
+    <ul class="flex flex-row flex-wrap sm:justify-center content-evenly gap-2 list-none p-0 m-0 w-full">
       <li class="p-0 m-0"><span class="clickable-button-inactive block font-normal">Daniel Freytag</span></li>
       {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
     </ul>

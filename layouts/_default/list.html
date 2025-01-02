@@ -1,6 +1,6 @@
 {{ define "main" }} {{ $titlePrefix := ""}} {{ if eq .Kind "term" }} {{ $titlePrefix = "Tag: " }} {{ end }}
 
-<div class="container container-special">
+<div class="container container-custom">
 	<h1>{{ $titlePrefix }}{{ .Title }}</h1>
 
 	{{/* Add RSS if available */}} {{ with .OutputFormats.Get "rss" -}}

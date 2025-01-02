@@ -1,16 +1,13 @@
-{{- /* For a given taxonomy, renders a list of terms assigned to the page.
-@context {page} page The current page. @context {string} taxonomy The taxonony.
-@example: {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }} */}} {{-
-$page := .page }} {{- $taxonomy := .taxonomy }} {{- with $page.GetTerms
-$taxonomy }} {{- $label := (index . 0).Parent.LinkTitle }}
+{{- /* For a given taxonomy, renders a list of terms assigned to the page. @context {page} page The current page.
+@context {string} taxonomy The taxonony. @example: {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }} */}} {{-
+$page := .page }} {{- $taxonomy := .taxonomy }} {{- with $page.GetTerms $taxonomy }} {{- $label := (index .
+0).Parent.LinkTitle }}
 <div class="mt-20">
-  <h5>{{ $label }}</h5>
-  <p class="mt-1">
-    {{- range . }}
-    <a href="{{ .RelPermalink }}" class="clickable-button inline-block m-0"
-      >{{ .LinkTitle }}</a
-    >
-    {{- end }}
-  </p>
+	<h5>{{ $label }}:</h5>
+	<p class="mt-1">
+		{{- range . }}
+		<a href="{{ .RelPermalink }}" class="">{{ .LinkTitle }}</a>
+		{{- end }}
+	</p>
 </div>
 {{- end }}

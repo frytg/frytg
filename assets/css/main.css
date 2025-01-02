@@ -48,12 +48,6 @@
 }
 
 @layer base {
-	html {
-		@apply bg-mid-dark-greeny;
-		@apply text-white font-sans;
-		@apply selection:bg-yellow selection:text-greeny;
-	}
-
 	h1 {
 		@apply text-5xl sm:text-6xl;
 		@apply font-bold;
@@ -113,7 +107,7 @@
 	p,
 	ul,
 	li {
-		@apply text-lg  font-normal;
+		@apply text-lg font-normal;
 
 		/* link in text */
 		a {
@@ -191,7 +185,7 @@
 
 	/* code in text */
 	code:not(pre code) {
-		@apply font-mono  bg-dark-greeny  px-2 py-1;
+		@apply font-mono bg-dark-greeny px-2 py-1;
 
 		a & {
 			@apply transition-all;
@@ -201,10 +195,8 @@
 	}
 
 	/* container */
-	.container-special {
-		@apply mx-auto my-6;
-		@apply px-4;
-		@apply lg:px-0;
+	.container-custom {
+		@apply mx-auto my-6 px-4 lg:px-0;
 	}
 
 	.container-bold strong {
