@@ -13,11 +13,11 @@
 {{- define "partials/inline/menu/walk.html" }}
   {{- $page := .page }}
   {{- range .menuEntries }}
-    {{- $attrs := dict "href" .URL "class" "clickable-button block" }}
+    {{- $attrs := dict "href" .URL "class" "clickable-button block m-0" }}
     {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "clickable-button block clickable-button-active" "aria-current" "page") }}
+      {{- $attrs = merge $attrs (dict "class" "clickable-button block m-0 clickable-button-active" "aria-current" "page") }}
     {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "clickable-button block clickable-button-ancestor" "aria-current" "true") }}
+      {{- $attrs = merge $attrs (dict "class" "clickable-button block m-0 clickable-button-ancestor" "aria-current" "true") }}
     {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}
