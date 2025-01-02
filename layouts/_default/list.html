@@ -1,38 +1,34 @@
-{{ define "main" }} {{ $titlePrefix := ""}} {{ if eq .Kind "term" }} {{
-$titlePrefix = "Tag: " }} {{ end }}
+{{ define "main" }} {{ $titlePrefix := ""}} {{ if eq .Kind "term" }} {{ $titlePrefix = "Tag: " }} {{ end }}
 
 <div class="container container-special">
-  <h1>{{ $titlePrefix }}{{ .Title }}</h1>
+	<h1>{{ $titlePrefix }}{{ .Title }}</h1>
 
-  {{/* Add RSS if available */}} {{ with .OutputFormats.Get "rss" -}}
-  <p class="">
-    <a
-      class="clickable-button inline-block m-0 -ml-3 sm:-ml-4"
-      href="{{ .RelPermalink }}"
-      >RSS feed</a
-    >
-  </p>
+	{{/* Add RSS if available */}} {{ with .OutputFormats.Get "rss" -}}
+	<p class="">
+		Subscribe via
+		<a class="" href="{{ .RelPermalink }}">RSS feed</a>
+	</p>
+	{{ end }} 
+  
+  {{ if .Site.Taxonomies.categories }}
+    <p>
+      Categories:
+      {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+        <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}/">{{ $name }}</a>
+      {{ end }}
+    </p>
   {{ end }}
+  
+  {{ .Content }} {{ range .Pages }} {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00"
+	}} {{ $dateHuman := .Date | time.Format "2006-01-02" }}
 
-  <hr class="border-yellow" />
-  {{ .Content }} {{ range .Pages }} {{ $dateMachine := .Date | time.Format
-  "2006-01-02T15:04:05-07:00" }} {{ $dateHuman := .Date | time.Format
-  "2006-01-02" }}
-
-  <h2>
-    <a class="no-underline" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-  </h2>
-  <p class="text-sm italic">
-    <time datetime="{{ $dateMachine }}">Posted {{ $dateHuman }}</time>
-  </p>
-  <p>{{ .Summary }}</p>
-  <p class="">
-    <a
-      class="clickable-button inline-block m-0 -ml-3 sm:-ml-4"
-      href="{{ .RelPermalink }}"
-      >Read article...</a
-    >
-  </p>
-  {{ end }}
+	<h2 class="text-2xl sm:text-4xl sm:leading-normal">
+		<a class="no-underline" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+	</h2>
+	<p class="text-sm italic">
+		<time datetime="{{ $dateMachine }}">Posted {{ $dateHuman }}</time>
+	</p>
+	<p>{{ .Summary }}</p>
+	{{ end }}
 </div>
 {{ end }}

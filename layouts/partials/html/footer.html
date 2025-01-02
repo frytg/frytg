@@ -4,12 +4,23 @@
 	</div>
 
 	<p class="mx-4 text-sm text-center my-0">
-		✨ Follow me on{{- range site.Menus.social }} <a href="{{.URL}}" target="_blank" rel="me noopener noreferrer" alt="Link to {{.Name}}" title="{{.Name}}: {{.Params.handle}}">{{.Name}}</a>{{.Post}} {{- end }}
+		✨ Follow me on{{- range site.Menus.social }} <a href="{{.URL}}" target="_blank" rel="me noopener noreferrer" alt="Link to {{.Name}}" title="{{.Name}}: {{.Params.handle}}">{{.Name}}</a>{{.Post}} {{- end }}.
 	</p>
-	<p class="mx-4 text-sm text-center my-0">🍪 No Cookies were stored during this visit. - Analytics by <a href="https://usefathom.com/ref/DJCJEW" target="_blank" title="Fathom Analytics">Fathom</a>.</p>
+	
+	<p class="mx-4 text-sm text-center my-0">🍪 No Cookies were stored during this visit. Analytics by <a href="https://usefathom.com/ref/DJCJEW" target="_blank" title="Fathom Analytics">Fathom</a>.</p>
+	
 	<p class="mx-4 text-sm text-center my-0"><a href="/legal/" title="Impressum">Legal Notices & Data Privacy</a></p>
-	<p class="mx-4 text-sm text-center my-0">&copy; Daniel Freytag</p>
+	
+
+	<p class="mx-4 text-sm text-center my-2">
+		Created by
+		<a href="https://www.frytg.digital/?ref=frytg-com-footer" target="_blank" title="FRYTG digital">
+			<img class="w-12 inline-block mx-1" src="{{ with resources.Get "svg/logo-white.svg" }} {{ .RelPermalink }} {{ end }}" alt="FRYTG digital Logo">
+		</a>
+		&copy; Daniel Freytag
+	</p>
 </div>
+
 
 {{- with resources.Get "css/dist/fonts.css" | minify | fingerprint }}
 <link

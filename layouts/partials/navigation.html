@@ -1,11 +1,1 @@
-<div
-  class="w-full flex gap-2 flex-wrap flex-col justify-center justify-items-center content-center items-center hidden"
->
-	<div class="w-48 mt-16 mb-10">
-		<a href="/">
-			<img src="{{ with resources.Get "svg/logo-white.svg" }} {{ .RelPermalink }} {{ end }}" alt="FRYTG digital Logo">
-		</a>
-	</div>
-</div>
-
 {{ partial "navigation-menu.html" (dict "menuID" "main" "page" .) }}

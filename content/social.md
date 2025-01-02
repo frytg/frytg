@@ -10,10 +10,9 @@ sitemap:
   priority: 0.8
 ---
 
-# Me, on Social Media
+# On Social Media
 
 I definitely was a big fan of the bird network (Twitter) in the beginning, but recent policy changes made it hard to justify using it.
-
 At the same time, federated social networks (Fediverse) like Mastodon and Bluesky are growing and becoming more interesting.
 
 {{< pic src="images/about/socials-header-2024-q4-v1.png" alt="Pictures of me at work and events" >}}
