@@ -56,7 +56,7 @@
 
 	h1 {
 		@apply text-5xl sm:text-6xl;
-		@apply font-black;
+		@apply font-bold;
 		@apply mt-8 mb-1;
 	}
 	h2 {
@@ -82,7 +82,7 @@
 		@apply font-bold;
 	}
 
-	/* title style (reponsiveness) */
+	/* title style & paragraphs (reponsiveness) */
 	h1,
 	h2,
 	h3,
@@ -93,7 +93,8 @@
 	div.highlight pre {
 		@apply text-balance;
 		@apply w-full mx-0;
-		@apply lg:w-3/4 lg:mx-auto;
+		@apply lg:w-2/3 lg:mx-auto;
+		@apply tracking-tight;
 
 		a {
 			@apply transition-all;
@@ -112,15 +113,14 @@
 	p,
 	ul,
 	li {
-		@apply text-lg;
-		@apply font-normal;
+		@apply text-lg  font-normal;
 
 		/* link in text */
 		a {
 			/* no images or code children */
 			&:not(:has(img)):not(:has(code)) {
 				@apply underline;
-				@apply px-2 py-1 rounded-sm;
+				@apply px-2 py-1;
 				@apply bg-yellow/10;
 				@apply transition-all;
 				@apply hover:bg-yellow hover:text-greeny;
@@ -139,6 +139,7 @@
 		}
 	}
 
+	/* lists */
 	ul {
 		@apply px-7;
 		@apply list-disc;
@@ -152,6 +153,7 @@
 		}
 	}
 
+	/* horizontal line */
 	hr {
 		@apply opacity-80;
 		@apply border-0 border-t;
@@ -159,11 +161,13 @@
 		@apply w-1/2 mx-auto;
 	}
 
+	/* code blocks */
 	pre {
 		@apply whitespace-pre-wrap break-all;
-		@apply p-2 rounded-md;
+		@apply p-2;
 	}
 
+	/* blockquotes */
 	blockquote {
 		@apply my-4;
 		@apply w-full mx-0;
@@ -185,8 +189,9 @@
 		}
 	}
 
+	/* code in text */
 	code:not(pre code) {
-		@apply font-mono rounded-sm bg-dark-greeny  px-2 py-1;
+		@apply font-mono  bg-dark-greeny  px-2 py-1;
 
 		a & {
 			@apply transition-all;
@@ -195,6 +200,7 @@
 		}
 	}
 
+	/* container */
 	.container-special {
 		@apply mx-auto my-6;
 		@apply px-4;
@@ -203,20 +209,19 @@
 
 	.container-bold strong {
 		/* bold text in paragraphs */
-		@apply font-bold bg-dark-greeny/40 px-2 py-1 rounded-sm;
+		@apply font-bold bg-dark-greeny/40 px-2 py-1;
 	}
 
 	.clickable-button,
 	.clickable-button-inactive {
 		/* padding */
 		@apply px-3 py-2 mx-0;
-		@apply sm:px-4 sm:py-1 sm:mx-1;
+		@apply sm:px-3 sm:py-1 sm:mx-1;
 
 		/* text size */
 		@apply text-base sm:text-lg;
 
 		/* button style */
-		@apply rounded-sm;
 		@apply no-underline;
 		@apply font-black;
 	}
