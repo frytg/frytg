@@ -55,17 +55,17 @@
 	}
 
 	h1 {
-		@apply text-5xl sm:text-7xl;
+		@apply text-5xl sm:text-6xl;
 		@apply font-black;
 		@apply mt-8 mb-1;
 	}
 	h2 {
-		@apply text-4xl sm:text-6xl;
+		@apply text-4xl sm:text-5xl;
 		@apply font-bold;
 		@apply mt-6 mb-1;
 	}
 	h3 {
-		@apply text-3xl sm:text-5xl;
+		@apply text-3xl sm:text-4xl;
 		@apply font-bold;
 		@apply mt-4 mb-1;
 	}
@@ -82,13 +82,15 @@
 		@apply font-bold;
 	}
 
+	/* title style (reponsiveness) */
 	h1,
 	h2,
 	h3,
 	h4,
 	h5,
 	h6,
-	.title-style {
+	.title-style,
+	div.highlight pre {
 		@apply text-balance;
 		@apply w-full mx-0;
 		@apply lg:w-3/4 lg:mx-auto;
@@ -99,6 +101,7 @@
 		}
 	}
 
+	/* paragraphs (reponsiveness) */
 	p,
 	ul {
 		@apply my-4;
@@ -134,11 +137,6 @@
 				}
 			}
 		}
-
-		/* bold text in paragraphs */
-		strong {
-			@apply font-bold bg-dark-greeny/40 px-2 py-1 rounded-sm;
-		}
 	}
 
 	ul {
@@ -159,6 +157,10 @@
 		@apply border-0 border-t;
 		@apply my-14;
 		@apply w-1/2 mx-auto;
+	}
+
+	pre {
+		@apply whitespace-pre-wrap break-all;
 	}
 
 	blockquote {
@@ -202,10 +204,15 @@
 		@apply lg:px-0;
 	}
 
+	.container-bold strong {
+		/* bold text in paragraphs */
+		@apply font-bold bg-dark-greeny/40 px-2 py-1 rounded-sm;
+	}
+
 	.clickable-button {
 		/* padding */
 		@apply px-3 py-2 mx-0;
-		@apply sm:px-4 sm:py-2 sm:mx-1;
+		@apply sm:px-4 sm:py-1 sm:mx-1;
 
 		/* text size */
 		@apply text-base sm:text-lg;

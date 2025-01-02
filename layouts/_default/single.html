@@ -1,13 +1,13 @@
 {{ define "main" }}
-<div class="container container-special">
-  <h1 itemprop="headline">{{ .Title }}</h1>
+<div class="container container-special{{ if .Params.highlight_bold }} container-bold{{ end }}">
+	<h1 itemprop="headline">{{ .Title }}</h1>
 
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }} {{
-  $dateHuman := .Date | time.Format "2006-01-02" }}
-  <p class="text-sm italic">
-    <time datetime="{{ $dateMachine }}">Posted {{ $dateHuman }}</time>
-  </p>
+	{{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }} {{ $dateHuman := .Date | time.Format
+	"2006-01-02" }}
+	<p class="text-sm italic">
+		<time datetime="{{ $dateMachine }}">Posted {{ $dateHuman }}</time>
+	</p>
 
-  {{ .Content }}{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+	{{ .Content }}{{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 </div>
 {{ end }}
