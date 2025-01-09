@@ -2,9 +2,9 @@
 @context {string} taxonomy The taxonony. @example: {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }} */}} {{-
 $page := .page }} {{- $taxonomy := .taxonomy }} {{- with $page.GetTerms $taxonomy }} {{- $label := (index .
 0).Parent.LinkTitle }}
-<div class="mt-20">
+<div class="my-6">
 	<h5>{{ $label }}:</h5>
-	<p class="mt-1">
+	<p class="mt-1 text-sm">
 		{{- range . }}
 		<a href="{{ .RelPermalink }}" class="">{{ .LinkTitle }}</a>
 		{{- end }}

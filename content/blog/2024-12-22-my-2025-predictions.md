@@ -5,7 +5,7 @@ seo_description: A list of predictions for 2025...
 summary: A list of predictions for 2025...
 image: 'images/blog/2024-12-22-my-2025-predictions/og-card-2x1.jpg'
 date: '2024-12-22T14:17:17+00:00'
-categories: [Tech, Cloud, World]
+categories: [Tech, Cloud]
 tags: [ai, startups, space, regulation, sovereignty, open source, privacy, health, security]
 highlight_bold: true
 ---

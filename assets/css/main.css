@@ -152,7 +152,7 @@
 		@apply opacity-80;
 		@apply border-0 border-t;
 		@apply my-14;
-		@apply w-1/2 mx-auto;
+		@apply w-1/3 mx-auto;
 	}
 
 	/* code blocks */
@@ -179,7 +179,7 @@
 		p,
 		ul {
 			@apply mx-2;
-			@apply w-full;
+			@apply w-full lg:!w-full;
 		}
 	}
 

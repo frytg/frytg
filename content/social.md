@@ -10,12 +10,10 @@ sitemap:
   priority: 0.8
 ---
 
-# On Social Media
+# Follow me on Social Media
 
 I definitely was a big fan of the bird network (Twitter) in the beginning, but recent policy changes made it hard to justify using it.
 At the same time, federated social networks (Fediverse) like Mastodon and Bluesky are growing and becoming more interesting.
-
-{{< pic src="images/about/socials-header-2024-q4-v1.png" alt="Pictures of me at work and events" >}}
 
 **Here's where you can find me nowadays:**
 
@@ -32,6 +30,8 @@ At the same time, federated social networks (Fediverse) like Mastodon and Bluesk
 💌 **Good 'ol email**: [`contact@frytg.com`](mailto:contact@frytg.com) - if email is your thing
 
 🚴🏼 **Strava**: [_`Dan`_](https://www.strava.com/athletes/7693180) - cycling and sports-related stuff
+
+{{< pic src="images/about/socials-header-2024-q4-v1.png" alt="Pictures of me at work and events" >}}
 
 Interested in what I use? Check out [`/uses`](/uses) and [`/dev`](/dev).
 

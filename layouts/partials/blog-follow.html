@@ -1,0 +1,10 @@
+{{/* Add RSS if available */}} {{ with .Parent.OutputFormats.Get "rss" -}}
+<div class="my-6">
+	<h5>Connect:</h5>
+	<p class="mt-1 text-sm">
+		Subscribe to new articles via
+		<a class="" href="{{ .RelPermalink }}">RSS feed</a> or follow me on any of the
+		<a href="/social">social networks</a>.
+	</p>
+</div>
+{{ end }}

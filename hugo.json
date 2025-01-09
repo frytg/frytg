@@ -2,7 +2,7 @@
 	"title": "Daniel Freytag",
 	"baseURL": "https://www.frytg.digital/",
 	"languageCode": "en-US",
-	"copyright": "© 2024 Daniel Freytag",
+	"copyright": "© 2025 Daniel Freytag",
 	"params": {
 		"author": {
 			"email": "contact@frytg.com",
@@ -150,6 +150,11 @@
 		"section": ["html", "rss"],
 		"taxonomy": ["html"],
 		"term": ["html"]
+	},
+	"services": {
+		"rss": {
+			"limit": 20
+		}
 	},
 	"markup": {
 		"goldmark": {
