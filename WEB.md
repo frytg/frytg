@@ -21,35 +21,17 @@ bun install
 First make sure fonts are compiled with Vite (we need to build tailwind simply to have the output file and prevent Vite from initially failing):
 
 ```sh
-bun tailwind:build && bun vite:build
-```
-
-Then run the Tailwind local server
-
-```sh
-bun tailwind:local
-```
-
-And the Hugo server:
-
-```sh
-bun hugo:local
+just dev
 ```
 
 Visit the site at [localhost:1313](http://localhost:1313).
-
-You can clean temporary files with:
-
-```sh
-bun run clean
-```
 
 ## Production Build
 
 This will run all required commands and build the site for production in `/public`:
 
 ```sh
-bun run build
+just build
 ```
 
 ## Sync to Bunny Storage
