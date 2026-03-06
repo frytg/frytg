@@ -1,9 +1,5 @@
 {
 	"version": "0.2.0",
-	"scripts": {
-		"rsync": "dotenvx run -- bun run .scripts/rsync-to-bunny-storage.js",
-		"deploy": "just build && bun run rsync"
-	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.6",
 		"@swrlab/style-guide": "^2.1.7",
