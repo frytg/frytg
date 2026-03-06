@@ -1,0 +1,11 @@
+# make sure to run `just update-keys` after any changes to this file
+
+# creation rules are evaluated sequentially, the first match wins
+creation_rules:
+  - age: >-
+      age1w705zz67szru9gezquvs8n69lsgjypv4s9r999t930yz5vqgnywsa8e62y
+    # see https://getsops.io/docs/#encrypting-using-age if you want to use this as your own main key
+    pgp: >-
+      BC954B2AAED2E832227C4EB4A2475C9531C8AC40
+    # these fingerprints of PGP keys need to be comma-separated (except the last one)
+    # you can get your own fingerprints with `just list-pgp`

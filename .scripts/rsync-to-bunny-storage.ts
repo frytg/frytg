@@ -1,5 +1,4 @@
-// load packages
-import { readFile, readdir, stat } from 'node:fs/promises'
+import { readdir, readFile, stat } from 'node:fs/promises'
 import { join, relative } from 'node:path'
 import process from 'node:process'
 
@@ -35,7 +34,12 @@ async function getLocalFiles(localPath) {
 async function getRemoteFiles(remotePath) {
 	// load from remote API
 	const url = `${STORAGE_ENDPOINT}/${BUNNY_STORAGE_ZONE}/${remotePath || ''}/`
-	const response = await fetch(url, { headers: { AccessKey: BUNNY_STORAGE_API_KEY, accept: 'application/json' } })
+	const response = await fetch(url, {
+		headers: {
+			AccessKey: BUNNY_STORAGE_API_KEY || '',
+			accept: 'application/json',
+		},
+	})
 	const data = await response.json()
 	const remoteFiles = {}
 	console.log('remote data', url, data.length, remotePath)
@@ -69,7 +73,7 @@ async function uploadFile(localPath, remotePath) {
 	const fileContent = await readFile(localPath)
 	const response = await fetch(url, {
 		method: 'PUT',
-		headers: { AccessKey: BUNNY_STORAGE_API_KEY },
+		headers: { AccessKey: BUNNY_STORAGE_API_KEY || '' },
 		body: fileContent,
 	})
 	if (!response.ok) throw new Error(`Failed to upload ${remotePath}`)
@@ -80,7 +84,7 @@ async function deleteRemoteFile(remotePath) {
 	const url = `${STORAGE_ENDPOINT}/${BUNNY_STORAGE_ZONE}/${remotePath}`
 	const response = await fetch(url, {
 		method: 'DELETE',
-		headers: { AccessKey: BUNNY_STORAGE_API_KEY },
+		headers: { AccessKey: BUNNY_STORAGE_API_KEY || '' },
 	})
 	if (!response.ok) throw new Error(`Failed to delete ${remotePath}`)
 	console.log(`Deleted > ${remotePath}`)
