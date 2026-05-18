@@ -11,13 +11,20 @@ _env *args:
 	@echo "Running command with SOPS > {{args}}"
 	@sops exec-env {{SELECTED_SOPS_FILE}} "{{args}}"
 
-# build the site for production
+
+# build vite
 [group('BUILD')]
-build:
+build-vite:
 	rm -rf public
 	rm -f assets/css/_main-compiled.scss
 	rm -rf assets/css/dist
 	bunx vite build
+alias vite:=build-vite
+
+# build the site for production
+[group('BUILD')]
+build:
+	just build-vite
 	bunx hugo --minify
 
 # sync to bunny storage
@@ -28,7 +35,13 @@ deploy:
 # run dev server locally
 [group('DEV')]
 dev:
-	bunx concurrently 'bunx vite' 'bunx hugo server'
+	bunx concurrently 'bunx vite' 'just local'
+
+# run hugo dev server locally
+[group('DEV')]
+local:
+	just build-vite
+	bunx hugo server
 
 ## ---------------------------------
 ## ENCRYPTION shortcuts

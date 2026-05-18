@@ -15,10 +15,9 @@ export default defineConfig({
 		// generate manifest.json in outDir
 		manifest: 'manifest.json',
 
-		minify: 'esbuild',
 		chunkSizeWarningLimit: 1000,
 
-		rollupOptions: {
+		rolldownOptions: {
 			input: {
 				main: resolve(__dirname, './assets/css/main.css'),
 				fonts: resolve(__dirname, './assets/css/fonts.scss'),
