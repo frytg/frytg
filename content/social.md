@@ -19,20 +19,26 @@ At the same time, federated social networks (Fediverse) like Mastodon and Bluesk
 
 🐘 **Mastodon**: [`@FRYTG@beoriginal.social`](https://beoriginal.social/@FRYTG) - currently my favorite network, with a good mix of tech/ developer community and personal stuff
 
-🦋 **Bluesky**: [`@frytg.digital`](https://bsky.app/profile/frytg.digital) - good and growing; fairly good twitter replacement
+📸 **Instagram**: [`@dan.frytg`](https://www.instagram.com/dan.frytg) - stories, photos and reels from day-to-day life
 
-👨🏼‍💻 **GitHub**: [`@frytg`](https://github.com/frytg) - home to all my development + open source projects as well as work-related stuff
+📲 **TikTok**: [`@dan.frytg`](https://www.tiktok.com/@dan.frytg) - short videos
 
-📸 **Instagram**: [`@dan.frytg`](https://www.instagram.com/dan.frytg) - stories and photos from day-to-day life
+📹 **YouTube**: [`@FRYTG`](https://www.youtube.com/@FRYTG) - little videos and shorts
+
+👨🏼‍💻 **GitHub**: [`@FRYTG`](https://github.com/frytg) - home to all my development + open source projects as well as work-related stuff
+
+💌 **Good 'ol email**: [`contact@frytg.com`](mailto:contact@frytg.com) - if email is your thing
+
+---
+
+Not really active anymore, but still available:
 
 💬 **Threads**: [`@dan.frytg`](https://www.threads.net/@dan.frytg/) - quite similar to Instagram, but with a bit more focus on text
 
-💌 **Good 'ol email**: [`contact@frytg.com`](mailto:contact@frytg.com) - if email is your thing
+🦋 **Bluesky**: [`@frytg.digital`](https://bsky.app/profile/frytg.digital) - good and growing; fairly good twitter replacement
 
 🚴🏼 **Strava**: [_`Dan`_](https://www.strava.com/athletes/7693180) - cycling and sports-related stuff
 
 {{< pic src="images/about/socials-header-2024-q4-v1.png" alt="Pictures of me at work and events" >}}
 
 Interested in what I use? Check out [`/uses`](/uses) and [`/dev`](/dev).
-
-[![GitHub Contributions](https://githubchart-rust.deno.dev/frytg/dark)](https://github.com/FRYTG)
