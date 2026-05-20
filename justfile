@@ -28,9 +28,14 @@ build:
 	bunx hugo --minify
 
 # sync to bunny storage
-[group('BUILD')]
+[group('BUNNY')]
 deploy:
 	just _env "bun run .scripts/rsync-to-bunny-storage.ts"
+
+# purge bunny pull zone cache
+[group('BUNNY')]
+purge:
+	just _env "bun run .scripts/purge-bunny-pull-zone.ts"
 
 # run dev server locally
 [group('DEV')]
