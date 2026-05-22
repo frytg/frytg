@@ -4,7 +4,7 @@ draft: false
 seo_description: Lots of flamingos, but only little water in the Big Pan wetlands.
 summary: Lots of flamingos, but only little water in the Big Pan wetlands.
 image: 'images/blog/2026-05-11-suriname/2026-05-11-suriname-d.jpg'
-date: '2026-05-21T14:08:17+00:00'
+date: '2026-05-22T09:09:17+00:00'
 categories: [Travel]
 tags: [Suriname, Paramaribo, Travel]
 ---
