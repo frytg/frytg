@@ -1,7 +1,7 @@
 {
 	"title": "Daniel Freytag",
 	"baseURL": "https://www.frytg.digital/",
-	"languageCode": "en-US",
+	"locale": "en-US",
 	"copyright": "© 2025 Daniel Freytag",
 	"params": {
 		"author": {
