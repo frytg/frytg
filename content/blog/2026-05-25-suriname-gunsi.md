@@ -4,7 +4,7 @@ draft: false
 seo_description: A few days near the maroon villages on the Upper Suriname River in Suriname.
 summary: A few days near the maroon villages on the Upper Suriname River in Suriname.
 image: 'images/blog/2026-05-11-suriname/2026-05-11-suriname-f.jpg'
-date: '2026-05-23T07:08:17+00:00'
+date: '2026-05-25T07:08:17+00:00'
 categories: [Travel]
 tags: [Suriname, Paramaribo, Travel]
 ---

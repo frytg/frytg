@@ -4,7 +4,7 @@ draft: false
 seo_description: Hiking up on Fredberg mountain for a hammock camping experience.
 summary: Hiking up on Fredberg mountain for a hammock camping experience.
 image: 'images/blog/2026-05-11-suriname/2026-05-11-suriname-e.jpg'
-date: '2026-05-22T08:08:17+00:00'
+date: '2026-05-24T08:06:17+00:00'
 categories: [Travel]
 tags: [Suriname, Paramaribo, Travel]
 ---
