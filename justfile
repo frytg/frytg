@@ -48,6 +48,10 @@ local:
 	just build-vite
 	bunx hugo server
 
+lint:
+	bunx biome lint
+	bunx @google/design.md designmd lint DESIGN.md
+
 ## ---------------------------------
 ## ENCRYPTION shortcuts
 
