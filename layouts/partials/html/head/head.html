@@ -2,17 +2,14 @@
 <title>{{ printf "%s | %s" .Title site.Title }}</title>
 
 {{ partialCached "html/head/css.html" . }}
+{{ partialCached "html/head/fonts.html" . }}
 {{/* partialCached "html/head/js.html" . */}}
 
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="HandheldFriendly" content="True" />
 <meta name="MobileOptimized" content="320" />
 <meta name="author" content="Daniel Freytag"/>
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, shrink-to-fit=no"
-/>
 <meta name="msvalidate.01" content="C1816188C38BDCCB8E9E9CEEF79E5110" />
 <meta name="fediverse:creator" content="@FRYTG@beoriginal.social">
 
@@ -74,14 +71,10 @@
 <meta property="og:image" content="{{ ($ogImage.Process "1200x630 jpg fill Center Lanczos").Permalink }}"/>
 <meta property="twitter:image" content="{{ ($ogImage.Process "2048x1024 webp fill q90 Center Lanczos").Permalink }}"/>
 
-{{/* Date */}}
-{{ if isset .Params "date" }}
-
-{{ end }}
-
-{{/* Date Published and Modified */}}
+{{/* Date Published and Modified (blog posts only) */}}
 {{- $datePublished := "" }}
 {{- $ISO8601 := "2006-01-02T15:04:05-07:00" }}
+{{- if and .IsPage (eq .Section "blog") }}
 {{- with .PublishDate }}
 {{ $datePublished = .Format $ISO8601  }}
 {{ $datePublishedHtml := $datePublished | printf "content=%q" }}
@@ -94,6 +87,7 @@
 {{- with .Lastmod }}
 {{ $dateModified = .Format $ISO8601  }}
 <meta itemprop="dateModified" {{ $dateModified | printf "content=%q" | safeHTMLAttr }}>
+{{- end }}
 {{- end }}
 
 {{/* Description (not summary!) */}}
@@ -115,27 +109,11 @@
 <meta name="twitter:creator:id" content="46650115" />
 
 {{/* OG meta */}}
-<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:type" content="{{ if and .IsPage (eq .Section "blog") }}article{{ else }}website{{ end }}" />
 <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}" />
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": {{ printf "%s | %s" .Title site.Title }},
-  "image": {{ ($ogImage.Process "1200x630 jpg fill Center Lanczos").Permalink }},
-  "datePublished": {{ $datePublished }},
-  "dateModified": {{ $dateModified }},
-  "wordCount": {{ .WordCount }},
-  "keywords": [{{ range $i, $e := $keywords }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}],
-  {{ if isset .Params "seo_description" }}"description": {{ htmlEscape .Params.seo_description }},{{ end }}
-  "author": {
-    "@type": "Person",
-    "name": "Daniel Freytag"
-  }
-}
-</script>
+{{ partial "html/head/schema.html" . }}
 
 {{ if not hugo.IsServer }}
 <!-- Fathom - beautiful, simple website analytics -->

@@ -124,7 +124,7 @@
 		"disableJSON": false,
 		"disableSVG": false,
 		"disableXML": false,
-		"minifyOutput": false,
+		"minifyOutput": true,
 		"tdewolff": {
 			"html": {
 				"keepQuotes": true

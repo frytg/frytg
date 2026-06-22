@@ -1,0 +1,95 @@
+{{- $ogImage := "" -}}
+{{- if isset .Params "image" -}}
+	{{- $ogImage = resources.Get .Params.image -}}
+{{- else -}}
+	{{- $ogImage = resources.Get site.Params.og_image -}}
+{{- end -}}
+{{- $ogImageUrl := ($ogImage.Process "1200x630 jpg fill Center Lanczos").Permalink -}}
+{{- $ISO8601 := "2006-01-02T15:04:05-07:00" -}}
+
+{{- $description := .Summary -}}
+{{- if isset .Params "seo_description" -}}
+	{{- $description = .Params.seo_description -}}
+{{- end -}}
+
+{{- $sameAs := slice -}}
+{{- range site.Menus.social -}}
+	{{- $sameAs = $sameAs | append .URL -}}
+{{- end -}}
+
+{{- $personId := printf "%s#person" site.BaseURL -}}
+{{- $author := dict "@type" "Person" "name" site.Params.author.name "url" site.BaseURL -}}
+{{- if $sameAs -}}
+	{{- $author = merge $author (dict "sameAs" $sameAs) -}}
+{{- end -}}
+
+{{- $keywords := slice -}}
+{{- range .GetTerms "tags" -}}
+	{{- $keywords = $keywords | append .Title -}}
+{{- end -}}
+
+{{- if .IsHome -}}
+	{{- $website := dict
+		"@type" "WebSite"
+		"@id" (printf "%s#website" site.BaseURL)
+		"url" site.BaseURL
+		"name" site.Title
+		"description" $description
+		"publisher" (dict "@id" $personId)
+	-}}
+	{{- $person := dict
+		"@type" "Person"
+		"@id" $personId
+		"name" site.Params.author.name
+		"url" site.BaseURL
+		"description" $description
+		"sameAs" $sameAs
+	-}}
+	<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" (slice $website $person) | jsonify | safeJS }}</script>
+{{- else if and .IsPage (eq .Section "blog") -}}
+	{{- $post := dict
+		"@context" "https://schema.org"
+		"@type" "BlogPosting"
+		"headline" .Title
+		"url" .Permalink
+		"mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+		"image" $ogImageUrl
+		"description" $description
+		"author" $author
+		"publisher" $author
+	-}}
+	{{- with .PublishDate -}}
+		{{- $post = merge $post (dict "datePublished" (.Format $ISO8601)) -}}
+	{{- end -}}
+	{{- with .Lastmod -}}
+		{{- $post = merge $post (dict "dateModified" (.Format $ISO8601)) -}}
+	{{- end -}}
+	{{- with .WordCount -}}
+		{{- $post = merge $post (dict "wordCount" .) -}}
+	{{- end -}}
+	{{- if $keywords -}}
+		{{- $post = merge $post (dict "keywords" $keywords) -}}
+	{{- end -}}
+	<script type="application/ld+json">{{ $post | jsonify | safeJS }}</script>
+{{- else if and .IsSection (eq .Section "blog") -}}
+	{{- $blog := dict
+		"@context" "https://schema.org"
+		"@type" "Blog"
+		"name" .Title
+		"url" .Permalink
+		"description" $description
+		"author" $author
+		"publisher" $author
+	-}}
+	<script type="application/ld+json">{{ $blog | jsonify | safeJS }}</script>
+{{- else -}}
+	{{- $page := dict
+		"@context" "https://schema.org"
+		"@type" "WebPage"
+		"name" .Title
+		"url" .Permalink
+		"description" $description
+		"isPartOf" (dict "@type" "WebSite" "@id" (printf "%s#website" site.BaseURL))
+	-}}
+	<script type="application/ld+json">{{ $page | jsonify | safeJS }}</script>
+{{- end -}}

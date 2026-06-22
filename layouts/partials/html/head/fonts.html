@@ -1,0 +1,12 @@
+{{- with resources.Get "css/dist/InterVariable-subset.woff2" }}
+<link rel="preload" href="{{ .RelPermalink }}" as="font" type="font/woff2" crossorigin="anonymous" />
+{{- end }}
+{{- with resources.Get "css/dist/fonts.css" | minify | fingerprint }}
+<link
+	rel="stylesheet"
+	type="text/css"
+	href="{{ .RelPermalink }}"
+	integrity="{{ .Data.Integrity }}"
+	crossorigin="anonymous"
+/>
+{{- end }}
