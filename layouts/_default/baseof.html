@@ -6,8 +6,8 @@
 >
 	{{ partial "html/head/head.html" . }}
 	<body>
-		<header>{{ partial "navigation.html" . }}</header>
-		{{ block "main" . }}{{ end }}
-		<footer>{{ partial "html/footer.html" . }}</footer>
+		<header class="site-header">{{ partial "navigation.html" . }}</header>
+		<main>{{ block "main" . }}{{ end }}</main>
+		<footer class="site-footer">{{ partial "html/footer.html" . }}</footer>
 	</body>
 </html>

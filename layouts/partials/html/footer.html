@@ -1,26 +1,24 @@
-<div id="footer" class="my-16 w-full flex gap-2 flex-wrap flex-col justify-center justify-items-center content-center items-center">
-	<div class="mx-4 my-3 w-42">
-		<img src="{{ with resources.Get "svg/beoriginal/white.svg" }}{{.RelPermalink}}{{end}}" alt="Be Original Claim" loading="lazy"/>
+<div id="footer" class="content-column py-12 flex flex-col items-center gap-4 text-center">
+	<div class="opacity-80">
+		<img class="h-8 w-auto" src="{{ with resources.Get "svg/beoriginal/white.svg" }}{{.RelPermalink}}{{end}}" alt="Be Original Claim" loading="lazy"/>
 	</div>
 
-	<p class="mx-4 text-sm text-center my-0">
-		✨ Follow me on{{- range site.Menus.social }} <a href="{{.URL}}" target="_blank" rel="me noopener noreferrer" alt="Link to {{.Name}}" title="{{.Name}}: {{.Params.handle}}">{{.Name}}</a>{{.Post}} {{- end }}.
+	<p class="text-meta my-0 max-w-md">
+		Follow on{{- range site.Menus.social }} <a href="{{.URL}}" target="_blank" rel="me noopener noreferrer" title="{{.Name}}: {{.Params.handle}}">{{.Name}}</a>{{.Post}} {{- end }}.
 	</p>
-	
-	<p class="mx-4 text-sm text-center my-0">🍪 No Cookies were stored during this visit. Analytics by <a href="https://usefathom.com/ref/DJCJEW" target="_blank" title="Fathom Analytics">Fathom</a>.</p>
-	
-	<p class="mx-4 text-sm text-center my-0"><a href="/legal/" title="Impressum">Legal Notices & Data Privacy</a></p>
-	
 
-	<p class="mx-4 text-sm text-center my-2">
-		Created by
-		<a href="https://www.frytg.digital/?ref=frytg-com-footer" target="_blank" title="FRYTG digital">
-			<img class="w-12 inline-block mx-1" src="{{ with resources.Get "svg/logo-white.svg" }} {{ .RelPermalink }} {{ end }}" alt="FRYTG digital Logo">
+	<p class="text-meta my-0">No cookies stored. Analytics by <a href="https://usefathom.com/ref/DJCJEW" target="_blank" title="Fathom Analytics">Fathom</a>.</p>
+
+	<p class="text-meta my-0"><a href="/legal/" title="Impressum">Legal & Privacy</a></p>
+
+	<p class="text-meta my-0 flex items-center justify-center gap-2">
+		<span>© Daniel Freytag</span>
+		<span class="text-white/20">·</span>
+		<a href="https://www.frytg.digital/?ref=frytg-com-footer" target="_blank" title="FRYTG digital" class="inline-flex items-center">
+			<img class="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity" src="{{ with resources.Get "svg/logo-white.svg" }}{{ .RelPermalink }}{{ end }}" alt="FRYTG digital">
 		</a>
-		&copy; Daniel Freytag
 	</p>
 </div>
-
 
 {{- with resources.Get "css/dist/fonts.css" | minify | fingerprint }}
 <link

@@ -49,6 +49,7 @@ local:
 	bunx hugo server
 
 lint:
+	just build
 	bunx biome lint
 	bunx @google/design.md designmd lint DESIGN.md
 

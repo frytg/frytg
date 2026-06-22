@@ -4,12 +4,12 @@
 {{- $alt := .Get "alt" -}}
 {{- $divClass := "" -}}
 
-{{- $imgClass := "w-full h-auto animate-fade" -}}
-{{- $dataSzes := "(min-width: 1024px) 100vw, 50vw" -}}
+{{- $imgClass := "w-full h-auto" -}}
+{{- $dataSzes := "(min-width: 1024px) 768px, 100vw" -}}
 
 {{- $actualImg := $src.Resize "640x" -}}
 
-	<div class="relative bg-center my-4">
+	<div class="content-column my-8 overflow-hidden">
 	<picture>
 		<source
 			type="image/webp"
