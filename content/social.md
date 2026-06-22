@@ -1,6 +1,6 @@
 ---
 title: 'Daniel Freytag, on Social Media'
-date: 2024-12-21T08:30:00+00:00
+date: 2026-06-22T08:30:00+00:00
 seo_description: 'Social Media links for Daniel Freytag'
 image: 'images/og-card/socials-2024-Q4-A-2x1.jpg'
 type: 'page'
@@ -19,11 +19,15 @@ At the same time, federated social networks (Fediverse) like Mastodon and Bluesk
 
 🐘 **Mastodon**: [`@FRYTG@beoriginal.social`](https://beoriginal.social/@FRYTG) - currently my favorite network, with a good mix of tech/ developer community and personal stuff
 
+💬 **Matrix**: [`@frytg:beoriginal.social`](https://matrix.to/#/@frytg:beoriginal.social) - federated and secure chat using the Matrix protocol
+
 📸 **Instagram**: [`@dan.frytg`](https://www.instagram.com/dan.frytg) - stories, photos and reels from day-to-day life
 
 📲 **TikTok**: [`@dan.frytg`](https://www.tiktok.com/@dan.frytg) - short videos
 
 📹 **YouTube**: [`@FRYTG`](https://www.youtube.com/@FRYTG) - little videos and shorts
+
+💼 **LinkedIn**: [`frytg`](https://www.linkedin.com/in/frytg/) - professional profile and work history
 
 👨🏼‍💻 **GitHub**: [`@FRYTG`](https://github.com/frytg) - home to all my development + open source projects as well as work-related stuff
 
@@ -31,11 +35,13 @@ At the same time, federated social networks (Fediverse) like Mastodon and Bluesk
 
 ---
 
-Not really active anymore, but still available:
+Less active, but still available:
 
 💬 **Threads**: [`@dan.frytg`](https://www.threads.net/@dan.frytg/) - quite similar to Instagram, but with a bit more focus on text
 
 🦋 **Bluesky**: [`@frytg.digital`](https://bsky.app/profile/frytg.digital) - good and growing; fairly good twitter replacement
+
+🐥 **Twitter (X)**: [`@FRYTG`](https://x.com/FRYTG) - not really active anymore, but still available
 
 🚴🏼 **Strava**: [_`Dan`_](https://www.strava.com/athletes/7693180) - cycling and sports-related stuff
 

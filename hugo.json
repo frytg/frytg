@@ -51,6 +51,15 @@
 				}
 			},
 			{
+				"name": "Matrix",
+				"url": "https://matrix.to/#/@frytg:beoriginal.social",
+				"weight": 15,
+				"post": ",",
+				"params": {
+					"handle": "@frytg:beoriginal.social"
+				}
+			},
+			{
 				"name": "Bluesky",
 				"url": "https://bsky.app/profile/frytg.digital",
 				"weight": 20,
@@ -75,6 +84,15 @@
 				"post": ",",
 				"params": {
 					"handle": "dan.frytg"
+				}
+			},
+			{
+				"name": "LinkedIn",
+				"url": "https://www.linkedin.com/in/frytg/",
+				"weight": 45,
+				"post": ",",
+				"params": {
+					"handle": "frytg"
 				}
 			},
 			{
