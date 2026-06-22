@@ -255,10 +255,21 @@
 
 	.blog-list-item {
 		@apply py-8;
-		@apply border-b border-white/10;
+	}
+
+	.blog-post-footer {
+		@apply mt-12 pt-8;
+	}
+
+	.blog-post-footer-section {
+		@apply my-6;
+
+		&:first-child {
+			@apply mt-0;
+		}
 
 		&:last-child {
-			@apply border-b-0;
+			@apply mb-0;
 		}
 	}
 

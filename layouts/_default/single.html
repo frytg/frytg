@@ -9,9 +9,10 @@
 	</p>
 	{{ .Content }}
 
-	<hr />
-
-	{{ partial "blog-follow.html" . }} {{ partial "blog-license.html" . }} {{ partial "blog-tags.html" (dict
-	"taxonomy" "tags" "page" .) }}
+	<aside class="blog-post-footer">
+		{{ partial "blog-follow.html" . }}
+		{{ partial "blog-license.html" . }}
+		{{ partial "blog-tags.html" (dict "taxonomy" "tags" "page" .) }}
+	</aside>
 </div>
 {{ end }}

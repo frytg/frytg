@@ -2,7 +2,7 @@
 {{- $taxonomy := .taxonomy }}
 {{- with $page.GetTerms $taxonomy }}
 {{- $label := (index . 0).Parent.LinkTitle }}
-<div class="my-8 pt-6 border-t border-white/10">
+<div class="blog-post-footer-section">
 	<h5 class="!text-sm !font-medium !text-gray/80 uppercase tracking-wider !mt-0 !mb-2">{{ $label }}</h5>
 	<p class="text-meta mt-0 mb-0">
 		{{- range . }}
