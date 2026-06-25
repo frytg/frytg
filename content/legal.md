@@ -10,7 +10,6 @@ sitemap:
   disable: true
   priority: 0.7
 ---
-
 ## Impressum/ Legal
 
 I'm always happy to answer your questions! Simply use one of the contact options or use one of my Social Media channels to send me a message.

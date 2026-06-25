@@ -8,7 +8,6 @@ sitemap:
   changefreq: 'weekly'
   priority: 1
 ---
-
 # Hello, I'm Daniel,
 
 or _Dan_ for short.

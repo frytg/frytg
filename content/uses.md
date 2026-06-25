@@ -9,7 +9,6 @@ sitemap:
   changefreq: 'monthly'
   priority: 0.7
 ---
-
 # Tech Stack & What I Use
 
 Consider this a continously-updated list of the tools, apps, and hardware I use for my work and personal projects.

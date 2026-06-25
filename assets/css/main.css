@@ -151,14 +151,15 @@
 	}
 
 	ul {
-		@apply pl-5;
 		@apply list-disc;
+		/* ps = content-column horizontal padding + bullet gutter (pl-5 was replacing, not adding) */
+		@apply ps-9 sm:ps-11;
 
 		li {
 			@apply my-2;
 
 			ul {
-				@apply mx-0 my-2;
+				@apply !mx-0 !my-2 !max-w-none !px-0 !ps-6 sm:!ps-7;
 			}
 		}
 	}

@@ -9,7 +9,6 @@ sitemap:
   changefreq: 'monthly'
   priority: 0.8
 ---
-
 # Follow me on Social Media
 
 I definitely was a big fan of the bird network (Twitter) in the beginning, but recent policy changes made it hard to justify using it.

@@ -9,7 +9,6 @@ sitemap:
   changefreq: 'monthly'
   priority: 0.7
 ---
-
 # `/dev`
 
 As most of my work revolves around software development, this serves as a non-complete overview of tools that I have published or otherwise created.
