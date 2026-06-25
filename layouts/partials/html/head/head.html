@@ -68,8 +68,8 @@
 {{ else }}
 	{{ $ogImage = resources.Get .Site.Params.og_image }}
 {{ end }}
-<meta property="og:image" content="{{ ($ogImage.Process "1200x630 jpg fill Center Lanczos").Permalink }}"/>
-<meta property="twitter:image" content="{{ ($ogImage.Process "2048x1024 webp fill q90 Center Lanczos").Permalink }}"/>
+<meta property="og:image" content="{{ ($ogImage.Process "1200x630 jpg fill Center Lanczos").RelPermalink }}"/>
+<meta property="twitter:image" content="{{ ($ogImage.Process "2048x1024 webp fill q90 Center Lanczos").RelPermalink }}"/>
 
 {{/* Date Published and Modified (blog posts only) */}}
 {{- $datePublished := "" }}
