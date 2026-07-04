@@ -54,9 +54,9 @@ atproto-publish:
 	just _env "bunx sequoia publish"
 
 # full publish pipeline: ATProto init → publish → build → deploy → purge
-[group('ATP')]
+[group('BUILD')]
 publish:
-	just atproto-init
+	# just atproto-init
 	just atproto-publish
 	just build
 	just deploy

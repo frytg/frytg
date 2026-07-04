@@ -7,6 +7,7 @@ image: 'images/blog/2024-09-13-eu-commission/eu-commission-og-card-2x1.jpg'
 date: '2024-09-13T14:08:17+00:00'
 categories: [Tech, Europe]
 tags: [EU, eu/acc, Europe]
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3vewc2m'
 ---
 
 **The EU Commission published a new strategy for competitiveness this September 2024. [Mario Draghi](https://www.perplexity.ai/search/who-is-mario-draghi-hW56zxQ6Q7ScVye3m2uecA), former European Central Bank President, was tasked by the European Commission to create this report and outline his vision.**

@@ -15,6 +15,7 @@ tags:
   - fediverse
   - AI
   - agents
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3islc2m'
 ---
 
 i loved the idea of reoccurring weeknotes from other blogs like [mijndertstuij.nl](https://mijndertstuij.nl/weeknotes/24-2026/).

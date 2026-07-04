@@ -7,6 +7,7 @@ image: 'images/blog/2024-11-20-flyio-openid-token/flyio-gcp-og-image.jpg'
 date: '2024-11-20T14:08:17+00:00'
 categories: [Tech, Cloud]
 tags: [fly.io, OIDC, OpenID, OSS, Google Cloud, Workload Identity Federation]
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3u4v22m'
 ---
 
 _A Go utility to decode Fly.io OpenID tokens for Google Cloud Workload Identity Federation integration._

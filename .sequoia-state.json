@@ -1,0 +1,86 @@
+{
+  "posts": {
+    "content/blog/2026-w26-weeknotes-no1.md": {
+      "contentHash": "ef439362fd25a8450a69aac52ad9775f2ea701b5afb00a9472c7d71d5da821a5",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3islc2m",
+      "lastPublished": "2026-07-04T14:15:24.251Z",
+      "slug": "2026-w26-weeknotes-no1"
+    },
+    "content/blog/2026-05-25-suriname-gunsi.md": {
+      "contentHash": "4775509d940089f06aa06980712dd63c1ce84e21b124602112bb9697d1c730ba",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3k4l22m",
+      "lastPublished": "2026-07-04T14:15:24.289Z",
+      "slug": "2026-05-25-suriname-gunsi"
+    },
+    "content/blog/2026-05-24-suriname-fredberg.md": {
+      "contentHash": "e40f05cbb60f3f1892f79f8e6594e852059a0d66603ed0f2d52f577c02282a2d",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3l6qs2m",
+      "lastPublished": "2026-07-04T14:15:24.324Z",
+      "slug": "2026-05-24-suriname-fredberg"
+    },
+    "content/blog/2026-05-22-suriname-bigi-pan.md": {
+      "contentHash": "e186c2911f6ab1ce6b292c9f3e7795dc11806bdc282065813f93e1a9ce619217",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3mplc2m",
+      "lastPublished": "2026-07-04T14:15:24.383Z",
+      "slug": "2026-05-22-suriname-bigi-pan"
+    },
+    "content/blog/2026-05-20-suriname-peperpot.md": {
+      "contentHash": "69582ce7120b81d14631f8a21146a9a4ce965d0aa8ea2bca7f479b68a0bab1ff",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3oryc2m",
+      "lastPublished": "2026-07-04T14:15:24.449Z",
+      "slug": "2026-05-20-suriname-peperpot"
+    },
+    "content/blog/2026-05-19-suriname-frederiksdorp.md": {
+      "contentHash": "4ac6e232f57d0bf2b164cb6c7b950d81494e82f5e74a73419f461079c6f57364",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3q4xc2m",
+      "lastPublished": "2026-07-04T14:15:24.493Z",
+      "slug": "2026-05-19-suriname-frederiksdorp"
+    },
+    "content/blog/2026-05-18-suriname-paramaribo.md": {
+      "contentHash": "2c21ebb24f08de5e7101133a323f2481bda1739384f6c0051b269184cd2dd10d",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3rgx22m",
+      "lastPublished": "2026-07-04T14:15:24.532Z",
+      "slug": "2026-05-18-suriname-paramaribo"
+    },
+    "content/blog/2026-03-06-hello-world.md": {
+      "contentHash": "828d5f3a103764841779504a4371199307276ab1a780a7e3cbb60d89d40f7c55",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3soyc2m",
+      "lastPublished": "2026-07-04T14:15:24.577Z",
+      "slug": "2026-03-06-hello-world"
+    },
+    "content/blog/2024-11-20-flyio-openid-token.md": {
+      "contentHash": "7b2aff09a668b272db753a0d745f102362f899eca8537fd9ff6cc8ed3ba19b2d",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3u4v22m",
+      "lastPublished": "2026-07-04T14:15:24.621Z",
+      "slug": "2024-11-20-flyio-openid-token"
+    },
+    "content/blog/2024-09-13-eu-commission-competitiveness.md": {
+      "contentHash": "1676616e43f8b704b28ede5b365b838ec7ae3f3c6bbe187f9e6f31feb3d91b56",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3vewc2m",
+      "lastPublished": "2026-07-04T14:15:24.744Z",
+      "slug": "2024-09-13-eu-commission-competitiveness"
+    },
+    "content/blog/2024-08-21-raycast.md": {
+      "contentHash": "62f047b5c96490d0093b63ab078da8ae11f3c241abe19b218782ab0434296cd6",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3z5zc2m",
+      "lastPublished": "2026-07-04T14:15:24.784Z",
+      "slug": "2024-08-21-raycast"
+    },
+    "content/blog/2024-07-19-company-hubs.md": {
+      "contentHash": "0fe6525563d7bc3172000c674ef0d666f17851069a9db0a436159b7d6c027ae7",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq42d4s2m",
+      "lastPublished": "2026-07-04T14:15:24.822Z",
+      "slug": "2024-07-19-company-hubs"
+    },
+    "content/blog/2024-05-03-eu-acc.md": {
+      "contentHash": "73eef8aadb86003c5b3dca384c5b7506ff4fd8573daab9f64d18da7909b9c33f",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq43iac2m",
+      "lastPublished": "2026-07-04T14:15:24.863Z",
+      "slug": "2024-05-03-eu-acc"
+    }
+  },
+  "publication": {
+    "cid": "bafyreidbilb7p5ty3nm4bb6eq7sol2evryuq2rxj2asl7nahtd6dc35uey",
+    "uri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.publication/3mptaiprnps2m"
+  }
+}

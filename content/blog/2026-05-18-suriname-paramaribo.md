@@ -7,6 +7,7 @@ image: 'images/blog/2026-05-11-suriname/2026-05-11-suriname-a.jpg'
 date: '2026-05-18T14:08:17+00:00'
 categories: [Travel]
 tags: [Suriname, Paramaribo, Travel]
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3rgx22m'
 ---
 
 {{< pic src="images/blog/2026-05-11-suriname/2026-05-11-suriname-a.jpg" alt="Collection of pictures from Suriname" >}}

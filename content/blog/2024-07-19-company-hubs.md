@@ -7,6 +7,7 @@ image: 'images/blog/2024-07-19-company-hubs/company-hub-og-card-2x1.jpg'
 date: '2024-07-19T09:00:00+00:00'
 categories: [Tech]
 tags: [companies, remote work, hubs, headquarters, distributed teams]
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq42d4s2m'
 ---
 
 i have this inexplicable feeling that remote work might actually be even more of a hamster wheel than the traditional commute to office gang.
