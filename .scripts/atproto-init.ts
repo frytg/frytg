@@ -1,14 +1,11 @@
-import { BskyAgent } from '@atproto/api'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import process from 'node:process'
+import { BskyAgent } from '@atproto/api'
 
 const ROOT = join(import.meta.dir, '..')
 const CONFIG_PATH = join(ROOT, 'sequoia.json')
-const WELL_KNOWN_PATH = join(
-	ROOT,
-	'static/.well-known/site.standard.publication',
-)
+const WELL_KNOWN_PATH = join(ROOT, 'static/.well-known/site.standard.publication')
 
 type SequoiaConfig = {
 	siteUrl: string
@@ -40,7 +37,7 @@ async function main(): Promise<void> {
 
 	if (!identifier || !password) {
 		console.error(
-			'Missing ATP_IDENTIFIER or ATP_APP_PASSWORD. Add them to .env.sops.yaml and run via `just atproto-init`.',
+			'Missing ATP_IDENTIFIER or ATP_APP_PASSWORD. Add them to .env.sops.yaml and run via `just atproto-init`.'
 		)
 		process.exit(1)
 	}
@@ -57,7 +54,7 @@ async function main(): Promise<void> {
 	await agent.login({ identifier, password })
 
 	const response = await agent.com.atproto.repo.createRecord({
-		repo: agent.did!,
+		repo: agent.did,
 		collection: 'site.standard.publication',
 		record: {
 			$type: 'site.standard.publication',
