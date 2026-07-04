@@ -4,6 +4,7 @@ draft: false
 seo_description: A little oasis on the grounds of a former plantation.
 summary: A little oasis on the grounds of a former plantation.
 image: 'images/blog/2026-05-11-suriname/2026-05-11-suriname-b.jpg'
+atprotoImage: 'images/atproto/blog/2026-05-11-suriname/2026-05-11-suriname-b.jpg'
 date: '2026-05-19T05:08:17+00:00'
 categories: [Travel]
 tags: [Suriname, Paramaribo, Travel]

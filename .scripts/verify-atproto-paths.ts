@@ -1,11 +1,12 @@
 import { glob } from 'glob'
-import { access, readFile } from 'node:fs/promises'
+import { access, readFile, stat } from 'node:fs/promises'
 import { basename, join, relative } from 'node:path'
 import process from 'node:process'
 import { parse as parseYaml } from 'yaml'
 
 const ROOT = join(import.meta.dir, '..')
 const CONFIG_PATH = join(ROOT, 'sequoia.json')
+const MAX_COVER_IMAGE_BYTES = 1024 * 1024 - 1
 
 type SequoiaConfig = {
 	siteUrl: string
@@ -121,7 +122,7 @@ async function main(): Promise<void> {
 	const contentDir = join(ROOT, config.contentDir)
 	const ignore = config.ignore ?? []
 	const draftField = config.frontmatter?.draft ?? 'draft'
-	const coverField = config.frontmatter?.coverImage ?? 'image'
+	const coverField = config.frontmatter?.coverImage ?? 'atprotoImage'
 	const files = await glob('**/*.{md,mdx}', { cwd: contentDir })
 
 	let mismatches = 0
@@ -158,14 +159,23 @@ async function main(): Promise<void> {
 			console.log(`OK ${slug} -> ${expected}`)
 		}
 
-		const coverImage = frontmatter[coverField]
-		if (typeof coverImage === 'string' && coverImage.length > 0) {
-			const resolved = await resolveCoverImagePath(config, coverImage)
+		const coverImageValue =
+			frontmatter[coverField] ?? frontmatter.image
+		if (typeof coverImageValue === 'string' && coverImageValue.length > 0) {
+			const resolved = await resolveCoverImagePath(config, coverImageValue)
 			if (!resolved) {
 				console.error(
-					`Cover image not found for ${slug}: ${coverImage} (check sequoia.json imagesDir)`,
+					`Cover image not found for ${slug}: ${coverImageValue} (check sequoia.json imagesDir)`,
 				)
 				mismatches += 1
+			} else {
+				const { size } = await stat(resolved)
+				if (size > MAX_COVER_IMAGE_BYTES) {
+					console.error(
+						`Cover image for ${slug} must be less than 1MB: ${resolved} (${(size / 1_000_000).toFixed(1)}MB)`,
+					)
+					mismatches += 1
+				}
 			}
 		}
 	}

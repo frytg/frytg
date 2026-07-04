@@ -1,81 +1,81 @@
 {
   "posts": {
     "content/blog/2026-w26-weeknotes-no1.md": {
-      "contentHash": "ef439362fd25a8450a69aac52ad9775f2ea701b5afb00a9472c7d71d5da821a5",
+      "contentHash": "bbfc45025aa7dc4e9bb8004c3162def30ebc0284fd47cf0503c0f625ca593ebf",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3islc2m",
-      "lastPublished": "2026-07-04T14:15:24.251Z",
+      "lastPublished": "2026-07-04T14:45:28.642Z",
       "slug": "2026-w26-weeknotes-no1"
     },
     "content/blog/2026-05-25-suriname-gunsi.md": {
-      "contentHash": "4775509d940089f06aa06980712dd63c1ce84e21b124602112bb9697d1c730ba",
+      "contentHash": "37f6423ea244eb6e8d54f54b62aff65d488967ca3b9347c52a9676dbc4582e20",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3k4l22m",
-      "lastPublished": "2026-07-04T14:15:24.289Z",
+      "lastPublished": "2026-07-04T14:45:29.750Z",
       "slug": "2026-05-25-suriname-gunsi"
     },
     "content/blog/2026-05-24-suriname-fredberg.md": {
-      "contentHash": "e40f05cbb60f3f1892f79f8e6594e852059a0d66603ed0f2d52f577c02282a2d",
+      "contentHash": "590c94c1bbb86ec67b03e0058511c64e82b94deac110b7951db12abb38607c2f",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3l6qs2m",
-      "lastPublished": "2026-07-04T14:15:24.324Z",
+      "lastPublished": "2026-07-04T14:45:30.481Z",
       "slug": "2026-05-24-suriname-fredberg"
     },
     "content/blog/2026-05-22-suriname-bigi-pan.md": {
-      "contentHash": "e186c2911f6ab1ce6b292c9f3e7795dc11806bdc282065813f93e1a9ce619217",
+      "contentHash": "fa049af82462f48206aeec583033d9c3a1b4a8b001df02f38ce590d6334f95d0",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3mplc2m",
-      "lastPublished": "2026-07-04T14:15:24.383Z",
+      "lastPublished": "2026-07-04T14:45:31.282Z",
       "slug": "2026-05-22-suriname-bigi-pan"
     },
     "content/blog/2026-05-20-suriname-peperpot.md": {
-      "contentHash": "69582ce7120b81d14631f8a21146a9a4ce965d0aa8ea2bca7f479b68a0bab1ff",
+      "contentHash": "6c9fbc576ab034e8a5b53f7a98ad77efb60fa10e202966e751bc49799c8e858c",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3oryc2m",
-      "lastPublished": "2026-07-04T14:15:24.449Z",
+      "lastPublished": "2026-07-04T14:45:32.583Z",
       "slug": "2026-05-20-suriname-peperpot"
     },
     "content/blog/2026-05-19-suriname-frederiksdorp.md": {
-      "contentHash": "4ac6e232f57d0bf2b164cb6c7b950d81494e82f5e74a73419f461079c6f57364",
+      "contentHash": "b1edbdcdf1dcfcecb010c0d5e3e7ec0d0eac20f4a8b55010ccd8d19154c06e39",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3q4xc2m",
-      "lastPublished": "2026-07-04T14:15:24.493Z",
+      "lastPublished": "2026-07-04T14:45:33.892Z",
       "slug": "2026-05-19-suriname-frederiksdorp"
     },
     "content/blog/2026-05-18-suriname-paramaribo.md": {
-      "contentHash": "2c21ebb24f08de5e7101133a323f2481bda1739384f6c0051b269184cd2dd10d",
+      "contentHash": "b510fccb08eefd26978001866b3a9a84e0b653bd0ae5a1917e315d6c70bfa36d",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3rgx22m",
-      "lastPublished": "2026-07-04T14:15:24.532Z",
+      "lastPublished": "2026-07-04T14:45:34.911Z",
       "slug": "2026-05-18-suriname-paramaribo"
     },
     "content/blog/2026-03-06-hello-world.md": {
-      "contentHash": "828d5f3a103764841779504a4371199307276ab1a780a7e3cbb60d89d40f7c55",
+      "contentHash": "4854471b15cc2437e6ea66fb03ca0649b51c8e1377585c878f78146707810a5e",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3soyc2m",
-      "lastPublished": "2026-07-04T14:15:24.577Z",
+      "lastPublished": "2026-07-04T14:45:35.513Z",
       "slug": "2026-03-06-hello-world"
     },
     "content/blog/2024-11-20-flyio-openid-token.md": {
-      "contentHash": "7b2aff09a668b272db753a0d745f102362f899eca8537fd9ff6cc8ed3ba19b2d",
+      "contentHash": "a595988b18426a1b31c3c9928bbc0480b5eb26d9340e9969f69b322022709cb5",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3u4v22m",
-      "lastPublished": "2026-07-04T14:15:24.621Z",
+      "lastPublished": "2026-07-04T14:45:35.980Z",
       "slug": "2024-11-20-flyio-openid-token"
     },
     "content/blog/2024-09-13-eu-commission-competitiveness.md": {
-      "contentHash": "1676616e43f8b704b28ede5b365b838ec7ae3f3c6bbe187f9e6f31feb3d91b56",
+      "contentHash": "1c1fd02b81cc17235ca269e5c4fbd197b8e5a1acf3e4ec7c09613574ce0e8949",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3vewc2m",
-      "lastPublished": "2026-07-04T14:15:24.744Z",
+      "lastPublished": "2026-07-04T14:45:38.039Z",
       "slug": "2024-09-13-eu-commission-competitiveness"
     },
     "content/blog/2024-08-21-raycast.md": {
-      "contentHash": "62f047b5c96490d0093b63ab078da8ae11f3c241abe19b218782ab0434296cd6",
+      "contentHash": "3de8d0e9ed46d515aaaa76bcab106d35399596a39dfb98bd1455f339d06feabb",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3z5zc2m",
-      "lastPublished": "2026-07-04T14:15:24.784Z",
+      "lastPublished": "2026-07-04T14:45:39.907Z",
       "slug": "2024-08-21-raycast"
     },
     "content/blog/2024-07-19-company-hubs.md": {
-      "contentHash": "0fe6525563d7bc3172000c674ef0d666f17851069a9db0a436159b7d6c027ae7",
+      "contentHash": "2f6a6abb3fd89fbf0bd7b47f8d0144763d1f7ad0bd66fe539bb0fb788b9e494f",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq42d4s2m",
-      "lastPublished": "2026-07-04T14:15:24.822Z",
+      "lastPublished": "2026-07-04T14:45:43.407Z",
       "slug": "2024-07-19-company-hubs"
     },
     "content/blog/2024-05-03-eu-acc.md": {
-      "contentHash": "73eef8aadb86003c5b3dca384c5b7506ff4fd8573daab9f64d18da7909b9c33f",
+      "contentHash": "9d8ec62c9ead3ba0f2ba556a719a3dd4fbe6ab3e7a152b3e022ca310f26f3307",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq43iac2m",
-      "lastPublished": "2026-07-04T14:15:24.863Z",
+      "lastPublished": "2026-07-04T14:45:44.800Z",
       "slug": "2024-05-03-eu-acc"
     }
   },

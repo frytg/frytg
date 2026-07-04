@@ -4,6 +4,7 @@ draft: false
 seo_description: Summary of the new EU strategy for competitiveness shows the EU must close the innovation gap, especially in advanced technologies, to reignite productivity growth.
 summary: New EU strategy for competitiveness shows the EU must close the innovation gap, especially in advanced technologies, to reignite productivity growth.
 image: 'images/blog/2024-09-13-eu-commission/eu-commission-og-card-2x1.jpg'
+atprotoImage: 'images/blog/2024-09-13-eu-commission/eu-commission-og-card-2x1.jpg'
 date: '2024-09-13T14:08:17+00:00'
 categories: [Tech, Europe]
 tags: [EU, eu/acc, Europe]

@@ -40,6 +40,7 @@ atproto-verify-paths:
 # preview ATProto publish (paths + Sequoia dry-run when credentials exist)
 [group('ATP')]
 atproto-dry-run:
+	just atproto-prepare-covers
 	just atproto-verify-paths
 	just _env "bunx sequoia publish --dry-run"
 
@@ -50,7 +51,11 @@ atproto-verify-build:
 
 # publish blog posts to ATProto (Standard.site)
 [group('ATP')]
+atproto-prepare-covers:
+	bun run .scripts/prepare-atproto-covers.ts
+
 atproto-publish:
+	just atproto-prepare-covers
 	just _env "bunx sequoia publish"
 
 # full publish pipeline: ATProto init → publish → build → deploy → purge

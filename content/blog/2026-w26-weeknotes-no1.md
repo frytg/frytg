@@ -4,6 +4,7 @@ draft: false
 seo_description: A week of exploring the atproto protocol, homelab, and AI.
 summary: A week of exploring the atproto protocol, homelab, and AI.
 image: images/blog/weeknotes-og-card-2x1.jpg
+atprotoImage: images/blog/weeknotes-og-card-2x1.jpg
 date: 2026-06-25T12:08:17+00:00
 categories:
   - weeknotes

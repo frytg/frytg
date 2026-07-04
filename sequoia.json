@@ -11,7 +11,7 @@
 	"frontmatter": {
 		"publishDate": "date",
 		"description": "seo_description",
-		"coverImage": "image"
+		"coverImage": "atprotoImage"
 	},
 	"pdsUrl": "https://pds.frytg.digital",
 	"identity": "frytg.digital",
