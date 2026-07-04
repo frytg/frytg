@@ -18,6 +18,10 @@
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{ end }}
 
+{{ with .Params.atUri }}
+<link rel="site.standard.document" href="{{ . | safeURL }}" />
+{{ end }}
+
 {{/* Robots NoIndex if needed (if set or if page is term/tag) */}}
 {{- $isTagsPage := eq .Kind "term" }}
 {{- $isNoIndexSet := isset .Params "noindex"}}

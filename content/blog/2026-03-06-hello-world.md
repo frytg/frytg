@@ -4,9 +4,11 @@ draft: false
 seo_description: 'Im back, and ready to write again.'
 summary: 'Im back, and ready to write again.'
 image: 'images/og-card/about-2024-Q1-A-2x1.jpg'
+atprotoImage: 'images/og-card/about-2024-Q1-A-2x1.jpg'
 date: '2026-03-06T09:00:00+00:00'
 categories: [Personal]
 tags: [Personal, hello world, introduction, rss]
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3soyc2m'
 ---
 
 Hi there, it's been a while...

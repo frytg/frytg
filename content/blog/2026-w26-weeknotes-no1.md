@@ -4,6 +4,7 @@ draft: false
 seo_description: A week of exploring the atproto protocol, homelab, and AI.
 summary: A week of exploring the atproto protocol, homelab, and AI.
 image: images/blog/weeknotes-og-card-2x1.jpg
+atprotoImage: images/blog/weeknotes-og-card-2x1.jpg
 date: 2026-06-25T12:08:17+00:00
 categories:
   - weeknotes
@@ -15,6 +16,7 @@ tags:
   - fediverse
   - AI
   - agents
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3islc2m'
 ---
 
 i loved the idea of reoccurring weeknotes from other blogs like [mijndertstuij.nl](https://mijndertstuij.nl/weeknotes/24-2026/).

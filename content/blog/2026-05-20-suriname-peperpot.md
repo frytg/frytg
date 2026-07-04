@@ -4,9 +4,11 @@ draft: false
 seo_description: A night walk through the Peperpot Nature Park.
 summary: A night walk through the Peperpot Nature Park.
 image: 'images/blog/2026-05-11-suriname/2026-05-11-suriname-c.jpg'
+atprotoImage: 'images/atproto/blog/2026-05-11-suriname/2026-05-11-suriname-c.jpg'
 date: '2026-05-20T05:08:17+00:00'
 categories: [Travel]
 tags: [Suriname, Paramaribo, Travel]
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3oryc2m'
 ---
 
 {{< pic src="images/blog/2026-05-11-suriname/2026-05-11-suriname-c.jpg" alt="Collection of pictures from Suriname" >}}

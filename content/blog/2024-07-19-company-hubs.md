@@ -4,9 +4,11 @@ draft: false
 seo_description: explore the hidden challenges of remote work and solutions for the future of workplace dynamics. this post examines the potential downsides of remote work efficiency, the importance of 'wandering' for creativity, and proposes a revolutionary approach to distributed work hubs. discover how companies can foster community, creativity, and work-life balance in the evolving landscape of remote and hybrid work models.
 summary: An analysis of remote work's efficiency challenges, the importance of unstructured time for innovation, and proposals for distributed work hubs to balance productivity and creativity.
 image: 'images/blog/2024-07-19-company-hubs/company-hub-og-card-2x1.jpg'
+atprotoImage: 'images/blog/2024-07-19-company-hubs/company-hub-og-card-2x1.jpg'
 date: '2024-07-19T09:00:00+00:00'
 categories: [Tech]
 tags: [companies, remote work, hubs, headquarters, distributed teams]
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq42d4s2m'
 ---
 
 i have this inexplicable feeling that remote work might actually be even more of a hamster wheel than the traditional commute to office gang.

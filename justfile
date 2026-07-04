@@ -27,6 +27,47 @@ build:
 	just build-vite
 	bunx hugo --minify
 
+# initialize Standard.site publication (one-time; requires ATP credentials in SOPS)
+[group('ATP')]
+atproto-init:
+	just _env "bun run .scripts/atproto-init.ts"
+
+# verify Sequoia paths match Hugo permalinks
+[group('ATP')]
+atproto-verify-paths:
+	bun run .scripts/verify-atproto-paths.ts
+
+# preview ATProto publish (paths + Sequoia dry-run when credentials exist)
+[group('ATP')]
+atproto-dry-run:
+	just atproto-prepare-covers
+	just atproto-verify-paths
+	just _env "bunx sequoia publish --dry-run"
+
+# verify built HTML contains ATProto verification tags
+[group('ATP')]
+atproto-verify-build:
+	bun run .scripts/verify-atproto-build.ts
+
+# publish blog posts to ATProto (Standard.site)
+[group('ATP')]
+atproto-prepare-covers:
+	bun run .scripts/prepare-atproto-covers.ts
+
+atproto-publish:
+	just atproto-prepare-covers
+	just _env "bunx sequoia publish"
+
+# full publish pipeline: ATProto init → publish → build → deploy → purge
+[group('BUILD')]
+publish:
+	# just atproto-init
+	just atproto-publish
+	just build
+	just deploy
+	just purge
+	just atproto-verify-build
+
 # sync to bunny storage
 [group('BUNNY')]
 deploy:

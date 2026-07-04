@@ -1,0 +1,23 @@
+{
+	"siteUrl": "https://www.frytg.digital",
+	"contentDir": "content/blog",
+	"imagesDir": "assets/images",
+	"publicDir": "static",
+	"outputDir": "public",
+	"pathPrefix": "/blog",
+	"ignore": [
+		"_index.md"
+	],
+	"frontmatter": {
+		"publishDate": "date",
+		"description": "seo_description",
+		"coverImage": "atprotoImage"
+	},
+	"pdsUrl": "https://pds.frytg.digital",
+	"identity": "frytg.digital",
+	"autoSync": true,
+	"bluesky": {
+		"enabled": false
+	},
+	"publicationUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.publication/3mptaiprnps2m"
+}
