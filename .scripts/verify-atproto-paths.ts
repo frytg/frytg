@@ -1,5 +1,5 @@
 import { glob } from 'glob'
-import { readFile } from 'node:fs/promises'
+import { access, readFile } from 'node:fs/promises'
 import { basename, join, relative } from 'node:path'
 import process from 'node:process'
 import { parse as parseYaml } from 'yaml'
@@ -10,11 +10,13 @@ const CONFIG_PATH = join(ROOT, 'sequoia.json')
 type SequoiaConfig = {
 	siteUrl: string
 	contentDir: string
+	imagesDir?: string
 	pathPrefix?: string
 	ignore?: string[]
 	frontmatter?: {
 		publishDate?: string
 		draft?: string
+		coverImage?: string
 	}
 }
 
@@ -33,6 +35,47 @@ function slugFromPath(relativePath: string): string {
 function sequoiaPath(config: SequoiaConfig, slug: string): string {
 	const prefix = config.pathPrefix ?? '/posts'
 	return `${prefix}/${slug}`
+}
+
+async function exists(path: string): Promise<boolean> {
+	try {
+		await access(path)
+		return true
+	} catch {
+		return false
+	}
+}
+
+async function resolveCoverImagePath(
+	config: SequoiaConfig,
+	coverImage: string,
+): Promise<string | undefined> {
+	const imagesDir = config.imagesDir
+		? join(ROOT, config.imagesDir)
+		: undefined
+	const contentDir = join(ROOT, config.contentDir)
+
+	if (imagesDir) {
+		const imagesDirBaseName = basename(config.imagesDir ?? '')
+		const imagesDirIndex = coverImage.indexOf(imagesDirBaseName)
+		const relativePath =
+			imagesDirIndex !== -1
+				? coverImage
+						.substring(imagesDirIndex + imagesDirBaseName.length)
+						.replace(/^[/\\]/, '')
+				: basename(coverImage)
+		const imagePath = join(imagesDir, relativePath)
+		if (await exists(imagePath)) {
+			return imagePath
+		}
+	}
+
+	const contentRelative = join(contentDir, coverImage)
+	if (await exists(contentRelative)) {
+		return contentRelative
+	}
+
+	return undefined
 }
 
 async function hugoPermalinks(): Promise<Map<string, string>> {
@@ -78,6 +121,7 @@ async function main(): Promise<void> {
 	const contentDir = join(ROOT, config.contentDir)
 	const ignore = config.ignore ?? []
 	const draftField = config.frontmatter?.draft ?? 'draft'
+	const coverField = config.frontmatter?.coverImage ?? 'image'
 	const files = await glob('**/*.{md,mdx}', { cwd: contentDir })
 
 	let mismatches = 0
@@ -113,13 +157,24 @@ async function main(): Promise<void> {
 		} else {
 			console.log(`OK ${slug} -> ${expected}`)
 		}
+
+		const coverImage = frontmatter[coverField]
+		if (typeof coverImage === 'string' && coverImage.length > 0) {
+			const resolved = await resolveCoverImagePath(config, coverImage)
+			if (!resolved) {
+				console.error(
+					`Cover image not found for ${slug}: ${coverImage} (check sequoia.json imagesDir)`,
+				)
+				mismatches += 1
+			}
+		}
 	}
 
 	if (mismatches > 0) {
 		process.exit(1)
 	}
 
-	console.log('All blog post paths match Hugo permalinks.')
+	console.log('All blog post paths and cover images are valid.')
 }
 
 main().catch((error: unknown) => {
