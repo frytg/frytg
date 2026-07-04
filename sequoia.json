@@ -1,0 +1,20 @@
+{
+	"siteUrl": "https://www.frytg.digital",
+	"contentDir": "content/blog",
+	"imagesDir": "assets",
+	"publicDir": "static",
+	"outputDir": "public",
+	"pathPrefix": "/blog",
+	"ignore": ["_index.md"],
+	"frontmatter": {
+		"publishDate": "date",
+		"description": "seo_description",
+		"coverImage": "image"
+	},
+	"pdsUrl": "https://pds.frytg.digital",
+	"identity": "frytg.digital",
+	"autoSync": true,
+	"bluesky": {
+		"enabled": false
+	}
+}
