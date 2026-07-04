@@ -1,0 +1,10 @@
+{{ with .Params.atUri }}
+<div class="blog-post-footer-section">
+	<h5 class="!text-sm !font-medium !text-gray/80 uppercase tracking-wider !mt-0 !mb-2">AT Protocol</h5>
+	<p class="text-meta mt-0 mb-0">
+		Inspect on <a href="https://pdsls.dev/{{ . }}" target="_blank" rel="noopener noreferrer">pdsls.dev</a>
+		or
+		<a href="https://atproto.at/uri/{{ . }}" target="_blank" rel="noopener noreferrer">taproot</a>.
+	</p>
+</div>
+{{ end }}
