@@ -15,7 +15,7 @@ or _Dan_ for short.
 
 I'm a **DevOps engineer** at [SWR Audio Lab](https://www.swr.de/unternehmen/audiolab/index.html) and a **hybrid athlete** chasing myself doing HYROX races in my spare time. This site is where I document the process of making both work.
 
-{{< pic src="images/about/web-about-2024-q1-1@2x.webp" alt="Photo collection of profile pictures" >}}
+![Photo collection of profile pictures](images/about/web-about-2024-q1-1@2x.webp)
 
 ## What I do
 
@@ -25,7 +25,7 @@ I'm a **DevOps engineer** at [SWR Audio Lab](https://www.swr.de/unternehmen/audi
 
 **On here**, I write about what I'm learning across both worlds. Training, building systems, staying consistent, and everyday life.
 
-{{< pic src="images/about/web-about-2024-q1-2@2x.webp" alt="Pictures of me at work and events" >}}
+![Pictures of me at work and events](images/about/web-about-2024-q1-2@2x.webp)
 
 ## A few things about me
 

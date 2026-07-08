@@ -1,46 +1,6 @@
-{{- $respSizes := slice "960" "1280" "1600" "1920" "2560" "3840" -}}
-
-{{- $src := resources.Get  (.Get "src") -}}
-{{- $alt := .Get "alt" -}}
-{{- $divClass := "" -}}
-
-{{- $imgClass := "w-full h-auto" -}}
-{{- $dataSzes := "(min-width: 1024px) 768px, 100vw" -}}
-
-{{- $actualImg := $src.Resize "640x" -}}
-
-	<div class="content-column my-8 overflow-hidden">
-	<picture>
-		<source
-			type="image/webp"
-			srcset="
-			{{- with $respSizes -}}
-				{{- range $i, $e := . -}}
-					{{- if ge $src.Width . -}}
-						{{- if $i }}, {{ end -}}{{- ($src.Resize (printf "%sx%s" . " webp q92 Lanczos") ).RelPermalink }} {{ . }}w
-					{{- end -}}
-				{{- end -}}
-			{{- end -}}"
-			sizes="{{ $dataSzes }}"
-		/>
-		<source
-			type="{{ $src.MediaType }}"
-			srcset="
-			{{- with $respSizes -}}
-				{{- range $i, $e := . -}}
-					{{- if ge $src.Width . -}}
-						{{- if $i }}, {{ end -}}{{- ($src.Resize ((printf "%sx%s" . " Lanczos")) ).RelPermalink }} {{ . }}w
-					{{- end -}}
-				{{- end -}}
-			{{- end -}}"
-			sizes="{{ $dataSzes }}"
-		/>
-		<img class="{{ $imgClass }}"
-			src="{{ $actualImg.RelPermalink }}"
-			width="{{ $src.Width }}"
-			height="{{ $src.Height }}"
-			alt="{{ $alt }}"
-			loading="lazy"
-		/>
-	</picture>
-</div>
+{{- $resource := resources.Get (.Get "src") -}}
+{{- if $resource -}}
+	{{- partial "responsive-picture.html" (dict "resource" $resource "alt" (.Get "alt") "title" (.Get "title")) -}}
+{{- else -}}
+	{{- errorf "pic shortcode: image not found: %q (in %s)" (.Get "src") .Position -}}
+{{- end -}}

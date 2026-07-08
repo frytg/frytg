@@ -13,7 +13,7 @@ sitemap:
 
 Consider this a continously-updated list of the tools, apps, and hardware I use for my work and personal projects.
 
-{{< pic src="images/about/web-stack-2024-q1-1@2x.webp" alt="Photo collection of computers" >}}
+![Photo collection of computers](images/about/web-stack-2024-q1-1@2x.webp)
 
 ## Tech
 

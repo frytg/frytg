@@ -11,7 +11,7 @@ tags: [Suriname, Paramaribo, Travel]
 atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3l6qs2m'
 ---
 
-{{< pic src="images/blog/2026-05-11-suriname/2026-05-11-suriname-e.jpg" alt="Collection of pictures from Suriname" >}}
+![Collection of pictures from Suriname](images/blog/2026-05-11-suriname/2026-05-11-suriname-e.jpg)
 
 To get to the most magical sunrise that Suriname had to offer, we had to board several buses that continuously got smaller and more off-road. Eventually we reached the Fredberg basecamp where we repacked our stuff and equipped with only cameras, a few clothes, a hammock, and some water, started our hike with the group to the top of the mountain.
 

@@ -36,7 +36,7 @@ if you want something with less work than a self-hosted pds, [eurosky.tech](http
 
 one side project that came out of this was [proto-typer.frytg.com](https://proto-typer.frytg.com), a little web app for posting to bluesky & mastodon at the same time.
 
-{{< pic src="images/blog/2026-weeknotes/2026-07-04-osaurus.png" alt="Osaurus app on mac" >}}
+![Osaurus app on mac](images/blog/2026-weeknotes/2026-07-04-osaurus.png)
 
 ## local LLM 🧠
 
