@@ -42,6 +42,16 @@ bun run rsync
 
 ## Image Configuration
 
+Image paths in Markdown and front matter use Hugo's `assets/` convention — e.g. `images/blog/foo.jpg` resolves to `assets/images/blog/foo.jpg` at build time via `resources.Get`. That path is not relative to the Markdown file, so editor Markdown preview cannot find the files on its own.
+
+**Editor preview fix:** a symlink at the project root maps `images/` → `assets/images/`. VS Code and Cursor resolve `images/...` from the workspace root when previewing Markdown, so `![alt](images/blog/foo.jpg)` loads correctly without changing Hugo paths.
+
+```sh
+ln -sfn assets/images images   # re-create if missing (e.g. after a fresh clone on Windows)
+```
+
+Alternatively, preview via `just dev` and open [localhost:1313](http://localhost:1313) for pixel-accurate rendering including responsive srcsets.
+
 Main inspiration for the template
 
 - [Responsive and optimized images with Hugo](https://www.brycewray.com/posts/2022/06/responsive-optimized-images-hugo/)
