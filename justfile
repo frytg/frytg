@@ -25,7 +25,13 @@ alias vite:=build-vite
 [group('BUILD')]
 build:
 	just build-vite
-	hugo --minify
+	hugo build --minify
+	just verify-build
+
+# verify public/ contains no dev-server URLs
+[group('BUILD')]
+verify-build:
+	nub .scripts/verify-production-build.ts
 
 # initialize Standard.site publication (one-time; requires ATP credentials in SOPS)
 [group('ATP')]
@@ -71,6 +77,7 @@ publish:
 # sync to bunny storage
 [group('BUNNY')]
 deploy:
+	just verify-build
 	just _env "nub .scripts/rsync-to-bunny-storage.ts"
 
 # purge bunny pull zone cache
@@ -87,7 +94,7 @@ dev:
 [group('DEV')]
 local:
 	just build-vite
-	hugo server
+	hugo server --renderToMemory
 
 lint:
 	just build

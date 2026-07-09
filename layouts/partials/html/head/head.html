@@ -67,13 +67,16 @@
 
 {{/* Teaser Image */}}
 {{- $ogImage := "" -}}
-{{ if isset .Params "image" }}
+{{- if isset .Params "image" -}}
 	{{- $ogImage = resources.Get .Params.image -}}
-{{ else }}
-	{{ $ogImage = resources.Get .Site.Params.og_image }}
-{{ end }}
-<meta property="og:image" content="{{ ($ogImage.Process "1200x630 jpg fill Center Lanczos").RelPermalink }}"/>
-<meta property="twitter:image" content="{{ ($ogImage.Process "2048x1024 webp fill q90 Center Lanczos").RelPermalink }}"/>
+{{- else -}}
+	{{- $ogImage = resources.Get site.Params.og_image -}}
+{{- end -}}
+{{- $ogImageProcessed := $ogImage.Process "1200x630 jpg fill Center Lanczos" -}}
+<meta property="og:image" content="{{ $ogImageProcessed.Permalink }}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:image" content="{{ $ogImageProcessed.Permalink }}" />
 
 {{/* Date Published and Modified (blog posts only) */}}
 {{- $datePublished := "" }}
