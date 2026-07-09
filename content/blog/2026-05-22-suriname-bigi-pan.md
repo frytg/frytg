@@ -11,7 +11,7 @@ tags: [Suriname, Paramaribo, Travel]
 atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3mplc2m'
 ---
 
-{{< pic src="images/blog/2026-05-11-suriname/2026-05-11-suriname-d.jpg" alt="Collection of pictures from Suriname" >}}
+![Collection of pictures from Suriname](images/blog/2026-05-11-suriname/2026-05-11-suriname-d.jpg)
 
 Departing for this stop, it wasn't clear if we'd make it. Not because it was dangerous, but because the water levels were unusually low and the narrow passage for the boats was quite a challenge.
 

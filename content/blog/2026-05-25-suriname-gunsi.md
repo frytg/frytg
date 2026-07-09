@@ -11,7 +11,7 @@ tags: [Suriname, Paramaribo, Travel]
 atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3k4l22m'
 ---
 
-{{< pic src="images/blog/2026-05-11-suriname/2026-05-11-suriname-f.jpg" alt="Collection of pictures from Suriname" >}}
+![Collection of pictures from Suriname](images/blog/2026-05-11-suriname/2026-05-11-suriname-f.jpg)
 
 Getting to our last stop in Suriname was a bit of a more interesting journey... A shuttle dropped us off in Atjoni – the local "harbour". A place where everything from tourists to food and mattresses was loaded onto boats. The instructions were "someone is going to pick you up". When? How? Where? To us Europeans, who run on timetables and way signs, this was a bit more free-flowing experience. But we waited and indeed, amidst the buzzing organised chaos, we were picked up. Abini – our guide for the next few days – brought us to the right boat and we made the journey upstream on the Upper Suriname River.
 

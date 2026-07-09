@@ -44,6 +44,6 @@ Less active, but still available:
 
 🚴🏼 **Strava**: [_`Dan`_](https://www.strava.com/athletes/7693180) - cycling and sports-related stuff
 
-{{< pic src="images/about/socials-header-2024-q4-v1.png" alt="Pictures of me at work and events" >}}
+![Pictures of me at work and events](images/about/socials-header-2024-q4-v1.png)
 
 Interested in what I use? Check out [`/uses`](/uses) and [`/dev`](/dev).

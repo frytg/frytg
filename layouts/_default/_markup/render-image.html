@@ -1,0 +1,17 @@
+{{- $src := .Destination -}}
+{{- $alt := .PlainText -}}
+{{- $resource := .PageInner.Resources.GetMatch $src -}}
+{{- if not $resource -}}
+	{{- $resource = resources.Get $src -}}
+{{- end -}}
+
+{{- if $resource -}}
+	{{- partial "responsive-picture.html" (dict "resource" $resource "alt" $alt "title" .Title) -}}
+{{- else -}}
+<img
+	src="{{ $src | safeURL }}"
+	alt="{{ $alt }}"
+	{{- with .Title }} title="{{ . }}"{{ end -}}
+	loading="lazy"
+/>
+{{- end -}}

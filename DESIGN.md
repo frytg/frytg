@@ -164,7 +164,7 @@ Content flows in a single centered column inside `.container.container-custom`:
 - **Navigation:** Horizontal flex row, wrapping, centered on `sm+`. Site owner name ("Daniel Freytag") appears as a non-interactive label; menu items are flat text buttons with generous gap (`gap-2`).
 - **Footer:** Stacked, centered column — logo, social links, legal, attribution. Uses `text-sm` throughout.
 - **Blog posts:** Title, italic date, content, horizontal rule, then connect/license/tags sections.
-- **Images:** Full-width responsive `<picture>` elements via the `pic` shortcode; lazy-loaded with WebP srcset at 960–3840px breakpoints.
+- **Images:** Full-width responsive `<picture>` elements via Hugo's image render hook on standard `![alt](path)` Markdown; lazy-loaded with WebP srcset at 960–3840px breakpoints. The legacy `pic` shortcode still works but is no longer used in content.
 
 No sidebar, no grid beyond the nav flex row and footer stack. The layout prioritizes reading flow over information density.
 

@@ -15,7 +15,7 @@ atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3vewc
 
 Here are the key takeaways around **accelerating innovation**, **decarbonizing**, and **reducing dependencies**.
 
-{{< pic src="images/blog/2024-09-13-eu-commission/eu-commission-hero-1.png" alt="Command + Space" >}}
+![Command + Space](images/blog/2024-09-13-eu-commission/eu-commission-hero-1.png)
 
 ## 🚀 Innovation and Productivity
 

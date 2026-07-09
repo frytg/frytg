@@ -1,0 +1,58 @@
+{{- $resource := .resource -}}
+{{- $alt := .alt -}}
+{{- $title := .title | default "" -}}
+
+{{- if eq $resource.MediaType.SubType "svg" -}}
+<div class="content-column my-8 overflow-hidden">
+	<img
+		class="w-full h-auto"
+		src="{{ $resource.RelPermalink }}"
+		alt="{{ $alt }}"
+		{{- with $title }} title="{{ . }}"{{ end -}}
+		loading="lazy"
+	/>
+</div>
+{{- else -}}
+{{- $respSizes := slice "960" "1280" "1600" "1920" "2560" "3840" -}}
+{{- $imgClass := "w-full h-auto" -}}
+{{- $dataSzes := "(min-width: 1024px) 768px, 100vw" -}}
+{{- $actualImg := $resource.Resize "640x" -}}
+
+<div class="content-column my-8 overflow-hidden">
+	<picture>
+		<source
+			type="image/webp"
+			srcset="
+			{{- with $respSizes -}}
+				{{- range $i, $e := . -}}
+					{{- if ge $resource.Width . -}}
+						{{- if $i }}, {{ end -}}{{- ($resource.Resize (printf "%sx%s" . " webp q92 Lanczos") ).RelPermalink }} {{ . }}w
+					{{- end -}}
+				{{- end -}}
+			{{- end -}}"
+			sizes="{{ $dataSzes }}"
+		/>
+		<source
+			type="{{ $resource.MediaType }}"
+			srcset="
+			{{- with $respSizes -}}
+				{{- range $i, $e := . -}}
+					{{- if ge $resource.Width . -}}
+						{{- if $i }}, {{ end -}}{{- ($resource.Resize (printf "%sx%s" . " Lanczos") ).RelPermalink }} {{ . }}w
+					{{- end -}}
+				{{- end -}}
+			{{- end -}}"
+			sizes="{{ $dataSzes }}"
+		/>
+		<img
+			class="{{ $imgClass }}"
+			src="{{ $actualImg.RelPermalink }}"
+			width="{{ $resource.Width }}"
+			height="{{ $resource.Height }}"
+			alt="{{ $alt }}"
+			{{- with $title }} title="{{ . }}"{{ end -}}
+			loading="lazy"
+		/>
+	</picture>
+</div>
+{{- end -}}
