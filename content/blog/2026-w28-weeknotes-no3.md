@@ -13,6 +13,7 @@ tags:
   - AI
   - agents
   - coding
+atUri: "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mqa7bufja22x"
 ---
 
 depending on how deep you are in the tech and ai bubble you may have heard of the term "_ai-pilled_": "_The transformative moment when someone fully embraces AI’s capabilities, often after a mind-opening, sleepless deep-dive._" (from [thedictionaryofpresentfutures.com](https://www.thedictionaryofpresentfutures.com/post/pilled)).
