@@ -1,12 +1,12 @@
 # AGENTS.md
 
-Personal site for [frytg.digital](https://www.frytg.digital/) — Hugo static site, Tailwind CSS v4, Vite, Bun.
+Personal site for [frytg.digital](https://www.frytg.digital/) — Hugo static site, Tailwind CSS v4, Vite, Nub.
 
 ## Dev environment
 
 Task runner: [just](https://github.com/casey/just). All project commands live in the root `justfile` — run `just` to list them.
 
-- Install dependencies: `bun install`
+- Install dependencies: `nub install`
 - Run locally: `just dev` (Vite + Hugo server)
 - Production build: `just build`
 - Lint: `just lint`

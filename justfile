@@ -18,45 +18,45 @@ build-vite:
 	rm -rf public
 	rm -f assets/css/_main-compiled.scss
 	rm -rf assets/css/dist
-	bunx vite build
+	nubx vite build
 alias vite:=build-vite
 
 # build the site for production
 [group('BUILD')]
 build:
 	just build-vite
-	bunx hugo --minify
+	hugo --minify
 
 # initialize Standard.site publication (one-time; requires ATP credentials in SOPS)
 [group('ATP')]
 atproto-init:
-	just _env "bun run .scripts/atproto-init.ts"
+	just _env "nub .scripts/atproto-init.ts"
 
 # verify Sequoia paths match Hugo permalinks
 [group('ATP')]
 atproto-verify-paths:
-	bun run .scripts/verify-atproto-paths.ts
+	nub .scripts/verify-atproto-paths.ts
 
 # preview ATProto publish (paths + Sequoia dry-run when credentials exist)
 [group('ATP')]
 atproto-dry-run:
 	just atproto-prepare-covers
 	just atproto-verify-paths
-	just _env "bunx sequoia publish --dry-run"
+	just _env "nubx sequoia publish --dry-run"
 
 # verify built HTML contains ATProto verification tags
 [group('ATP')]
 atproto-verify-build:
-	bun run .scripts/verify-atproto-build.ts
+	nub .scripts/verify-atproto-build.ts
 
 # publish blog posts to ATProto (Standard.site)
 [group('ATP')]
 atproto-prepare-covers:
-	bun run .scripts/prepare-atproto-covers.ts
+	nub .scripts/prepare-atproto-covers.ts
 
 atproto-publish:
 	just atproto-prepare-covers
-	just _env "bunx sequoia publish"
+	just _env "nubx sequoia publish"
 
 # full publish pipeline: ATProto init → publish → build → deploy → purge
 [group('BUILD')]
@@ -71,28 +71,28 @@ publish:
 # sync to bunny storage
 [group('BUNNY')]
 deploy:
-	just _env "bun run .scripts/rsync-to-bunny-storage.ts"
+	just _env "nub .scripts/rsync-to-bunny-storage.ts"
 
 # purge bunny pull zone cache
 [group('BUNNY')]
 purge:
-	just _env "bun run .scripts/purge-bunny-pull-zone.ts"
+	just _env "nub .scripts/purge-bunny-pull-zone.ts"
 
 # run dev server locally
 [group('DEV')]
 dev:
-	bunx concurrently 'bunx vite' 'just local'
+	nubx concurrently 'nubx vite' 'just local'
 
 # run hugo dev server locally
 [group('DEV')]
 local:
 	just build-vite
-	bunx hugo server
+	hugo server
 
 lint:
 	just build
-	bunx biome lint
-	bunx @google/design.md designmd lint DESIGN.md
+	nubx biome lint
+	nubx @google/design.md designmd lint DESIGN.md
 
 ## ---------------------------------
 ## ENCRYPTION shortcuts

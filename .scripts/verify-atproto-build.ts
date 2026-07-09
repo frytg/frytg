@@ -4,7 +4,7 @@ import { join } from 'node:path'
 import process from 'node:process'
 import { parse as parseYaml } from 'yaml'
 
-const ROOT = join(import.meta.dir, '..')
+const ROOT = join(import.meta.dirname, '..')
 const PUBLIC_DIR = join(ROOT, 'public')
 const CONTENT_DIR = join(ROOT, 'content/blog')
 const WELL_KNOWN_SOURCE = join(

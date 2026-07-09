@@ -2,7 +2,7 @@
 
 ## Local Setup
 
-Install [Bun](https://bun.sh/docs/installation) and [Hugo](https://gohugo.io/installation/).
+Install [Nub](https://nubjs.com/docs/install) and [Hugo](https://gohugo.io/installation/).
 
 ```sh
 brew install hugo
@@ -10,10 +10,10 @@ brew install hugo
 
 ### Install Dependencies
 
-Use bun to install everything:
+Use nub to install everything:
 
 ```sh
-bun install
+nub install
 ```
 
 ### Run local server
@@ -37,7 +37,7 @@ just build
 ## Sync to Bunny Storage
 
 ```bash
-bun run rsync
+just deploy
 ```
 
 ## Image Configuration

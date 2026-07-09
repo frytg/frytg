@@ -1,10 +1,12 @@
+import { spawn } from 'node:child_process'
 import { glob } from 'glob'
 import { mkdir, readFile, stat } from 'node:fs/promises'
 import { basename, dirname, join } from 'node:path'
 import process from 'node:process'
+import { text } from 'node:stream/consumers'
 import { parse as parseYaml } from 'yaml'
 
-const ROOT = join(import.meta.dir, '..')
+const ROOT = join(import.meta.dirname, '..')
 const CONFIG_PATH = join(ROOT, 'sequoia.json')
 const ATPROTO_IMAGES_SUBDIR = 'atproto'
 /** Matches sequoia-cli COVER_IMAGE_MAX_SIZE */
@@ -77,9 +79,9 @@ async function compressToLimit(
 	await mkdir(dirname(destination), { recursive: true })
 
 	for (const quality of [85, 80, 75, 70]) {
-		const proc = Bun.spawn(
+		const proc = spawn(
+			'magick',
 			[
-				'magick',
 				source,
 				'-resize',
 				'2560x>',
@@ -91,8 +93,8 @@ async function compressToLimit(
 			{ stdout: 'ignore', stderr: 'pipe' },
 		)
 		const [stderr, exitCode] = await Promise.all([
-			new Response(proc.stderr).text(),
-			proc.exited,
+			proc.stderr ? text(proc.stderr) : Promise.resolve(''),
+			new Promise<number | null>((resolve) => proc.on('close', resolve)),
 		])
 		if (exitCode !== 0) {
 			throw new Error(`magick failed for ${source}:\n${stderr}`)

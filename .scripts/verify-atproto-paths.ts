@@ -1,10 +1,12 @@
+import { spawn } from 'node:child_process'
 import { glob } from 'glob'
 import { access, readFile, stat } from 'node:fs/promises'
 import { basename, join, relative } from 'node:path'
 import process from 'node:process'
+import { text } from 'node:stream/consumers'
 import { parse as parseYaml } from 'yaml'
 
-const ROOT = join(import.meta.dir, '..')
+const ROOT = join(import.meta.dirname, '..')
 const CONFIG_PATH = join(ROOT, 'sequoia.json')
 const MAX_COVER_IMAGE_BYTES = 1024 * 1024 - 1
 
@@ -80,15 +82,15 @@ async function resolveCoverImagePath(
 }
 
 async function hugoPermalinks(): Promise<Map<string, string>> {
-	const proc = Bun.spawn(['hugo', 'list', 'all'], {
+	const proc = spawn('hugo', ['list', 'all'], {
 		cwd: ROOT,
 		stdout: 'pipe',
 		stderr: 'pipe',
 	})
 	const [stdout, stderr, exitCode] = await Promise.all([
-		new Response(proc.stdout).text(),
-		new Response(proc.stderr).text(),
-		proc.exited,
+		proc.stdout ? text(proc.stdout) : Promise.resolve(''),
+		proc.stderr ? text(proc.stderr) : Promise.resolve(''),
+		new Promise<number | null>((resolve) => proc.on('close', resolve)),
 	])
 
 	if (exitCode !== 0) {

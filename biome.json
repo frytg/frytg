@@ -14,7 +14,7 @@
 			"semicolons": "asNeeded",
 			"trailingCommas": "es5"
 		},
-		"globals": ["cast", "Bun"]
+		"globals": ["cast"]
 	},
 	"linter": {
 		"enabled": true,

@@ -3,7 +3,7 @@ import { join } from 'node:path'
 import process from 'node:process'
 import { BskyAgent } from '@atproto/api'
 
-const ROOT = join(import.meta.dir, '..')
+const ROOT = join(import.meta.dirname, '..')
 const CONFIG_PATH = join(ROOT, 'sequoia.json')
 const WELL_KNOWN_PATH = join(ROOT, 'static/.well-known/site.standard.publication')
 

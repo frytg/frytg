@@ -1,4 +1,4 @@
-import { readdir, readFile, stat } from 'node:fs/promises'
+import { readdir, readFile, stat, writeFile } from 'node:fs/promises'
 import { join, relative } from 'node:path'
 import process from 'node:process'
 
@@ -93,11 +93,11 @@ async function deleteRemoteFile(remotePath) {
 async function syncFolders(localPath, remotePath) {
 	// get local files
 	const localFiles = await getLocalFiles(localPath)
-	await Bun.write('./temp/rsync-local-files.json', JSON.stringify(localFiles, null, 2))
+	await writeFile('./temp/rsync-local-files.json', JSON.stringify(localFiles, null, 2))
 
 	// get remote files
 	const remoteFiles = await getRemoteFiles(remotePath)
-	await Bun.write('./temp/rsync-remote-files.json', JSON.stringify(remoteFiles, null, 2))
+	await writeFile('./temp/rsync-remote-files.json', JSON.stringify(remoteFiles, null, 2))
 
 	// Upload new or modified files
 	for await (const [relPath, localInfo] of Object.entries(localFiles)) {
