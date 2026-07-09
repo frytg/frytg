@@ -6,7 +6,7 @@
 	<h5 class="!text-sm !font-medium !text-gray/80 uppercase tracking-wider !mt-0 !mb-2">{{ $label }}</h5>
 	<p class="text-meta mt-0 mb-0">
 		{{- range . }}
-		<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+		<a href="{{ .RelPermalink }}">{{ .LinkTitle | lower }}</a>
 		{{- end }}
 	</p>
 </div>

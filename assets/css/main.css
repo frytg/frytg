@@ -182,7 +182,7 @@
 	blockquote {
 		@apply my-6;
 		@apply content-column;
-		@apply border-l border-yellow/60 pl-4;
+		@apply border-l border-yellow/60 pl-6;
 		@apply text-white/75;
 
 		h1,
@@ -218,9 +218,7 @@
 	}
 
 	.site-header {
-		@apply sticky top-0 z-50;
-		@apply border-b border-white/10;
-		@apply bg-mid-dark-greeny/85 backdrop-blur-md;
+		@apply relative;
 	}
 
 	.site-footer {
@@ -228,30 +226,43 @@
 		@apply mt-auto;
 	}
 
-	.clickable-button,
-	.clickable-button-inactive {
-		@apply inline-flex items-center;
-		@apply px-3 py-1.5;
-		@apply text-sm font-medium;
-		@apply no-underline;
-		@apply border border-transparent;
+	.site-nav {
+		@apply py-4 sm:py-5;
+	}
+
+	.site-nav__bar {
+		@apply flex items-center gap-3 sm:gap-4;
+	}
+
+	.nav-brand {
+		@apply shrink-0 text-sm font-semibold tracking-tight text-white no-underline;
 		@apply transition-colors duration-200;
+		@apply hover:text-yellow;
 	}
 
-	.clickable-button-inactive {
-		@apply text-white/60 cursor-default;
+	.nav-list {
+		@apply flex min-w-0 flex-1 items-center gap-0.5 list-none p-0 m-0;
+		@apply overflow-x-auto;
+		@apply [-ms-overflow-style:none] [scrollbar-width:none];
+		@apply lg:flex-none lg:ml-auto lg:overflow-visible;
 	}
 
-	.clickable-button {
-		@apply cursor-pointer;
-		@apply text-white;
-		@apply border-white/10;
-		@apply hover:text-greeny hover:bg-yellow hover:border-yellow;
+	.nav-list::-webkit-scrollbar {
+		display: none;
 	}
 
-	.clickable-button-active,
-	.clickable-button-ancestor {
-		@apply bg-yellow text-greeny border-yellow;
+	.nav-link {
+		@apply inline-flex shrink-0 items-center;
+		@apply px-2 py-1.5 sm:px-3;
+		@apply text-sm font-medium tracking-tight;
+		@apply text-white/55 no-underline;
+		@apply transition-colors duration-200;
+		@apply hover:text-white;
+	}
+
+	.nav-link--active {
+		@apply text-yellow;
+		@apply hover:text-yellow;
 	}
 
 	.blog-list-item {
