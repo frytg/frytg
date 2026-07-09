@@ -240,15 +240,35 @@
 		@apply hover:text-yellow;
 	}
 
-	.nav-list {
-		@apply flex min-w-0 flex-1 items-center gap-0.5 list-none p-0 m-0;
+	.nav-scroll {
+		@apply relative min-w-0 flex-1;
 		@apply overflow-x-auto;
 		@apply [-ms-overflow-style:none] [scrollbar-width:none];
 		@apply lg:flex-none lg:ml-auto lg:overflow-visible;
 	}
 
-	.nav-list::-webkit-scrollbar {
+	.nav-scroll::-webkit-scrollbar {
 		display: none;
+	}
+
+	.nav-scroll::after {
+		content: '';
+		@apply pointer-events-none absolute inset-y-0 right-0 z-10 w-10;
+		@apply bg-gradient-to-l from-mid-dark-greeny to-transparent;
+		@apply opacity-0 transition-opacity duration-200;
+		@apply lg:hidden;
+	}
+
+	.nav-scroll--overflow::after {
+		@apply opacity-100;
+	}
+
+	.nav-scroll--at-end::after {
+		@apply opacity-0;
+	}
+
+	.nav-list {
+		@apply flex items-center gap-0.5 list-none p-0 m-0;
 	}
 
 	.nav-link {

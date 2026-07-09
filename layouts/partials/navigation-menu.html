@@ -6,9 +6,11 @@
     <div class="site-nav__bar">
       <a href="{{ `/` | relLangURL }}" class="nav-brand">Daniel Freytag</a>
 
-      <ul class="nav-list">
-        {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-      </ul>
+      <div class="nav-scroll" data-nav-scroll>
+        <ul class="nav-list">
+          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+        </ul>
+      </div>
     </div>
   </nav>
 {{- end }}
