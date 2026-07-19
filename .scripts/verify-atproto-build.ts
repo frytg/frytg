@@ -1,3 +1,7 @@
+// Verify the production build includes ATProto verification artifacts.
+// Checks the .well-known publication file and per-post document tags in HTML.
+// Run via `just atproto-verify-build` (final step of `just publish`).
+
 import { glob } from 'glob'
 import { access, readFile } from 'node:fs/promises'
 import { join } from 'node:path'

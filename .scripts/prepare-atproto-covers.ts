@@ -1,3 +1,7 @@
+// Compress blog cover images that exceed ATProto's 1 MB limit.
+// Writes resized copies under assets/images/atproto/ for Sequoia to publish.
+// Run via `just atproto-prepare-covers` before ATProto publish or dry-run.
+
 import { spawn } from 'node:child_process'
 import { glob } from 'glob'
 import { mkdir, readFile, stat } from 'node:fs/promises'

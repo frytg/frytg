@@ -1,3 +1,7 @@
+// Scan public/ for dev-server artifacts that must not reach production.
+// Fails if localhost, 127.0.0.1, or livereload references are found.
+// Run via `just verify-build` after `just build` and before `just deploy`.
+
 import { glob } from 'glob'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'

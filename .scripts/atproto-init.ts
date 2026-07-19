@@ -1,3 +1,8 @@
+// One-time ATProto publication setup for Standard.site.
+// Creates a site.standard.publication record on the PDS and writes the
+// publication URI to sequoia.json and static/.well-known/.
+// Run via `just atproto-init` (requires ATP credentials in SOPS).
+
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import process from 'node:process'

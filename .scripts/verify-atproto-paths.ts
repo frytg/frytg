@@ -1,3 +1,7 @@
+// Verify blog post paths and cover images are ready for ATProto publishing.
+// Ensures Sequoia paths match Hugo permalinks and cover images exist under 1 MB.
+// Run via `just atproto-verify-paths` before publish or dry-run.
+
 import { spawn } from 'node:child_process'
 import { glob } from 'glob'
 import { access, readFile, stat } from 'node:fs/promises'

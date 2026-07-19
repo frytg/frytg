@@ -1,3 +1,7 @@
+// Purge the Bunny CDN pull zone cache after a deploy.
+// Ensures visitors get fresh assets instead of stale cached files.
+// Run via `just purge` (last step of `just publish`).
+
 import process from 'node:process'
 
 const BUNNY_PULL_ZONE_API_KEY = process.env.BUNNY_PULL_ZONE_API_KEY

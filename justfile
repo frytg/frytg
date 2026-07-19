@@ -33,6 +33,11 @@ build:
 verify-build:
 	nub .scripts/verify-production-build.ts
 
+# fail if any Hugo process is running (dev server must not be active)
+[group('BUILD')]
+verify-no-hugo:
+	nub .scripts/verify-no-hugo-process.ts
+
 # initialize Standard.site publication (one-time; requires ATP credentials in SOPS)
 [group('ATP')]
 atproto-init:
@@ -62,12 +67,14 @@ atproto-prepare-covers:
 
 atproto-publish:
 	just atproto-prepare-covers
+	just atproto-verify-paths
 	just _env "nubx sequoia publish"
 
 # full publish pipeline: ATProto init → publish → build → deploy → purge
 [group('BUILD')]
 publish:
 	# just atproto-init
+	just verify-no-hugo
 	just atproto-publish
 	just build
 	just deploy
@@ -77,6 +84,7 @@ publish:
 # sync to bunny storage
 [group('BUNNY')]
 deploy:
+	just verify-no-hugo
 	just verify-build
 	just _env "nub .scripts/rsync-to-bunny-storage.ts"
 
