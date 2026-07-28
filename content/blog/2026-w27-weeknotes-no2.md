@@ -16,7 +16,7 @@ tags:
   - agents
   - bluesky
   - local-llm
-atUri: "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptgjktoo22x"
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptgjktoo22x'
 ---
 
 Q3 is here! OKRs ready? have you already made the shareholders happy? :)

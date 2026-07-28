@@ -24,7 +24,7 @@ there's even an [ai fluency index](https://www.ai-pilled.com/) test you can take
 
 > Today we’re back with the results from our 2026 survey, and it’s **a tale of two workforces**.
 >
-> One half feels amplified by AI—more capable, more confident, more excited than they’ve been in _their entire career_. The other half feels shaken by it—less sure of their value and whether there’s still a place for them. Which side of that line people fall on predicts how they feel about their career more than anything else, including their current role, seniority, company size, or any other measure we collected. The workforce is bifurcating into two realities.
+> One half feels amplified by AI—more capable, more confident, more excited than they’ve been in *their entire career*. The other half feels shaken by it—less sure of their value and whether there’s still a place for them. Which side of that line people fall on predicts how they feel about their career more than anything else, including their current role, seniority, company size, or any other measure we collected. The workforce is bifurcating into two realities.
 > (from [lennysnewsletter.com](https://www.lennysnewsletter.com/p/how-tech-workers-are-feeling-in-2026))
 
 while there are real concerns from the survey such as rising rates of burnout and fear of job loss the underlying shift is clear: **ai is disrupting everything**.

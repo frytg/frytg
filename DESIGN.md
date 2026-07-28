@@ -145,7 +145,7 @@ Contrast is high by design: white on `#293126` for reading, greeny on yellow for
 | H1 | 3.75rem (`text-6xl`) | Bold (700) | Scales from 3rem on mobile. `text-balance`, `tracking-tight`. |
 | H2 | 3rem (`text-5xl`) | Bold | Blog list titles override to `text-2xl sm:text-4xl`. |
 | H3–H6 | 1.875rem → 1.25rem | Bold | Stepped down one level each. |
-| Body | 1.125rem (`text-lg`) | Normal (400) | Default for `p`, `ul`, `li`. |
+| Body | 1.125rem (`text-lg`) | Normal (400) | Default for `p`, `ul`, `ol`, `li`. |
 | Metadata | 0.875rem (`text-sm`) | Normal, italic | Dates, RSS, footer, tags. |
 | Nav buttons | 1.125rem / 1rem | Black (900) | Responsive sizing via `text-base sm:text-lg`. |
 | Inline code | 1.125rem | Normal, monospace | `font-mono` on dark surface background. |
