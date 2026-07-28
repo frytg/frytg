@@ -79,15 +79,15 @@
       "slug": "2024-05-03-eu-acc"
     },
     "content/blog/2026-w27-weeknotes-no2.md": {
-      "contentHash": "aba6a9ab39b13ac1c0c0aebb2d9bc4a4bfcd457416232f6df9300343fa134dbe",
+      "contentHash": "97b8a8509400a385011f023a23a1e319515aaf60908d6d7ba88b6e0b323d2b8e",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptgjktoo22x",
-      "lastPublished": "2026-07-09T17:54:10.123Z",
+      "lastPublished": "2026-07-28T17:25:58.617Z",
       "slug": "2026-w27-weeknotes-no2"
     },
     "content/blog/2026-w28-weeknotes-no3.md": {
-      "contentHash": "e60b9cd70bc373731e9c9efa43262725132a0df5d2d88b12b490ef0b8b3749ca",
+      "contentHash": "119bb8f1906e8f7a5b3d52130404e72b4ada6d45ac0d50b1b90927fb39b08b2a",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mqa7bufja22x",
-      "lastPublished": "2026-07-09T18:09:58.846Z",
+      "lastPublished": "2026-07-28T17:25:58.563Z",
       "slug": "2026-w28-weeknotes-no3"
     },
     "content/blog/2026-w29-weeknotes-no4.md": {
@@ -95,6 +95,18 @@
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mqyyypy5gm2x",
       "lastPublished": "2026-07-19T14:40:02.990Z",
       "slug": "2026-w29-weeknotes-no4"
+    },
+    "content/blog/2026-07-28-migrating-to-tangled.md": {
+      "contentHash": "4d8893416d168895e0243e813e2058eb6dea3169c19b62b08c5f2a26c434bfdf",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mrpwkwyw242x",
+      "lastPublished": "2026-07-28T17:31:22.928Z",
+      "slug": "2026-07-28-migrating-to-tangled"
+    },
+    "content/blog/2026-w30-weeknotes-no5.md": {
+      "contentHash": "6c701a78bc2107757d721fc28210a1d83b7fd21f3e47b4fe563ce9c7e9f59800",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mrpwkx2krm2x",
+      "lastPublished": "2026-07-28T17:25:58.477Z",
+      "slug": "2026-w30-weeknotes-no5"
     }
   },
   "publication": {

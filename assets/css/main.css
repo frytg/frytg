@@ -122,13 +122,15 @@
 	}
 
 	p,
-	ul {
+	ul,
+	ol {
 		@apply my-5;
 		@apply content-column;
 	}
 
 	p,
 	ul,
+	ol,
 	li {
 		@apply text-base sm:text-lg font-normal leading-relaxed;
 
@@ -150,18 +152,27 @@
 		}
 	}
 
-	ul {
-		@apply list-disc;
-		/* ps = content-column horizontal padding + bullet gutter (pl-5 was replacing, not adding) */
+	ul,
+	ol {
+		/* ps = content-column horizontal padding + marker gutter (pl-5 was replacing, not adding) */
 		@apply ps-9 sm:ps-11;
 
 		li {
 			@apply my-2;
 
-			ul {
+			ul,
+			ol {
 				@apply !mx-0 !my-2 !max-w-none !px-0 !ps-6 sm:!ps-7;
 			}
 		}
+	}
+
+	ul {
+		@apply list-disc;
+	}
+
+	ol {
+		@apply list-decimal;
 	}
 
 	hr {
@@ -192,7 +203,8 @@
 		h5,
 		h6,
 		p,
-		ul {
+		ul,
+		ol {
 			@apply !mx-0 !max-w-none !px-0;
 		}
 	}
