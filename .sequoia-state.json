@@ -49,9 +49,9 @@
       "slug": "2026-03-06-hello-world"
     },
     "content/blog/2024-11-20-flyio-openid-token.md": {
-      "contentHash": "a595988b18426a1b31c3c9928bbc0480b5eb26d9340e9969f69b322022709cb5",
+      "contentHash": "9460d1a8f00871a26e3cd635fc4c0734a6d6bd4648838135a8453e26b081f62c",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptaq3u4v22m",
-      "lastPublished": "2026-07-04T14:45:35.980Z",
+      "lastPublished": "2026-08-05T20:08:56.993Z",
       "slug": "2024-11-20-flyio-openid-token"
     },
     "content/blog/2024-09-13-eu-commission-competitiveness.md": {
@@ -85,9 +85,9 @@
       "slug": "2026-w27-weeknotes-no2"
     },
     "content/blog/2026-w28-weeknotes-no3.md": {
-      "contentHash": "119bb8f1906e8f7a5b3d52130404e72b4ada6d45ac0d50b1b90927fb39b08b2a",
+      "contentHash": "e60b9cd70bc373731e9c9efa43262725132a0df5d2d88b12b490ef0b8b3749ca",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mqa7bufja22x",
-      "lastPublished": "2026-07-28T17:25:58.563Z",
+      "lastPublished": "2026-08-05T20:08:54.565Z",
       "slug": "2026-w28-weeknotes-no3"
     },
     "content/blog/2026-w29-weeknotes-no4.md": {
@@ -103,10 +103,16 @@
       "slug": "2026-07-28-migrating-to-tangled"
     },
     "content/blog/2026-w30-weeknotes-no5.md": {
-      "contentHash": "6c701a78bc2107757d721fc28210a1d83b7fd21f3e47b4fe563ce9c7e9f59800",
+      "contentHash": "d0c38cb5d15f77df23c99f25aa3e40899a85e314c87808a96f4d9e1aab3992cf",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mrpwkx2krm2x",
-      "lastPublished": "2026-07-28T17:25:58.477Z",
+      "lastPublished": "2026-08-05T20:08:54.495Z",
       "slug": "2026-w30-weeknotes-no5"
+    },
+    "content/blog/2026-w31-weeknotes-no6.md": {
+      "contentHash": "3b6e7ef1e7bce41c438953372c678e90239a6bf59978368e4a124a820bcc8f15",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3msedfnuyde2x",
+      "lastPublished": "2026-08-05T20:08:54.438Z",
+      "slug": "2026-w31-weeknotes-no6"
     }
   },
   "publication": {
