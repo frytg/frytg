@@ -82,9 +82,7 @@ async function main(): Promise<void> {
 	const rows = await listProcesses()
 	const exclude = excludedPids(rows)
 
-	const hugoProcesses = rows.filter(
-		(row) => !exclude.has(row.pid) && commandLooksLikeHugo(row.command),
-	)
+	const hugoProcesses = rows.filter((row) => !exclude.has(row.pid) && commandLooksLikeHugo(row.command))
 
 	if (hugoProcesses.length > 0) {
 		console.error('Hugo process check failed. Stop Hugo before publishing or deploying:\n')
@@ -92,7 +90,7 @@ async function main(): Promise<void> {
 			console.error(`  pid ${pid}: ${command}`)
 		}
 		console.error(
-			'\nIf you use `just dev`, stop it first. Local preview uses `hugo server --renderToMemory` and must not run during build/deploy.',
+			'\nIf you use `just dev`, stop it first. Local preview uses `hugo server --renderToMemory` and must not run during build/deploy.'
 		)
 		process.exit(1)
 	}

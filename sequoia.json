@@ -5,9 +5,7 @@
 	"publicDir": "static",
 	"outputDir": "public",
 	"pathPrefix": "/blog",
-	"ignore": [
-		"_index.md"
-	],
+	"ignore": ["_index.md"],
 	"frontmatter": {
 		"publishDate": "date",
 		"description": "seo_description",

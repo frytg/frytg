@@ -2,10 +2,10 @@
 // Fails if localhost, 127.0.0.1, or livereload references are found.
 // Run via `just verify-build` after `just build` and before `just deploy`.
 
-import { glob } from 'glob'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import process from 'node:process'
+import { glob } from 'glob'
 
 const ROOT = join(import.meta.dirname, '..')
 const PUBLIC_DIR = join(ROOT, 'public')
@@ -37,30 +37,20 @@ async function main(): Promise<void> {
 				continue
 			}
 
-			const lineNumber = content
-				.split('\n')
-				.findIndex((line) => pattern.test(line))
+			const lineNumber = content.split('\n').findIndex((line) => pattern.test(line))
 
-			console.error(
-				`Found ${label} in public/${file}:${lineNumber + 1}`,
-			)
+			console.error(`Found ${label} in public/${file}:${lineNumber + 1}`)
 			failures += 1
 		}
 	}
 
 	if (failures > 0) {
-		console.error(
-			`\nProduction build verification failed (${failures} issue${failures === 1 ? '' : 's'}).`,
-		)
-		console.error(
-			'Run `just build` before deploy. Use `just dev` for local preview (renders to memory, not public/).',
-		)
+		console.error(`\nProduction build verification failed (${failures} issue${failures === 1 ? '' : 's'}).`)
+		console.error('Run `just build` before deploy. Use `just dev` for local preview (renders to memory, not public/).')
 		process.exit(1)
 	}
 
-	console.log(
-		`Production build verification passed (${files.length} files scanned).`,
-	)
+	console.log(`Production build verification passed (${files.length} files scanned).`)
 }
 
 main().catch((error: unknown) => {

@@ -12,7 +12,7 @@ tags:
   - AI
   - agents
   - coding
-atUri: "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mrpwkx2krm2x"
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mrpwkx2krm2x'
 ---
 
 is a weeknotes blog post actually late, if you can just backdate the article? 👀

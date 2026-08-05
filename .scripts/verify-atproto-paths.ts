@@ -3,11 +3,11 @@
 // Run via `just atproto-verify-paths` before publish or dry-run.
 
 import { spawn } from 'node:child_process'
-import { glob } from 'glob'
 import { access, readFile, stat } from 'node:fs/promises'
 import { basename, join, relative } from 'node:path'
 import process from 'node:process'
 import { text } from 'node:stream/consumers'
+import { glob } from 'glob'
 import { parse as parseYaml } from 'yaml'
 
 const ROOT = join(import.meta.dirname, '..')
@@ -53,13 +53,8 @@ async function exists(path: string): Promise<boolean> {
 	}
 }
 
-async function resolveCoverImagePath(
-	config: SequoiaConfig,
-	coverImage: string,
-): Promise<string | undefined> {
-	const imagesDir = config.imagesDir
-		? join(ROOT, config.imagesDir)
-		: undefined
+async function resolveCoverImagePath(config: SequoiaConfig, coverImage: string): Promise<string | undefined> {
+	const imagesDir = config.imagesDir ? join(ROOT, config.imagesDir) : undefined
 	const contentDir = join(ROOT, config.contentDir)
 
 	if (imagesDir) {
@@ -67,9 +62,7 @@ async function resolveCoverImagePath(
 		const imagesDirIndex = coverImage.indexOf(imagesDirBaseName)
 		const relativePath =
 			imagesDirIndex !== -1
-				? coverImage
-						.substring(imagesDirIndex + imagesDirBaseName.length)
-						.replace(/^[/\\]/, '')
+				? coverImage.substring(imagesDirIndex + imagesDirBaseName.length).replace(/^[/\\]/, '')
 				: basename(coverImage)
 		const imagePath = join(imagesDir, relativePath)
 		if (await exists(imagePath)) {
@@ -108,9 +101,7 @@ async function hugoPermalinks(): Promise<Map<string, string>> {
 			continue
 		}
 
-		const permalinkMatch = line.match(
-			/(https:\/\/www\.frytg\.digital\/blog\/[^,\s]+)/,
-		)
+		const permalinkMatch = line.match(/(https:\/\/www\.frytg\.digital\/blog\/[^,\s]+)/)
 		if (!permalinkMatch?.[1]) {
 			continue
 		}
@@ -122,9 +113,7 @@ async function hugoPermalinks(): Promise<Map<string, string>> {
 }
 
 async function main(): Promise<void> {
-	const config = JSON.parse(
-		await readFile(CONFIG_PATH, 'utf-8'),
-	) as SequoiaConfig
+	const config = JSON.parse(await readFile(CONFIG_PATH, 'utf-8')) as SequoiaConfig
 	const contentDir = join(ROOT, config.contentDir)
 	const ignore = config.ignore ?? []
 	const draftField = config.frontmatter?.draft ?? 'draft'
@@ -158,27 +147,24 @@ async function main(): Promise<void> {
 		const normalizedHugo = hugoPath.replace(/\/$/, '')
 		if (normalizedHugo !== expected) {
 			console.error(
-				`Path mismatch for ${relative(ROOT, join(contentDir, file))}: sequoia=${expected}, hugo=${normalizedHugo}`,
+				`Path mismatch for ${relative(ROOT, join(contentDir, file))}: sequoia=${expected}, hugo=${normalizedHugo}`
 			)
 			mismatches += 1
 		} else {
 			console.log(`OK ${slug} -> ${expected}`)
 		}
 
-		const coverImageValue =
-			frontmatter[coverField] ?? frontmatter.image
+		const coverImageValue = frontmatter[coverField] ?? frontmatter.image
 		if (typeof coverImageValue === 'string' && coverImageValue.length > 0) {
 			const resolved = await resolveCoverImagePath(config, coverImageValue)
 			if (!resolved) {
-				console.error(
-					`Cover image not found for ${slug}: ${coverImageValue} (check sequoia.json imagesDir)`,
-				)
+				console.error(`Cover image not found for ${slug}: ${coverImageValue} (check sequoia.json imagesDir)`)
 				mismatches += 1
 			} else {
 				const { size } = await stat(resolved)
 				if (size > MAX_COVER_IMAGE_BYTES) {
 					console.error(
-						`Cover image for ${slug} must be less than 1MB: ${resolved} (${(size / 1_000_000).toFixed(1)}MB)`,
+						`Cover image for ${slug} must be less than 1MB: ${resolved} (${(size / 1_000_000).toFixed(1)}MB)`
 					)
 					mismatches += 1
 				}

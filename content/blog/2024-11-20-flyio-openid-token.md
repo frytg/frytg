@@ -48,11 +48,11 @@ GCP documents a format for [_Executable-sourced credentials_](https://cloud.goog
 
 ```json
 {
-  "version": 1,
-  "success": true,
-  "token_type": "urn:ietf:params:oauth:token-type:id_token",
-  "id_token": "HEADER.PAYLOAD.SIGNATURE",
-  "expiration_time": 1620499962
+	"version": 1,
+	"success": true,
+	"token_type": "urn:ietf:params:oauth:token-type:id_token",
+	"id_token": "HEADER.PAYLOAD.SIGNATURE",
+	"expiration_time": 1620499962
 }
 ```
 
@@ -64,18 +64,18 @@ When setting up a [Google Cloud Workload Identity](https://cloud.google.com/iam/
 
 ```json
 {
-  "universe_domain": "googleapis.com",
-  "type": "external_account",
-  "audience": "//iam.googleapis.com/projects/<NUMBER>/locations/global/workloadIdentityPools/<POOL_NAME>/providers/<PROVIDER_NAME>",
-  "subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
-  "token_url": "https://sts.googleapis.com/v1/token",
-  "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/<EMAIL>:generateAccessToken",
-  "credential_source": {
-    "executable": {
-      "command": "./bin/flyio_openid_token https://oidc.fly.io/<ORG_SLUG>",
-      "timeout_millis": 5000
-    }
-  }
+	"universe_domain": "googleapis.com",
+	"type": "external_account",
+	"audience": "//iam.googleapis.com/projects/<NUMBER>/locations/global/workloadIdentityPools/<POOL_NAME>/providers/<PROVIDER_NAME>",
+	"subject_token_type": "urn:ietf:params:oauth:token-type:jwt",
+	"token_url": "https://sts.googleapis.com/v1/token",
+	"service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/<EMAIL>:generateAccessToken",
+	"credential_source": {
+		"executable": {
+			"command": "./bin/flyio_openid_token https://oidc.fly.io/<ORG_SLUG>",
+			"timeout_millis": 5000
+		}
+	}
 }
 ```
 

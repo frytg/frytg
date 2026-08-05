@@ -11,7 +11,7 @@
 	"arrowParens": "always",
 	"bracketSameLine": false,
 	"bracketSpacing": true,
-	"ignorePatterns": ["**/static", "**/keys", "layouts/**", "**/node_modules/**", "**/*.sops.*"],
+	"ignorePatterns": ["**/static", "**/keys", "layouts/**", "**/node_modules/**", "**/*.sops.*", ".sequoia-state.json"],
 	"sortImports": {
 		"groups": [
 			"type-builtin",

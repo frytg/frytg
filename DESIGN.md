@@ -3,17 +3,17 @@ version: alpha
 name: FRYTG Digital
 description: Personal site and blog for Daniel Freytag — dark forest-green canvas, high-contrast white type, and electric yellow interaction accents.
 colors:
-  primary: "#FFFFFF"
-  secondary: "#3D4938"
-  tertiary: "oklch(96.5% 0.243 110.2)"
-  neutral: "#293126"
-  background: "#293126"
-  surface: "#171D15"
-  on-tertiary: "{colors.secondary}"
-  on-background: "{colors.primary}"
-  muted: "#EBEAE2"
-  accent-orange: "#F09139"
-  accent-gray: "#D6E1CB"
+  primary: '#FFFFFF'
+  secondary: '#3D4938'
+  tertiary: 'oklch(96.5% 0.243 110.2)'
+  neutral: '#293126'
+  background: '#293126'
+  surface: '#171D15'
+  on-tertiary: '{colors.secondary}'
+  on-background: '{colors.primary}'
+  muted: '#EBEAE2'
+  accent-orange: '#F09139'
+  accent-gray: '#D6E1CB'
 typography:
   h1:
     fontFamily: InterVariable
@@ -68,49 +68,49 @@ spacing:
 components:
   nav-button:
     backgroundColor: transparent
-    textColor: "{colors.on-background}"
+    textColor: '{colors.on-background}'
     typography: nav-button
-    rounded: "{rounded.none}"
+    rounded: '{rounded.none}'
     padding: 8px 12px
   nav-button-hover:
-    backgroundColor: "{colors.tertiary}"
-    textColor: "{colors.on-tertiary}"
+    backgroundColor: '{colors.tertiary}'
+    textColor: '{colors.on-tertiary}'
     typography: nav-button
-    rounded: "{rounded.none}"
+    rounded: '{rounded.none}'
     padding: 8px 12px
   nav-button-active:
-    backgroundColor: "{colors.tertiary}"
-    textColor: "{colors.on-tertiary}"
+    backgroundColor: '{colors.tertiary}'
+    textColor: '{colors.on-tertiary}'
     typography: nav-button
-    rounded: "{rounded.none}"
+    rounded: '{rounded.none}'
     padding: 8px 12px
   link-inline:
-    backgroundColor: "{colors.tertiary}1A"
-    textColor: "{colors.on-background}"
+    backgroundColor: '{colors.tertiary}1A'
+    textColor: '{colors.on-background}'
     typography: body-lg
-    rounded: "{rounded.none}"
+    rounded: '{rounded.none}'
     padding: 4px 8px
   link-inline-hover:
-    backgroundColor: "{colors.tertiary}"
-    textColor: "{colors.on-tertiary}"
+    backgroundColor: '{colors.tertiary}'
+    textColor: '{colors.on-tertiary}'
     typography: body-lg
-    rounded: "{rounded.none}"
+    rounded: '{rounded.none}'
     padding: 4px 8px
   link-heading-hover:
-    textColor: "{colors.tertiary}"
+    textColor: '{colors.tertiary}'
   code-inline:
-    backgroundColor: "{colors.surface}"
-    textColor: "{colors.on-background}"
+    backgroundColor: '{colors.surface}'
+    textColor: '{colors.on-background}'
     typography: code-inline
-    rounded: "{rounded.none}"
+    rounded: '{rounded.none}'
     padding: 4px 8px
   blockquote:
-    textColor: "{colors.on-background}"
+    textColor: '{colors.on-background}'
     typography: body-lg
     padding: 0 0 0 16px
   selection:
-    backgroundColor: "{colors.tertiary}"
-    textColor: "{colors.on-tertiary}"
+    backgroundColor: '{colors.tertiary}'
+    textColor: '{colors.on-tertiary}'
 ---
 
 ## Overview
@@ -140,15 +140,15 @@ Contrast is high by design: white on `#293126` for reading, greeny on yellow for
 
 **Inter Variable** (`InterVariable`, sans-serif) is the only typeface. Loaded via `inter-ui/inter-variable-latin.css` in `assets/css/fonts.scss`.
 
-| Role | Size (desktop) | Weight | Notes |
-|:-----|:---------------|:-------|:------|
-| H1 | 3.75rem (`text-6xl`) | Bold (700) | Scales from 3rem on mobile. `text-balance`, `tracking-tight`. |
-| H2 | 3rem (`text-5xl`) | Bold | Blog list titles override to `text-2xl sm:text-4xl`. |
-| H3–H6 | 1.875rem → 1.25rem | Bold | Stepped down one level each. |
-| Body | 1.125rem (`text-lg`) | Normal (400) | Default for `p`, `ul`, `ol`, `li`. |
-| Metadata | 0.875rem (`text-sm`) | Normal, italic | Dates, RSS, footer, tags. |
-| Nav buttons | 1.125rem / 1rem | Black (900) | Responsive sizing via `text-base sm:text-lg`. |
-| Inline code | 1.125rem | Normal, monospace | `font-mono` on dark surface background. |
+| Role        | Size (desktop)       | Weight            | Notes                                                         |
+| :---------- | :------------------- | :---------------- | :------------------------------------------------------------ |
+| H1          | 3.75rem (`text-6xl`) | Bold (700)        | Scales from 3rem on mobile. `text-balance`, `tracking-tight`. |
+| H2          | 3rem (`text-5xl`)    | Bold              | Blog list titles override to `text-2xl sm:text-4xl`.          |
+| H3–H6       | 1.875rem → 1.25rem   | Bold              | Stepped down one level each.                                  |
+| Body        | 1.125rem (`text-lg`) | Normal (400)      | Default for `p`, `ul`, `ol`, `li`.                            |
+| Metadata    | 0.875rem (`text-sm`) | Normal, italic    | Dates, RSS, footer, tags.                                     |
+| Nav buttons | 1.125rem / 1rem      | Black (900)       | Responsive sizing via `text-base sm:text-lg`.                 |
+| Inline code | 1.125rem             | Normal, monospace | `font-mono` on dark surface background.                       |
 
 Headings, `.title-style` blocks, and code blocks share a **two-thirds column** (`lg:w-2/3 lg:mx-auto`) at large breakpoints. Paragraphs and lists follow the same width constraint for consistent reading measure (~66 characters).
 

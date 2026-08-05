@@ -3,11 +3,11 @@
 // Run via `just atproto-prepare-covers` before ATProto publish or dry-run.
 
 import { spawn } from 'node:child_process'
-import { glob } from 'glob'
 import { mkdir, readFile, stat } from 'node:fs/promises'
 import { basename, dirname, join } from 'node:path'
 import process from 'node:process'
 import { text } from 'node:stream/consumers'
+import { glob } from 'glob'
 import { parse as parseYaml } from 'yaml'
 
 const ROOT = join(import.meta.dirname, '..')
@@ -34,13 +34,8 @@ function parseFrontmatter(raw: string): Record<string, unknown> {
 	return parseYaml(match[1]) as Record<string, unknown>
 }
 
-async function resolveImagePath(
-	config: SequoiaConfig,
-	imagePath: string,
-): Promise<string | undefined> {
-	const imagesDir = config.imagesDir
-		? join(ROOT, config.imagesDir)
-		: undefined
+async function resolveImagePath(config: SequoiaConfig, imagePath: string): Promise<string | undefined> {
+	const imagesDir = config.imagesDir ? join(ROOT, config.imagesDir) : undefined
 	const contentDir = join(ROOT, config.contentDir)
 
 	if (imagesDir) {
@@ -48,9 +43,7 @@ async function resolveImagePath(
 		const imagesDirIndex = imagePath.indexOf(imagesDirBaseName)
 		const relativePath =
 			imagesDirIndex !== -1
-				? imagePath
-						.substring(imagesDirIndex + imagesDirBaseName.length)
-						.replace(/^[/\\]/, '')
+				? imagePath.substring(imagesDirIndex + imagesDirBaseName.length).replace(/^[/\\]/, '')
 				: basename(imagePath)
 		const resolved = join(imagesDir, relativePath)
 		try {
@@ -76,26 +69,14 @@ function atprotoOutputPath(sourcePath: string, imagesDir: string): string {
 	return join(imagesRoot, ATPROTO_IMAGES_SUBDIR, relative)
 }
 
-async function compressToLimit(
-	source: string,
-	destination: string,
-): Promise<void> {
+async function compressToLimit(source: string, destination: string): Promise<void> {
 	await mkdir(dirname(destination), { recursive: true })
 
 	for (const quality of [85, 80, 75, 70]) {
-		const proc = spawn(
-			'magick',
-			[
-				source,
-				'-resize',
-				'2560x>',
-				'-strip',
-				'-quality',
-				String(quality),
-				destination,
-			],
-			{ stdout: 'ignore', stderr: 'pipe' },
-		)
+		const proc = spawn('magick', [source, '-resize', '2560x>', '-strip', '-quality', String(quality), destination], {
+			stdout: 'ignore',
+			stderr: 'pipe',
+		})
 		const [stderr, exitCode] = await Promise.all([
 			proc.stderr ? text(proc.stderr) : Promise.resolve(''),
 			new Promise<number | null>((resolve) => proc.on('close', resolve)),
@@ -111,15 +92,11 @@ async function compressToLimit(
 	}
 
 	const { size } = await stat(destination)
-	throw new Error(
-		`Could not compress ${source} below 1MB (best effort: ${(size / 1_000_000).toFixed(1)}MB)`,
-	)
+	throw new Error(`Could not compress ${source} below 1MB (best effort: ${(size / 1_000_000).toFixed(1)}MB)`)
 }
 
 async function main(): Promise<void> {
-	const config = JSON.parse(
-		await readFile(CONFIG_PATH, 'utf-8'),
-	) as SequoiaConfig
+	const config = JSON.parse(await readFile(CONFIG_PATH, 'utf-8')) as SequoiaConfig
 	const imagesDir = config.imagesDir ?? 'assets/images'
 	const contentDir = join(ROOT, config.contentDir)
 	const ignore = config.ignore ?? []
@@ -158,20 +135,14 @@ async function main(): Promise<void> {
 		const destination = atprotoOutputPath(resolved, imagesDir)
 		const destStat = await stat(destination).catch(() => undefined)
 		const sourceStat = await stat(resolved)
-		if (
-			destStat &&
-			destStat.mtimeMs >= sourceStat.mtimeMs &&
-			destStat.size <= MAX_COVER_IMAGE_BYTES
-		) {
+		if (destStat && destStat.mtimeMs >= sourceStat.mtimeMs && destStat.size <= MAX_COVER_IMAGE_BYTES) {
 			console.log(`Up to date ${basename(destination)}`)
 			continue
 		}
 
 		await compressToLimit(resolved, destination)
 		const compressedSize = (await stat(destination)).size
-		console.log(
-			`Created ${destination.replace(`${ROOT}/`, '')} (${(compressedSize / 1024).toFixed(0)}KB)`,
-		)
+		console.log(`Created ${destination.replace(`${ROOT}/`, '')} (${(compressedSize / 1024).toFixed(0)}KB)`)
 		created += 1
 	}
 
