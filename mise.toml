@@ -1,0 +1,12 @@
+[settings]
+# monorepo_root = true
+minimum_release_age = "3d" # override the default 24h delay
+lockfile = true
+
+[tools]
+# Node for root aube/oxc (just lint / just format / just install).
+bun = "1.3.14"
+# Package manager — https://aube.jdx.dev
+aube = "1.37.0"
+"npm:oxlint" = { version = "latest" }
+"npm:oxfmt" = { version = "latest" }

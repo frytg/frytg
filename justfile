@@ -3,14 +3,36 @@ _default:
 	just --list
 
 # use a default sops file, or allow to be overridden by SOPS_ENV_FILE environment variable
-DEFAULT_SOPS_FILE:= '.env.sops.yaml'
-SELECTED_SOPS_FILE:= env('SOPS_ENV_FILE', DEFAULT_SOPS_FILE)
+DEFAULT_SOPS_FILE := '.env.sops.yaml'
+SELECTED_SOPS_FILE := env('SOPS_ENV_FILE', DEFAULT_SOPS_FILE)
 
 # run a command with the selected sops file (injecting environment variables)
 _env *args:
-	@echo "Running command with SOPS > {{args}}"
-	@sops exec-env {{SELECTED_SOPS_FILE}} "{{args}}"
+	@echo "Running command with SOPS > {{ args }}"
+	@sops exec-env {{ SELECTED_SOPS_FILE }} "{{ args }}"
 
+# install toolchain (mise) + package dependencies (aube)
+[group('DEV-SETUP')]
+install:
+	mise install  
+	aube install --silent
+
+# update package dependencies
+[group('DEV-SETUP')]
+update:
+	mise upgrade --bump -y --local
+	mise outdated --quiet
+	aube update --silent
+	just format
+
+[group('LOCAL')]
+lint:
+	oxlint
+
+[group('LOCAL')]
+format:
+	oxlint --fix
+	oxfmt
 
 # build vite
 [group('BUILD')]
@@ -19,7 +41,7 @@ build-vite:
 	rm -f assets/css/_main-compiled.scss
 	rm -rf assets/css/dist
 	nubx vite build
-alias vite:=build-vite
+alias vite := build-vite
 
 # build the site for production
 [group('BUILD')]
@@ -104,11 +126,6 @@ local:
 	just build-vite
 	hugo server --renderToMemory
 
-lint:
-	just build
-	nubx biome lint
-	nubx @google/design.md designmd lint DESIGN.md
-
 ## ---------------------------------
 ## ENCRYPTION shortcuts
 
@@ -118,7 +135,7 @@ update-keys:
 	just _update-key .env.sops.yaml
 
 _update-key file:
-	sops updatekeys {{file}}
+	sops updatekeys {{ file }}
 
 # rotate keys (refreshed internal encryption keys)
 [group('ENCRYPTION')]
@@ -126,9 +143,9 @@ rotate-keys:
 	just _rotate-key .env.sops.yaml
 
 _rotate-key file:
-	sops rotate --in-place {{file}}
+	sops rotate --in-place {{ file }}
 
 # make changes to a secret file
 [group('ENCRYPTION')]
 edit-key file:
-	EDITOR=nano sops edit {{file}}
+	EDITOR=nano sops edit {{ file }}
