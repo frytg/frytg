@@ -2,19 +2,22 @@
 
 ## Local Setup
 
-Install [Nub](https://nubjs.com/docs/install) and [Hugo](https://gohugo.io/installation/).
+Install [mise](https://mise.jdx.dev/), [aube](https://aube.jdx.dev) (via mise), and [Hugo](https://gohugo.io/installation/).
 
 ```sh
-brew install hugo
+brew install mise hugo
+eval "$(mise activate zsh)"  # or your shell
 ```
 
 ### Install Dependencies
 
-Use nub to install everything:
+Provision the pinned toolchain and install packages:
 
 ```sh
-nub install
+just install
 ```
+
+That runs `mise install` then `aube install`. You can also run those directly.
 
 ### Run local server
 

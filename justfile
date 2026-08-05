@@ -40,7 +40,7 @@ build-vite:
 	rm -rf public
 	rm -f assets/css/_main-compiled.scss
 	rm -rf assets/css/dist
-	nubx vite build
+	aubx vite build
 alias vite := build-vite
 
 # build the site for production
@@ -53,44 +53,44 @@ build:
 # verify public/ contains no dev-server URLs
 [group('BUILD')]
 verify-build:
-	nub .scripts/verify-production-build.ts
+	aube node .scripts/verify-production-build.ts
 
 # fail if any Hugo process is running (dev server must not be active)
 [group('BUILD')]
 verify-no-hugo:
-	nub .scripts/verify-no-hugo-process.ts
+	aube node .scripts/verify-no-hugo-process.ts
 
 # initialize Standard.site publication (one-time; requires ATP credentials in SOPS)
 [group('ATP')]
 atproto-init:
-	just _env "nub .scripts/atproto-init.ts"
+	just _env "aube node .scripts/atproto-init.ts"
 
 # verify Sequoia paths match Hugo permalinks
 [group('ATP')]
 atproto-verify-paths:
-	nub .scripts/verify-atproto-paths.ts
+	aube node .scripts/verify-atproto-paths.ts
 
 # preview ATProto publish (paths + Sequoia dry-run when credentials exist)
 [group('ATP')]
 atproto-dry-run:
 	just atproto-prepare-covers
 	just atproto-verify-paths
-	just _env "nubx sequoia publish --dry-run"
+	just _env "aubx sequoia publish --dry-run"
 
 # verify built HTML contains ATProto verification tags
 [group('ATP')]
 atproto-verify-build:
-	nub .scripts/verify-atproto-build.ts
+	aube node .scripts/verify-atproto-build.ts
 
 # publish blog posts to ATProto (Standard.site)
 [group('ATP')]
 atproto-prepare-covers:
-	nub .scripts/prepare-atproto-covers.ts
+	aube node .scripts/prepare-atproto-covers.ts
 
 atproto-publish:
 	just atproto-prepare-covers
 	just atproto-verify-paths
-	just _env "nubx sequoia publish"
+	just _env "aubx sequoia publish"
 
 # full publish pipeline: ATProto init → publish → build → deploy → purge
 [group('BUILD')]
@@ -108,17 +108,17 @@ publish:
 deploy:
 	just verify-no-hugo
 	just verify-build
-	just _env "nub .scripts/rsync-to-bunny-storage.ts"
+	just _env "aube node .scripts/rsync-to-bunny-storage.ts"
 
 # purge bunny pull zone cache
 [group('BUNNY')]
 purge:
-	just _env "nub .scripts/purge-bunny-pull-zone.ts"
+	just _env "aube node .scripts/purge-bunny-pull-zone.ts"
 
 # run dev server locally
 [group('DEV')]
 dev:
-	nubx concurrently 'nubx vite' 'just local'
+	aube x concurrently 'aubx vite' 'just local'
 
 # run hugo dev server locally
 [group('DEV')]
