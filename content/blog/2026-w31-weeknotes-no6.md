@@ -12,7 +12,7 @@ tags:
   - AI
   - agents
   - coding
-atUri: "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3msedfnuyde2x"
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3msedfnuyde2x'
 ---
 
 ![elevation](images/blog/2026-weeknotes/2026-07-26-weeknotes-6.jpg)

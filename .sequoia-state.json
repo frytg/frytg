@@ -109,10 +109,16 @@
       "slug": "2026-w30-weeknotes-no5"
     },
     "content/blog/2026-w31-weeknotes-no6.md": {
-      "contentHash": "3b6e7ef1e7bce41c438953372c678e90239a6bf59978368e4a124a820bcc8f15",
+      "contentHash": "7c4c08ad9604726998818c8fb09fefc24670189d49bf0f35bd10fd1d876269cc",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3msedfnuyde2x",
-      "lastPublished": "2026-08-05T20:08:54.438Z",
+      "lastPublished": "2026-08-09T18:35:27.706Z",
       "slug": "2026-w31-weeknotes-no6"
+    },
+    "content/blog/2026-w32-weeknotes-no7.md": {
+      "contentHash": "34960780bed92217fc1e0eb44109a93e9ed4196072a5c0f8e1467afc540972ae",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3msoa2aqcx42x",
+      "lastPublished": "2026-08-09T18:35:27.643Z",
+      "slug": "2026-w32-weeknotes-no7"
     }
   },
   "publication": {
