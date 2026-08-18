@@ -92,6 +92,11 @@ atproto-publish:
 	just atproto-verify-paths
 	just _env "aubx sequoia publish"
 
+# update the site.standard.publication icon on the PDS (Bluesky embed-card favicon)
+[group('ATP')]
+atproto-update-publication-icon:
+	just _env "aube node .scripts/atproto-update-publication-icon.ts"
+
 # full publish pipeline: ATProto init → publish → build → deploy → purge
 [group('BUILD')]
 publish:
