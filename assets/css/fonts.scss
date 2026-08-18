@@ -1,2 +1,15 @@
-//@import "inter-ui/inter-latin.css";
-@import 'inter-ui/inter-variable-latin.css';
+@font-face {
+	font-family: 'Geist';
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url('../../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2-variations');
+}
+
+@font-face {
+	font-family: 'Geist';
+	font-style: italic;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url('../../node_modules/geist/dist/fonts/geist-sans/Geist-Italic[wght].woff2') format('woff2-variations');
+}

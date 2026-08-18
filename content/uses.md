@@ -76,7 +76,7 @@ _Do you have more great recommendations? Please [let me know](/social)!_
 
 While switching over from [_Jekyll_](https://jekyllrb.com/) to [_Hugo_](https://gohugo.io/), I also rewrote most of it to make it as minimal and fast as possible. Most pages are written in pure Markdown with custom attributes. The layout is some bare-bones HTML structure with custom elements for pages and the blog.
 
-The style is based on [_Tailwind CSS_](https://tailwindcss.com/), with some pre-processing to bundle the [_Inter_](https://rsms.me/inter/) font using [_Vite_](https://vitejs.dev/). The final static assets are served through [_Bunny CDN_](https://bunnycdn.com/). The source code is publicly hosted on [_GitHub_](https://github.com/frytg/frytgdigital).
+The style is based on [_Tailwind CSS_](https://tailwindcss.com/), with some pre-processing to bundle the [_Geist_](https://vercel.com/font) font using [_Vite_](https://vitejs.dev/). The final static assets are served through [_Bunny CDN_](https://bunnycdn.com/). The source code is publicly hosted on [_GitHub_](https://github.com/frytg/frytgdigital).
 
 ### Kudos
 

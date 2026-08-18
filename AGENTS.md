@@ -21,7 +21,7 @@ Task runner: [just](https://github.com/casey/just). All project commands live in
 
 ## Design
 
-Read [DESIGN.md](./DESIGN.md) before changing UI, colors, typography, or layout. Match existing tokens and patterns; do not introduce new accent colors, shadows, or rounded components unless DESIGN.md is updated first.
+Read [DESIGN.md](https://tangled.org/frytg.digital/dotfiles/blob/main/DESIGN.md) before changing UI, colors, typography, or layout. Match existing tokens and patterns; do not introduce new accent colors, shadows, or rounded components unless DESIGN.md is updated first.
 
 ## Code style
 
