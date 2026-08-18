@@ -115,10 +115,16 @@
       "slug": "2026-w31-weeknotes-no6"
     },
     "content/blog/2026-w32-weeknotes-no7.md": {
-      "contentHash": "34960780bed92217fc1e0eb44109a93e9ed4196072a5c0f8e1467afc540972ae",
+      "contentHash": "51152e94baa2aa26fe03791b40f3c03651af1fb06b71b71927827ca1e101b698",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3msoa2aqcx42x",
-      "lastPublished": "2026-08-09T18:35:27.643Z",
+      "lastPublished": "2026-08-18T18:47:57.579Z",
       "slug": "2026-w32-weeknotes-no7"
+    },
+    "content/blog/2026-w33-weeknotes-no8.md": {
+      "contentHash": "5e5c2395fd5275f0d49b3205d6adf7fe374d79bf6d2a99aaddd69f442934e3d9",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mteuwuwoue2x",
+      "lastPublished": "2026-08-18T18:47:57.530Z",
+      "slug": "2026-w33-weeknotes-no8"
     }
   },
   "publication": {
