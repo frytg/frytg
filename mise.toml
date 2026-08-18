@@ -8,6 +8,6 @@ lockfile = true
 node = "26"
 bun = "1.3.14"
 # Package manager — https://aube.jdx.dev
-aube = "1.37.0"
+aube = "1.40.0"
 "npm:oxlint" = { version = "latest" }
 "npm:oxfmt" = { version = "latest" }
