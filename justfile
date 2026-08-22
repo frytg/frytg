@@ -97,6 +97,7 @@ publish:
 # sync to bunny storage
 [group('BUNNY')]
 deploy:
+	mkdir -p temp
 	just verify-build
 	just _env "aube node .scripts/rsync-to-bunny-storage.ts"
 
