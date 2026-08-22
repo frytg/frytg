@@ -1,0 +1,14 @@
+---
+import TaxonomyIndex from '../../components/TaxonomyIndex.astro'
+import Base from '../../layouts/Base.astro'
+import { publishedPosts, taxonomyTerms } from '../../lib/content.ts'
+import { site } from '../../site.ts'
+
+const posts = await publishedPosts()
+const terms = taxonomyTerms(posts, 'tags')
+const categories = taxonomyTerms(posts, 'categories').map((term) => term.name)
+---
+
+<Base title="Tags" description="" canonicalPath="/tags/" image={site.ogImage}>
+	<TaxonomyIndex title="Tags" terms={terms} termBase="tags" categories={categories} />
+</Base>

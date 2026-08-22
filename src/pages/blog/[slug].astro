@@ -1,0 +1,67 @@
+---
+import { getCollection, render } from 'astro:content'
+import PostFooter from '../../components/PostFooter.astro'
+import { formatDateHuman, formatDateIso } from '../../lib/dates.ts'
+import Base from '../../layouts/Base.astro'
+import { absoluteUrl, blogPermalink, site } from '../../site.ts'
+
+export const getStaticPaths = async () => {
+	const posts = await getCollection('blog', ({ data }) => !data.draft)
+	return posts.map((post) => ({
+		params: { slug: post.id },
+		props: { post },
+	}))
+}
+
+const { post } = Astro.props
+const { Content } = await render(post)
+const permalink = blogPermalink(post.id)
+const description = post.data.seo_description ?? post.data.summary ?? ''
+const publishedTime = formatDateIso(post.data.date)
+const sameAs = site.menus.social.map((item) => item.url)
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'BlogPosting',
+	headline: post.data.title,
+	url: absoluteUrl(permalink),
+	mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(permalink) },
+	description,
+	author: {
+		'@type': 'Person',
+		name: site.author.name,
+		url: site.baseURL,
+		sameAs,
+	},
+	publisher: {
+		'@type': 'Person',
+		name: site.author.name,
+		url: site.baseURL,
+		sameAs,
+	},
+	datePublished: publishedTime,
+	keywords: post.data.tags,
+}
+
+const highlightClass = post.data.highlight_bold ? ' container-bold' : ''
+---
+
+<Base
+	title={post.data.title}
+	description={description}
+	canonicalPath={permalink}
+	image={post.data.image ?? site.ogImage}
+	ogType="article"
+	atUri={post.data.atUri}
+	publishedTime={publishedTime}
+	jsonLd={jsonLd}
+	rssHref="/blog/index.xml"
+>
+	<div class={`container container-custom${highlightClass}`}>
+		<h1 itemprop="headline">{post.data.title}</h1>
+		<p class="text-meta">
+			<time datetime={publishedTime}>{formatDateHuman(post.data.date)}</time>
+		</p>
+		<Content />
+		<PostFooter atUri={post.data.atUri} tags={post.data.tags} />
+	</div>
+</Base>

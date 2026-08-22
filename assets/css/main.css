@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @source '../../content/**/*.{html,js,md}';
 @source '../../layouts/**/*.{html,js}';
+@source '../../src/**/*.{astro,html,js,ts}';
 
 @theme {
 	/* colors */

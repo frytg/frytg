@@ -1,0 +1,25 @@
+---
+import PostList from '../../components/PostList.astro'
+import Base from '../../layouts/Base.astro'
+import { publishedPosts, taxonomyTerms } from '../../lib/content.ts'
+import { site } from '../../site.ts'
+
+/** @returns One page per category used on a published post. */
+export const getStaticPaths = async () => {
+	const terms = taxonomyTerms(await publishedPosts(), 'categories')
+	return terms.map((term) => ({
+		params: { category: term.slug },
+		props: term,
+	}))
+}
+
+const { name, slug, posts } = Astro.props
+const permalink = `/categories/${slug}/`
+---
+
+<Base title={name} description="" canonicalPath={permalink} noindex image={site.ogImage}>
+	<div class="container container-custom">
+		<h1>{name}</h1>
+		<PostList posts={posts} />
+	</div>
+</Base>

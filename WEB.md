@@ -29,6 +29,17 @@ just dev
 
 Visit the site at [localhost:1313](http://localhost:1313).
 
+## Astro spike
+
+Production is still Hugo (`just build` → `public/`). The Astro spike is a parallel pipeline that writes to `dist/` and is not deployed.
+
+```sh
+just spike-dev   # http://localhost:4321
+just spike       # astro build + verify trailing slashes, Sharp srcset, RSS
+```
+
+Do not run Sequoia against the spike output. Sequoia still reads `content/blog` and originals under `assets/images`.
+
 ## Production Build
 
 This will run all required commands and build the site for production in `/public`:

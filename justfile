@@ -131,6 +131,17 @@ local:
 	just build-vite
 	hugo server --renderToMemory
 
+# Astro spike (does not replace `just build`; writes to dist/, not public/)
+[group('SPIKE')]
+spike:
+	ASTRO_TELEMETRY_DISABLED=1 aubx astro build
+	aube node .scripts/verify-astro-spike.ts
+
+# Astro spike dev server (http://localhost:4321)
+[group('SPIKE')]
+spike-dev:
+	ASTRO_TELEMETRY_DISABLED=1 aubx astro dev
+
 ## ---------------------------------
 ## ENCRYPTION shortcuts
 

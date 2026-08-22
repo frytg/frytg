@@ -1,0 +1,27 @@
+---
+import type { BlogPost } from '../lib/content.ts'
+import { formatDateHuman, formatDateIso } from '../lib/dates.ts'
+import { blogPermalink } from '../site.ts'
+
+type Props = {
+	posts: BlogPost[]
+}
+
+const { posts } = Astro.props
+---
+
+{
+	posts.map((post) => (
+		<article class="blog-list-item">
+			<h2 class="!text-2xl sm:!text-3xl !mt-0 !mb-2">
+				<a class="no-underline hover:text-yellow transition-colors" href={blogPermalink(post.id)}>
+					{post.data.title}
+				</a>
+			</h2>
+			<p class="text-meta my-0">
+				<time datetime={formatDateIso(post.data.date)}>{formatDateHuman(post.data.date)}</time>
+			</p>
+			<p class="mt-3 mb-0 text-white/75">{post.data.summary ?? post.data.seo_description}</p>
+		</article>
+	))
+}

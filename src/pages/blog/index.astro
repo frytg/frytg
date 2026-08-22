@@ -1,0 +1,47 @@
+---
+import PostList from '../../components/PostList.astro'
+import Base from '../../layouts/Base.astro'
+import { publishedPosts, taxonomyTerms, urlize } from '../../lib/content.ts'
+import { absoluteUrl, site } from '../../site.ts'
+
+const posts = await publishedPosts()
+const categories = taxonomyTerms(posts, 'categories').map((term) => term.name)
+const title = 'Blog Posts'
+const description =
+	'Thoughts, insights and learnings from me, a guy working at the crossroads of technology, sustainability and media.'
+const permalink = '/blog/'
+---
+
+<Base
+	title={title}
+	description={description}
+	canonicalPath={permalink}
+	rssHref="/blog/index.xml"
+	jsonLd={{
+		'@context': 'https://schema.org',
+		'@type': 'Blog',
+		name: title,
+		url: absoluteUrl(permalink),
+		description,
+		author: { '@type': 'Person', name: site.author.name, url: site.baseURL },
+		publisher: { '@type': 'Person', name: site.author.name, url: site.baseURL },
+	}}
+>
+	<div class="container container-custom">
+		<h1>{title}</h1>
+		<p class="text-meta">
+			Subscribe via <a href="/blog/index.xml">RSS feed</a>.
+		</p>
+		{
+			categories.length > 0 && (
+				<p class="text-meta">
+					Categories:{' '}
+					{categories.map((name) => (
+						<a href={`/categories/${urlize(name)}/`}>{name}</a>
+					))}
+				</p>
+			)
+		}
+		<PostList posts={posts} />
+	</div>
+</Base>

@@ -19,6 +19,8 @@ hugo_stats.json
 .hugo_build.lock
 .DS_Store
 resources/
+.astro/
+.cache/
 todo.md
 
 .DS_Store
