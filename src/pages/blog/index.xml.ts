@@ -24,8 +24,8 @@ export const GET = async (context: APIContext): Promise<Response> => {
 	)
 
 	return rss({
-		title: `Blog Posts on ${site.title}`,
-		description: `Recent content in Blog Posts on ${site.title}`,
+		title: site.rssTitle,
+		description: `Recent posts in ${site.rssTitle}`,
 		site: context.site ?? site.baseURL,
 		trailingSlash: true,
 		xmlns: {

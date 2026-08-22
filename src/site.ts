@@ -8,6 +8,7 @@ export const site = {
 	},
 	ogImage: 'images/og-card/about-2024-Q1-A-2x1.jpg',
 	fathomSite: 'BCUBYJDW',
+	rssTitle: 'Blog Posts from Daniel Freytag',
 	rssLimit: 20,
 	menus: {
 		main: [
