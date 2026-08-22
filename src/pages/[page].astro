@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from 'astro:content'
+import Base from '../layouts/Base.astro'
+import { absoluteUrl, site } from '../site.ts'
+
+/** @returns Trailing-slash routes for the remaining Markdown pages. */
+export const getStaticPaths = async () => {
+	const plainPages = new Set(['social', 'uses', 'dev', 'legal'])
+	const pages = await getCollection('pages', ({ id }) => plainPages.has(id))
+	return pages.map((page) => ({
+		params: { page: page.id },
+		props: { page },
+	}))
+}
+
+const { page } = Astro.props
+const { Content } = await render(page)
+const permalink = `/${page.id}/`
+const description = page.data.seo_description ?? ''
+---
+
+<Base
+	title={page.data.title}
+	description={description}
+	canonicalPath={permalink}
+	image={page.data.image ?? site.ogImage}
+	noindex={page.data.noindex ?? false}
+	jsonLd={{
+		'@context': 'https://schema.org',
+		'@type': 'WebPage',
+		name: page.data.title,
+		url: absoluteUrl(permalink),
+		description,
+		isPartOf: { '@type': 'WebSite', '@id': `${site.baseURL}#website` },
+	}}
+>
+	<div class="container container-custom">
+		<Content />
+	</div>
+</Base>

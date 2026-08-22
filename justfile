@@ -34,38 +34,25 @@ format:
 	oxlint --fix
 	oxfmt
 
-# build vite
-[group('BUILD')]
-build-vite:
-	rm -rf public
-	rm -f assets/css/_main-compiled.scss
-	rm -rf assets/css/dist
-	aubx vite build
-alias vite := build-vite
-
 # build the site for production
 [group('BUILD')]
 build:
-	just build-vite
-	hugo build --minify
+	rm -rf public
+	ASTRO_TELEMETRY_DISABLED=1 aubx astro build
 	just verify-build
+	aube node .scripts/verify-site.ts
 
 # verify public/ contains no dev-server URLs
 [group('BUILD')]
 verify-build:
 	aube node .scripts/verify-production-build.ts
 
-# fail if any Hugo process is running (dev server must not be active)
-[group('BUILD')]
-verify-no-hugo:
-	aube node .scripts/verify-no-hugo-process.ts
-
 # initialize Standard.site publication (one-time; requires ATP credentials in SOPS)
 [group('ATP')]
 atproto-init:
 	just _env "aube node .scripts/atproto-init.ts"
 
-# verify Sequoia paths match Hugo permalinks
+# verify Sequoia paths match blog filename slugs
 [group('ATP')]
 atproto-verify-paths:
 	aube node .scripts/verify-atproto-paths.ts
@@ -101,7 +88,6 @@ atproto-update-publication-icon:
 [group('BUILD')]
 publish:
 	# just atproto-init
-	just verify-no-hugo
 	just atproto-publish
 	just build
 	just deploy
@@ -111,7 +97,7 @@ publish:
 # sync to bunny storage
 [group('BUNNY')]
 deploy:
-	just verify-no-hugo
+	mkdir -p temp
 	just verify-build
 	just _env "aube node .scripts/rsync-to-bunny-storage.ts"
 
@@ -120,16 +106,10 @@ deploy:
 purge:
 	just _env "aube node .scripts/purge-bunny-pull-zone.ts"
 
-# run dev server locally
+# run Astro dev server locally
 [group('DEV')]
 dev:
-	aube x concurrently 'aubx vite' 'just local'
-
-# run hugo dev server locally
-[group('DEV')]
-local:
-	just build-vite
-	hugo server --renderToMemory
+	ASTRO_TELEMETRY_DISABLED=1 aubx astro dev
 
 ## ---------------------------------
 ## ENCRYPTION shortcuts

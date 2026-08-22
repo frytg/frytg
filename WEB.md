@@ -2,10 +2,10 @@
 
 ## Local Setup
 
-Install [mise](https://mise.jdx.dev/), [aube](https://aube.jdx.dev) (via mise), and [Hugo](https://gohugo.io/installation/).
+Install [mise](https://mise.jdx.dev/) and [aube](https://aube.jdx.dev) (via mise).
 
 ```sh
-brew install mise hugo
+brew install mise
 eval "$(mise activate zsh)"  # or your shell
 ```
 
@@ -21,17 +21,15 @@ That runs `mise install` then `aube install`. You can also run those directly.
 
 ### Run local server
 
-First make sure fonts are compiled with Vite (we need to build tailwind simply to have the output file and prevent Vite from initially failing):
-
 ```sh
 just dev
 ```
 
-Visit the site at [localhost:1313](http://localhost:1313).
+Visit the site at [localhost:4321](http://localhost:4321).
 
 ## Production Build
 
-This will run all required commands and build the site for production in `/public`:
+This builds the static site into `/public`:
 
 ```sh
 just build
@@ -45,7 +43,7 @@ just deploy
 
 ## Internal links between Markdown pages
 
-The link render hook (`layouts/_default/_markup/render-link.html`) resolves relative destinations to page permalinks. Absolute URLs still open in a new tab with `rel="external noopener"`.
+Sibling Markdown destinations resolve to page permalinks. Absolute URLs still open in a new tab with `rel="external noopener"`.
 
 In blog posts (and any other content), you can link siblings by filename:
 
@@ -55,7 +53,7 @@ In blog posts (and any other content), you can link siblings by filename:
 [section fragment](2026-07-28-migrating-to-tangled.md#setup)
 ```
 
-Root-absolute site paths still work as plain paths (no hook resolution needed):
+Root-absolute site paths still work as plain paths:
 
 ```md
 [social](/social/)
@@ -66,18 +64,12 @@ Prefer the filename form for peer posts in the same section — it survives slug
 
 ## Image Configuration
 
-Image paths in Markdown and front matter use Hugo's `assets/` convention — e.g. `images/blog/foo.jpg` resolves to `assets/images/blog/foo.jpg` at build time via `resources.Get`. That path is not relative to the Markdown file, so editor Markdown preview cannot find the files on its own.
+Image paths in Markdown and front matter use the `assets/` convention — e.g. `images/blog/foo.jpg` resolves to `assets/images/blog/foo.jpg` at build time. That path is not relative to the Markdown file, so editor Markdown preview cannot find the files on its own.
 
-**Editor preview fix:** a symlink at the project root maps `images/` → `assets/images/`. VS Code and Cursor resolve `images/...` from the workspace root when previewing Markdown, so `![alt](images/blog/foo.jpg)` loads correctly without changing Hugo paths.
+**Editor preview fix:** a symlink at the project root maps `images/` → `assets/images/`. VS Code and Cursor resolve `images/...` from the workspace root when previewing Markdown, so `![alt](images/blog/foo.jpg)` loads correctly without changing those paths.
 
 ```sh
 ln -sfn assets/images images   # re-create if missing (e.g. after a fresh clone on Windows)
 ```
 
-Alternatively, preview via `just dev` and open [localhost:1313](http://localhost:1313) for pixel-accurate rendering including responsive srcsets.
-
-Main inspiration for the template
-
-- [Responsive and optimized images with Hugo](https://www.brycewray.com/posts/2022/06/responsive-optimized-images-hugo/)
-- [How To Add Image Processing to Your Hugo Website and Improve Performance](https://alexlakatos.com/web/2020/07/17/hugo-image-processing/)
-- [WebP and AVIF images on a Hugo website](https://pawelgrzybek.com/webp-and-avif-images-on-a-hugo-website/)
+Alternatively, preview via `just dev` and open [localhost:4321](http://localhost:4321) for pixel-accurate rendering including responsive srcsets.

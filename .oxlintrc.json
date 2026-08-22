@@ -1,6 +1,15 @@
 {
 	"$schema": "./node_modules/oxlint/configuration_schema.json",
-	"ignorePatterns": ["**/static/**", "**/keys/**", "**/node_modules/**", "layouts/**", "**/*.sops.*"],
+	"ignorePatterns": [
+		"**/static/**",
+		"**/keys/**",
+		"**/node_modules/**",
+		"public/**",
+		"dist/**",
+		".astro/**",
+		".cache/**",
+		"**/*.sops.*"
+	],
 	"categories": {
 		"correctness": "warn",
 		"nursery": "off",

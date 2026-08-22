@@ -1,0 +1,39 @@
+---
+import { site } from '../site.ts'
+
+const pathname = Astro.url.pathname
+
+/**
+ * @param href Menu path.
+ * @returns True when this nav item is the current page.
+ */
+const isActive = (href: string): boolean => {
+	if (href === '/') {
+		return pathname === '/'
+	}
+	return pathname === href || pathname.startsWith(href)
+}
+---
+
+<nav class="content-column site-nav" aria-label="Main">
+	<div class="site-nav__bar">
+		<a href="/" class="nav-brand">Daniel Freytag</a>
+		<div class="nav-scroll" data-nav-scroll>
+			<ul class="nav-list">
+				{
+					site.menus.main.map((item) => (
+						<li>
+							<a
+								href={item.href}
+								class:list={['nav-link', { 'nav-link--active': isActive(item.href) }]}
+								aria-current={isActive(item.href) ? 'page' : undefined}
+							>
+								{item.name}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
+</nav>

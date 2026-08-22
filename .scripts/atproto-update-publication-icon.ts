@@ -41,16 +41,14 @@ async function main(): Promise<void> {
 
 	if (!identifier || !password) {
 		console.error(
-			'Missing ATP_IDENTIFIER or ATP_APP_PASSWORD. Add them to .env.sops.yaml and run via `just atproto-update-publication-icon`.',
+			'Missing ATP_IDENTIFIER or ATP_APP_PASSWORD. Add them to .env.sops.yaml and run via `just atproto-update-publication-icon`.'
 		)
 		process.exit(1)
 	}
 
 	const config = await loadConfig()
 	if (!config.publicationUri) {
-		console.error(
-			`No publicationUri in ${CONFIG_PATH}. Run \`just atproto-init\` first.`,
-		)
+		console.error(`No publicationUri in ${CONFIG_PATH}. Run \`just atproto-init\` first.`)
 		process.exit(1)
 	}
 
@@ -69,9 +67,7 @@ async function main(): Promise<void> {
 	await agent.login({ identifier, password })
 
 	if (agent.did !== did) {
-		console.error(
-			`Auth mismatch: logged in as ${agent.did} but publication belongs to ${did}.`,
-		)
+		console.error(`Auth mismatch: logged in as ${agent.did} but publication belongs to ${did}.`)
 		process.exit(1)
 	}
 
@@ -102,13 +98,9 @@ async function main(): Promise<void> {
 	})
 
 	console.log(`Publication: ${config.publicationUri}`)
-	console.log(
-		`Icon: ${hadIcon ? 'updated' : 'added'} (${iconBytes.length} bytes, CID ${blobRef.ref.toString()})`,
-	)
+	console.log(`Icon: ${hadIcon ? 'updated' : 'added'} (${iconBytes.length} bytes, CID ${blobRef.ref.toString()})`)
 	console.log(`Record CID: ${putResponse.data.cid}`)
-	console.log(
-		`Verify: https://atproto.md/at://${did}/${COLLECTION}/${rkey}`,
-	)
+	console.log(`Verify: https://atproto.md/at://${did}/${COLLECTION}/${rkey}`)
 }
 
 main().catch((error: unknown) => {

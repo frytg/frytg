@@ -1,13 +1,13 @@
 # AGENTS.md
 
-Personal site for [frytg.digital](https://www.frytg.digital/) — Hugo static site, Tailwind CSS v4, Vite, mise + aube.
+Personal site for [frytg.digital](https://www.frytg.digital/) — Astro static site, Tailwind CSS v4, mise + aube.
 
 ## Dev environment
 
 Task runner: [just](https://github.com/casey/just). All project commands live in the root `justfile` — run `just` to list them.
 
 - Install toolchain + deps: `just install` (mise + aube)
-- Run locally: `just dev` (Vite + Hugo server)
+- Run locally: `just dev` (Astro server)
 - Production build: `just build`
 - Lint: `just lint`
 
@@ -15,8 +15,9 @@ Task runner: [just](https://github.com/casey/just). All project commands live in
 
 - `justfile` — task runner recipes (build, dev, lint, deploy)
 - `content/` — Markdown pages and blog posts
-- `layouts/` — Hugo templates
+- `src/` — Astro layouts, pages, collections, and image pipeline
 - `assets/css/` — Tailwind theme and styles (`main.css` is the source of truth for tokens)
+- `static/` — files copied as-is into the build
 - `public/` — build output (do not edit by hand)
 
 ## Design

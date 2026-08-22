@@ -1,0 +1,64 @@
+---
+import MetaLinks from './MetaLinks.astro'
+
+type Props = {
+	atUri?: string
+	tags: string[]
+}
+
+const { atUri, tags } = Astro.props
+---
+
+<aside class="blog-post-footer">
+	<div class="blog-post-footer-section">
+		<h5 class="!text-sm !font-medium !text-gray/80 uppercase tracking-wider !mt-0 !mb-2">Connect</h5>
+		<p class="text-meta mt-0 mb-0">
+			Subscribe via <a href="/blog/index.xml">RSS</a> or follow on <a href="/social/">social</a>.
+		</p>
+	</div>
+
+	{
+		atUri && (
+			<div class="blog-post-footer-section">
+				<h5 class="!text-sm !font-medium !text-gray/80 uppercase tracking-wider !mt-0 !mb-2">AT Protocol</h5>
+				<p class="text-meta mt-0 mb-0">
+					Inspect on{' '}
+					<a href={`https://pdsls.dev/${atUri}`} target="_blank" rel="noopener noreferrer">
+						pdsls.dev
+					</a>{' '}
+					or{' '}
+					<a href={`https://atproto.at/uri/${atUri}`} target="_blank" rel="noopener noreferrer">
+						taproot
+					</a>
+					.
+				</p>
+			</div>
+		)
+	}
+
+	<div class="blog-post-footer-section">
+		<h5 class="!text-sm !font-medium !text-gray/80 uppercase tracking-wider !mt-0 !mb-2">License</h5>
+		<p class="text-meta mt-0 mb-0">
+			Unless otherwise noted, text is licensed under
+			<a
+				href="https://creativecommons.org/licenses/by-sa/4.0/"
+				title="Creative Commons Attribution-ShareAlike 4.0 International License"
+				target="_blank"
+				rel="license noopener noreferrer"
+			>
+				CC BY-SA 4.0
+			</a>.
+		</p>
+	</div>
+
+	{
+		tags.length > 0 && (
+			<div class="blog-post-footer-section">
+				<h5 class="!text-sm !font-medium !text-gray/80 uppercase tracking-wider !mt-0 !mb-2">Tags</h5>
+				<p class="text-meta mt-0 mb-0">
+					<MetaLinks items={tags.map((tag) => ({ href: `/tags/${tag.toLowerCase()}/`, label: tag.toLowerCase() }))} />
+				</p>
+			</div>
+		)
+	}
+</aside>

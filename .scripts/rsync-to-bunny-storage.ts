@@ -1,4 +1,4 @@
-// Sync the Hugo build output (public/) to Bunny Storage.
+// Sync the site build output (public/) to Bunny Storage.
 // Uploads new or changed files and deletes remote files removed locally.
 // Run via `just deploy` after `just verify-build`.
 

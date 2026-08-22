@@ -1,0 +1,42 @@
+---
+import type { TaxonomyTerm } from '../lib/content.ts'
+import { urlize } from '../lib/content.ts'
+import MetaLinks from './MetaLinks.astro'
+
+type Props = {
+	title: string
+	terms: TaxonomyTerm[]
+	termBase: 'tags' | 'categories'
+	categories: string[]
+}
+
+const { title, terms, termBase, categories } = Astro.props
+---
+
+<div class="container container-custom">
+	<h1>{title}</h1>
+	{
+		categories.length > 0 && (
+			<p class="text-meta">
+				Categories:{' '}
+				<MetaLinks
+					items={categories.map((name) => ({
+						href: `/categories/${urlize(name)}/`,
+						label: name.toLowerCase(),
+					}))}
+				/>
+			</p>
+		)
+	}
+	{
+		terms.map((term) => (
+			<article class="blog-list-item">
+				<h2 class="!text-2xl sm:!text-3xl !mt-0 !mb-2">
+					<a class="no-underline hover:text-yellow transition-colors" href={`/${termBase}/${term.slug}/`}>
+						{term.name}
+					</a>
+				</h2>
+			</article>
+		))
+	}
+</div>

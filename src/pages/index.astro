@@ -1,0 +1,47 @@
+---
+import { getEntry, render } from 'astro:content'
+import Base from '../layouts/Base.astro'
+import { site } from '../site.ts'
+
+const home = await getEntry('pages', '_index')
+if (!home) {
+	throw new Error('Missing content/_index.md')
+}
+
+const { Content } = await render(home)
+const description = home.data.seo_description ?? ''
+const sameAs = site.menus.social.map((item) => item.url)
+const jsonLd = {
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'WebSite',
+			'@id': `${site.baseURL}#website`,
+			url: site.baseURL,
+			name: site.title,
+			description,
+			publisher: { '@id': `${site.baseURL}#person` },
+		},
+		{
+			'@type': 'Person',
+			'@id': `${site.baseURL}#person`,
+			name: site.author.name,
+			url: site.baseURL,
+			description,
+			sameAs,
+		},
+	],
+}
+---
+
+<Base
+	title={home.data.title}
+	description={description}
+	canonicalPath="/"
+	image={home.data.image ?? site.ogImage}
+	jsonLd={jsonLd}
+>
+	<div class="container container-custom">
+		<Content />
+	</div>
+</Base>

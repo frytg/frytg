@@ -1,0 +1,21 @@
+---
+type Item = {
+	href: string
+	label: string
+}
+
+type Props = {
+	items: Item[]
+}
+
+const { items } = Astro.props
+---
+
+{
+	items.map((item, index) => (
+		<>
+			{index > 0 && ' '}
+			<a href={item.href}>{item.label}</a>
+		</>
+	))
+}

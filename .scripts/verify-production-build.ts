@@ -46,7 +46,7 @@ async function main(): Promise<void> {
 
 	if (failures > 0) {
 		console.error(`\nProduction build verification failed (${failures} issue${failures === 1 ? '' : 's'}).`)
-		console.error('Run `just build` before deploy. Use `just dev` for local preview (renders to memory, not public/).')
+		console.error('Run `just build` before deploy. Use `just dev` for local preview.')
 		process.exit(1)
 	}
 

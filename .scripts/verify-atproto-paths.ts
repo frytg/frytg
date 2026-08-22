@@ -1,12 +1,10 @@
 // Verify blog post paths and cover images are ready for ATProto publishing.
-// Ensures Sequoia paths match Hugo permalinks and cover images exist under 1 MB.
+// Ensures Sequoia paths match `/blog/<filename>` slugs and cover images exist under 1 MB.
 // Run via `just atproto-verify-paths` before publish or dry-run.
 
-import { spawn } from 'node:child_process'
 import { access, readFile, stat } from 'node:fs/promises'
 import { basename, join, relative } from 'node:path'
 import process from 'node:process'
-import { text } from 'node:stream/consumers'
 import { glob } from 'glob'
 import { parse as parseYaml } from 'yaml'
 
@@ -27,7 +25,11 @@ type SequoiaConfig = {
 	}
 }
 
-function parseFrontmatter(raw: string): Record<string, unknown> {
+/**
+ * @param raw Markdown file contents.
+ * @returns Parsed YAML front matter, or an empty object.
+ */
+const parseFrontmatter = (raw: string): Record<string, unknown> => {
 	const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/)
 	if (!match?.[1]) {
 		return {}
@@ -35,16 +37,27 @@ function parseFrontmatter(raw: string): Record<string, unknown> {
 	return parseYaml(match[1]) as Record<string, unknown>
 }
 
-function slugFromPath(relativePath: string): string {
-	return basename(relativePath).replace(/\.mdx?$/, '')
-}
+/**
+ * @param relativePath Path relative to the Sequoia content directory.
+ * @returns Filename without `.md` / `.mdx`.
+ */
+const slugFromPath = (relativePath: string): string => basename(relativePath).replace(/\.mdx?$/, '')
 
-function sequoiaPath(config: SequoiaConfig, slug: string): string {
+/**
+ * @param config Sequoia config.
+ * @param slug Blog filename without extension.
+ * @returns Sequoia path (`/blog/<slug>`).
+ */
+const sequoiaPath = (config: SequoiaConfig, slug: string): string => {
 	const prefix = config.pathPrefix ?? '/posts'
 	return `${prefix}/${slug}`
 }
 
-async function exists(path: string): Promise<boolean> {
+/**
+ * @param path Filesystem path.
+ * @returns Whether the path exists.
+ */
+const exists = async (path: string): Promise<boolean> => {
 	try {
 		await access(path)
 		return true
@@ -53,7 +66,12 @@ async function exists(path: string): Promise<boolean> {
 	}
 }
 
-async function resolveCoverImagePath(config: SequoiaConfig, coverImage: string): Promise<string | undefined> {
+/**
+ * @param config Sequoia config.
+ * @param coverImage Front-matter cover path.
+ * @returns Absolute filesystem path, or `undefined` if missing.
+ */
+const resolveCoverImagePath = async (config: SequoiaConfig, coverImage: string): Promise<string | undefined> => {
 	const imagesDir = config.imagesDir ? join(ROOT, config.imagesDir) : undefined
 	const contentDir = join(ROOT, config.contentDir)
 
@@ -78,41 +96,10 @@ async function resolveCoverImagePath(config: SequoiaConfig, coverImage: string):
 	return undefined
 }
 
-async function hugoPermalinks(): Promise<Map<string, string>> {
-	const proc = spawn('hugo', ['list', 'all'], {
-		cwd: ROOT,
-		stdout: 'pipe',
-		stderr: 'pipe',
-	})
-	const [stdout, stderr, exitCode] = await Promise.all([
-		proc.stdout ? text(proc.stdout) : Promise.resolve(''),
-		proc.stderr ? text(proc.stderr) : Promise.resolve(''),
-		new Promise<number | null>((resolve) => proc.on('close', resolve)),
-	])
-
-	if (exitCode !== 0) {
-		throw new Error(`hugo list all failed:\n${stderr}`)
-	}
-
-	const paths = new Map<string, string>()
-	for (const line of stdout.trim().split('\n').slice(1)) {
-		const path = line.split(',')[0]
-		if (!path?.startsWith('content/blog/') || path.endsWith('_index.md')) {
-			continue
-		}
-
-		const permalinkMatch = line.match(/(https:\/\/www\.frytg\.digital\/blog\/[^,\s]+)/)
-		if (!permalinkMatch?.[1]) {
-			continue
-		}
-
-		const slug = basename(path).replace(/\.mdx?$/, '')
-		paths.set(slug, new URL(permalinkMatch[1]).pathname)
-	}
-	return paths
-}
-
-async function main(): Promise<void> {
+/**
+ * Compare Sequoia paths to filename slugs and check cover-image size.
+ */
+const main = async (): Promise<void> => {
 	const config = JSON.parse(await readFile(CONFIG_PATH, 'utf-8')) as SequoiaConfig
 	const contentDir = join(ROOT, config.contentDir)
 	const ignore = config.ignore ?? []
@@ -121,7 +108,6 @@ async function main(): Promise<void> {
 	const files = await glob('**/*.{md,mdx}', { cwd: contentDir })
 
 	let mismatches = 0
-	const hugoPaths = await hugoPermalinks()
 
 	for (const file of files) {
 		if (ignore.some((pattern) => file === pattern || file.endsWith(pattern))) {
@@ -136,18 +122,11 @@ async function main(): Promise<void> {
 
 		const slug = slugFromPath(file)
 		const expected = sequoiaPath(config, slug)
-		const hugoPath = hugoPaths.get(slug)
+		const sitePath = `/blog/${slug}`
 
-		if (!hugoPath) {
-			console.error(`Missing Hugo permalink for blog slug: ${slug}`)
-			mismatches += 1
-			continue
-		}
-
-		const normalizedHugo = hugoPath.replace(/\/$/, '')
-		if (normalizedHugo !== expected) {
+		if (sitePath !== expected) {
 			console.error(
-				`Path mismatch for ${relative(ROOT, join(contentDir, file))}: sequoia=${expected}, hugo=${normalizedHugo}`
+				`Path mismatch for ${relative(ROOT, join(contentDir, file))}: sequoia=${expected}, site=${sitePath}`
 			)
 			mismatches += 1
 		} else {
