@@ -57,7 +57,7 @@
 
 @layer base {
 	html {
-		@apply scroll-smooth antialiased tracking-tight;
+		@apply scroll-smooth antialiased;
 	}
 
 	body {
@@ -113,7 +113,6 @@
 	div.highlight pre {
 		@apply text-balance;
 		@apply content-column;
-		@apply tracking-tight;
 
 		a {
 			@apply transition-colors duration-200;
@@ -247,7 +246,7 @@
 	}
 
 	.nav-brand {
-		@apply shrink-0 text-sm font-semibold tracking-tight text-white no-underline;
+		@apply shrink-0 text-sm font-semibold  text-white no-underline;
 		@apply transition-colors duration-200;
 		@apply hover:text-yellow;
 	}
@@ -286,7 +285,7 @@
 	.nav-link {
 		@apply inline-flex shrink-0 items-center;
 		@apply px-2 py-1.5 sm:px-3;
-		@apply text-sm font-medium tracking-tight;
+		@apply text-sm font-medium;
 		@apply text-white/55 no-underline;
 		@apply transition-colors duration-200;
 		@apply hover:text-white;

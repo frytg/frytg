@@ -1,6 +1,6 @@
 ---
 title: 'Tech Stack - What I Use'
-date: 2024-03-02T08:00:00+00:00
+date: 2026-08-21T09:17:00+00:00
 seo_description: 'A continously-updated list of the tools, apps, and hardware I use for my work and personal projects.'
 image: 'images/og-card/uses-2024-Q1-A-2x1.jpg'
 type: 'page'
@@ -74,9 +74,9 @@ _Do you have more great recommendations? Please [let me know](/social)!_
 
 ## This Website
 
-While switching over from [_Jekyll_](https://jekyllrb.com/) to [_Hugo_](https://gohugo.io/), I also rewrote most of it to make it as minimal and fast as possible. Most pages are written in pure Markdown with custom attributes. The layout is some bare-bones HTML structure with custom elements for pages and the blog.
+I migrated the site from [_Hugo_](https://gohugo.io/) to [_Astro_](https://astro.build/), keeping it as minimal and fast as possible. Content is written in plain Markdown with custom remark/rehype plugins for sibling links, image transforms, and shortcode-like markup. The layout is a small set of components in `src/components` and `src/layouts`, generated statically into HTML.
 
-The style is based on [_Tailwind CSS_](https://tailwindcss.com/), with some pre-processing to bundle the [_Geist_](https://vercel.com/font) font using [_Vite_](https://vitejs.dev/). The final static assets are served through [_Bunny CDN_](https://bunnycdn.com/). The source code is publicly hosted on [_GitHub_](https://github.com/frytg/frytgdigital).
+The style is based on [_Tailwind CSS v4_](https://tailwindcss.com/) with the [_Geist_](https://vercel.com/font) sans typeface loaded as an npm package and wired through a CSS `@font-face` rule. The final static assets are served through [_Bunny CDN_](https://bunnycdn.com/). The source code is publicly hosted on [_Tangled_](https://tangled.org/frytg.digital).
 
 ### Kudos
 
