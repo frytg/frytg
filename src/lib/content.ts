@@ -13,7 +13,7 @@ export type TaxonomyTerm = {
 
 /**
  * @param value Taxonomy name.
- * @returns URL slug matching Hugo `urlize` for this site's ASCII tags/categories.
+ * @returns URL slug for this site's ASCII tags/categories.
  */
 export const urlize = (value: string): string =>
 	value

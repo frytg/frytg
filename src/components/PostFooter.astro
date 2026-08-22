@@ -1,4 +1,6 @@
 ---
+import MetaLinks from './MetaLinks.astro'
+
 type Props = {
 	atUri?: string
 	tags: string[]
@@ -24,7 +26,7 @@ const { atUri, tags } = Astro.props
 					<a href={`https://pdsls.dev/${atUri}`} target="_blank" rel="noopener noreferrer">
 						pdsls.dev
 					</a>{' '}
-					or
+					or{' '}
 					<a href={`https://atproto.at/uri/${atUri}`} target="_blank" rel="noopener noreferrer">
 						taproot
 					</a>
@@ -54,9 +56,7 @@ const { atUri, tags } = Astro.props
 			<div class="blog-post-footer-section">
 				<h5 class="!text-sm !font-medium !text-gray/80 uppercase tracking-wider !mt-0 !mb-2">Tags</h5>
 				<p class="text-meta mt-0 mb-0">
-					{tags.map((tag) => (
-						<a href={`/tags/${tag.toLowerCase()}/`}>{tag.toLowerCase()}</a>
-					))}
+					<MetaLinks items={tags.map((tag) => ({ href: `/tags/${tag.toLowerCase()}/`, label: tag.toLowerCase() }))} />
 				</p>
 			</div>
 		)

@@ -35,12 +35,12 @@ type PictureSource = {
 }
 
 /**
- * Resolve a Hugo global asset path (`images/blog/foo.jpg`) to a file under `assets/images`.
- * @param hugoPath Markdown/front-matter image path.
+ * Resolve a global asset path (`images/blog/foo.jpg`) to a file under `assets/images`.
+ * @param assetPath Markdown/front-matter image path.
  * @returns Absolute filesystem path, or `undefined` if it is not a local asset.
  */
-export const resolveHugoImagePath = (hugoPath: string): string | undefined => {
-	const trimmed = hugoPath.replace(/^\.\//, '')
+export const resolveAssetImagePath = (assetPath: string): string | undefined => {
+	const trimmed = assetPath.replace(/^\.\//, '')
 	if (!trimmed.startsWith('images/')) {
 		return undefined
 	}
@@ -135,18 +135,18 @@ const srcsetAttr = (sources: PictureSource[]): string =>
 	sources.map((entry) => `${entry.url} ${entry.width}w`).join(', ')
 
 /**
- * Build a Hugo-equivalent `<picture>` (WebP + original srcset at 960–3840, fallback 640w).
- * @param hugoPath Markdown image destination (`images/...`).
+ * Build a `<picture>` (WebP + original srcset at 960–3840, fallback 640w).
+ * @param assetPath Markdown image destination (`images/...`).
  * @param alt Alt text.
  * @param title Optional title.
  * @returns HTML string, or `undefined` when the file is missing.
  */
 export const renderResponsivePicture = async (
-	hugoPath: string,
+	assetPath: string,
 	alt: string,
 	title?: string | null
 ): Promise<string | undefined> => {
-	const absolute = resolveHugoImagePath(hugoPath)
+	const absolute = resolveAssetImagePath(assetPath)
 	if (!absolute) {
 		return undefined
 	}
@@ -206,12 +206,12 @@ export const renderResponsivePicture = async (
 }
 
 /**
- * Crop a cover image to 1200×630 JPG, matching Hugo `fill Center`.
- * @param hugoPath Front-matter `image` path.
+ * Crop a cover image to 1200×630 JPG (`cover` / center).
+ * @param assetPath Front-matter `image` path.
  * @returns Public URL of the cropped file, or `undefined` if missing.
  */
-export const renderOgImage = async (hugoPath: string): Promise<string | undefined> => {
-	const absolute = resolveHugoImagePath(hugoPath)
+export const renderOgImage = async (assetPath: string): Promise<string | undefined> => {
+	const absolute = resolveAssetImagePath(assetPath)
 	if (!absolute) {
 		return undefined
 	}
@@ -238,7 +238,7 @@ export const renderOgImage = async (hugoPath: string): Promise<string | undefine
 }
 
 /**
- * Copy cached derivatives into the Astro `dist/_images` tree after build.
+ * Copy cached derivatives into the build `_images` tree.
  * @param distDir Build output directory (`file:` URL from `astro:build:done`).
  */
 export const copyImageCacheToDist = async (distDir: URL): Promise<void> => {

@@ -1,6 +1,7 @@
 ---
 import type { TaxonomyTerm } from '../lib/content.ts'
 import { urlize } from '../lib/content.ts'
+import MetaLinks from './MetaLinks.astro'
 
 type Props = {
 	title: string
@@ -18,9 +19,12 @@ const { title, terms, termBase, categories } = Astro.props
 		categories.length > 0 && (
 			<p class="text-meta">
 				Categories:{' '}
-				{categories.map((name) => (
-					<a href={`/categories/${urlize(name)}/`}>{name}</a>
-				))}
+				<MetaLinks
+					items={categories.map((name) => ({
+						href: `/categories/${urlize(name)}/`,
+						label: name.toLowerCase(),
+					}))}
+				/>
 			</p>
 		)
 	}

@@ -14,8 +14,8 @@
 	"ignorePatterns": [
 		"**/static",
 		"**/keys",
-		"layouts/**",
 		"content/**",
+		"public/**",
 		"**/node_modules/**",
 		"dist/**",
 		".astro/**",

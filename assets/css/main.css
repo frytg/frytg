@@ -1,6 +1,5 @@
 @import 'tailwindcss';
 @source '../../content/**/*.{html,js,md}';
-@source '../../layouts/**/*.{html,js}';
 @source '../../src/**/*.{astro,html,js,ts}';
 
 @theme {
@@ -58,7 +57,7 @@
 
 @layer base {
 	html {
-		@apply scroll-smooth antialiased;
+		@apply scroll-smooth antialiased tracking-tight;
 	}
 
 	body {

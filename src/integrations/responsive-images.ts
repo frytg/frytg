@@ -4,7 +4,7 @@ import { extname, join, normalize } from 'node:path'
 import { copyImageCacheToDist, IMAGE_CACHE_DIR, IMAGE_PUBLIC_PREFIX, MIME_BY_EXT } from '../lib/responsive-images.ts'
 
 /**
- * Serve `/_images` in `astro dev` and copy the Sharp cache into `dist` after build.
+ * Serve `/_images` in `astro dev` and copy the Sharp cache into the build output.
  * @returns Astro integration.
  */
 export const responsiveImages = (): AstroIntegration => ({

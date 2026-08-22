@@ -38,7 +38,7 @@ const resolveSiblingHref = (url: string): string | undefined => {
 }
 
 /**
- * Match Hugo `render-link.html`: sibling Markdown filenames become permalinks; absolute URLs open externally.
+ * Sibling Markdown filenames become permalinks; absolute URLs open externally.
  * @returns Remark plugin.
  */
 export const remarkSiblingLinks = () => {

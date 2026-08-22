@@ -16,7 +16,7 @@ const ATTR_LINE = /(?:^|\n)\{\s*((?:\.[A-Za-z0-9_-]+\s*)+)\s*\}$/
 const HEADING = /^h[1-6]$/
 
 /**
- * @param tokenList Goldmark `{.a .b}` inner tokens.
+ * @param tokenList `{.a .b}` inner tokens.
  * @returns Class names without the leading dots.
  */
 const parseClassNames = (tokenList: string): string[] =>
@@ -51,7 +51,7 @@ const lastTextNode = (node: HastText | HastElement): HastText | undefined => {
 
 /**
  * @param value Heading text.
- * @returns URL fragment matching typical Goldmark/GitHub slugs.
+ * @returns URL fragment matching typical GitHub slugs.
  */
 const slugify = (value: string): string => {
 	const slug = value
@@ -65,7 +65,7 @@ const slugify = (value: string): string => {
 }
 
 /**
- * Goldmark `{.class}` attributes plus heading ids/anchor links (replaces rehype-slug + autolink).
+ * `{.class}` attributes plus heading ids/anchor links.
  * @returns Rehype plugin.
  */
 export const rehypeMarkup = () => {

@@ -43,11 +43,11 @@ const applyJobs = async (jobs: ImageJob[]): Promise<void> => {
 }
 
 /**
- * Replace Markdown images that use Hugo global `images/` paths with Sharp `<picture>` HTML.
+ * Replace Markdown `images/` destinations with Sharp `<picture>` HTML.
  * Standalone image paragraphs become a single HTML block so we don't leave empty `<p>` wrappers.
  * @returns Async remark plugin.
  */
-export const remarkHugoImages = () => {
+export const remarkImages = () => {
 	return async (tree: { type: string }): Promise<void> => {
 		const paragraphJobs: ImageJob[] = []
 		const inlineJobs: ImageJob[] = []

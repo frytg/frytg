@@ -1,6 +1,0 @@
-{{- $resource := resources.Get (.Get "src") -}}
-{{- if $resource -}}
-	{{- partial "responsive-picture.html" (dict "resource" $resource "alt" (.Get "alt") "title" (.Get "title")) -}}
-{{- else -}}
-	{{- errorf "pic shortcode: image not found: %q (in %s)" (.Get "src") .Position -}}
-{{- end -}}
