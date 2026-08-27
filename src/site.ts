@@ -1,10 +1,12 @@
 export const site = {
 	title: 'Daniel Freytag',
+	documentTitle: 'Daniel Freytag – DevOps engineer & hybrid athlete',
 	baseURL: 'https://www.frytg.digital/',
 	locale: 'en-US',
 	author: {
 		email: 'contact@frytg.com',
 		name: 'Daniel Freytag',
+		jobTitle: 'DevOps engineer',
 	},
 	ogImage: 'images/og-card/about-2024-Q1-A-2x1.jpg',
 	fathomSite: 'BCUBYJDW',

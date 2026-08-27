@@ -34,7 +34,7 @@ this blog is now also connected to at proto and publishes [site.standard.documen
 
 if you want something with less work than a self-hosted pds, [eurosky.tech](https://eurosky.tech/accounts/) is worth checking out. they have a europe-hosted PDS open for everyone (plus an account migration tool).
 
-one side project that came out of this was [proto-typer.frytg.com](https://proto-typer.frytg.com), a little web app for posting to bluesky & mastodon at the same time.
+one side project that came out of this was `proto-typer`, a little web app for posting to bluesky & mastodon at the same time.
 
 ![Osaurus app on mac](images/blog/2026-weeknotes/2026-07-04-osaurus.png)
 

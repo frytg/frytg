@@ -35,6 +35,15 @@ const main = async (): Promise<void> => {
 		failures += 1
 	} else {
 		const html = await readFile(home, 'utf-8')
+		if (
+			!html.includes('<title>Daniel Freytag – DevOps engineer &amp; hybrid athlete</title>') &&
+			!html.includes('<title>Daniel Freytag – DevOps engineer & hybrid athlete</title>')
+		) {
+			console.error('Homepage is missing the document title with role clause')
+			failures += 1
+		} else {
+			console.log('OK homepage document title')
+		}
 		if (!html.includes('class="text-3xl title-style"') && !html.includes("class='text-3xl title-style'")) {
 			console.error('Homepage is missing the {.title-style} class')
 			failures += 1
@@ -52,6 +61,25 @@ const main = async (): Promise<void> => {
 			failures += 1
 		} else {
 			console.log('OK homepage OG image')
+		}
+		const homepagePriority = html.match(/fetchpriority="high"/g) ?? []
+		if (homepagePriority.length !== 1 || !html.includes('loading="eager"')) {
+			console.error('Homepage should eager-load exactly one content image')
+			failures += 1
+		} else {
+			console.log('OK homepage LCP image priority')
+		}
+		if (!html.includes('"sameAs"') || !html.includes('beoriginal.social/@FRYTG')) {
+			console.error('Homepage JSON-LD is missing Person.sameAs social profiles')
+			failures += 1
+		} else {
+			console.log('OK homepage Person.sameAs')
+		}
+		if (!html.includes('"jobTitle":"DevOps engineer"')) {
+			console.error('Homepage JSON-LD is missing Person.jobTitle')
+			failures += 1
+		} else {
+			console.log('OK homepage Person.jobTitle')
 		}
 	}
 
@@ -72,6 +100,25 @@ const main = async (): Promise<void> => {
 			failures += 1
 		} else {
 			console.log(`OK /blog/${SAMPLE_POST}/ atUri`)
+		}
+		if (!html.includes('"dateModified"') || !html.includes('"wordCount"') || !html.includes('"ImageObject"')) {
+			console.error(`Post ${SAMPLE_POST} JSON-LD is missing image, dateModified, or wordCount`)
+			failures += 1
+		} else {
+			console.log(`OK /blog/${SAMPLE_POST}/ BlogPosting JSON-LD`)
+		}
+		if (!html.includes('"sameAs"') || !html.includes('github.com/FRYTG')) {
+			console.error(`Post ${SAMPLE_POST} JSON-LD is missing author sameAs`)
+			failures += 1
+		} else {
+			console.log(`OK /blog/${SAMPLE_POST}/ Person.sameAs`)
+		}
+		const postPriority = html.match(/fetchpriority="high"/g) ?? []
+		if (postPriority.length !== 1) {
+			console.error(`Post ${SAMPLE_POST} should eager-load exactly one content image`)
+			failures += 1
+		} else {
+			console.log(`OK /blog/${SAMPLE_POST}/ LCP image priority`)
 		}
 	}
 

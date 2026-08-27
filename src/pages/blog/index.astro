@@ -3,7 +3,8 @@ import MetaLinks from '../../components/MetaLinks.astro'
 import PostList from '../../components/PostList.astro'
 import Base from '../../layouts/Base.astro'
 import { publishedPosts, taxonomyTerms, urlize } from '../../lib/content.ts'
-import { absoluteUrl, site } from '../../site.ts'
+import { PERSON_ID, personNode } from '../../lib/json-ld.ts'
+import { absoluteUrl } from '../../site.ts'
 
 const posts = await publishedPosts()
 const categories = taxonomyTerms(posts, 'categories').map((term) => term.name)
@@ -24,8 +25,8 @@ const permalink = '/blog/'
 		name: title,
 		url: absoluteUrl(permalink),
 		description,
-		author: { '@type': 'Person', name: site.author.name, url: site.baseURL },
-		publisher: { '@type': 'Person', name: site.author.name, url: site.baseURL },
+		author: personNode(),
+		publisher: { '@id': PERSON_ID },
 	}}
 >
 	<div class="container container-custom">

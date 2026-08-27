@@ -134,18 +134,31 @@ const writeVariant = async (
 const srcsetAttr = (sources: PictureSource[]): string =>
 	sources.map((entry) => `${entry.url} ${entry.width}w`).join(', ')
 
+export type ResponsivePictureOptions = {
+	title?: string | null
+	priority?: boolean
+}
+
+/**
+ * @param priority Whether this is the page's LCP image.
+ * @returns `loading` / `fetchpriority` attribute string.
+ */
+const loadingAttrs = (priority: boolean): string =>
+	priority ? ' loading="eager" fetchpriority="high"' : ' loading="lazy"'
+
 /**
  * Build a `<picture>` (WebP + original srcset at 960–3840, fallback 640w).
  * @param assetPath Markdown image destination (`images/...`).
  * @param alt Alt text.
- * @param title Optional title.
+ * @param options Optional title and LCP priority.
  * @returns HTML string, or `undefined` when the file is missing.
  */
 export const renderResponsivePicture = async (
 	assetPath: string,
 	alt: string,
-	title?: string | null
+	options: ResponsivePictureOptions = {}
 ): Promise<string | undefined> => {
+	const { title, priority = false } = options
 	const absolute = resolveAssetImagePath(assetPath)
 	if (!absolute) {
 		return undefined
@@ -154,6 +167,7 @@ export const renderResponsivePicture = async (
 	const ext = extname(absolute)
 	const titleAttr = title ? ` title="${escapeAttr(title)}"` : ''
 	const altAttr = escapeAttr(alt)
+	const loadAttr = loadingAttrs(priority)
 
 	if (ext.toLowerCase() === '.svg') {
 		const svgName = `${fingerprint(Buffer.from(absolute), 'svg')}-${absolute.split('/').at(-1)}`
@@ -163,7 +177,7 @@ export const renderResponsivePicture = async (
 			await writeFile(cached, await readFile(absolute))
 		}
 		return `<div class="content-column my-8 overflow-hidden">
-	<img class="w-full h-auto" src="${IMAGE_PUBLIC_PREFIX}/${svgName}" alt="${altAttr}"${titleAttr} loading="lazy" />
+	<img class="w-full h-auto" src="${IMAGE_PUBLIC_PREFIX}/${svgName}" alt="${altAttr}"${titleAttr}${loadAttr} />
 </div>`
 	}
 
@@ -200,7 +214,7 @@ export const renderResponsivePicture = async (
 	<picture>
 		<source type="image/webp" srcset="${srcsetAttr(webpSources)}" sizes="${IMG_SIZES}" />
 		<source type="${originalType}" srcset="${srcsetAttr(originalSources)}" sizes="${IMG_SIZES}" />
-		<img class="w-full h-auto" src="${fallbackUrl}" width="${originalWidth}" height="${originalHeight}" alt="${altAttr}"${titleAttr} loading="lazy" />
+		<img class="w-full h-auto" src="${fallbackUrl}" width="${originalWidth}" height="${originalHeight}" alt="${altAttr}"${titleAttr}${loadAttr} />
 	</picture>
 </div>`
 }

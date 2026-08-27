@@ -1,6 +1,7 @@
 ---
 import { getEntry, render } from 'astro:content'
 import Base from '../layouts/Base.astro'
+import { absoluteOgImageUrl, homeJsonLd } from '../lib/json-ld.ts'
 import { site } from '../site.ts'
 
 const home = await getEntry('pages', '_index')
@@ -10,28 +11,7 @@ if (!home) {
 
 const { Content } = await render(home)
 const description = home.data.seo_description ?? ''
-const sameAs = site.menus.social.map((item) => item.url)
-const jsonLd = {
-	'@context': 'https://schema.org',
-	'@graph': [
-		{
-			'@type': 'WebSite',
-			'@id': `${site.baseURL}#website`,
-			url: site.baseURL,
-			name: site.title,
-			description,
-			publisher: { '@id': `${site.baseURL}#person` },
-		},
-		{
-			'@type': 'Person',
-			'@id': `${site.baseURL}#person`,
-			name: site.author.name,
-			url: site.baseURL,
-			description,
-			sameAs,
-		},
-	],
-}
+const imageUrl = await absoluteOgImageUrl(home.data.image ?? site.ogImage)
 ---
 
 <Base
@@ -39,7 +19,7 @@ const jsonLd = {
 	description={description}
 	canonicalPath="/"
 	image={home.data.image ?? site.ogImage}
-	jsonLd={jsonLd}
+	jsonLd={homeJsonLd({ description, imageUrl })}
 >
 	<div class="container container-custom">
 		<Content />

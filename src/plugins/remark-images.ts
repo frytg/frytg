@@ -21,6 +21,7 @@ type ImageJob = {
 	image: ImageNode
 	index: number
 	parent: ParentNode
+	priority: boolean
 }
 
 /**
@@ -35,7 +36,10 @@ const isIgnorable = (node: { type: string; value?: string }): boolean =>
  */
 const applyJobs = async (jobs: ImageJob[]): Promise<void> => {
 	for (const job of jobs) {
-		const html = await renderResponsivePicture(job.image.url, job.image.alt ?? '', job.image.title)
+		const html = await renderResponsivePicture(job.image.url, job.image.alt ?? '', {
+			title: job.image.title,
+			priority: job.priority,
+		})
 		if (html) {
 			job.parent.children[job.index] = { type: 'html', value: html }
 		}
@@ -45,6 +49,7 @@ const applyJobs = async (jobs: ImageJob[]): Promise<void> => {
 /**
  * Replace Markdown `images/` destinations with Sharp `<picture>` HTML.
  * Standalone image paragraphs become a single HTML block so we don't leave empty `<p>` wrappers.
+ * The first content image on the page is the LCP candidate (eager + fetchpriority=high).
  * @returns Async remark plugin.
  */
 export const remarkImages = () => {
@@ -52,6 +57,19 @@ export const remarkImages = () => {
 		const paragraphJobs: ImageJob[] = []
 		const inlineJobs: ImageJob[] = []
 		const lifted = new Set<ImageNode>()
+		let assignedPriority = false
+
+		/**
+		 * @param job Image location without priority.
+		 * @returns Job with priority set on the first image in document order.
+		 */
+		const withPriority = (job: Omit<ImageJob, 'priority'>): ImageJob => {
+			const priority = !assignedPriority
+			if (priority) {
+				assignedPriority = true
+			}
+			return { ...job, priority }
+		}
 
 		visit(tree, 'paragraph', (node: ParentNode, index, parent) => {
 			if (typeof index !== 'number' || !parent) {
@@ -69,14 +87,14 @@ export const remarkImages = () => {
 			}
 
 			lifted.add(image)
-			paragraphJobs.push({ image, index, parent: parent as ParentNode })
+			paragraphJobs.push(withPriority({ image, index, parent: parent as ParentNode }))
 		})
 
 		visit(tree, 'image', (node: ImageNode, index, parent) => {
 			if (typeof index !== 'number' || !parent || !node.url.startsWith('images/') || lifted.has(node)) {
 				return
 			}
-			inlineJobs.push({ image: node, index, parent: parent as ParentNode })
+			inlineJobs.push(withPriority({ image: node, index, parent: parent as ParentNode }))
 		})
 
 		await applyJobs(paragraphJobs)

@@ -38,6 +38,7 @@ format:
 [group('BUILD')]
 build:
 	rm -rf public
+	rm -f .astro/data-store.json node_modules/.astro/data-store.json
 	ASTRO_TELEMETRY_DISABLED=1 aubx astro build
 	just verify-build
 	aube node .scripts/verify-site.ts

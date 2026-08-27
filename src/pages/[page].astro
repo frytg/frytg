@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content'
 import Base from '../layouts/Base.astro'
+import { WEBSITE_ID } from '../lib/json-ld.ts'
 import { absoluteUrl, site } from '../site.ts'
 
 /** @returns Trailing-slash routes for the remaining Markdown pages. */
@@ -31,7 +32,7 @@ const description = page.data.seo_description ?? ''
 		name: page.data.title,
 		url: absoluteUrl(permalink),
 		description,
-		isPartOf: { '@type': 'WebSite', '@id': `${site.baseURL}#website` },
+		isPartOf: { '@type': 'WebSite', '@id': WEBSITE_ID },
 	}}
 >
 	<div class="container container-custom">
