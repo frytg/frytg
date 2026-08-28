@@ -79,9 +79,9 @@
       "slug": "2024-05-03-eu-acc"
     },
     "content/blog/2026-w27-weeknotes-no2.md": {
-      "contentHash": "97b8a8509400a385011f023a23a1e319515aaf60908d6d7ba88b6e0b323d2b8e",
+      "contentHash": "2bf1668ce222888651ee38b4ab9d9875ea60f77455268855968a33bbb7895196",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mptgjktoo22x",
-      "lastPublished": "2026-07-28T17:25:58.617Z",
+      "lastPublished": "2026-08-27T14:39:09.738Z",
       "slug": "2026-w27-weeknotes-no2"
     },
     "content/blog/2026-w28-weeknotes-no3.md": {
@@ -131,6 +131,12 @@
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mtomskxbsm2x",
       "lastPublished": "2026-08-22T15:49:00.293Z",
       "slug": "2026-w34-weeknotes-no9"
+    },
+    "content/blog/2026-w35-weeknotes-no10.md": {
+      "contentHash": "7186063c9ac37cf891ac9e2575bca1f37d50dcd11a74ceb54e146681a08dcac9",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mu33abh6ec2g",
+      "lastPublished": "2026-08-27T14:39:09.437Z",
+      "slug": "2026-w35-weeknotes-no10"
     }
   },
   "publication": {

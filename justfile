@@ -135,3 +135,4 @@ _rotate-key file:
 [group('ENCRYPTION')]
 edit-key file:
 	EDITOR=nano sops edit {{ file }}
+alias ek := edit-key
