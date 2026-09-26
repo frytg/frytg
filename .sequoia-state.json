@@ -121,33 +121,33 @@
       "slug": "2026-w32-weeknotes-no7"
     },
     "content/blog/2026-w33-weeknotes-no8.md": {
-      "contentHash": "5e5c2395fd5275f0d49b3205d6adf7fe374d79bf6d2a99aaddd69f442934e3d9",
+      "contentHash": "d8d067f6047ce3c3edd2a108989b224374524afaf5d9470f9d52d1a208e5f533",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mteuwuwoue2x",
-      "lastPublished": "2026-08-18T18:47:57.530Z",
+      "lastPublished": "2026-09-26T17:55:13.130Z",
       "slug": "2026-w33-weeknotes-no8"
     },
     "content/blog/2026-w34-weeknotes-no9.md": {
-      "contentHash": "d945c8eb2ea3f03cb79ce45b2fc78124632587c6d44400c4e951918854ee06ed",
+      "contentHash": "4fc88779c730a9a02467ca30ed714dffb9f420c3beee006c9efa5f4dbd62cb97",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mtomskxbsm2x",
-      "lastPublished": "2026-08-22T15:49:00.293Z",
+      "lastPublished": "2026-09-26T17:55:12.836Z",
       "slug": "2026-w34-weeknotes-no9"
     },
     "content/blog/2026-w35-weeknotes-no10.md": {
-      "contentHash": "7186063c9ac37cf891ac9e2575bca1f37d50dcd11a74ceb54e146681a08dcac9",
+      "contentHash": "6809bd3a007448200a06644b661b33eeb868828a1f0b0f7862e13bc1a5dfbb71",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mu33abh6ec2g",
-      "lastPublished": "2026-08-27T14:39:09.437Z",
+      "lastPublished": "2026-09-26T17:55:12.564Z",
       "slug": "2026-w35-weeknotes-no10"
     },
     "content/blog/2026-w36-weeknotes-no11.md": {
-      "contentHash": "d7e9fd82dd1437dea832789275ca6a2eefc226533b2107ea585bac41115e0bab",
+      "contentHash": "777e6f31c2bb3ef8da2db1562c20070f724c6a9a1c2be8d046573ce5b16091cc",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3muxb4xek6s2p",
-      "lastPublished": "2026-09-07T19:39:13.327Z",
+      "lastPublished": "2026-09-26T17:55:12.301Z",
       "slug": "2026-w36-weeknotes-no11"
     },
     "content/blog/2026-w37-weeknotes-no12.md": {
-      "contentHash": "adff68b9fbdf80be547aef4b1cd1f29348c50920d20f066453aeafbf5abfba8b",
+      "contentHash": "ff5c2bc5f6081471c6e75b63412697804b3d29d835c35998d93172fe949a4062",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mvg77hx6wv2p",
-      "lastPublished": "2026-09-13T18:14:45.979Z",
+      "lastPublished": "2026-09-26T17:55:12.001Z",
       "slug": "2026-w37-weeknotes-no12"
     },
     "content/blog/2026-w38-weeknotes-no13-state-of-homelab.md": {
@@ -157,10 +157,16 @@
       "slug": "2026-w38-weeknotes-no13-state-of-homelab"
     },
     "content/blog/2026-w38-weeknotes-no13-eurosummer.md": {
-      "contentHash": "0107ea004aac6c20aadd24d653106ee904f3b796dd866a6618c71275baf19126",
+      "contentHash": "7b639ce5aaa33fbe7b970ee4bdd109e6f2a93b2ae0d39d980649559b1093a637",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mw6o3vvugo2p",
-      "lastPublished": "2026-09-23T11:45:06.654Z",
+      "lastPublished": "2026-09-26T17:55:11.777Z",
       "slug": "2026-w38-weeknotes-no13-eurosummer"
+    },
+    "content/blog/2026-w39-weeknotes-no14-environment.md": {
+      "contentHash": "652371738430717581442f810787ce70436a112c1c3a5885243328abfbcc829c",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mwgu6ggyc22o",
+      "lastPublished": "2026-09-26T17:55:11.483Z",
+      "slug": "2026-w39-weeknotes-no14-environment"
     }
   },
   "publication": {
