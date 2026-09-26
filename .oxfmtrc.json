@@ -14,7 +14,6 @@
 	"ignorePatterns": [
 		"**/static",
 		"**/keys",
-		"content/**",
 		"public/**",
 		"**/node_modules/**",
 		"dist/**",

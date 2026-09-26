@@ -10,17 +10,17 @@ categories:
 tags:
   - weeknotes
   - fediverse
-atUri: "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mvg77hx6wv2p"
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mvg77hx6wv2p'
 ---
 
 hello from berlin after this year's [#fediday](https://beoriginal.social/@berlinfediday@berlin.social).
 
 two and a half days of talks and sessions around federated social networking.  
-with tools like **mastodon** and other **activity pub** services at the center, which some at the conference have nicely described as a "*neighborhood*". that cosy digital place where you virtually run into the people you know and trust. compared to the algorithmic chaos of big tech, where hate and clickbait are the predominant factors.
+with tools like **mastodon** and other **activity pub** services at the center, which some at the conference have nicely described as a "_neighborhood_". that cosy digital place where you virtually run into the people you know and trust. compared to the algorithmic chaos of big tech, where hate and clickbait are the predominant factors.
 
 ## safe space vs. growth
 
-"*should mastodon continue to be this fairly small (safe) space of communities, or aim to be a big platform? – yes!*"
+"_should mastodon continue to be this fairly small (safe) space of communities, or aim to be a big platform? – yes!_"
 
 as there are so many communities across lots of federated servers, there are equally many opinions about its future.
 some like the current setup and their small circle; others are discussing how we could grow, so that everyone has an account.
@@ -29,7 +29,7 @@ while the latter would be the best thing in terms of digital resiliency against 
 
 ## public money. public code.
 
-following the idea that organizations and institutions working with **public money** should also contribute to **public code**, this should also apply to social media, some say. if for some reason you are still primarily posting on closed networks, you should at least post the same content on a public/ accessible platform like mastodon (now called the *+1 principle*).
+following the idea that organizations and institutions working with **public money** should also contribute to **public code**, this should also apply to social media, some say. if for some reason you are still primarily posting on closed networks, you should at least post the same content on a public/ accessible platform like mastodon (now called the _+1 principle_).
 
 ## self-fulfilling cycle of under-investment
 
@@ -39,8 +39,8 @@ this specifically applies to companies and public organizations, who have to man
 
 ## the atmosphere
 
-while this conference was mostly about the fediverse (however you want to define it), the *atmosphere*, *at proto*, and *bluesky* came up more often.
+while this conference was mostly about the fediverse (however you want to define it), the _atmosphere_, _at proto_, and _bluesky_ came up more often.
 
-even though the commonly declared enemy is *big tech*, the collaboration across those platforms felt minimal. there are fewer points to critique about *at proto* than before (plc directory is now a swiss foundation, etc) and there is an arguably better technical architecture with their personal data servers (in my opinion). despite that it seems more like a fundamental ideological preference.
+even though the commonly declared enemy is _big tech_, the collaboration across those platforms felt minimal. there are fewer points to critique about _at proto_ than before (plc directory is now a swiss foundation, etc) and there is an arguably better technical architecture with their personal data servers (in my opinion). despite that it seems more like a fundamental ideological preference.
 
-*bluesky* and *at proto* have a nicer setup, but worse trust by the community. *mastodon* and *activity pub* have a more federated approach, but worse user experience for everyday users. the question is, what will be solved first?
+_bluesky_ and _at proto_ have a nicer setup, but worse trust by the community. _mastodon_ and _activity pub_ have a more federated approach, but worse user experience for everyday users. the question is, what will be solved first?

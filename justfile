@@ -27,12 +27,12 @@ update:
 
 [group('LOCAL')]
 lint:
-	oxlint
+	aubx oxlint
 
 [group('LOCAL')]
 format:
-	oxlint --fix
-	oxfmt
+	aubx oxlint --fix
+	aubx oxfmt
 
 # build the site for production
 [group('BUILD')]

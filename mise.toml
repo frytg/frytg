@@ -6,8 +6,6 @@ lockfile = true
 [tools]
 # Node for root aube/oxc (just lint / just format / just install).
 node = "26"
-bun = "1.4.1"
+bun = "1.4.2"
 # Package manager — https://aube.jdx.dev
-aube = "1.40.0"
-"npm:oxlint" = { version = "latest" }
-"npm:oxfmt" = { version = "latest" }
+aube = "2.3.0"

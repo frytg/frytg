@@ -11,7 +11,7 @@ tags:
   - weeknotes
   - agent
   - coding
-atUri: "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mteuwuwoue2x"
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mteuwuwoue2x'
 ---
 
 ![cursor screenshot](images/blog/2026-weeknotes/2026-08-18-weeknotes-8.jpg)
