@@ -19,6 +19,14 @@ just install
 
 That runs `mise install` then `aube install`. You can also run those directly.
 
+### ImageMagick (ATProto covers)
+
+`just atproto-prepare-covers` (also run by `just atproto-dry-run` and `just atproto-publish`) shells out to `magick`. Install it via Homebrew, not mise — the conda build mise pulls in links `libheif` against Homebrew's `webp` and fails to load without it:
+
+```sh
+brew install imagemagick
+```
+
 ### Run local server
 
 ```sh

@@ -163,10 +163,16 @@
       "slug": "2026-w38-weeknotes-no13-eurosummer"
     },
     "content/blog/2026-w39-weeknotes-no14-environment.md": {
-      "contentHash": "652371738430717581442f810787ce70436a112c1c3a5885243328abfbcc829c",
+      "contentHash": "f0cdc4a261b2f907c615de962d5f89429403b41e46009a6ab3e5efc32c44f07c",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mwgu6ggyc22o",
-      "lastPublished": "2026-09-26T17:55:11.483Z",
+      "lastPublished": "2026-10-02T17:56:01.956Z",
       "slug": "2026-w39-weeknotes-no14-environment"
+    },
+    "content/blog/2026-w40-weeknotes-no15-hyrox-ka.md": {
+      "contentHash": "3f9a60f2c43ee34b800b247dbdeef78a06d716c331777d1e3005fdca12919b8c",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mwvwzh65o22o",
+      "lastPublished": "2026-10-02T17:56:01.749Z",
+      "slug": "2026-w40-weeknotes-no15-hyrox-ka"
     }
   },
   "publication": {

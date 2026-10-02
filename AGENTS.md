@@ -7,6 +7,7 @@ Personal site for [frytg.digital](https://www.frytg.digital/) — Astro static s
 Task runner: [just](https://github.com/casey/just). All project commands live in the root `justfile` — run `just` to list them.
 
 - Install toolchain + deps: `just install` (mise + aube)
+- ATProto cover prep needs `magick` from `brew install imagemagick` (not mise — see `WEB.md`)
 - Run locally: `just dev` (Astro server)
 - Production build: `just build`
 - Lint: `just lint`
