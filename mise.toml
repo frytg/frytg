@@ -8,4 +8,4 @@ lockfile = true
 node = "26"
 bun = "1.4.2"
 # Package manager — https://aube.jdx.dev
-aube = "2.3.0"
+aube = "2.7.0"
