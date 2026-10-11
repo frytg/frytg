@@ -169,10 +169,16 @@
       "slug": "2026-w39-weeknotes-no14-environment"
     },
     "content/blog/2026-w40-weeknotes-no15-hyrox-ka.md": {
-      "contentHash": "3f9a60f2c43ee34b800b247dbdeef78a06d716c331777d1e3005fdca12919b8c",
+      "contentHash": "542b142222b97c58689600f8923e4190ae32a96a9836ffa7768fecd8e8713651",
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mwvwzh65o22o",
-      "lastPublished": "2026-10-02T17:56:01.749Z",
+      "lastPublished": "2026-10-11T17:49:39.280Z",
       "slug": "2026-w40-weeknotes-no15-hyrox-ka"
+    },
+    "content/blog/2026-w41-weeknotes-no16.md": {
+      "contentHash": "e27d1ddec75282ab6b5fcd99849088a42cdd3021f9e068871db72788874c5ad3",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mxmkude6w22o",
+      "lastPublished": "2026-10-11T17:50:06.931Z",
+      "slug": "2026-w41-weeknotes-no16"
     }
   },
   "publication": {

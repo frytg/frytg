@@ -11,7 +11,7 @@ tags:
   - weeknotes
   - hyrox
   - sports
-atUri: "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mwvwzh65o22o"
+atUri: 'at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mwvwzh65o22o'
 ---
 
 ![hyrox 1](images/blog/2026-weeknotes/2026-10-02-weeknotes-w40-hy1.jpg)
