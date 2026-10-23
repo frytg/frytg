@@ -13,6 +13,7 @@ type HastElement = {
 }
 
 const ATTR_LINE = /(?:^|\n)\{\s*((?:\.[A-Za-z0-9_-]+\s*)+)\s*\}$/
+const HEADING_ID_ATTR = /\s*\{\s*#([A-Za-z0-9_-]+)\s*\}\s*$/
 const HEADING = /^h[1-6]$/
 
 /**
@@ -99,7 +100,17 @@ export const rehypeMarkup = () => {
 				return
 			}
 
-			let id = slugify(toPlain(node))
+			let customId: string | undefined
+			const trailingText = lastTextNode(node)
+			if (trailingText) {
+				const idMatch = trailingText.value.match(HEADING_ID_ATTR)
+				if (idMatch?.[1]) {
+					customId = idMatch[1]
+					trailingText.value = trailingText.value.replace(HEADING_ID_ATTR, '')
+				}
+			}
+
+			let id = customId ?? slugify(toPlain(node))
 			const count = seen.get(id) ?? 0
 			seen.set(id, count + 1)
 			if (count > 0) {

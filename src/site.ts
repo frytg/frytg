@@ -1,26 +1,34 @@
 export const site = {
 	title: 'Daniel Freytag',
-	documentTitle: 'Daniel Freytag – DevOps engineer & hybrid athlete',
+	documentTitle: 'Daniel Freytag – Freelance DevOps & Backend Engineer (Media, Audio & EU Cloud)',
 	baseURL: 'https://www.frytg.digital/',
 	locale: 'en-US',
 	author: {
 		email: 'contact@frytg.com',
 		name: 'Daniel Freytag',
-		jobTitle: 'DevOps engineer',
+		jobTitle: 'DevOps & Backend Engineer',
 	},
+	// TODO: Update availability month/window as schedule changes.
+	availability: 'Currently taking on freelance projects from November 2026',
 	ogImage: 'images/og-card/about-2024-Q1-A-2x1.jpg',
 	fathomSite: 'BCUBYJDW',
 	rssTitle: 'Blog Posts from Daniel Freytag',
 	rssLimit: 20,
 	menus: {
 		main: [
-			{ name: '/about', href: '/' },
-			{ name: '/social', href: '/social/' },
-			{ name: '/blog', href: '/blog/' },
-			{ name: '/uses', href: '/uses/' },
-			{ name: '/dev', href: '/dev/' },
+			{ name: 'Work', href: '/work/' },
+			{ name: 'Services', href: '/services/' },
+			{ name: 'Blog', href: '/blog/' },
+			{ name: 'About', href: '/about/' },
+			{ name: 'Contact', href: '/services/#contact' },
 		],
 		social: [
+			{
+				name: 'LinkedIn',
+				url: 'https://www.linkedin.com/in/frytg/',
+				handle: 'frytg',
+				post: ',',
+			},
 			{
 				name: 'Mastodon',
 				url: 'https://beoriginal.social/@FRYTG',
@@ -28,15 +36,9 @@ export const site = {
 				post: ',',
 			},
 			{
-				name: 'Matrix',
-				url: 'https://matrix.to/#/@frytg:beoriginal.social',
-				handle: '@frytg:beoriginal.social',
-				post: ',',
-			},
-			{
-				name: 'Bluesky',
-				url: 'https://bsky.app/profile/frytg.digital',
-				handle: '@FRYTG',
+				name: 'Tangled',
+				url: 'https://tangled.org/frytg.digital',
+				handle: 'frytg.digital',
 				post: ',',
 			},
 			{
@@ -46,15 +48,21 @@ export const site = {
 				post: ',',
 			},
 			{
-				name: 'Instagram',
-				url: 'https://www.instagram.com/dan.frytg/',
-				handle: 'dan.frytg',
+				name: 'Bluesky',
+				url: 'https://bsky.app/profile/frytg.digital',
+				handle: '@frytg.digital',
 				post: ',',
 			},
 			{
-				name: 'LinkedIn',
-				url: 'https://www.linkedin.com/in/frytg/',
-				handle: 'frytg',
+				name: 'Matrix',
+				url: 'https://matrix.to/#/@frytg:beoriginal.social',
+				handle: '@frytg:beoriginal.social',
+				post: ',',
+			},
+			{
+				name: 'Instagram',
+				url: 'https://www.instagram.com/dan.frytg/',
+				handle: 'dan.frytg',
 				post: ',',
 			},
 			{

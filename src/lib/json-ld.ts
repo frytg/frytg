@@ -3,6 +3,8 @@ import { OG_HEIGHT, OG_WIDTH, renderOgImage } from './responsive-images.ts'
 
 export const WEBSITE_ID = `${site.baseURL}#website`
 export const PERSON_ID = `${site.baseURL}#person`
+export const SERVICE_ID = `${site.baseURL}#service`
+export const AREA_SERVED = ['DE', 'AT', 'CH', 'EU'] as const
 
 type PersonFields = {
 	description?: string
@@ -20,8 +22,16 @@ type BlogPostingFields = {
 	wordCount: number
 }
 
+type PageJsonLdFields = {
+	id: string
+	title: string
+	url: string
+	description: string
+	imageUrl: string
+}
+
 /**
- * @returns Profile URLs for Person.sameAs (Mastodon, GitHub, LinkedIn, …).
+ * @returns Profile URLs for Person.sameAs (LinkedIn, Mastodon, Tangled, GitHub, …).
  */
 export const sameAsUrls = (): string[] => site.menus.social.map((item) => item.url)
 
@@ -42,7 +52,7 @@ export const absoluteOgImageUrl = async (assetPath: string): Promise<string> => 
 
 /**
  * Full Person node. `sameAs` is the identity graph Google uses to join this
- * site to Mastodon, Bluesky, GitHub, LinkedIn, and the other listed profiles.
+ * site to LinkedIn, Mastodon, Tangled, Bluesky, GitHub, and other listed profiles.
  * @param fields Optional description and image URL.
  * @returns schema.org Person.
  */
@@ -51,7 +61,60 @@ export const personNode = (fields: PersonFields = {}): Record<string, unknown> =
 	'@id': PERSON_ID,
 	name: site.author.name,
 	url: site.baseURL,
+	email: site.author.email,
 	jobTitle: site.author.jobTitle,
+	areaServed: AREA_SERVED,
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: 'Ehrenkirchen (Freiburg region)',
+		addressRegion: 'Baden-Württemberg',
+		addressCountry: 'DE',
+	},
+	knowsAbout: [
+		'DevOps',
+		'Cloud Infrastructure',
+		'Terraform',
+		'Kubernetes',
+		'EU Cloud Migration',
+		'Audio & Broadcast Engineering',
+		'TypeScript',
+		'Go',
+		'Rust',
+		'Self-Hosted AI',
+	],
+	sameAs: sameAsUrls(),
+	...(fields.description ? { description: fields.description } : {}),
+	...(fields.image ? { image: fields.image } : {}),
+})
+
+/**
+ * schema.org ProfessionalService node describing freelance engineering services.
+ * @param fields Optional description and image URL.
+ * @returns schema.org ProfessionalService.
+ */
+export const professionalServiceNode = (fields: PersonFields = {}): Record<string, unknown> => ({
+	'@type': 'ProfessionalService',
+	'@id': SERVICE_ID,
+	name: `${site.author.name} – Freelance DevOps & Backend Engineering`,
+	url: absoluteUrl('/services/'),
+	email: site.author.email,
+	provider: { '@id': PERSON_ID },
+	founder: { '@id': PERSON_ID },
+	areaServed: AREA_SERVED,
+	address: {
+		'@type': 'PostalAddress',
+		addressLocality: 'Ehrenkirchen (Freiburg region)',
+		addressRegion: 'Baden-Württemberg',
+		addressCountry: 'DE',
+	},
+	serviceType: [
+		'Cloud & DevOps for Small Teams',
+		'EU-Sovereign Hosting & Cloud Migrations',
+		'Audio & Broadcast Backend Engineering',
+		'Backend & API Development (TypeScript, Go, Rust)',
+		'Self-Hosted & Privacy-First AI',
+		'Infrastructure & Software Maintenance Retainers',
+	],
 	sameAs: sameAsUrls(),
 	...(fields.description ? { description: fields.description } : {}),
 	...(fields.image ? { image: fields.image } : {}),
@@ -69,7 +132,7 @@ export const ogImageObject = (url: string): Record<string, unknown> => ({
 })
 
 /**
- * Homepage WebSite + Person graph. Person.sameAs lists every social profile.
+ * Homepage WebSite + Person + ProfessionalService graph.
  * @param fields Site description and Person image URL.
  * @returns JSON-LD `@graph` payload.
  */
@@ -86,8 +149,36 @@ export const homeJsonLd = (fields: { description: string; imageUrl: string }): R
 			publisher: { '@id': PERSON_ID },
 		},
 		personNode({ description: fields.description, image: fields.imageUrl }),
+		professionalServiceNode({ description: fields.description, image: fields.imageUrl }),
 	],
 })
+
+/**
+ * Content page JSON-LD (`WebPage` / `ProfilePage` + `Person` + `ProfessionalService`).
+ * @param fields Page metadata.
+ * @returns JSON-LD `@graph` payload.
+ */
+export const pageJsonLd = (fields: PageJsonLdFields): Record<string, unknown> => {
+	const pageType = fields.id === 'about' ? 'ProfilePage' : 'WebPage'
+	const includeService = fields.id === 'services' || fields.id === 'work' || fields.id === 'about'
+	return {
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': pageType,
+				'@id': fields.url,
+				name: fields.title,
+				url: fields.url,
+				description: fields.description,
+				isPartOf: { '@type': 'WebSite', '@id': WEBSITE_ID },
+				about: { '@id': PERSON_ID },
+				...(fields.id === 'about' ? { mainEntity: { '@id': PERSON_ID } } : {}),
+			},
+			personNode({ image: fields.imageUrl }),
+			...(includeService ? [professionalServiceNode({ description: fields.description, image: fields.imageUrl })] : []),
+		],
+	}
+}
 
 /**
  * @param fields Article metadata.

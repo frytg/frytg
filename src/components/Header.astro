@@ -11,6 +11,9 @@ const isActive = (href: string): boolean => {
 	if (href === '/') {
 		return pathname === '/'
 	}
+	if (href.includes('#')) {
+		return false
+	}
 	return pathname === href || pathname.startsWith(href)
 }
 ---

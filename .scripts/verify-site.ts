@@ -1,9 +1,10 @@
-// Verify the production build: trailing-slash permalinks, Sharp srcset, RSS.
+// Verify the production build: trailing-slash permalinks, Sharp srcset, RSS, JSON-LD, and internal links.
 // Run via `just build` after `astro build`. Does not run Sequoia.
 
 import { access, readFile } from 'node:fs/promises'
-import { join } from 'node:path'
+import { dirname, join } from 'node:path'
 import process from 'node:process'
+import { glob } from 'glob'
 
 const ROOT = join(import.meta.dirname, '..')
 const PUBLIC_DIR = join(ROOT, 'public')
@@ -36,8 +37,10 @@ const main = async (): Promise<void> => {
 	} else {
 		const html = await readFile(home, 'utf-8')
 		if (
-			!html.includes('<title>Daniel Freytag – DevOps engineer &amp; hybrid athlete</title>') &&
-			!html.includes('<title>Daniel Freytag – DevOps engineer & hybrid athlete</title>')
+			!html.includes(
+				'<title>Daniel Freytag – Freelance DevOps &amp; Backend Engineer (Media, Audio &amp; EU Cloud)</title>'
+			) &&
+			!html.includes('<title>Daniel Freytag – Freelance DevOps & Backend Engineer (Media, Audio & EU Cloud)</title>')
 		) {
 			console.error('Homepage is missing the document title with role clause')
 			failures += 1
@@ -75,11 +78,26 @@ const main = async (): Promise<void> => {
 		} else {
 			console.log('OK homepage Person.sameAs')
 		}
-		if (!html.includes('"jobTitle":"DevOps engineer"')) {
+		if (
+			!html.includes('"jobTitle":"DevOps & Backend Engineer"') &&
+			!html.includes('"jobTitle":"DevOps &amp; Backend Engineer"')
+		) {
 			console.error('Homepage JSON-LD is missing Person.jobTitle')
 			failures += 1
 		} else {
 			console.log('OK homepage Person.jobTitle')
+		}
+		if (!html.includes('"ProfessionalService"') || !html.includes('"areaServed"')) {
+			console.error('Homepage JSON-LD is missing ProfessionalService or areaServed')
+			failures += 1
+		} else {
+			console.log('OK homepage ProfessionalService JSON-LD')
+		}
+		if (!html.includes('type="application/rss+xml"') || !html.includes('/blog/index.xml')) {
+			console.error('Homepage <head> is missing RSS alternate link')
+			failures += 1
+		} else {
+			console.log('OK homepage RSS <head> link')
 		}
 	}
 
@@ -168,6 +186,9 @@ const main = async (): Promise<void> => {
 	}
 
 	const routes = [
+		['about', join(PUBLIC_DIR, 'about', 'index.html')],
+		['services', join(PUBLIC_DIR, 'services', 'index.html')],
+		['work', join(PUBLIC_DIR, 'work', 'index.html')],
 		['social', join(PUBLIC_DIR, 'social', 'index.html')],
 		['uses', join(PUBLIC_DIR, 'uses', 'index.html')],
 		['dev', join(PUBLIC_DIR, 'dev', 'index.html')],
@@ -198,6 +219,50 @@ const main = async (): Promise<void> => {
 			console.log('OK /legal/ noindex')
 		}
 	}
+
+	const htmlFiles = await glob('**/*.html', { cwd: PUBLIC_DIR, nodir: true })
+	const htmlByPath = new Map<string, string>()
+	for (const rel of htmlFiles) {
+		htmlByPath.set(join(PUBLIC_DIR, rel), await readFile(join(PUBLIC_DIR, rel), 'utf-8'))
+	}
+
+	let checkedInternalLinks = 0
+	for (const [filePath, html] of htmlByPath) {
+		const hrefMatches = html.matchAll(/\bhref="([^"]+)"/g)
+		for (const match of hrefMatches) {
+			const href = match[1]
+			if (!href || /^[a-z][a-z\d+\-.]*:/i.test(href) || href.startsWith('//')) {
+				continue
+			}
+
+			const [rawPath, fragment] = href.split('#')
+			let targetFile: string
+			if (!rawPath) {
+				targetFile = filePath
+			} else if (rawPath.startsWith('/')) {
+				targetFile = rawPath.endsWith('/') ? join(PUBLIC_DIR, rawPath, 'index.html') : join(PUBLIC_DIR, rawPath)
+			} else {
+				targetFile = join(dirname(filePath), rawPath)
+			}
+
+			if (!(await exists(targetFile))) {
+				console.error(`Broken internal link in ${filePath}: href="${href}" -> missing ${targetFile}`)
+				failures += 1
+				continue
+			}
+
+			if (fragment) {
+				const targetHtml = htmlByPath.get(targetFile) ?? (await readFile(targetFile, 'utf-8'))
+				if (!targetHtml.includes(`id="${fragment}"`) && !targetHtml.includes(`id='${fragment}'`)) {
+					console.error(`Broken fragment in ${filePath}: href="${href}" -> #${fragment} not found in ${targetFile}`)
+					failures += 1
+					continue
+				}
+			}
+			checkedInternalLinks += 1
+		}
+	}
+	console.log(`OK ${checkedInternalLinks} internal links and #fragments verified`)
 
 	if (failures > 0) {
 		console.error(`\nSite verification failed (${failures} issue${failures === 1 ? '' : 's'}).`)

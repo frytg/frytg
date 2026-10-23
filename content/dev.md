@@ -12,7 +12,7 @@ sitemap:
 
 # `/dev`
 
-As most of my work revolves around software development, this serves as a non-complete overview of tools that I have published or otherwise created.
+As most of my work revolves around software development, this serves as a non-complete overview of tools that I have published or otherwise created. For detailed architecture and client-facing project write-ups, see [`/work/`](/work/) and [`/services/`](/services/).
 
 Also check out [`/uses/`](/uses/) for a list of tools that I use daily.
 

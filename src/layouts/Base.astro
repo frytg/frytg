@@ -31,7 +31,7 @@ const {
 	publishedTime,
 	modifiedTime,
 	jsonLd,
-	rssHref,
+	rssHref = '/blog/index.xml',
 } = Astro.props
 
 const pageTitle = canonicalPath === '/' ? site.documentTitle : `${title} | ${site.title}`

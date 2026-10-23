@@ -68,7 +68,7 @@ I listen to a lot of podcasts. Some of my favorites are:
 - [**Whoop**](https://join.whoop.com/3AC604) Podcast, great talks and health insights from the makers of the wearable fitness and recovery tracker – [_Apple Podcasts_](https://podcasts.apple.com/de/podcast/whoop-podcast/id1445509665) / [_Spotify_](https://open.spotify.com/show/0yFoBgekRMM9lN0xMMczL7)
 - **Kriss Kross Amsterdam**, great DJ mixes from the Dutch trio – [_Apple Podcasts_](https://podcasts.apple.com/de/podcast/kris-kross-amsterdam-kris-kross-mixtape/id1412638125)
 
-_Do you have more great recommendations? Please [let me know](/social)!_
+_Do you have more great recommendations? Please [let me know](/social/)!_
 
 ---
 

@@ -333,4 +333,31 @@
 	h6:hover .anchor-link {
 		@apply opacity-40 hover:opacity-100 hover:text-yellow;
 	}
+
+	p.cta-row {
+		@apply flex flex-wrap items-center gap-3 my-6;
+
+		a {
+			@apply inline-flex items-center px-4 py-2 text-sm sm:text-base font-medium !no-underline transition-colors duration-200;
+		}
+
+		a:first-child {
+			@apply bg-yellow !text-greeny font-semibold border border-yellow;
+			@apply hover:bg-white hover:border-white hover:!text-greeny;
+		}
+
+		a:not(:first-child) {
+			@apply bg-dark-greeny/60 !text-white border border-white/25;
+			@apply hover:border-yellow hover:!text-yellow;
+		}
+	}
+
+	p.service-tiles-lead + ul {
+		@apply grid grid-cols-1 sm:grid-cols-2 gap-4 list-none !ps-4 sm:!ps-6 my-6;
+
+		> li {
+			@apply !my-0 p-4 sm:p-5 bg-dark-greeny/60 border border-white/10 transition-colors duration-200;
+			@apply hover:border-yellow/60;
+		}
+	}
 }

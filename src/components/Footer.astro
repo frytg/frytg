@@ -2,39 +2,86 @@
 import beOriginal from '../../assets/svg/beoriginal/white.svg?url'
 import logo from '../../assets/svg/logo-white.svg?url'
 import { site } from '../site.ts'
+
+const footerLinks = [
+	{ name: 'Work', href: '/work/' },
+	{ name: 'Services', href: '/services/' },
+	{ name: 'Blog', href: '/blog/' },
+	{ name: 'About', href: '/about/' },
+	{ name: 'Uses', href: '/uses/' },
+	{ name: 'Dev', href: '/dev/' },
+	{ name: 'Social', href: '/social/' },
+	{ name: 'Impressum & Datenschutz', href: '/legal/' },
+] as const
+
+const primarySocialNames = new Set(['LinkedIn', 'Mastodon', 'Tangled', 'GitHub'])
+const primarySocial = site.menus.social.filter((item) => primarySocialNames.has(item.name))
 ---
 
 <div id="footer" class="content-column py-12 flex flex-col items-center gap-4 text-center">
-	<div class="flex flex-col items-center opacity-80">
+	<div class="w-full border border-white/10 bg-dark-greeny/60 px-5 py-4 text-left sm:flex sm:items-center sm:justify-between sm:gap-6">
+		<div>
+			<p class="!my-0 !px-0 !max-w-none text-sm font-medium text-white">
+				<span class="inline-block h-2 w-2 rounded-full bg-yellow mr-2 align-middle" aria-hidden="true" />
+				{site.availability}
+			</p>
+			<p class="!my-1 !px-0 !max-w-none text-meta">
+				DevOps, EU cloud migrations, broadcast/audio backends &amp; self-hosted AI — remote across DE/AT/CH/EU, based near Freiburg.
+			</p>
+		</div>
+		<div class="mt-3 sm:mt-0 shrink-0 flex flex-wrap items-center gap-3">
+			<a
+				href={`mailto:${site.author.email}?subject=Project%20inquiry%20%E2%80%93%20frytg.digital`}
+				class="inline-flex items-center bg-yellow text-greeny font-semibold text-sm px-3.5 py-1.5 !no-underline border border-yellow hover:bg-white hover:border-white hover:text-greeny transition-colors"
+			>
+				{site.author.email}
+			</a>
+			<a
+				href="/services/#contact"
+				class="inline-flex items-center border border-white/25 text-white font-medium text-sm px-3.5 py-1.5 !no-underline hover:border-yellow hover:text-yellow transition-colors"
+			>
+				Hire / Intro call
+			</a>
+		</div>
+	</div>
+
+	<div class="flex flex-col items-center opacity-80 mt-2">
 		<img class="h-8 w-auto" src="/eu-flag-color.svg" alt="European Union" title="European Union" loading="lazy" />
 	</div>
-	
+
 	<div class="flex flex-col items-center opacity-80">
 		<img class="h-8 w-auto" src={beOriginal} alt="Be Original Claim" loading="lazy" />
 	</div>
 
-	<p class="text-meta my-0 max-w-md">
-		Follow on
+	<p class="text-meta my-0 max-w-xl">
+		Connect:{' '}
+		<a href={`mailto:${site.author.email}`}>{site.author.email}</a>
 		{
-			site.menus.social.map((item) => (
+			primarySocial.map((item) => (
 				<>
-					{' '}
+					{' · '}
 					<a href={item.url} target="_blank" rel="me noopener noreferrer" title={`${item.name}: ${item.handle}`}>
 						{item.name}
 					</a>
-					{item.post}
 				</>
 			))
-		}.
+		}
+	</p>
+
+	<p class="text-meta my-0 max-w-xl">
+		{
+			footerLinks.map((item, idx) => (
+				<>
+					{idx > 0 && ' · '}
+					<a href={item.href}>{item.name}</a>
+				</>
+			))
+		}
 	</p>
 
 	<p class="text-meta my-0">
 		No cookies stored. Analytics by{' '}
 		<a href="https://usefathom.com/ref/DJCJEW" target="_blank" title="Fathom Analytics">Fathom</a>.
-	</p>
-
-	<p class="text-meta my-0">
-		<a href="/legal/" title="Impressum">Legal & Privacy</a>
 	</p>
 
 	<p class="text-meta my-0 flex items-center justify-center gap-2">

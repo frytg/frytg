@@ -1,4 +1,5 @@
 ---
+import { urlize } from '../lib/content.ts'
 import MetaLinks from './MetaLinks.astro'
 
 type Props = {
@@ -56,7 +57,7 @@ const { atUri, tags } = Astro.props
 			<div class="blog-post-footer-section">
 				<h5 class="!text-sm !font-medium !text-gray/80 uppercase tracking-wider !mt-0 !mb-2">Tags</h5>
 				<p class="text-meta mt-0 mb-0">
-					<MetaLinks items={tags.map((tag) => ({ href: `/tags/${tag.toLowerCase()}/`, label: tag.toLowerCase() }))} />
+					<MetaLinks items={tags.map((tag) => ({ href: `/tags/${urlize(tag)}/`, label: tag.toLowerCase() }))} />
 				</p>
 			</div>
 		)
