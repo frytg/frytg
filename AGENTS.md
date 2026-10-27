@@ -20,6 +20,7 @@ Task runner: [just](https://github.com/casey/just). All project commands live in
 - `assets/css/` — Tailwind theme and styles (`main.css` is the source of truth for tokens)
 - `static/` — files copied as-is into the build
 - `public/` — build output (do not edit by hand)
+- `.agents/skills/` — project skills. `seo-summaries` drafts five `seo_description` teasers from a blog post path and does not edit the file
 
 ## Design
 

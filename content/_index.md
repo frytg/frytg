@@ -25,7 +25,7 @@ I build and operate resilient backend and cloud infrastructure — from live rad
 
 ## what i do {#what-i-do .editorial-row}
 
-Alongside my work in public broadcasting, I take on selected freelance and consulting engagements for engineering, media, and product teams across Europe. I work with AI tooling early and daily — in my own stack and at SWR Audio Lab — and care about systems that are observable, documented, and built to last beyond my involvement.
+Alongside my work in public broadcasting, I take on selected freelance work for engineering, media, and product teams across Europe. I use AI tools early, in my own work and at SWR Audio Lab, and I care that a system can be watched, is written down, and still runs after I leave.
 {.editorial-summary}
 
 - **[Cloud & DevOps for small teams](/services/#cloud-devops-for-small-teams)** — Terraform, CI/CD, Kubernetes/k3s, observability (Grafana, Datadog), and cloud cost reviews across Scaleway, GCP, and AWS.
@@ -38,11 +38,11 @@ See all offers — including [responsible AI adoption & integration](/services/#
 
 ## selected work {#selected-work .editorial-row}
 
-- **[ARD Eventhub](/work/#ard-eventhub-real-time-radio-metadata-distribution)** — Open-source real-time metadata ingestion and distribution across ARD radio broadcasters ([GitHub](https://github.com/swrlab/ard-eventhub), [docs](https://swrlab.github.io/ard-eventhub/)).
+- **[ARD Eventhub](/work/#ard-eventhub-real-time-radio-metadata-distribution)** — Open-source service that collects what's on air across ARD radio and sends it to the listener apps ([GitHub](https://github.com/swrlab/ard-eventhub), [docs](https://swrlab.github.io/ard-eventhub/)).
 - **[ARD RAKI](/work/#ard-raki-popnacht)** — Responsible AI in live radio: regionalised weather and traffic for ARD Popnacht, voiced by an ARD-internal system from editor-written texts, with transparency notices and human override.
 - **[ARD Sounds Voice Assistants](/work/#ard-sounds-voice-assistants)** — Voice control and smart-speaker playback for ARD Sounds radio and podcast content via Google Assistant, Alexa, and Siri.
-- **[Declarative Infrastructure as Code](/work/#declarative-iac)** — Servers, containers, and cloud resources described once in code and reproducible on demand, from cloud to edge — proven in daily use on my own federated services ([Tangled](https://tangled.org/frytg.digital/locally)).
-- **[`feather-ai-proxy` & `feather-ai-chat`](/work/#feather-ai-proxy-chat-self-hosted-llm-gateway-native-client)** — Lightweight Go multi-provider OpenAI-compatible gateway paired with a native Swift client for Mac, iPad, and iPhone.
+- **[Declarative Infrastructure as Code](/work/#declarative-iac)** — Servers and cloud resources described once in code and rebuildable on demand, from a large host down to a machine at home. In daily use on my own services ([Tangled](https://tangled.org/frytg.digital/locally)).
+- **[`feather-ai-proxy` & `feather-ai-chat`](/work/#feather-ai-proxy-chat-self-hosted-llm-gateway-native-client)** — A small self-hosted gateway to several AI providers, with a native app for Mac, iPad, and iPhone.
 
 ## professional background {#professional-background .editorial-section}
 
@@ -62,10 +62,10 @@ Before focusing full-time on backend and cloud engineering, I worked across **li
 
 ## values & how i build {#values-how-i-build .editorial-row}
 
-- **Systems built to last beyond my involvement**: Infrastructure should be reproducible from a clean git checkout, documented in plain Markdown RFCs, and operable by the next engineer on call.
+- **Systems built to last beyond my involvement**: Anyone should be able to rebuild the system from the project files, read how it works in plain writing, and run it without me.
 - **Always touch a running system**: Software that is never updated eventually becomes a security and reliability liability. Small, regular updates beat multi-year rescue rewrites.
 - **European digital sovereignty**: Whenever practical, I prefer and recommend European cloud, CDN, and DNS providers with clear GDPR compliance and transparent pricing.
-- **Quality over quantity**: Fewer dependencies, strict types, observable failure modes, and calm, direct communication — reflected in our public [SWR Audio Lab Engineering Principles](https://github.com/swrlab/swrlab/blob/main/PRINCIPLES.md).
+- **Quality over quantity**: Fewer moving parts, failures you can see, and calm, direct communication — reflected in our public [SWR Audio Lab Engineering Principles](https://github.com/swrlab/swrlab/blob/main/PRINCIPLES.md).
 
 ## beyond the terminal {#beyond-the-terminal .editorial-section}
 
