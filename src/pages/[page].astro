@@ -6,7 +6,7 @@ import { absoluteUrl, site } from '../site.ts'
 
 /** @returns Trailing-slash routes for the Markdown content pages. */
 export const getStaticPaths = async () => {
-	const plainPages = new Set(['about', 'services', 'work', 'social', 'uses', 'dev', 'legal'])
+	const plainPages = new Set(['services', 'work', 'social', 'dev', 'legal'])
 	const pages = await getCollection('pages', ({ id }) => plainPages.has(id))
 	return pages.map((page) => ({
 		params: { page: page.id },

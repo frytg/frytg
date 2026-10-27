@@ -40,7 +40,7 @@ When understanding or searching for more than just a link or tool [_Perplexity_]
 
 After the shutdown of _Tweetbot_ (rest in peace), I switched over to [_Ivory_](https://tapbots.com/ivory/) and my own Mastodon instance [beoriginal.social](https://beoriginal.social/).
 
-Work and development-wise I'm a big fan of [_Scaleway_](https://www.scaleway.com/), with their EU-based public cloud platform. For some applications [_fly.io_](http://fly.io) is also a great choice. For all the other stuff [_Google Cloud Platform_](https://cloud.google.com/) and [_AWS_](https://aws.amazon.com/) are the usual options. CDN is mostly [_Bunny_](https://bunnycdn.com/) or [_Fastly_](https://www.fastly.com/). [_Terraform_](https://www.terraform.io/) is great to make infrastructure reproducible and abstract bad cloud UIs.
+Work and development-wise I'm a big fan of [_Scaleway_](https://www.scaleway.com/), with their EU-based public cloud platform. For all the other stuff [_Google Cloud Platform_](https://cloud.google.com/) and [_AWS_](https://aws.amazon.com/) are the usual options. CDN is mostly [_Bunny_](https://bunnycdn.com/) or [_Fastly_](https://www.fastly.com/). [_Terraform_](https://www.terraform.io/) is great to make infrastructure reproducible and abstract bad cloud UIs.
 
 Monitoring tech deployments works best with [_Datadog_](https://www.datadoghq.com/) and [_Better Uptime_](https://betterstack.com/).
 

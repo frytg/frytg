@@ -47,4 +47,4 @@ Less active, but still available:
 
 ![Pictures of me at work and events](images/about/socials-header-2024-q4-v1.png)
 
-Interested in what I build and use? Check out [`/work/`](/work/), [`/services/`](/services/), [`/uses/`](/uses/), and [`/dev/`](/dev/).
+Interested in what I build? Check out [`/work/`](/work/), [`/services/`](/services/), and [`/dev/`](/dev/).

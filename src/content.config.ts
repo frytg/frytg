@@ -11,7 +11,7 @@ const sitemapSchema = z
 	.optional()
 
 const pages = defineCollection({
-	loader: glob({ pattern: '{_index,about,services,work,social,uses,dev,legal}.md', base: './content' }),
+	loader: glob({ pattern: '{_index,services,work,social,dev,legal}.md', base: './content' }),
 	schema: z.object({
 		title: z.string(),
 		date: z.coerce.date().optional(),

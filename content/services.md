@@ -1,7 +1,7 @@
 ---
 title: 'Services – Freelance DevOps, Backend & EU Cloud Consulting'
 date: 2026-10-23T08:00:00+00:00
-seo_description: 'Freelance DevOps engineer near Freiburg offering cloud infrastructure, EU-sovereign cloud migrations (Scaleway, Bunny), broadcast audio backends, TypeScript/Go/Rust APIs, self-hosted AI, and maintenance retainers.'
+seo_description: 'Freelance DevOps engineer near Freiburg offering cloud infrastructure, EU-sovereign cloud migrations (Scaleway, Bunny), broadcast audio backends, TypeScript/Go/Rust APIs, responsible AI adoption, and maintenance retainers.'
 image: 'images/og-card/services-2026-Q4-A-2x1.jpg'
 type: 'page'
 layout: 'plain'
@@ -27,7 +27,7 @@ Production infrastructure without needing a full-time platform department.
 
 - **Who it's for**: Startups, agencies, and 3–30 person engineering teams whose developers are spending too much time babysitting deployments, debugging flaky pipelines, or deciphering surprise cloud bills.
 - **Typical problems**: ClickOps infrastructure nobody dares to touch, slow or brittle CI/CD pipelines, missing alerting until customers complain, over-provisioned clusters on AWS or GCP, and secrets scattered across `.env` files.
-- **What's delivered**: Reproducible Infrastructure as Code with **Terraform**, fast CI/CD pipelines (GitHub Actions, GitLab CI, Tangled Spindles), right-sized container setups (**Kubernetes / k3s**, managed containers, or **Fly.io**), **sops + age** secret management, actionable observability (**Grafana**, **Datadog**, **VictoriaMetrics / Loki**, **Better Stack**), and a clear cloud cost review across **Scaleway**, **GCP**, **AWS**, and **Fly.io**.
+- **What's delivered**: Reproducible Infrastructure as Code with **Terraform**, fast CI/CD pipelines (GitHub Actions, GitLab CI, Tangled Spindles), right-sized container setups (**Kubernetes / k3s** or managed containers), **sops + age** secret management, actionable observability (**Grafana**, **Datadog**, **VictoriaMetrics / Loki**, **Better Stack**), and a clear cloud cost review across **Scaleway**, **GCP**, and **AWS**.
 - **Example engagement**: A 2–3 week infrastructure audit and Terraform migration for a growing SaaS or media team — consolidating manual cloud resources into version-controlled IaC, cutting monthly cloud spend, and setting up alert routing with concise runbooks.
 
 ## 2. EU-sovereign hosting & migrations
@@ -41,12 +41,12 @@ Pragmatic European cloud and CDN architectures that take data residency and GDPR
 
 ## 3. Audio & broadcast tech
 
-Reliable real-time metadata pipelines, live streaming relays, and backend services built on 7+ years of public-broadcasting and live-production experience.
+Reliable real-time metadata pipelines and backend services built on 7+ years of public-broadcasting experience.
 
-- **Who it's for**: Radio broadcasters, podcast networks, live-event producers, and audio platforms that need rock-solid delivery between studio playout systems, cloud relays, and listener apps.
-- **Typical problems**: Inconsistent live metadata formats across stations, fragile on-premise encoders, expensive 24/7 cloud GPU instances sitting idle between live shows, and traffic spikes during breaking news or live broadcasts.
-- **What's delivered**: Real-time metadata ingestion and distribution services (REST, WebSockets, SSE, MQTT), disposable **RTMP / SRT** ingest relays and on-demand cloud **vMix** GPU production environments via Terraform, plus high-cache-hit backend APIs for radio, podcast, and voice-assistant platforms.
-- **Example engagement**: Designing and building a containerized live-metadata ingestion service or an automated on-demand SRT/RTMP cloud relay setup that spins up before a live broadcast and tears down cleanly afterward.
+- **Who it's for**: Radio broadcasters, podcast networks, and audio platforms that need rock-solid delivery between studio playout systems, cloud services, and listener apps.
+- **Typical problems**: Inconsistent live metadata formats across stations, brittle integrations between studio systems and apps, and traffic spikes during breaking news or live broadcasts.
+- **What's delivered**: Real-time metadata ingestion and distribution services (REST, WebSockets, SSE, MQTT), plus high-cache-hit backend APIs for radio, podcast, and voice-assistant platforms — like the [ARD Sounds voice assistants](/work/#ard-sounds-voice-assistants) on smart speakers.
+- **Example engagement**: Designing and building a containerized live-metadata ingestion service, or the backend behind a voice-assistant integration that brings your radio and podcast catalogue to smart speakers.
 
 ## 4. Backend & API development
 
@@ -57,14 +57,18 @@ Fast, well-typed APIs and background workers with minimal dependency footprint a
 - **What's delivered**: Clean, strictly typed services in **TypeScript** (**Node.js**, **Bun**, **Deno**) using web-standard frameworks like **Hono** and **Zod**, or compiled services in **Go** and **Rust** where single-binary deployment, memory predictability, or raw throughput fits better — complete with OpenAPI specs, structured syslog-level logging, Redis/Valkey caching, and universal unit/integration tests.
 - **Example engagement**: Building a high-throughput API gateway or data-ingestion service in TypeScript (Hono) or Go, from RFC and schema design through containerization, observability, and load testing.
 
-## 5. Self-hosted & privacy-first AI
+## 5. Responsible AI adoption & integration
 
-Practical AI integrations where data stays under your control, model providers are swappable, and token spend is capped.
+Practical AI where the guardrails come first: people keep editorial and operational responsibility, audiences can tell when AI is involved, and data stays under your control.
 
-- **Who it's for**: Teams that want to integrate LLMs, structured classification, or speech-to-text into internal tools or customer products without scattering vendor API keys across client apps or leaking sensitive data.
-- **Typical problems**: Hardcoded OpenAI SDK calls across multiple repositories, no per-team or per-key budget caps, compliance blockers around sending audio or internal documents to external training pipelines, and heavyweight proxy setups that need their own database just to route requests.
-- **What's delivered**: Lightweight, stateless OpenAI-compatible LLM gateways (like [`feather-ai-proxy`](/work/#feather-ai-proxy-chat-self-hosted-llm-gateway-native-client)), multi-provider routing with hard spend limits (OpenRouter, EU-hosted endpoints, local **Ollama** / **exo** clusters), and self-hosted or on-device speech-to-text and audio transcription pipelines.
-- **Example engagement**: Deploying a self-hosted LLM gateway and internal chat/automation workflow with strict API key scoping, provider fallback, and local speech-to-text transcription for editorial or engineering teams.
+- **Who it's for**: Media houses, public-sector teams, and product organizations that want real AI use cases in production — not demos — without giving up editorial control, GDPR compliance, or sovereignty over models and data.
+- **Typical problems**: AI pilots that stall at the compliance review, vendor demos that quietly send editorial content to external training pipelines, AI output nobody is accountable for, and hardcoded single-vendor SDK calls with no budget caps or fallback.
+- **What's delivered**: Use-case selection and scoping (narrow, measurable, reversible first), written guardrails — human-written and human-checked content, no autonomous formulation or alteration, transparency labelling for audiences, human override and escalation paths for critical situations — plus the engineering to run it: EU-hosted or self-hosted models, lightweight OpenAI-compatible LLM gateways (like [`feather-ai-proxy`](/work/#feather-ai-proxy-chat-self-hosted-llm-gateway-native-client)) with per-key spend limits, and self-hosted speech-to-text pipelines.
+- **Real use cases**:
+  - **[ARD RAKI](/work/#ard-raki-popnacht)** — the ARD-internal _Radio Automation KI_ behind regionalised weather and traffic in ARD Popnacht: editors write and check every text, the AI only voices them in each station's sound, every item carries a transparency notice, and live presenters take over in danger situations.
+  - **Editorial speech-to-text** — self-hosted transcription of interviews and raw audio, so unpublished material never leaves your infrastructure.
+  - **Internal LLM gateway & chat** — one governed endpoint for coding agents and internal tools, with scoped API keys, provider fallback, and hard token budgets instead of keys scattered across laptops.
+- **Example engagement**: A responsible-AI pilot from use-case workshop to production: one narrow use case, a short guardrails document your legal and editorial teams can sign off, EU-hosted or local deployment, and transparency plus human-fallback built in from day one.
 
 ## 6. Maintenance retainers
 
@@ -91,14 +95,11 @@ _"Always touch a running system."_ Continuous care so production systems stay pa
 
 ## Hire / Get in touch {#contact}
 
-The fastest way to start is a short email or a free 30-minute intro call to check fit, scope, and timing.
+The fastest way to start is a short email to check fit, scope, and timing.
 
 - **Email**: [`contact@frytg.com`](mailto:contact@frytg.com?subject=Project%20inquiry%20%E2%80%93%20frytg.digital)
 - **LinkedIn**: [`linkedin.com/in/frytg`](https://www.linkedin.com/in/frytg/)
 - **Matrix (encrypted chat)**: [`@frytg:beoriginal.social`](https://matrix.to/#/@frytg:beoriginal.social)
-- **30-min intro call**: [Request a slot via email](<mailto:contact@frytg.com?subject=30-min%20intro%20call%20%E2%80%93%20frytg.digital&body=Hi%20Dan%2C%0A%0AI'd%20like%20to%20book%20a%2030-minute%20intro%20call.%0A%0A-%20Project%20%2F%20context%3A%20%0A-%20Timeline%3A%20%0A-%20Budget%20range%3A%20%0A-%20Suggested%20times%20(CET)%3A%20>)
-
-<!-- TODO: Optional — replace the mailto intro-call link above with a Cal.com booking link if desired. -->
 
 ### What to include in your message
 

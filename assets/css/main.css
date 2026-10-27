@@ -235,6 +235,31 @@
 	.site-footer {
 		@apply border-t border-white/10;
 		@apply mt-auto;
+
+		.footer-copy {
+			@apply !mx-0 !my-0 !w-auto !max-w-none !px-0;
+		}
+
+		.footer-heading {
+			@apply !mx-0 !my-0 !w-auto !max-w-none !px-0;
+			@apply text-xs font-semibold tracking-wider text-white/50 uppercase;
+		}
+
+		.footer-list--stack {
+			@apply !flex-col;
+		}
+
+		.footer-list {
+			@apply !mx-0 !my-0 !flex !w-auto !max-w-none !flex-wrap !list-none !items-start !gap-x-4 !gap-y-2 !px-0 !ps-0;
+
+			> li {
+				@apply !m-0 !p-0;
+
+				a {
+					@apply whitespace-nowrap;
+				}
+			}
+		}
 	}
 
 	.site-nav {
@@ -359,5 +384,15 @@
 			@apply !my-0 p-4 sm:p-5 bg-dark-greeny/60 border border-white/10 transition-colors duration-200;
 			@apply hover:border-yellow/60;
 		}
+	}
+
+	.signal-mark {
+		@apply mr-2 inline-block align-middle text-yellow;
+		width: 11ch;
+		font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+		font-size: 0.8em;
+		line-height: 1;
+		letter-spacing: 0;
+		white-space: pre;
 	}
 }

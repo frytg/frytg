@@ -3,97 +3,121 @@ import beOriginal from '../../assets/svg/beoriginal/white.svg?url'
 import logo from '../../assets/svg/logo-white.svg?url'
 import { site } from '../site.ts'
 
-const footerLinks = [
+const explore = [
+	{ name: 'About', href: '/' },
 	{ name: 'Work', href: '/work/' },
 	{ name: 'Services', href: '/services/' },
 	{ name: 'Blog', href: '/blog/' },
-	{ name: 'About', href: '/about/' },
-	{ name: 'Uses', href: '/uses/' },
 	{ name: 'Dev', href: '/dev/' },
 	{ name: 'Social', href: '/social/' },
-	{ name: 'Impressum & Datenschutz', href: '/legal/' },
 ] as const
 
 const primarySocialNames = new Set(['LinkedIn', 'Mastodon', 'Tangled', 'GitHub'])
 const primarySocial = site.menus.social.filter((item) => primarySocialNames.has(item.name))
+const year = new Date().getFullYear()
+const mailto = `mailto:${site.author.email}?subject=Project%20inquiry%20%E2%80%93%20frytg.digital`
 ---
 
-<div id="footer" class="content-column py-12 flex flex-col items-center gap-4 text-center">
-	<div class="w-full border border-white/10 bg-dark-greeny/60 px-5 py-4 text-left sm:flex sm:items-center sm:justify-between sm:gap-6">
+<div id="footer" class="content-column py-12 sm:py-14">
+	<section
+		aria-labelledby="footer-availability"
+		class="border border-white/10 bg-dark-greeny/60 px-5 py-5 text-left sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-6"
+	>
 		<div>
-			<p class="!my-0 !px-0 !max-w-none text-sm font-medium text-white">
-				<span class="inline-block h-2 w-2 rounded-full bg-yellow mr-2 align-middle" aria-hidden="true" />
+			<p id="footer-availability" class="footer-copy text-sm font-medium text-white">
+				<span class="signal-mark" data-signal aria-hidden="true">....+#+....</span>
 				{site.availability}
 			</p>
-			<p class="!my-1 !px-0 !max-w-none text-meta">
-				DevOps, EU cloud migrations, broadcast/audio backends &amp; self-hosted AI — remote across DE/AT/CH/EU, based near Freiburg.
+			<p class="footer-copy mt-1 text-meta">
+				DevOps, EU cloud migrations, broadcast/audio backends &amp; responsible AI — remote across DE/AT/CH/EU, based
+				near Freiburg.
 			</p>
 		</div>
-		<div class="mt-3 sm:mt-0 shrink-0 flex flex-wrap items-center gap-3">
+		<div class="mt-4 flex shrink-0 flex-wrap items-center gap-3 sm:mt-0">
 			<a
-				href={`mailto:${site.author.email}?subject=Project%20inquiry%20%E2%80%93%20frytg.digital`}
-				class="inline-flex items-center bg-yellow text-greeny font-semibold text-sm px-3.5 py-1.5 !no-underline border border-yellow hover:bg-white hover:border-white hover:text-greeny transition-colors"
+				href={mailto}
+				class="inline-flex items-center border border-yellow bg-yellow px-3.5 py-1.5 text-sm font-semibold !text-greeny !no-underline transition-colors hover:border-white hover:bg-white hover:!text-greeny"
 			>
 				{site.author.email}
 			</a>
 			<a
-				href="/services/#contact"
-				class="inline-flex items-center border border-white/25 text-white font-medium text-sm px-3.5 py-1.5 !no-underline hover:border-yellow hover:text-yellow transition-colors"
+				href="/services/"
+				class="inline-flex items-center border border-white/25 px-3.5 py-1.5 text-sm font-medium text-white !no-underline transition-colors hover:border-yellow hover:!text-yellow"
 			>
-				Hire / Intro call
+				Explore services
 			</a>
 		</div>
+	</section>
+
+	<div class="mt-10 grid gap-8 sm:grid-cols-[minmax(0,1.5fr)_auto_auto] sm:gap-12">
+		<div>
+			<p class="footer-copy text-base font-semibold text-white">{site.author.name}</p>
+			<p class="footer-copy mt-1 text-sm text-white/80">Freelance {site.author.jobTitle}</p>
+			<p class="footer-copy mt-3 max-w-md text-meta">
+				DevOps and backend engineering for media, broadcast audio, and EU-sovereign cloud infrastructure.
+			</p>
+			<address class="not-italic">
+				<p class="footer-copy mt-3 text-sm text-white/80">
+					<a href={`mailto:${site.author.email}`}>{site.author.email}</a>
+					<span class="text-white/35" aria-hidden="true"> · </span>
+					Ehrenkirchen, near Freiburg, Germany
+				</p>
+			</address>
+		</div>
+
+		<nav aria-label="Footer">
+			<p class="footer-heading">Explore</p>
+			<ul class="footer-list footer-list--stack mt-3">
+				{
+					explore.map((item) => (
+						<li>
+							<a href={item.href}>{item.name}</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+
+		<nav aria-label="Social profiles">
+			<p class="footer-heading">Connect</p>
+			<ul class="footer-list footer-list--stack mt-3">
+				{
+					primarySocial.map((item) => (
+						<li>
+							<a href={item.url} target="_blank" rel="me noopener noreferrer">
+								{item.name}
+							</a>
+						</li>
+					))
+				}
+				<li>
+					<a href="/blog/index.xml">RSS feed</a>
+				</li>
+			</ul>
+		</nav>
 	</div>
 
-	<div class="flex flex-col items-center opacity-80 mt-2">
-		<img class="h-8 w-auto" src="/eu-flag-color.svg" alt="European Union" title="European Union" loading="lazy" />
+	<div class="mt-10 border-t border-white/10 pt-6">
+		<div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+			<p class="footer-copy text-meta">© {year} {site.author.name}</p>
+			<ul class="footer-list shrink-0">
+				<li class="text-sm">
+					<a href="/legal/">Impressum &amp; Datenschutz</a>
+				</li>
+			</ul>
+		</div>
+		<div class="mt-3 flex flex-wrap items-center justify-between gap-x-6 gap-y-3">
+			<p class="footer-copy text-meta">
+				No cookies stored. Analytics by{' '}
+				<a href="https://usefathom.com/ref/DJCJEW" target="_blank" rel="noopener noreferrer">Fathom</a>.
+			</p>
+			<div class="flex items-center gap-4">
+				<img class="h-6 w-auto opacity-80" src="/eu-flag-color.svg" alt="European Union" title="European Union" loading="lazy" />
+				<img class="h-6 w-auto opacity-80" src={beOriginal} alt="Be Original" loading="lazy" />
+				<a href="/" title="FRYTG digital" class="inline-flex items-center">
+					<img class="h-5 w-auto opacity-70 transition-opacity hover:opacity-100" src={logo} alt="FRYTG digital" />
+				</a>
+			</div>
+		</div>
 	</div>
-
-	<div class="flex flex-col items-center opacity-80">
-		<img class="h-8 w-auto" src={beOriginal} alt="Be Original Claim" loading="lazy" />
-	</div>
-
-	<p class="text-meta my-0 max-w-xl">
-		Connect:{' '}
-		<a href={`mailto:${site.author.email}`}>{site.author.email}</a>
-		{
-			primarySocial.map((item) => (
-				<>
-					{' · '}
-					<a href={item.url} target="_blank" rel="me noopener noreferrer" title={`${item.name}: ${item.handle}`}>
-						{item.name}
-					</a>
-				</>
-			))
-		}
-	</p>
-
-	<p class="text-meta my-0 max-w-xl">
-		{
-			footerLinks.map((item, idx) => (
-				<>
-					{idx > 0 && ' · '}
-					<a href={item.href}>{item.name}</a>
-				</>
-			))
-		}
-	</p>
-
-	<p class="text-meta my-0">
-		No cookies stored. Analytics by{' '}
-		<a href="https://usefathom.com/ref/DJCJEW" target="_blank" title="Fathom Analytics">Fathom</a>.
-	</p>
-
-	<p class="text-meta my-0 flex items-center justify-center gap-2">
-		<span>© Daniel Freytag</span>
-		<span class="text-white/20">·</span>
-		<a
-			href="https://www.frytg.digital/?ref=frytg-com-footer"
-			target="_blank"
-			title="FRYTG digital"
-			class="inline-flex items-center"
-		>
-			<img class="h-5 w-auto opacity-70 hover:opacity-100 transition-opacity" src={logo} alt="FRYTG digital" />
-		</a>
-	</p>
 </div>

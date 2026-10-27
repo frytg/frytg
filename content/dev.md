@@ -14,8 +14,6 @@ sitemap:
 
 As most of my work revolves around software development, this serves as a non-complete overview of tools that I have published or otherwise created. For detailed architecture and client-facing project write-ups, see [`/work/`](/work/) and [`/services/`](/services/).
 
-Also check out [`/uses/`](/uses/) for a list of tools that I use daily.
-
 ## Universal Activity Maps
 
 It all started as [a Ruby project](https://github.com/akerl/githubchart) that parses GitHub contribution data and renders an SVG. I later rewrote the same idea in Rust as [`githubchart-rust`](https://tangled.org/frytg.digital/pkgy/tree/main/githubchart-rust) and compiled it to WASM so it could be embedded on a serverless endpoint.

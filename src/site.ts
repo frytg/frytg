@@ -8,18 +8,18 @@ export const site = {
 		name: 'Daniel Freytag',
 		jobTitle: 'DevOps & Backend Engineer',
 	},
-	// TODO: Update availability month/window as schedule changes.
-	availability: 'Currently taking on freelance projects from November 2026',
+	availability: 'Currently taking on freelance projects',
 	ogImage: 'images/og-card/about-2024-Q1-A-2x1.jpg',
 	fathomSite: 'BCUBYJDW',
 	rssTitle: 'Blog Posts from Daniel Freytag',
 	rssLimit: 20,
 	menus: {
 		main: [
+			{ name: 'About', href: '/' },
 			{ name: 'Work', href: '/work/' },
 			{ name: 'Services', href: '/services/' },
 			{ name: 'Blog', href: '/blog/' },
-			{ name: 'About', href: '/about/' },
+			{ name: 'Social', href: '/social/' },
 			{ name: 'Contact', href: '/services/#contact' },
 		],
 		social: [

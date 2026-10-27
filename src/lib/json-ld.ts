@@ -80,6 +80,7 @@ export const personNode = (fields: PersonFields = {}): Record<string, unknown> =
 		'TypeScript',
 		'Go',
 		'Rust',
+		'Responsible AI Integration',
 		'Self-Hosted AI',
 	],
 	sameAs: sameAsUrls(),
@@ -112,7 +113,7 @@ export const professionalServiceNode = (fields: PersonFields = {}): Record<strin
 		'EU-Sovereign Hosting & Cloud Migrations',
 		'Audio & Broadcast Backend Engineering',
 		'Backend & API Development (TypeScript, Go, Rust)',
-		'Self-Hosted & Privacy-First AI',
+		'Responsible AI Adoption & Integration',
 		'Infrastructure & Software Maintenance Retainers',
 	],
 	sameAs: sameAsUrls(),
@@ -132,7 +133,8 @@ export const ogImageObject = (url: string): Record<string, unknown> => ({
 })
 
 /**
- * Homepage WebSite + Person + ProfessionalService graph.
+ * Homepage WebSite + ProfilePage + Person + ProfessionalService graph.
+ * The index is the about page, so the profile's main entity is the person.
  * @param fields Site description and Person image URL.
  * @returns JSON-LD `@graph` payload.
  */
@@ -148,31 +150,38 @@ export const homeJsonLd = (fields: { description: string; imageUrl: string }): R
 			inLanguage: site.locale,
 			publisher: { '@id': PERSON_ID },
 		},
+		{
+			'@type': 'ProfilePage',
+			'@id': `${site.baseURL}#profile`,
+			url: site.baseURL,
+			name: site.documentTitle,
+			isPartOf: { '@id': WEBSITE_ID },
+			about: { '@id': PERSON_ID },
+			mainEntity: { '@id': PERSON_ID },
+		},
 		personNode({ description: fields.description, image: fields.imageUrl }),
 		professionalServiceNode({ description: fields.description, image: fields.imageUrl }),
 	],
 })
 
 /**
- * Content page JSON-LD (`WebPage` / `ProfilePage` + `Person` + `ProfessionalService`).
+ * Content page JSON-LD (`WebPage` + `Person`, plus `ProfessionalService` on services and work).
  * @param fields Page metadata.
  * @returns JSON-LD `@graph` payload.
  */
 export const pageJsonLd = (fields: PageJsonLdFields): Record<string, unknown> => {
-	const pageType = fields.id === 'about' ? 'ProfilePage' : 'WebPage'
-	const includeService = fields.id === 'services' || fields.id === 'work' || fields.id === 'about'
+	const includeService = fields.id === 'services' || fields.id === 'work'
 	return {
 		'@context': 'https://schema.org',
 		'@graph': [
 			{
-				'@type': pageType,
+				'@type': 'WebPage',
 				'@id': fields.url,
 				name: fields.title,
 				url: fields.url,
 				description: fields.description,
 				isPartOf: { '@type': 'WebSite', '@id': WEBSITE_ID },
 				about: { '@id': PERSON_ID },
-				...(fields.id === 'about' ? { mainEntity: { '@id': PERSON_ID } } : {}),
 			},
 			personNode({ image: fields.imageUrl }),
 			...(includeService ? [professionalServiceNode({ description: fields.description, image: fields.imageUrl })] : []),

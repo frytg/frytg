@@ -186,11 +186,9 @@ const main = async (): Promise<void> => {
 	}
 
 	const routes = [
-		['about', join(PUBLIC_DIR, 'about', 'index.html')],
 		['services', join(PUBLIC_DIR, 'services', 'index.html')],
 		['work', join(PUBLIC_DIR, 'work', 'index.html')],
 		['social', join(PUBLIC_DIR, 'social', 'index.html')],
-		['uses', join(PUBLIC_DIR, 'uses', 'index.html')],
 		['dev', join(PUBLIC_DIR, 'dev', 'index.html')],
 		['legal', join(PUBLIC_DIR, 'legal', 'index.html')],
 		['blog', join(PUBLIC_DIR, 'blog', 'index.html')],

@@ -1,7 +1,7 @@
 ---
 title: 'Work & Case Studies – DevOps, Broadcast Tech & EU Cloud'
 date: 2026-10-23T08:00:00+00:00
-seo_description: 'Selected engineering case studies by Daniel Freytag: ARD Eventhub real-time radio metadata, disposable RTMP/SRT cloud livestreaming, NixOS/k3s IaC, and self-hosted AI gateways.'
+seo_description: 'Selected engineering case studies by Daniel Freytag: ARD Eventhub real-time radio metadata, ARD RAKI responsible AI for ARD Popnacht, ARD Sounds voice assistants, declarative IaC, and self-hosted AI gateways.'
 image: 'images/og-card/work-2026-Q4-A-2x1.jpg'
 type: 'page'
 layout: 'plain'
@@ -12,7 +12,7 @@ sitemap:
 
 # `/work`
 
-Selected infrastructure, broadcast-tech, and backend engineering projects — from public-broadcasting systems serving millions of listeners to disposable live-streaming rigs, declarative NixOS/k3s infrastructure, and self-hosted AI tools.
+Selected infrastructure, broadcast-tech, and backend engineering projects — from public-broadcasting systems serving millions of listeners to responsible AI in live radio, voice-assistant platforms, declarative infrastructure, and self-hosted AI tools.
 
 [Work with me](/services/) [Get in touch](/services/#contact)
 {.cta-row}
@@ -31,23 +31,31 @@ Selected infrastructure, broadcast-tech, and backend engineering projects — fr
 - **Stack**: TypeScript, Node.js, containerized cloud infrastructure, structured logging and Datadog observability, OpenAPI, GitHub Actions CI/CD.
 - **Outcome**: Published as open source under [`swrlab/ard-eventhub`](https://github.com/swrlab/ard-eventhub) with public contributor documentation, powering live radio metadata across ARD's digital audio platforms.
 
-### Live event streaming — Disposable RTMP/SRT relays & cloud vMix {#live-event-streaming-disposable-rtmp-srt-relays-cloud-vmix}
+### ARD RAKI — Responsible AI for ARD Popnacht {#ard-raki-popnacht}
 
-- **Context**: Live conferences, hybrid events, and remote productions need resilient ingest relays (RTMP and SRT) and multi-camera video switching without hauling rack-mounted hardware to every venue or paying for idle cloud GPUs year-round.
-- **Problem**: On-site uplink connections can drop or fluctuate, and keeping dedicated GPU cloud instances and streaming relays running 24/7 for occasional live broadcasts wastes budget and invites configuration drift.
-- **What I built**: **[`event-livestream-tools`](https://github.com/frytg/event-livestream-tools)** — a set of reproducible scripts and infrastructure definitions to spin up disposable RTMP/SRT ingest relays and GPU-accelerated cloud **vMix** production VMs on demand before a broadcast, bond or relay incoming camera feeds, and tear the entire stack down cleanly once the event ends.
-- **Stack**: SRT & RTMP streaming relays, cloud GPU VMs, vMix, Linux/containers, automated provisioning scripts.
-- **Outcome**: Repeatable, spin-up-per-event broadcast infrastructure that eliminates idle monthly GPU and relay costs while giving live production teams a predictable cloud control room in minutes.
+<!-- TODO: Employer sign-off check — this section only uses information already public in the ARD press release and press coverage of RAKI. Confirm with SWR before adding internal system details. -->
+
+- **Context**: Since early 2025, eight ARD pop stations — hr3, rbb 88.8, MDR JUMP, NDR 2, Bremen Vier, SR 1, SWR3, and WDR 2 — share the evening and night programmes _Pop – Die Abendshow_ and [_ARD Popnacht_](https://www.ard.de/die-ard/presse-kontakt/ard-pressemeldungen/2026/02-25-ard-popwellen-fuehren-regionalisierten-ki-service-fuer-wetter-und-verkehr-ein-100.html), produced by SWR3 with one live host for all stations. Weather and traffic could previously only be announced nationwide, with nothing specific to each listener's region.
+- **What was built**: **RAKI** (_Radio Automation KI_), an ARD-internal AI data-processing and speech-output system developed and configured in close cooperation between SWR and WDR. Editors in the ARD weather and traffic desks write and check every text and assign it to a broadcast region; RAKI then voices those texts with a specially trained speech system matched to each station's sound design, using voices based on real presenters and built exclusively for this purpose.
+- **Responsible-AI guardrails**: The AI may neither formulate nor alter content itself — editorial responsibility stays with people. Every AI-voiced item goes out with a clear transparency notice, the voices are governed by strict data-protection and security rules, and in acute danger situations (for example a wrong-way driver) the live presenter takes over as before. Keeping the system ARD-internal gives the broadcasters full sovereignty over the technology and the data.
+- **Outcome**: Since 3 March 2026, each participating station airs its own regional traffic at the top of the hour and regional weather and traffic at half past — in its familiar station sound, inside a shared programme reaching a million-strong audience.
+
+### ARD Sounds Voice Assistants — Smart speakers & voice control {#ard-sounds-voice-assistants}
+
+- **Context**: More and more listening happens away from the radio set — at breakfast, in the car, or under the shower. Listeners expect [ARD Sounds](https://www.ardsounds.de/) radio and podcast content on the smart speakers already in their homes, and hands-free control also matters for people with limited sight or mobility.
+- **What I worked on**: Voice-assistant integrations that make ARD Sounds content playable through the major assistant ecosystems — [Google Assistant, Alexa, and Siri on Google Home, Alexa, Sonos, and similar speaker systems](https://hilfe.ard.de/artikel/ard-sounds-mit-sprachsteuerung-und-lautsprechersystemen/) — backed by the same metadata and audio-delivery pipelines that feed the apps and web players.
+- **Stack**: Voice-assistant platforms (Skills/Actions), backend APIs, live radio metadata, audio delivery, containerized cloud infrastructure.
+- **Outcome**: ARD Sounds radio, news, and podcast content is available by voice on smart speakers — no screen, app, or radio set required.
 
 ![Daniel Freytag in live broadcast control rooms and production setups](images/about/web-about-2024-q1-3@2x.webp)
 
-### Homelab as production-grade IaC
+### Declarative Infrastructure as Code {#declarative-iac}
 
-- **Context**: Personal and federated production services — including a Mastodon instance ([`beoriginal.social`](https://beoriginal.social/)), a Matrix homeserver (`tuwunel`), an AT Protocol PDS (`pds.frytg.digital`), monitoring, and internal tools — needed a single declarative setup across local hardware and European cloud edge services.
-- **Problem**: Running self-hosted services on ad-hoc cloud VPS instances cost 50+ EUR/month and accumulated manual configuration snowflaking, secret sprawl, and fragile backup routines.
-- **What I built**: **[`frytg.digital/locally`](https://tangled.org/frytg.digital/locally)** ([background write-up](/blog/2026-w35-weeknotes-no10/)) — a multi-host declarative infrastructure repository combining **NixOS** host configurations, **k3s** Kubernetes manifests, **Terraform** for cloud edge resources (Scaleway, GCP, Bunny CDN, DNS, object storage), **sops + age** encrypted secrets, **k8up / restic** automated backups, and a full observability stack.
+- **Context**: The same pattern I set up for client and team infrastructure — declarative hosts, container workloads, and cloud edge resources described once in code and applied reproducibly — also has to work for small, long-lived services that one person operates alone.
+- **Problem**: Ad-hoc servers and manual configuration snowflake over time: secrets sprawl across machines, backups go untested, and nobody remembers how a host was built six months later.
+- **What I built**: A reusable IaC setup combining **NixOS** host configurations, **k3s** Kubernetes manifests, **Terraform** for cloud edge resources (Scaleway, GCP, Bunny CDN, DNS, object storage), **sops + age** encrypted secrets, **k8up / restic** automated backups, and a full observability stack. The public example of the pattern in daily use is my own homelab and edge infrastructure in **[`frytg.digital/locally`](https://tangled.org/frytg.digital/locally)** ([background write-up](/blog/2026-w35-weeknotes-no10/)), which runs federated services like a Mastodon instance ([`beoriginal.social`](https://beoriginal.social/)), a Matrix homeserver, and an AT Protocol PDS on low-power nodes.
 - **Stack**: NixOS, k3s, Terraform, sops (age/PGP), k8up & restic, VictoriaMetrics, VictoriaLogs, Grafana, Loki, Prometheus, Perses, Vector, Tailscale, Cloudflare Tunnels, `just`.
-- **Outcome**: Consolidated recurring VPS workloads onto low-power NixOS + k3s nodes with zero plaintext secrets in git, one-command host synchronization via `just`, and end-to-end metrics, logs, and off-site encrypted backups.
+- **Outcome**: One declarative pattern from cloud to edge — zero plaintext secrets in git, one-command host synchronization via `just`, end-to-end metrics and logs, off-site encrypted backups, and infrastructure a new engineer can rebuild from a clean checkout.
 
 ### `feather-ai-proxy` & `feather-ai-chat` — Self-hosted LLM gateway & native client {#feather-ai-proxy-chat-self-hosted-llm-gateway-native-client}
 
@@ -71,7 +79,7 @@ Beyond client and broadcast systems, I publish open-source tools, reusable TypeS
 - **[SWR Audio Lab open source (`@swrlab`)](https://github.com/swrlab)** — Public repositories and our team's [Engineering Principles](https://github.com/swrlab/swrlab/blob/main/PRINCIPLES.md).
 - **[`frytg.digital/frytg-digital`](https://tangled.org/frytg.digital/frytg-digital)** — The source code for this Astro static site, published to Bunny CDN and AT Protocol ([Standard.site](https://pdsls.dev/at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.publication/3mptaiprnps2m)).
 
-You can also view the live SVG contribution charts on [`/dev/`](/dev/) or check out the hardware and software I use daily on [`/uses/`](/uses/).
+You can also view the live SVG contribution charts on [`/dev/`](/dev/).
 
 ---
 
