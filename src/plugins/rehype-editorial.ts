@@ -65,6 +65,38 @@ const isImageParagraph = (node: EditorialNode): boolean => {
 }
 
 /**
+ * find the next non-whitespace sibling after an index.
+ * @param siblings direct children of a section body.
+ * @param index paragraph position in the body.
+ * @returns the next element or raw node, if any.
+ */
+const nextElement = (siblings: EditorialNode[], index: number): EditorialNode | undefined => {
+	for (let position = index + 1; position < siblings.length; position += 1) {
+		const node = siblings[position]
+		if (node.type === 'element' || node.type === 'raw') {
+			return node
+		}
+	}
+	return undefined
+}
+
+/**
+ * find the previous non-whitespace sibling before an index.
+ * @param siblings direct children of a section body.
+ * @param index paragraph position in the body.
+ * @returns the previous element or raw node, if any.
+ */
+const prevElement = (siblings: EditorialNode[], index: number): EditorialNode | undefined => {
+	for (let position = index - 1; position >= 0; position -= 1) {
+		const node = siblings[position]
+		if (node.type === 'element' || node.type === 'raw') {
+			return node
+		}
+	}
+	return undefined
+}
+
+/**
  * apply the shared editorial conventions inside a section body: image examples,
  * list leads, and first/last paragraph styling. explicit classes always win.
  * @param body direct children of a section body.
@@ -79,14 +111,14 @@ const annotateBody = (body: EditorialNode[], kind: 'row' | 'section'): void => {
 
 	for (const entry of paragraphs) {
 		const { node, index } = entry
-		const next = body[index + 1]
+		const next = nextElement(body, index)
 		const nextIsList = next?.type === 'element' && (next.tagName === 'ul' || next.tagName === 'ol')
-		if (nextIsList) {
-			assign(node, 'editorial-list-lead')
-			continue
-		}
 		if (kind === 'section' && isImageParagraph(node)) {
 			assign(node, 'editorial-media')
+			continue
+		}
+		if (nextIsList) {
+			assign(node, 'editorial-list-lead')
 			continue
 		}
 		if (node === firstParagraph && kind === 'row') {
@@ -117,8 +149,8 @@ const annotateOpening = (nodes: EditorialNode[]): void => {
 		if (node?.type !== 'element' || node.tagName !== 'p') {
 			continue
 		}
-		const prev = nodes[index - 1]
-		const next = nodes[index + 1]
+		const prev = prevElement(nodes, index)
+		const next = nextElement(nodes, index)
 		const prevIsH1 = prev?.type === 'element' && prev.tagName === 'h1'
 		const nextIsH1 = next?.type === 'element' && next.tagName === 'h1'
 		const prevIsCta = prev?.type === 'element' && classNames(prev).includes('cta-row')

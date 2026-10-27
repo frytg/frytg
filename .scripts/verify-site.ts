@@ -81,6 +81,14 @@ const main = async (): Promise<void> => {
 		} else {
 			console.log('OK homepage LCP image priority')
 		}
+		const homeRows = html.match(/<section class="editorial-row"/g) ?? []
+		const homeSections = html.match(/<section class="editorial-section"/g) ?? []
+		if (!html.includes('editorial-page') || homeRows.length !== 4 || homeSections.length !== 3) {
+			console.error('Homepage is missing its shared editorial layout or labelled sections')
+			failures += 1
+		} else {
+			console.log('OK homepage editorial layout and labelled sections')
+		}
 		if (!html.includes('"sameAs"') || !html.includes('beoriginal.social/@FRYTG')) {
 			console.error('Homepage JSON-LD is missing Person.sameAs social profiles')
 			failures += 1

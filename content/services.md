@@ -17,7 +17,7 @@ sitemap:
 
 i help small teams build, improve, and maintain the systems behind their products. hands-on infrastructure, backend engineering, and modern websites; practical AI integration where it makes sense.
 
-[let's talk about your project](#contact) [see my work](/work/)
+[get in touch](#contact) [see my work](/work/)
 {.cta-row}
 
 based near Freiburg; working remotely across Germany, Austria, Switzerland, and Europe. selected freelance projects alongside my work at SWR Audio Lab.

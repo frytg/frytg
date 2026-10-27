@@ -47,14 +47,20 @@ export default {
 - use `{.editorial-section}` for full-width chapters or contact sections; nested split headings work too.
 - a peer or higher-level heading ends the section. horizontal rules also end it; standalone image-pipeline media
   stays outside split rows so photos keep their full-width placement.
-- `.editorial-intro`, `.editorial-note`, and `.editorial-meta` style introductions, optional evidence, and supporting text.
-  `.editorial-list-lead` introduces a compact three-column list; `.editorial-media` sizes an image example.
-  no fixed paragraph count or heading-ID CSS.
+- everything else is inferred from position; no per-paragraph markers needed:
+  paragraph before `h1` → path, first paragraph after `h1` → intro, paragraph after the cta row → context;
+  in a row body the first paragraph → summary and the last → note; in a section body a paragraph before a
+  list → list-lead, an image-only paragraph → media, and the last → note. all other paragraphs use the
+  shared default. explicit `{.class}` markers still win over inference (e.g. `.cta-row`).
 - set `footerAvailability: false` when the page already ends with its own contact section.
 - work-page wording and links stay in Markdown; layout markers don't change either.
-- run `just test`, `just lint`, and `just build`; the build also runs the editorial regression tests.
+- run `just test`, `just lint`, and `just build`; the build also runs the editorial regression tests in
+  `.scripts/verify-editorial.ts`.
   use `just preview` to check narrow and desktop layouts locally.
 - design reference: [dotfiles design system](https://tangled.org/frytg.digital/dotfiles/blob/main/context/DESIGN.md).
+
+mdx is not needed here: the `{#id .class}` heading markers plus positional inference cover this site's
+needs. mdx would make sense only if pages later need real components or embedded interactivity.
 
 Learn more on [frytg.digital](https://www.frytg.digital/) and find me on several social media sites: [frytg.digital/social](https://www.frytg.digital/social) 🤝
 

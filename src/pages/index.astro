@@ -12,6 +12,7 @@ if (!home) {
 const { Content } = await render(home)
 const description = home.data.seo_description ?? ''
 const imageUrl = await absoluteOgImageUrl(home.data.image ?? site.ogImage)
+const isEditorial = home.data.layout === 'editorial'
 ---
 
 <Base
@@ -19,9 +20,10 @@ const imageUrl = await absoluteOgImageUrl(home.data.image ?? site.ogImage)
 	description={description}
 	canonicalPath="/"
 	image={home.data.image ?? site.ogImage}
+	footerAvailability={home.data.footerAvailability}
 	jsonLd={homeJsonLd({ description, imageUrl })}
 >
-	<div class="container container-custom">
+	<div class={isEditorial ? 'editorial-page' : 'container container-custom'}>
 		<Content />
 	</div>
 </Base>
