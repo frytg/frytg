@@ -79,7 +79,7 @@ Need an experienced pair of hands for an infrastructure review, EU cloud migrati
 - **Email**: [`contact@frytg.com`](mailto:contact@frytg.com?subject=Project%20inquiry%20%E2%80%93%20frytg.digital)
 - **LinkedIn**: [`linkedin.com/in/frytg`](https://www.linkedin.com/in/frytg/)
 - **Fediverse / Matrix**: [`@FRYTG@beoriginal.social`](https://beoriginal.social/@FRYTG) · [all social channels](/social/)
-Need a concise **one-page CV / project profile (PDF)** for internal procurement or team review? Send a short note to [`contact@frytg.com`](mailto:contact@frytg.com?subject=CV%20%2F%20Project%20inquiry%20%E2%80%93%20frytg.digital) or connect on [LinkedIn](https://www.linkedin.com/in/frytg/).
+  Need a concise **one-page CV / project profile (PDF)** for internal procurement or team review? Send a short note to [`contact@frytg.com`](mailto:contact@frytg.com?subject=CV%20%2F%20Project%20inquiry%20%E2%80%93%20frytg.digital) or connect on [LinkedIn](https://www.linkedin.com/in/frytg/).
 
 [Explore services & how I work](/services/#contact) [Email contact@frytg.com](mailto:contact@frytg.com?subject=Project%20inquiry%20%E2%80%93%20frytg.digital)
 {.cta-row}

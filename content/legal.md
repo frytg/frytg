@@ -15,10 +15,10 @@ sitemap:
 
 I'm always happy to answer your questions! Simply use one of the contact options or use one of my Social Media channels to send me a message.
 
-Daniel Freytag
-Herrenstr. 15
-79238 Ehrenkirchen
-Germany
+Daniel Freytag  
+Herrenstr. 15  
+79238 Ehrenkirchen  
+Germany  
 contact [at] frytg [dot] com
 
 ## Cookies

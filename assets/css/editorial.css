@@ -2,7 +2,7 @@
 	.editorial-page {
 		@apply w-full max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16;
 
-		:is(h1, h2, h3, h4, p, ul, ol, hr) {
+		:where(h1, h2, h3, h4, p, ul, ol, hr) {
 			@apply mx-0 max-w-none px-0;
 			min-width: 0;
 		}
@@ -69,13 +69,19 @@
 			> :last-child {
 				@apply mb-0;
 			}
+
+			/* shared default for body paragraphs: summaries, leads, and prose */
+			> :where(p) {
+				@apply text-base sm:text-lg leading-relaxed;
+				max-width: 46rem;
+			}
 		}
 
 		.editorial-row {
 			@apply grid gap-3 border-t border-white/15 py-6 sm:py-8;
 
 			> :is(h2, h3, h4) {
-				@apply m-0 text-2xl leading-tight tracking-tight;
+				@apply m-0 text-2xl leading-snug tracking-tight;
 			}
 
 			> .editorial-body > ul > li + li {
@@ -91,12 +97,9 @@
 			}
 		}
 
-		.editorial-summary {
-			@apply text-base sm:text-lg leading-relaxed;
-		}
-
 		.editorial-note {
 			@apply mt-3 text-base text-gray/80;
+			max-width: 46rem;
 
 			a {
 				@apply inline-block py-2;
@@ -120,26 +123,11 @@
 		}
 
 		.editorial-media {
-			@apply my-8 max-w-md;
+			@apply my-8 max-w-xs;
 
 			img {
 				@apply w-full h-auto;
 			}
-		}
-
-		.editorial-principle {
-			@apply text-base sm:text-lg;
-			max-width: 46rem;
-		}
-
-		.editorial-meta {
-			@apply text-base text-gray/80;
-			max-width: 46rem;
-		}
-
-		.editorial-lead {
-			@apply text-lg;
-			max-width: 42rem;
 		}
 
 		a:focus-visible,

@@ -11,17 +11,14 @@ sitemap:
   priority: 0.9
 ---
 
-# `/work`
+`/work`
+
+# selected work. shipped & running.
 
 Selected infrastructure, broadcast-tech, and backend engineering projects — from public-broadcasting systems serving millions of listeners to responsible AI in live radio, voice-assistant platforms, declarative infrastructure, and self-hosted AI tools.
-{.editorial-intro}
 
 [Work with me](/services/) [Get in touch](/services/#contact)
 {.cta-row}
-
----
-
-## Case Studies {.editorial-section}
 
 ### ARD Eventhub — Real-time radio metadata distribution {.editorial-row}
 
@@ -74,7 +71,6 @@ Beyond client and broadcast systems, I publish open-source tools, reusable TypeS
 - **[Universal Activity Maps](https://tangled.org/frytg.digital/pkgy/tree/main/universal-activitymap)** — A TypeScript + Hono server (evolved from a Rust/WASM port [`githubchart-rust`](https://tangled.org/frytg.digital/pkgy/tree/main/githubchart-rust)) that renders SVG contribution charts and JSON activity data across GitHub, Tangled, Mastodon, and Bluesky. Live at [`universal-activitymap.frytg.deno.net`](https://universal-activitymap.frytg.deno.net).
 
 [![My GitHub contributions as an activity chart](https://universal-activitymap.frytg.deno.net/github/frytg/default-auto?weeks=14)](https://universal-activitymap.frytg.deno.net/github/frytg/default-auto?weeks=14)
-{.editorial-media}
 
 - **[`@frytg/*` utility packages on JSR](https://tangled.org/frytg.digital/utility)** — Zero-bloat, cross-runtime TypeScript libraries for Node, Bun, and Deno: [`@frytg/logger`](https://jsr.io/@frytg/logger) (structured syslog-level logging), [`@frytg/dates`](https://jsr.io/@frytg/dates) (date formatting and parsing), and [`@frytg/check-required-env`](https://jsr.io/@frytg/check-required-env) (fail-fast environment validation).
 - **[`frytg.digital/pkgy`](https://tangled.org/frytg.digital/pkgy)** — Everyday scripts, hardware experiments (ESPHome e-ink displays, M5Stack CoreInk), and small services hosted on Tangled.
