@@ -11,19 +11,19 @@ sitemap:
   priority: 1
 ---
 
-# Hello, I'm Daniel,
+# hello, i'm daniel,
 
 DevOps & backend engineer for media, audio, and EU-hosted infrastructure. Based near Freiburg, and available for freelance projects.
 {.text-3xl .title-style}
 
-[Work with me](/services/) [Case studies](/work/)
+[work with me](/services/) [case studies](/work/)
 {.cta-row}
 
 I build and operate resilient backend and cloud infrastructure — from live radio metadata pipelines and APIs serving **billions of requests per month** for platforms like [ARD Sounds](https://www.ardsounds.de/) and SWR's radio apps, to EU-sovereign cloud migrations and self-hosted AI systems. At [SWR Audio Lab](https://www.swr.de/unternehmen/audiolab/index.html), I also work on the responsible integration of AI into public broadcasting — for example [RAKI, the ARD-internal system](/work/#ard-raki-popnacht) behind regionalised AI weather and traffic in ARD Popnacht.
 
 ![Daniel Freytag at work and broadcast tech conferences](images/about/web-about-2024-q1-2@2x.webp)
 
-## What I do {#what-i-do .editorial-row}
+## what i do {#what-i-do .editorial-row}
 
 Alongside my work in public broadcasting, I take on selected freelance and consulting engagements for engineering, media, and product teams across Europe. I work with AI tooling early and daily — in my own stack and at SWR Audio Lab — and care about systems that are observable, documented, and built to last beyond my involvement.
 {.editorial-summary}
@@ -36,7 +36,7 @@ Alongside my work in public broadcasting, I take on selected freelance and consu
 
 See all offers — including [responsible AI adoption & integration](/services/#responsible-ai-adoption-integration) and [maintenance & support](/services/#maintenance-retainers) — on [`/services/`](/services/), or browse recent architecture and engineering case studies on [`/work/`](/work/).
 
-## Selected work {#selected-work .editorial-row}
+## selected work {#selected-work .editorial-row}
 
 - **[ARD Eventhub](/work/#ard-eventhub-real-time-radio-metadata-distribution)** — Open-source real-time metadata ingestion and distribution across ARD radio broadcasters ([GitHub](https://github.com/swrlab/ard-eventhub), [docs](https://swrlab.github.io/ard-eventhub/)).
 - **[ARD RAKI](/work/#ard-raki-popnacht)** — Responsible AI in live radio: regionalised weather and traffic for ARD Popnacht, voiced by an ARD-internal system from editor-written texts, with transparency notices and human override.
@@ -44,7 +44,7 @@ See all offers — including [responsible AI adoption & integration](/services/#
 - **[Declarative Infrastructure as Code](/work/#declarative-iac)** — Servers, containers, and cloud resources described once in code and reproducible on demand, from cloud to edge — proven in daily use on my own federated services ([Tangled](https://tangled.org/frytg.digital/locally)).
 - **[`feather-ai-proxy` & `feather-ai-chat`](/work/#feather-ai-proxy-chat-self-hosted-llm-gateway-native-client)** — Lightweight Go multi-provider OpenAI-compatible gateway paired with a native Swift client for Mac, iPad, and iPhone.
 
-## Professional background {#professional-background .editorial-section}
+## professional background {#professional-background .editorial-section}
 
 For **7+ years at [SWR Audio Lab](https://www.swr.de/unternehmen/audiolab/index.html)**, that work has included real-time radio metadata distribution ([ARD Eventhub](https://github.com/swrlab/ard-eventhub)), [voice-assistant integrations for ARD Sounds](/work/#ard-sounds-voice-assistants), responsible AI services like [RAKI for ARD Popnacht](/work/#ard-raki-popnacht), and audio delivery pipelines.
 
@@ -52,7 +52,7 @@ Before focusing full-time on backend and cloud engineering, I worked across **li
 
 ![Daniel Freytag in broadcast production and engineering environments](images/about/web-about-2024-q1-3@2x.webp)
 
-## Core stack {#core-stack .editorial-row}
+## core stack {#core-stack .editorial-row}
 
 - **Cloud & EU infrastructure**: Scaleway, UpCloud, Google Cloud Platform (GCP), AWS, Bunny CDN & Storage, Fastly, dns0.eu, NixOS, Linux.
 - **Infrastructure as Code & containers**: Terraform, Kubernetes / k3s, Docker & Apple `container`, GitHub Actions, Tangled Spindles, `sops` + `age`, `k8up` / `restic`, `just`, and more.
@@ -60,20 +60,20 @@ Before focusing full-time on backend and cloud engineering, I worked across **li
 - **Observability**: Datadog, Grafana, VictoriaMetrics, VictoriaLogs, Prometheus, Loki, Perses, Vector, Better Stack (Better Uptime).
 - **Media & responsible AI**: Live radio metadata pipelines, voice-assistant backends, responsible AI integration (editorial guardrails, transparency labelling, human override, EU-hosted and local models), OpenAI-compatible LLM gateways (`feather-ai-proxy`), speech-to-text.
 
-## Values & how I build {#values-how-i-build .editorial-row}
+## values & how i build {#values-how-i-build .editorial-row}
 
 - **Systems built to last beyond my involvement**: Infrastructure should be reproducible from a clean git checkout, documented in plain Markdown RFCs, and operable by the next engineer on call.
 - **Always touch a running system**: Software that is never updated eventually becomes a security and reliability liability. Small, regular updates beat multi-year rescue rewrites.
 - **European digital sovereignty**: Whenever practical, I prefer and recommend European cloud, CDN, and DNS providers with clear GDPR compliance and transparent pricing.
 - **Quality over quantity**: Fewer dependencies, strict types, observable failure modes, and calm, direct communication — reflected in our public [SWR Audio Lab Engineering Principles](https://github.com/swrlab/swrlab/blob/main/PRINCIPLES.md).
 
-## Beyond the terminal {#beyond-the-terminal .editorial-section}
+## beyond the terminal {#beyond-the-terminal .editorial-section}
 
 When I'm not working on distributed systems, I train in the Black Forest foothills around Freiburg as a **hybrid athlete** — mixing strength training, road cycling, [HYROX](https://www.hyresult.com/athlete/daniel-freytag) races, and trail running as I work my way toward longer mountain and **UTMB** trail events. On my [blog](/blog/), I publish weeknotes on building systems, training, and everyday life.
 
 ![Daniel Freytag portrait, cycling, running, and travel](images/about/web-about-2024-q1-1@2x.webp)
 
-## Get in touch {#contact .editorial-section}
+## get in touch {#contact .editorial-section}
 
 Need an experienced pair of hands for an infrastructure review, EU cloud migration, broadcast backend, or ongoing technical support?
 
@@ -81,5 +81,5 @@ Need an experienced pair of hands for an infrastructure review, EU cloud migrati
 - **LinkedIn**: [`linkedin.com/in/frytg`](https://www.linkedin.com/in/frytg/)
 - **Fediverse / Matrix**: [`@FRYTG@beoriginal.social`](https://beoriginal.social/@FRYTG) · [all social channels](/social/)
 
-[Explore services & how I work](/services/#contact) [Email contact@frytg.com](mailto:contact@frytg.com?subject=Project%20inquiry%20%E2%80%93%20frytg.digital)
+[get in touch](/services/#contact) [email contact@frytg.com](mailto:contact@frytg.com?subject=Project%20inquiry%20%E2%80%93%20frytg.digital)
 {.cta-row}

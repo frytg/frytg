@@ -52,6 +52,11 @@
 	@apply w-full max-w-3xl mx-auto px-4 sm:px-6;
 }
 
+/* matches the editorial-page width so site chrome aligns with extended pages */
+@utility content-column-wide {
+	@apply w-full max-w-5xl mx-auto px-4 sm:px-6;
+}
+
 @utility text-meta {
 	@apply text-sm text-gray/80 not-italic;
 }

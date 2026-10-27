@@ -17,7 +17,7 @@ sitemap:
 
 Selected infrastructure, broadcast-tech, and backend engineering projects — from public-broadcasting systems serving millions of listeners to responsible AI in live radio, voice-assistant platforms, declarative infrastructure, and self-hosted AI tools.
 
-[Work with me](/services/) [Get in touch](/services/#contact)
+[work with me](/services/) [get in touch](/services/#contact)
 {.cta-row}
 
 ### ARD Eventhub — Real-time radio metadata distribution {.editorial-row}
@@ -64,7 +64,7 @@ Selected infrastructure, broadcast-tech, and backend engineering projects — fr
 
 ---
 
-## Open source & side projects {.editorial-section}
+## open source & side projects {.editorial-section}
 
 Beyond client and broadcast systems, I publish open-source tools, reusable TypeScript packages, and experiments:
 
@@ -79,9 +79,9 @@ Beyond client and broadcast systems, I publish open-source tools, reusable TypeS
 
 ---
 
-## Need something similar built or untangled? {.editorial-section}
+## need something similar built or untangled? {.editorial-section}
 
 I'm available for scoped consulting, architecture reviews, EU cloud migrations, and ongoing technical support.
 
-[Explore services](/services/) [Get in touch](/services/#contact)
+[explore services](/services/) [get in touch](/services/#contact)
 {.cta-row}
