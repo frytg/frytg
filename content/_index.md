@@ -33,7 +33,7 @@ Alongside my work in public broadcasting, I take on selected freelance and consu
 - **[Backend & API development](/services/#backend-api-development)** — TypeScript (Node, Bun, Hono, Zod), Go, and Rust APIs with OpenAPI specs, structured logging, and load-tested delivery.
 - **[Websites & CMS](/services/#websites-cms)** — Refactoring and rebuilding conventional websites on modern CMS or statically generated foundations.
 
-See all offers — including [responsible AI adoption & integration](/services/#responsible-ai-adoption-integration) and [maintenance retainers](/services/#maintenance-retainers) — on [`/services/`](/services/), or browse recent architecture and engineering case studies on [`/work/`](/work/).
+See all offers — including [responsible AI adoption & integration](/services/#responsible-ai-adoption-integration) and [maintenance & support](/services/#maintenance-retainers) — on [`/services/`](/services/), or browse recent architecture and engineering case studies on [`/work/`](/work/).
 
 ## Selected work
 
@@ -74,7 +74,7 @@ When I'm not working on distributed systems, I train in the Black Forest foothil
 
 ## Get in touch {#contact}
 
-Need an experienced pair of hands for an infrastructure review, EU cloud migration, broadcast backend, or ongoing maintenance retainer?
+Need an experienced pair of hands for an infrastructure review, EU cloud migration, broadcast backend, or ongoing technical support?
 
 - **Email**: [`contact@frytg.com`](mailto:contact@frytg.com?subject=Project%20inquiry%20%E2%80%93%20frytg.digital)
 - **LinkedIn**: [`linkedin.com/in/frytg`](https://www.linkedin.com/in/frytg/)

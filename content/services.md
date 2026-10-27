@@ -72,7 +72,7 @@ turn a useful AI idea into a working system with clear boundaries. i use new mod
 [ARD RAKI: editorial control and transparent AI use](/work/#ard-raki-popnacht) · [self-hosted AI tools](/work/#feather-ai-proxy-chat-self-hosted-llm-gateway-native-client)
 {.service-proof}
 
-## maintenance retainers {#maintenance-retainers}
+## maintenance & support {#maintenance-retainers}
 
 keep production systems healthy through regular care. scheduled updates, security patches, monitoring reviews, and backup restore checks; catching small problems before they become emergency projects.
 {.service-summary}
@@ -95,7 +95,7 @@ a focused project, a second pair of eyes, or ongoing support.
 decisions and documentation stay in your repository. standard tools, lean dependencies, and a handover your team can use; no setup that only i know how to run.
 {.services-principle}
 
-i take on 1–2 focused freelance projects or retainers at a time alongside SWR Audio Lab. ongoing engagements typically fit within 2–4 days per month; project timing is agreed up front. German or English; remote-first, with on-site workshops by arrangement.
+project scope and timing are agreed up front. German or English; remote-first, with on-site workshops by arrangement.
 {.services-availability}
 
 ## let's talk about your project {#contact}

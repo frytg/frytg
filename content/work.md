@@ -82,7 +82,7 @@ Beyond client and broadcast systems, I publish open-source tools, reusable TypeS
 
 ## Need something similar built or untangled?
 
-I'm available for scoped consulting, architecture reviews, EU cloud migrations, and ongoing maintenance retainers.
+I'm available for scoped consulting, architecture reviews, EU cloud migrations, and ongoing technical support.
 
 [Explore services](/services/) [Get in touch](/services/#contact)
 {.cta-row}
