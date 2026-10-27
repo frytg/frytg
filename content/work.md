@@ -23,22 +23,18 @@ Selected infrastructure, broadcast-tech, and backend engineering projects — fr
 
 ### ARD Eventhub — Real-time radio metadata distribution
 
-<!-- TODO: Employer sign-off check — this section only uses information already public on github.com/swrlab/ard-eventhub and swrlab.github.io/ard-eventhub/. Confirm with SWR before adding internal throughput metrics or broadcaster-specific operational details. -->
-
 - **Context**: Public radio broadcasters across [ARD](https://www.ard.de/) produce continuous live metadata — now-playing tracks, show schedules, moderation topics, and regional contributions — that need to reach listener apps like [ARD Sounds](https://www.ardsounds.de/), smart speakers, and web players in real time.
 - **Problem**: Each regional broadcaster historically operated different studio playout systems and delivery formats, making it slow and brittle for downstream platforms to consume a unified, low-latency stream of live radio metadata.
 - **What I built**: Together with the team at [SWR Audio Lab](https://github.com/swrlab), we built, operated, and open-sourced **[ARD Eventhub](https://github.com/swrlab/ard-eventhub)** ([public documentation](https://swrlab.github.io/ard-eventhub/)) — a central ingestion and distribution service that normalizes live studio events from participating ARD broadcasters and fans them out to downstream consumers with structured observability and automated deployment pipelines.
 - **Stack**: TypeScript, Node.js, containerized cloud infrastructure, structured logging and Datadog observability, OpenAPI, GitHub Actions CI/CD.
-- **Outcome**: Published as open source under [`swrlab/ard-eventhub`](https://github.com/swrlab/ard-eventhub) with public contributor documentation, powering live radio metadata across ARD's digital audio platforms.
+- **Outcome**: Published as open source under [`swrlab/ard-eventhub`](https://github.com/swrlab/ard-eventhub) with public contributor documentation, powering live radio metadata across ARD's digital audio platforms. The system is currently also being migrated from public cloud to a sovereign, ARD-internal hosting environment.
 
 ### ARD RAKI — Responsible AI for ARD Popnacht {#ard-raki-popnacht}
 
-<!-- TODO: Employer sign-off check — this section only uses information already public in the ARD press release and press coverage of RAKI. Confirm with SWR before adding internal system details. -->
-
 - **Context**: Since early 2025, eight ARD pop stations — hr3, rbb 88.8, MDR JUMP, NDR 2, Bremen Vier, SR 1, SWR3, and WDR 2 — share the evening and night programmes _Pop – Die Abendshow_ and [_ARD Popnacht_](https://www.ard.de/die-ard/presse-kontakt/ard-pressemeldungen/2026/02-25-ard-popwellen-fuehren-regionalisierten-ki-service-fuer-wetter-und-verkehr-ein-100.html), produced by SWR3 with one live host for all stations. Weather and traffic could previously only be announced nationwide, with nothing specific to each listener's region.
 - **What was built**: **RAKI** (_Radio Automation KI_), an ARD-internal AI data-processing and speech-output system developed and configured in close cooperation between SWR and WDR. Editors in the ARD weather and traffic desks write and check every text and assign it to a broadcast region; RAKI then voices those texts with a specially trained speech system matched to each station's sound design, using voices based on real presenters and built exclusively for this purpose.
-- **Responsible-AI guardrails**: The AI may neither formulate nor alter content itself — editorial responsibility stays with people. Every AI-voiced item goes out with a clear transparency notice, the voices are governed by strict data-protection and security rules, and in acute danger situations (for example a wrong-way driver) the live presenter takes over as before. Keeping the system ARD-internal gives the broadcasters full sovereignty over the technology and the data.
-- **Outcome**: Since 3 March 2026, each participating station airs its own regional traffic at the top of the hour and regional weather and traffic at half past — in its familiar station sound, inside a shared programme reaching a million-strong audience.
+- **Responsible-AI guardrails**: The AI mustn't formulate or alter content itself — editorial responsibility stays with people. Every AI-voiced item goes out with a clear transparency notice, the voices are governed by strict data-protection and security rules, and in acute danger situations (for example a wrong-way driver) the live presenter takes over as before. Keeping the system ARD-internal gives the broadcasters full sovereignty over the technology and the data.
+- **Outcome**: Since March 2026, each participating station airs its own regional traffic at the top of the hour and regional weather and traffic at half past — in its familiar station sound, inside a shared programme reaching a million-strong audience.
 
 ### ARD Sounds Voice Assistants — Smart speakers & voice control {#ard-sounds-voice-assistants}
 
@@ -53,9 +49,9 @@ Selected infrastructure, broadcast-tech, and backend engineering projects — fr
 
 - **Context**: The same pattern I set up for client and team infrastructure — declarative hosts, container workloads, and cloud edge resources described once in code and applied reproducibly — also has to work for small, long-lived services that one person operates alone.
 - **Problem**: Ad-hoc servers and manual configuration snowflake over time: secrets sprawl across machines, backups go untested, and nobody remembers how a host was built six months later.
-- **What I built**: A reusable IaC setup combining **NixOS** host configurations, **k3s** Kubernetes manifests, **Terraform** for cloud edge resources (Scaleway, GCP, Bunny CDN, DNS, object storage), **sops + age** encrypted secrets, **k8up / restic** automated backups, and a full observability stack. The public example of the pattern in daily use is my own homelab and edge infrastructure in **[`frytg.digital/locally`](https://tangled.org/frytg.digital/locally)** ([background write-up](/blog/2026-w35-weeknotes-no10/)), which runs federated services like a Mastodon instance ([`beoriginal.social`](https://beoriginal.social/)), a Matrix homeserver, and an AT Protocol PDS on low-power nodes.
-- **Stack**: NixOS, k3s, Terraform, sops (age/PGP), k8up & restic, VictoriaMetrics, VictoriaLogs, Grafana, Loki, Prometheus, Perses, Vector, Tailscale, Cloudflare Tunnels, `just`.
-- **Outcome**: One declarative pattern from cloud to edge — zero plaintext secrets in git, one-command host synchronization via `just`, end-to-end metrics and logs, off-site encrypted backups, and infrastructure a new engineer can rebuild from a clean checkout.
+- **What I built**: A reusable pattern where every server, container, and cloud resource is described in code and can be reproduced on demand — covering host configuration, Kubernetes workloads, cloud edge resources (CDN, DNS, object storage), encrypted secrets, automated backups, and a full observability stack. The public example of the pattern in daily use is my own homelab and edge infrastructure in **[`frytg.digital/locally`](https://tangled.org/frytg.digital/locally)** ([background write-up](/blog/2026-w35-weeknotes-no10/)), which runs federated services like a Mastodon instance ([`beoriginal.social`](https://beoriginal.social/)), a Matrix homeserver, and an AT Protocol PDS on low-power at-home nodes.
+- **Stack**: NixOS, Terraform, Kubernetes, automated encrypted backups, and an observability stack.
+- **Outcome**: One declarative pattern from cloud to edge — any part of the infrastructure can be rebuilt from scratch with a single command, no secrets stored in plain text, automated off-site backups, and full metrics and logs, so a new engineer can get the same system running from a clean checkout without tribal knowledge.
 
 ### `feather-ai-proxy` & `feather-ai-chat` — Self-hosted LLM gateway & native client {#feather-ai-proxy-chat-self-hosted-llm-gateway-native-client}
 
@@ -71,7 +67,7 @@ Selected infrastructure, broadcast-tech, and backend engineering projects — fr
 
 ## Open source & side projects
 
-Beyond client and broadcast systems, I publish open-source tools, reusable TypeScript packages, and experiments (previously listed exclusively on [`/dev/`](/dev/)):
+Beyond client and broadcast systems, I publish open-source tools, reusable TypeScript packages, and experiments:
 
 - **[Universal Activity Maps](https://tangled.org/frytg.digital/pkgy/tree/main/universal-activitymap)** — A TypeScript + Hono server (evolved from a Rust/WASM port [`githubchart-rust`](https://tangled.org/frytg.digital/pkgy/tree/main/githubchart-rust)) that renders SVG contribution charts and JSON activity data across GitHub, Tangled, Mastodon, and Bluesky, respecting `prefers-color-scheme`. Live at [`universal-activitymap.frytg.deno.net`](https://universal-activitymap.frytg.deno.net).
 - **[`@frytg/*` utility packages on JSR](https://tangled.org/frytg.digital/utility)** — Zero-bloat, cross-runtime TypeScript libraries for Node, Bun, and Deno: [`@frytg/logger`](https://jsr.io/@frytg/logger) (structured syslog-level logging), [`@frytg/dates`](https://jsr.io/@frytg/dates) (date formatting and parsing), and [`@frytg/check-required-env`](https://jsr.io/@frytg/check-required-env) (fail-fast environment validation).
@@ -79,7 +75,7 @@ Beyond client and broadcast systems, I publish open-source tools, reusable TypeS
 - **[SWR Audio Lab open source (`@swrlab`)](https://github.com/swrlab)** — Public repositories and our team's [Engineering Principles](https://github.com/swrlab/swrlab/blob/main/PRINCIPLES.md).
 - **[`frytg.digital/frytg-digital`](https://tangled.org/frytg.digital/frytg-digital)** — The source code for this Astro static site, published to Bunny CDN and AT Protocol ([Standard.site](https://pdsls.dev/at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.publication/3mptaiprnps2m)).
 
-You can also view the live SVG contribution charts on [`/dev/`](/dev/).
+Live SVG versions of the contribution charts are available from the [universal-activitymap](https://tangled.org/frytg.digital/pkgy/tree/main/universal-activitymap) service.
 
 ---
 

@@ -17,11 +17,11 @@ Hands-on DevOps, cloud infrastructure, and backend engineering for media organiz
 [Get in touch](#contact) [View case studies](/work/)
 {.cta-row}
 
-I focus on pragmatic infrastructure and backend software that a small team can understand, operate, and hand over without vendor lock-in or unnecessary complexity. Below are the six areas where I typically help clients.
+I focus on pragmatic infrastructure and backend software that a small team can understand, operate, and hand over without vendor lock-in or unnecessary complexity. Below are the areas where I typically help clients.
 
 ---
 
-## 1. Cloud & DevOps for small teams
+## Cloud & DevOps for small teams
 
 Production infrastructure without needing a full-time platform department.
 
@@ -30,7 +30,7 @@ Production infrastructure without needing a full-time platform department.
 - **What's delivered**: Reproducible Infrastructure as Code with **Terraform**, fast CI/CD pipelines (GitHub Actions, GitLab CI, Tangled Spindles), right-sized container setups (**Kubernetes / k3s** or managed containers), **sops + age** secret management, actionable observability (**Grafana**, **Datadog**, **VictoriaMetrics / Loki**, **Better Stack**), and a clear cloud cost review across **Scaleway**, **GCP**, and **AWS**.
 - **Example engagement**: A 2–3 week infrastructure audit and Terraform migration for a growing SaaS or media team — consolidating manual cloud resources into version-controlled IaC, cutting monthly cloud spend, and setting up alert routing with concise runbooks.
 
-## 2. EU-sovereign hosting & migrations
+## EU-sovereign hosting & migrations
 
 Pragmatic European cloud and CDN architectures that take data residency and GDPR seriously without sacrificing developer experience.
 
@@ -39,7 +39,7 @@ Pragmatic European cloud and CDN architectures that take data residency and GDPR
 - **What's delivered**: Architecture assessment and zero- or low-downtime migration to European infrastructure — **Scaleway** (compute, managed PostgreSQL, S3-compatible Object Storage), **Bunny** (CDN, edge storage, DNS), **dns0.eu**, or hardened **NixOS / Linux** hosts — complete with automated restic/k8up backups, TLS, and a documented rollback plan.
 - **Example engagement**: Migrating a web platform and asset pipeline from AWS S3 + CloudFront + ECS to Scaleway and Bunny CDN with Terraform, S3-portable storage abstractions, and automated CI deploys.
 
-## 3. Audio & broadcast tech
+## Audio & broadcast tech
 
 Reliable real-time metadata pipelines and backend services built on 7+ years of public-broadcasting experience.
 
@@ -48,18 +48,27 @@ Reliable real-time metadata pipelines and backend services built on 7+ years of 
 - **What's delivered**: Real-time metadata ingestion and distribution services (REST, WebSockets, SSE, MQTT), plus high-cache-hit backend APIs for radio, podcast, and voice-assistant platforms — like the [ARD Sounds voice assistants](/work/#ard-sounds-voice-assistants) on smart speakers.
 - **Example engagement**: Designing and building a containerized live-metadata ingestion service, or the backend behind a voice-assistant integration that brings your radio and podcast catalogue to smart speakers.
 
-## 4. Backend & API development
+## Backend & API development
 
 Fast, well-typed APIs and background workers with minimal dependency footprint and high test coverage.
 
 - **Who it's for**: Product and platform teams that need a senior backend engineer to design, build, or untangle a core API service, webhook pipeline, or edge worker.
 - **Typical problems**: Bloated Node services with dozens of outdated dependencies, unvalidated request/response payloads causing runtime crashes, slow third-party integrations, and codebases that only run on one runtime.
-- **What's delivered**: Clean, strictly typed services in **TypeScript** (**Node.js**, **Bun**, **Deno**) using web-standard frameworks like **Hono** and **Zod**, or compiled services in **Go** and **Rust** where single-binary deployment, memory predictability, or raw throughput fits better — complete with OpenAPI specs, structured syslog-level logging, Redis/Valkey caching, and universal unit/integration tests.
+- **What's delivered**: Clean, strictly typed services in **TypeScript** (**Node.js**, **Bun**) using web-standard frameworks like **Hono** and **Zod**, or compiled services in **Go** and **Rust** where single-binary deployment, memory predictability, or raw throughput fits better — complete with OpenAPI specs, structured syslog-level logging, Redis/Valkey caching, and universal unit/integration tests.
 - **Example engagement**: Building a high-throughput API gateway or data-ingestion service in TypeScript (Hono) or Go, from RFC and schema design through containerization, observability, and load testing.
 
-## 5. Responsible AI adoption & integration
+## Websites & CMS
 
-Practical AI where the guardrails come first: people keep editorial and operational responsibility, audiences can tell when AI is involved, and data stays under your control.
+Refactoring and rebuilding conventional websites on modern, low-maintenance foundations — statically generated or backed by a modern CMS.
+
+- **Who it's for**: Companies and organizations with aging marketing sites, blogs, or documentation — especially sites grown heavy on legacy plugins, page builders, or hand-maintained HTML.
+- **Typical problems**: Slow page loads and poor Core Web Vitals, a CMS nobody dares to update anymore, content workflows that need a developer for every change, and hosting costs out of proportion to traffic.
+- **What's delivered**: A rebuild on a statically generated foundation (for example Astro with Tailwind) or a modern headless CMS — including content modelling, redirects and SEO preservation, automated builds and deploys, and a handover so your team can edit and ship without me.
+- **Example engagement**: Migrating a marketing site from a legacy CMS to a statically generated build with a modern CMS for editing — same URLs and content, faster pages, and deployments reduced to a git push.
+
+## Responsible AI adoption & integration
+
+Practical AI where the guardrails come first: people keep editorial and operational responsibility, audiences can tell when AI is involved, and data stays under your control. I adopt new models, agents, and tooling early in my own daily work, so recommendations come from hands-on experience rather than vendor decks.
 
 - **Who it's for**: Media houses, public-sector teams, and product organizations that want real AI use cases in production — not demos — without giving up editorial control, GDPR compliance, or sovereignty over models and data.
 - **Typical problems**: AI pilots that stall at the compliance review, vendor demos that quietly send editorial content to external training pipelines, AI output nobody is accountable for, and hardcoded single-vendor SDK calls with no budget caps or fallback.
@@ -70,7 +79,7 @@ Practical AI where the guardrails come first: people keep editorial and operatio
   - **Internal LLM gateway & chat** — one governed endpoint for coding agents and internal tools, with scoped API keys, provider fallback, and hard token budgets instead of keys scattered across laptops.
 - **Example engagement**: A responsible-AI pilot from use-case workshop to production: one narrow use case, a short guardrails document your legal and editorial teams can sign off, EU-hosted or local deployment, and transparency plus human-fallback built in from day one.
 
-## 6. Maintenance retainers
+## Maintenance retainers
 
 _"Always touch a running system."_ Continuous care so production systems stay patched, observable, and boring.
 

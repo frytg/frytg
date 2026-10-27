@@ -66,7 +66,7 @@ export const personNode = (fields: PersonFields = {}): Record<string, unknown> =
 	areaServed: AREA_SERVED,
 	address: {
 		'@type': 'PostalAddress',
-		addressLocality: 'Ehrenkirchen (Freiburg region)',
+		addressLocality: 'Freiburg region',
 		addressRegion: 'Baden-Württemberg',
 		addressCountry: 'DE',
 	},
@@ -104,7 +104,7 @@ export const professionalServiceNode = (fields: PersonFields = {}): Record<strin
 	areaServed: AREA_SERVED,
 	address: {
 		'@type': 'PostalAddress',
-		addressLocality: 'Ehrenkirchen (Freiburg region)',
+		addressLocality: 'Freiburg region',
 		addressRegion: 'Baden-Württemberg',
 		addressCountry: 'DE',
 	},
