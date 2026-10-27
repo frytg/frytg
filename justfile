@@ -29,6 +29,11 @@ update:
 lint:
 	aubx oxlint
 
+# verify editorial Markdown composition
+[group('LOCAL')]
+test:
+	aube node .scripts/verify-editorial.ts
+
 [group('LOCAL')]
 format:
 	aubx oxlint --fix
@@ -37,6 +42,7 @@ format:
 # build the site for production
 [group('BUILD')]
 build:
+	just test
 	rm -rf public
 	rm -f .astro/data-store.json node_modules/.astro/data-store.json
 	ASTRO_TELEMETRY_DISABLED=1 aubx astro build

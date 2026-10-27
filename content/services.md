@@ -4,86 +4,87 @@ date: 2026-10-23T08:00:00+00:00
 seo_description: 'Freelance engineering near Freiburg: reliable infrastructure, EU hosting migrations, audio backends, APIs, modern websites, responsible AI, and ongoing maintenance.'
 image: 'images/og-card/services-2026-Q4-A-2x1.jpg'
 type: 'page'
-layout: 'plain'
+layout: 'editorial'
+footerAvailability: false
 sitemap:
   changefreq: 'weekly'
   priority: 0.9
 ---
 
 `/services`
-{.services-path}
+{.editorial-path}
 
 # build it well. keep it running.
 
 i help small teams build, improve, and maintain the systems behind their products. hands-on infrastructure, backend engineering, and modern websites; practical AI integration where it makes sense.
-{.services-intro}
+{.editorial-intro}
 
 [let's talk about your project](#contact) [see my work](/work/)
 {.cta-row}
 
 based near Freiburg; working remotely across Germany, Austria, Switzerland, and Europe. selected freelance projects alongside my work at SWR Audio Lab.
-{.services-context}
+{.editorial-context}
 
-## cloud & DevOps for small teams {#cloud-devops-for-small-teams}
+## cloud & DevOps for small teams {#cloud-devops-for-small-teams .editorial-row}
 
 reliable deployments, useful monitoring, and infrastructure your team understands. i replace manual setup with reproducible configuration, untangle delivery pipelines, and review hosting costs; documented so the next engineer can take over.
-{.service-summary}
+{.editorial-summary}
 
 [see the infrastructure pattern](/work/#declarative-iac)
-{.service-proof}
+{.editorial-note}
 
-## EU-sovereign hosting & migrations {#eu-sovereign-hosting-migrations}
+## EU-sovereign hosting & migrations {#eu-sovereign-hosting-migrations .editorial-row}
 
 more control over where your systems run and who they depend on. i assess the current setup and help move services to European providers or in-house infrastructure; with backups, a rollback plan, and the tradeoffs made explicit.
-{.service-summary}
+{.editorial-summary}
 
 data residency, provider dependencies, and operational responsibility considered together.
-{.service-proof}
+{.editorial-note}
 
-## audio & broadcast tech {#audio-broadcast-tech}
+## audio & broadcast tech {#audio-broadcast-tech .editorial-row}
 
 connect studio systems, live metadata, and listener apps without fragile workarounds. i build the services behind radio, podcast, and smart-speaker experiences; drawing on years of hands-on engineering in public broadcasting.
-{.service-summary}
+{.editorial-summary}
 
 [ARD Eventhub](/work/#ard-eventhub-real-time-radio-metadata-distribution) · [ARD Sounds voice assistants](/work/#ard-sounds-voice-assistants)
-{.service-proof}
+{.editorial-note}
 
-## backend & API development {#backend-api-development}
+## backend & API development {#backend-api-development .editorial-row}
 
 build a new service or make an existing one easier to trust. APIs, integrations, and background processing in TypeScript, Go, or Rust; with tests, clear interfaces, and enough visibility to understand what happens in production.
-{.service-summary}
+{.editorial-summary}
 
 [see selected backend projects](/work/)
-{.service-proof}
+{.editorial-note}
 
-## websites & CMS {#websites-cms}
+## websites & CMS {#websites-cms .editorial-row}
 
 replace an aging website with something faster and easier to maintain. statically generated sites or a modern CMS; keeping existing content and URLs in mind, simplifying publishing, and giving your team a clear editing workflow.
-{.service-summary}
+{.editorial-summary}
 
 a site your team can update; a setup someone else can maintain.
-{.service-proof}
+{.editorial-note}
 
-## responsible AI adoption & integration {#responsible-ai-adoption-integration}
+## responsible AI adoption & integration {#responsible-ai-adoption-integration .editorial-row}
 
 turn a useful AI idea into a working system with clear boundaries. i use new models, agents, and tools early in my own work; then help teams choose a narrow use case, control data access and costs, and keep people responsible for the result.
-{.service-summary}
+{.editorial-summary}
 
 [ARD RAKI: editorial control and transparent AI use](/work/#ard-raki-popnacht) · [self-hosted AI tools](/work/#feather-ai-proxy-chat-self-hosted-llm-gateway-native-client)
-{.service-proof}
+{.editorial-note}
 
-## maintenance & support {#maintenance-retainers}
+## maintenance & support {#maintenance-retainers .editorial-row}
 
 keep production systems healthy through regular care. scheduled updates, security patches, monitoring reviews, and backup restore checks; catching small problems before they become emergency projects.
-{.service-summary}
+{.editorial-summary}
 
 ongoing care for existing infrastructure and services, including projects i didn't originally build.
-{.service-proof}
+{.editorial-note}
 
-## how we can work together {#how-i-work}
+## how we can work together {#how-i-work .editorial-section}
 
 a focused project, a second pair of eyes, or ongoing support.
-{.engagements-lead}
+{.editorial-list-lead}
 
 - **build or improve**
   a scoped piece of work, from understanding the problem through implementation and handover.
@@ -93,18 +94,18 @@ a focused project, a second pair of eyes, or ongoing support.
   regular time for keeping services healthy; scope and cadence agreed around what your team needs.
 
 decisions and documentation stay in your repository. standard tools, lean dependencies, and a handover your team can use; no setup that only i know how to run.
-{.services-principle}
+{.editorial-principle}
 
 project scope and timing are agreed up front. German or English; remote-first, with on-site workshops by arrangement.
-{.services-availability}
+{.editorial-meta}
 
-## let's talk about your project {#contact}
+## let's talk about your project {#contact .editorial-section}
 
 tell me what you're building, what needs to change, and when. a rough budget helps if you have one; a few lines are enough to check fit, scope, and availability.
-{.services-contact-intro}
+{.editorial-lead}
 
 [email contact@frytg.com](mailto:contact@frytg.com?subject=Project%20inquiry%20%E2%80%93%20frytg.digital) [connect on LinkedIn](https://www.linkedin.com/in/frytg/)
 {.cta-row}
 
 prefer encrypted chat? [find me on Matrix](https://matrix.to/#/@frytg:beoriginal.social).
-{.services-contact-note}
+{.editorial-meta}

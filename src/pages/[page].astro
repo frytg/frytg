@@ -20,6 +20,7 @@ const permalink = `/${page.id}/`
 const description = page.data.seo_description ?? ''
 const image = page.data.image ?? site.ogImage
 const imageUrl = await absoluteOgImageUrl(image)
+const isEditorial = page.data.layout === 'editorial'
 ---
 
 <Base
@@ -28,6 +29,7 @@ const imageUrl = await absoluteOgImageUrl(image)
 	canonicalPath={permalink}
 	image={image}
 	noindex={page.data.noindex ?? false}
+	footerAvailability={page.data.footerAvailability}
 	jsonLd={pageJsonLd({
 		id: page.id,
 		title: page.data.title,
@@ -36,12 +38,7 @@ const imageUrl = await absoluteOgImageUrl(image)
 		imageUrl,
 	})}
 >
-	<div
-		class:list={[
-			'container-custom',
-			{ container: page.id !== 'services', 'services-page': page.id === 'services' },
-		]}
-	>
+	<div class={isEditorial ? 'editorial-page' : 'container container-custom'}>
 		<Content />
 	</div>
 </Base>

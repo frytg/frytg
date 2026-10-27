@@ -13,7 +13,7 @@ type HastElement = {
 }
 
 const ATTR_LINE = /(?:^|\n)\{\s*((?:\.[A-Za-z0-9_-]+\s*)+)\s*\}$/
-const HEADING_ID_ATTR = /\s*\{\s*#([A-Za-z0-9_-]+)\s*\}\s*$/
+const HEADING_ATTR = /\s*\{\s*(?:#([A-Za-z0-9_-]+)\s*)?((?:\.[A-Za-z0-9_-]+\s*)*)\}\s*$/
 const HEADING = /^h[1-6]$/
 
 /**
@@ -103,10 +103,18 @@ export const rehypeMarkup = () => {
 			let customId: string | undefined
 			const trailingText = lastTextNode(node)
 			if (trailingText) {
-				const idMatch = trailingText.value.match(HEADING_ID_ATTR)
-				if (idMatch?.[1]) {
-					customId = idMatch[1]
-					trailingText.value = trailingText.value.replace(HEADING_ID_ATTR, '')
+				const attributes = trailingText.value.match(HEADING_ATTR)
+				if (attributes && (attributes[1] || attributes[2]?.trim())) {
+					customId = attributes[1]
+					trailingText.value = trailingText.value.replace(HEADING_ATTR, '')
+					if (attributes[2]?.trim()) {
+						const existing = node.properties?.className ?? node.properties?.class ?? []
+						const current = Array.isArray(existing) ? existing : [existing]
+						node.properties = {
+							...node.properties,
+							className: [...current, ...parseClassNames(attributes[2])],
+						}
+					}
 				}
 			}
 

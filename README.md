@@ -37,17 +37,23 @@ export default {
 }
 ```
 
-## services page
+## editorial pages
 
-`content/services.md` owns the copy; the `.services-page` rules in `assets/css/main.css` own the layout.
-short outcome-led sections replace hypothetical packages and tool inventories; real evidence links to `/work/`.
-existing service anchors stay stable for homepage links.
+`content/services.md` and `content/work.md` use `layout: 'editorial'`;
+`assets/css/editorial.css` owns their shared presentation. other pages keep the existing layout.
 
-- each service heading has a `.service-summary` paragraph and a `.service-proof` paragraph; keep that source order.
-- desktop uses a heading rail beside the copy; mobile stacks everything in reading order. no extra javascript.
-- the services page skips the footer availability callout; its own contact section already handles that job.
-- run `just lint` and `just build`; the build checks service rows, anchors, and internal links.
-- run `just preview` to review the production build locally; check narrow and desktop widths before deploying.
+- mark split headings with `{.editorial-row}` or `{#stable-link .editorial-row}`.
+  the build groups the heading and following content into a labelled section with a flexible body.
+- use `{.editorial-section}` for full-width chapters or contact sections; nested split headings work too.
+- a peer or higher-level heading ends the section. horizontal rules also end it; standalone image-pipeline media
+  stays outside split rows so photos keep their full-width placement.
+- `.editorial-intro`, `.editorial-note`, and `.editorial-meta` style introductions, optional evidence, and supporting text.
+  `.editorial-list-lead` introduces a compact three-column list; `.editorial-media` sizes an image example.
+  no fixed paragraph count or heading-ID CSS.
+- set `footerAvailability: false` when the page already ends with its own contact section.
+- work-page wording and links stay in Markdown; layout markers don't change either.
+- run `just test`, `just lint`, and `just build`; the build also runs the editorial regression tests.
+  use `just preview` to check narrow and desktop layouts locally.
 - design reference: [dotfiles design system](https://tangled.org/frytg.digital/dotfiles/blob/main/context/DESIGN.md).
 
 Learn more on [frytg.digital](https://www.frytg.digital/) and find me on several social media sites: [frytg.digital/social](https://www.frytg.digital/social) 🤝

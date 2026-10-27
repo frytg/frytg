@@ -2,6 +2,7 @@ import { unified } from '@astrojs/markdown-remark'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'astro/config'
 import { responsiveImages } from './src/integrations/responsive-images.ts'
+import { rehypeEditorial } from './src/plugins/rehype-editorial.ts'
 import { rehypeMarkup } from './src/plugins/rehype-markup.ts'
 import { remarkImages } from './src/plugins/remark-images.ts'
 import { remarkSiblingLinks } from './src/plugins/remark-sibling-links.ts'
@@ -16,7 +17,7 @@ export default defineConfig({
 	markdown: {
 		processor: unified({
 			remarkPlugins: [remarkSiblingLinks, remarkImages],
-			rehypePlugins: [rehypeMarkup],
+			rehypePlugins: [rehypeMarkup, rehypeEditorial],
 		}),
 	},
 	image: {

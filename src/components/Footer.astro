@@ -3,6 +3,12 @@ import beOriginal from '../../assets/svg/beoriginal/white.svg?url'
 import logo from '../../assets/svg/logo-white.svg?url'
 import { site } from '../site.ts'
 
+type Props = {
+	showAvailability?: boolean
+}
+
+const { showAvailability = true } = Astro.props
+
 const explore = [
 	{ name: 'About', href: '/' },
 	{ name: 'Work', href: '/work/' },
@@ -14,7 +20,6 @@ const explore = [
 const primarySocialNames = new Set(['LinkedIn', 'Mastodon', 'Tangled', 'GitHub'])
 const primarySocial = site.menus.social.filter((item) => primarySocialNames.has(item.name))
 const year = new Date().getFullYear()
-const showAvailability = Astro.url.pathname !== '/services/'
 const mailto = `mailto:${site.author.email}?subject=Project%20inquiry%20%E2%80%93%20frytg.digital`
 ---
 

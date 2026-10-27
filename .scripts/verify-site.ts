@@ -218,18 +218,18 @@ const main = async (): Promise<void> => {
 	const services = join(PUBLIC_DIR, 'services', 'index.html')
 	if (await exists(services)) {
 		const html = await readFile(services, 'utf-8')
-		const summaries = html.match(/class="service-summary"/g) ?? []
-		const proofs = html.match(/class="service-proof"/g) ?? []
+		const rows = html.match(/<section class="editorial-row"/g) ?? []
 		if (
-			!html.includes('services-page') ||
-			summaries.length !== SERVICE_ANCHORS.length ||
-			proofs.length !== SERVICE_ANCHORS.length ||
-			!SERVICE_ANCHORS.every((anchor) => html.includes(`id="${anchor}"`))
+			!html.includes('editorial-page') ||
+			rows.length !== SERVICE_ANCHORS.length ||
+			!SERVICE_ANCHORS.every(
+				(anchor) => html.includes(`aria-labelledby="${anchor}"`) && html.includes(`id="${anchor}"`)
+			)
 		) {
-			console.error('services page is missing its scoped layout or paired service rows')
+			console.error('services page is missing its shared editorial layout or labelled service sections')
 			failures += 1
 		} else {
-			console.log('OK services layout and paired service rows')
+			console.log('OK services editorial layout and labelled sections')
 		}
 		if (html.includes('id="footer-availability"')) {
 			console.error('services page must not repeat the availability callout after its contact section')
@@ -240,6 +240,31 @@ const main = async (): Promise<void> => {
 			failures += 1
 		} else {
 			console.log('OK services collaboration and contact anchors')
+		}
+	}
+
+	const work = join(PUBLIC_DIR, 'work', 'index.html')
+	if (await exists(work)) {
+		const html = await readFile(work, 'utf-8')
+		const anchors = [
+			'ard-eventhub-real-time-radio-metadata-distribution',
+			'ard-raki-popnacht',
+			'ard-sounds-voice-assistants',
+			'declarative-iac',
+			'feather-ai-proxy-chat-self-hosted-llm-gateway-native-client',
+		]
+		const rows = html.match(/<section class="editorial-row"/g) ?? []
+		if (
+			!html.includes('editorial-page') ||
+			rows.length !== anchors.length ||
+			!anchors.every((anchor) => html.includes(`aria-labelledby="${anchor}"`) && html.includes(`id="${anchor}"`)) ||
+			!html.includes('<picture>') ||
+			!html.includes('universal-activitymap.frytg.deno.net/github/frytg/default-auto?weeks=14')
+		) {
+			console.error('work page is missing labelled case studies, its photo, or the live chart')
+			failures += 1
+		} else {
+			console.log('OK work editorial layout, case-study anchors, photo, and live chart')
 		}
 	}
 
