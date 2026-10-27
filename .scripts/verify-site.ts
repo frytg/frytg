@@ -10,6 +10,15 @@ const ROOT = join(import.meta.dirname, '..')
 const PUBLIC_DIR = join(ROOT, 'public')
 const SAMPLE_POST = '2026-w33-weeknotes-no8'
 const SIBLING_POST = '2026-w30-weeknotes-no5'
+const SERVICE_ANCHORS = [
+	'cloud-devops-for-small-teams',
+	'eu-sovereign-hosting-migrations',
+	'audio-broadcast-tech',
+	'backend-api-development',
+	'websites-cms',
+	'responsible-ai-adoption-integration',
+	'maintenance-retainers',
+] as const
 
 /**
  * @param path Filesystem path.
@@ -189,7 +198,6 @@ const main = async (): Promise<void> => {
 		['services', join(PUBLIC_DIR, 'services', 'index.html')],
 		['work', join(PUBLIC_DIR, 'work', 'index.html')],
 		['social', join(PUBLIC_DIR, 'social', 'index.html')],
-		['dev', join(PUBLIC_DIR, 'dev', 'index.html')],
 		['legal', join(PUBLIC_DIR, 'legal', 'index.html')],
 		['blog', join(PUBLIC_DIR, 'blog', 'index.html')],
 		['tags', join(PUBLIC_DIR, 'tags', 'index.html')],
@@ -205,6 +213,39 @@ const main = async (): Promise<void> => {
 		} else {
 			console.log(`OK /${name}${name.includes('.') ? '' : '/'}`)
 		}
+	}
+
+	const services = join(PUBLIC_DIR, 'services', 'index.html')
+	if (await exists(services)) {
+		const html = await readFile(services, 'utf-8')
+		const summaries = html.match(/class="service-summary"/g) ?? []
+		const proofs = html.match(/class="service-proof"/g) ?? []
+		if (
+			!html.includes('services-page') ||
+			summaries.length !== SERVICE_ANCHORS.length ||
+			proofs.length !== SERVICE_ANCHORS.length ||
+			!SERVICE_ANCHORS.every((anchor) => html.includes(`id="${anchor}"`))
+		) {
+			console.error('services page is missing its scoped layout or paired service rows')
+			failures += 1
+		} else {
+			console.log('OK services layout and paired service rows')
+		}
+		if (html.includes('id="footer-availability"')) {
+			console.error('services page must not repeat the availability callout after its contact section')
+			failures += 1
+		}
+		if (!html.includes('id="how-i-work"') || !html.includes('id="contact"')) {
+			console.error('services page is missing collaboration or contact anchors')
+			failures += 1
+		} else {
+			console.log('OK services collaboration and contact anchors')
+		}
+	}
+
+	if (await exists(join(PUBLIC_DIR, 'dev', 'index.html'))) {
+		console.error('removed dev route must not be generated')
+		failures += 1
 	}
 
 	const legal = join(PUBLIC_DIR, 'legal', 'index.html')

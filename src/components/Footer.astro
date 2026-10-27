@@ -14,41 +14,46 @@ const explore = [
 const primarySocialNames = new Set(['LinkedIn', 'Mastodon', 'Tangled', 'GitHub'])
 const primarySocial = site.menus.social.filter((item) => primarySocialNames.has(item.name))
 const year = new Date().getFullYear()
+const showAvailability = Astro.url.pathname !== '/services/'
 const mailto = `mailto:${site.author.email}?subject=Project%20inquiry%20%E2%80%93%20frytg.digital`
 ---
 
 <div id="footer" class="content-column py-12 sm:py-14">
-	<section
-		aria-labelledby="footer-availability"
-		class="border border-white/10 bg-dark-greeny/60 px-5 py-5 text-left sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-6"
-	>
-		<div>
-			<p id="footer-availability" class="footer-copy text-sm font-medium text-white">
-				<span class="signal-mark" data-signal aria-hidden="true">....+#+....</span>
-				{site.availability}
-			</p>
-			<p class="footer-copy mt-1 text-meta">
-				DevOps, EU cloud migrations, broadcast/audio backends &amp; responsible AI — remote across DE/AT/CH/EU, based
-				near Freiburg.
-			</p>
-		</div>
-		<div class="mt-4 flex shrink-0 flex-wrap items-center gap-3 sm:mt-0">
-			<a
-				href={mailto}
-				class="inline-flex items-center border border-yellow bg-yellow px-3.5 py-1.5 text-sm font-semibold !text-greeny !no-underline transition-colors hover:border-white hover:bg-white hover:!text-greeny"
+	{
+		showAvailability && (
+			<section
+				aria-labelledby="footer-availability"
+				class="border border-white/10 bg-dark-greeny/60 px-5 py-5 text-left sm:flex sm:items-center sm:justify-between sm:gap-6 sm:px-6"
 			>
-				{site.author.email}
-			</a>
-			<a
-				href="/services/"
-				class="inline-flex items-center border border-white/25 px-3.5 py-1.5 text-sm font-medium text-white !no-underline transition-colors hover:border-yellow hover:!text-yellow"
-			>
-				Explore services
-			</a>
-		</div>
-	</section>
+				<div>
+					<p id="footer-availability" class="footer-copy text-sm font-medium text-white">
+						<span class="signal-mark" data-signal aria-hidden="true">....+#+....</span>
+						{site.availability}
+					</p>
+					<p class="footer-copy mt-1 text-meta">
+						DevOps, EU cloud migrations, broadcast/audio backends &amp; responsible AI — remote across DE/AT/CH/EU, based
+						near Freiburg.
+					</p>
+				</div>
+				<div class="mt-4 flex shrink-0 flex-wrap items-center gap-3 sm:mt-0">
+					<a
+						href={mailto}
+						class="inline-flex items-center border border-yellow bg-yellow px-3.5 py-1.5 text-sm font-semibold !text-greeny !no-underline transition-colors hover:border-white hover:bg-white hover:!text-greeny"
+					>
+						{site.author.email}
+					</a>
+					<a
+						href="/services/"
+						class="inline-flex items-center border border-white/25 px-3.5 py-1.5 text-sm font-medium text-white !no-underline transition-colors hover:border-yellow hover:!text-yellow"
+					>
+						Explore services
+					</a>
+				</div>
+			</section>
+		)
+	}
 
-	<div class="mt-10 grid gap-8 sm:grid-cols-[minmax(0,1.5fr)_auto_auto] sm:gap-12">
+	<div class:list={['grid gap-8 sm:grid-cols-[minmax(0,1.5fr)_auto_auto] sm:gap-12', { 'mt-10': showAvailability }]}>
 		<div>
 			<p class="footer-copy text-base font-semibold text-white">{site.author.name}</p>
 			<p class="footer-copy mt-1 text-sm text-white/80">Freelance {site.author.jobTitle}</p>

@@ -36,7 +36,12 @@ const imageUrl = await absoluteOgImageUrl(image)
 		imageUrl,
 	})}
 >
-	<div class="container container-custom">
+	<div
+		class:list={[
+			'container-custom',
+			{ container: page.id !== 'services', 'services-page': page.id === 'services' },
+		]}
+	>
 		<Content />
 	</div>
 </Base>

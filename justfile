@@ -107,6 +107,11 @@ deploy:
 purge:
 	just _env "aube node .scripts/purge-bunny-pull-zone.ts"
 
+# preview the production build locally
+[group('DEV')]
+preview:
+	ASTRO_TELEMETRY_DISABLED=1 aubx astro preview
+
 # run Astro dev server locally
 [group('DEV')]
 dev:
