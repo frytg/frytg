@@ -18,7 +18,6 @@ type Props = {
 	modifiedTime?: string
 	jsonLd?: Record<string, unknown>
 	rssHref?: string
-	footerAvailability?: boolean
 }
 
 const {
@@ -33,7 +32,6 @@ const {
 	modifiedTime,
 	jsonLd,
 	rssHref = '/blog/index.xml',
-	footerAvailability = true,
 } = Astro.props
 
 const pageTitle = canonicalPath === '/' ? site.documentTitle : `${title} | ${site.title}`
@@ -103,7 +101,7 @@ const escapedDescription = description
 		<main>
 			<slot />
 		</main>
-		<footer class="site-footer"><Footer showAvailability={footerAvailability} /></footer>
+		<footer class="site-footer"><Footer /></footer>
 		<script src="../../assets/js/main.js"></script>
 		<script src="../../assets/js/motion.js"></script>
 	</body>

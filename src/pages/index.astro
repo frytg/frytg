@@ -20,7 +20,6 @@ const isEditorial = home.data.layout === 'editorial'
 	description={description}
 	canonicalPath="/"
 	image={home.data.image ?? site.ogImage}
-	footerAvailability={home.data.footerAvailability}
 	jsonLd={homeJsonLd({ description, imageUrl })}
 >
 	<div class={isEditorial ? 'editorial-page' : 'container container-custom'}>

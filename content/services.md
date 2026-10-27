@@ -5,7 +5,6 @@ seo_description: 'Freelance engineering near Freiburg: reliable infrastructure, 
 image: 'images/og-card/services-2026-Q4-A-2x1.jpg'
 type: 'page'
 layout: 'editorial'
-footerAvailability: false
 sitemap:
   changefreq: 'weekly'
   priority: 0.9

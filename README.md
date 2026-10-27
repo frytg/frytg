@@ -52,7 +52,6 @@ export default {
   in a row body the first paragraph → summary and the last → note; in a section body a paragraph before a
   list → list-lead, an image-only paragraph → media, and the last → note. all other paragraphs use the
   shared default. explicit `{.class}` markers still win over inference (e.g. `.cta-row`).
-- set `footerAvailability: false` when the page already ends with its own contact section.
 - work-page wording and links stay in Markdown; layout markers don't change either.
 - run `just test`, `just lint`, and `just build`; the build also runs the editorial regression tests in
   `.scripts/verify-editorial.ts`.

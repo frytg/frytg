@@ -19,7 +19,6 @@ const pages = defineCollection({
 		image: z.string().optional(),
 		type: z.string().optional(),
 		layout: z.string().optional(),
-		footerAvailability: z.boolean().optional(),
 		noindex: z.boolean().optional(),
 		sitemap: sitemapSchema,
 	}),

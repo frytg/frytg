@@ -239,8 +239,8 @@ const main = async (): Promise<void> => {
 		} else {
 			console.log('OK services editorial layout and labelled sections')
 		}
-		if (html.includes('id="footer-availability"')) {
-			console.error('services page must not repeat the availability callout after its contact section')
+		if (!html.includes('id="footer-availability"')) {
+			console.error('services page must include the availability callout in the footer')
 			failures += 1
 		}
 		if (!html.includes('id="how-i-work"') || !html.includes('id="contact"')) {

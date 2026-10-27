@@ -5,7 +5,6 @@ seo_description: 'Selected engineering case studies by Daniel Freytag: ARD Event
 image: 'images/og-card/work-2026-Q4-A-2x1.jpg'
 type: 'page'
 layout: 'editorial'
-footerAvailability: false
 sitemap:
   changefreq: 'monthly'
   priority: 0.9

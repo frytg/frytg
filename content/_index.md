@@ -5,7 +5,6 @@ seo_description: 'Freelance DevOps and backend engineer near Freiburg for media,
 image: 'images/og-card/about-2024-Q1-A-2x1.jpg'
 type: 'page'
 layout: 'editorial'
-footerAvailability: false
 sitemap:
   changefreq: 'weekly'
   priority: 1
