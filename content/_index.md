@@ -69,7 +69,8 @@ Before focusing full-time on backend and cloud engineering, I worked across **li
 
 ## beyond the terminal {#beyond-the-terminal .editorial-section}
 
-When I'm not working on distributed systems, I train in the Black Forest foothills around Freiburg as a **hybrid athlete** — mixing strength training, road cycling, [HYROX](https://www.hyresult.com/athlete/daniel-freytag) races, and trail running as I work my way toward longer mountain and **UTMB** trail events. On my [blog](/blog/), I publish weeknotes on building systems, training, and everyday life.
+When I'm not working on distributed systems, I train in the Black Forest foothills around Freiburg as a **hybrid athlete** — mixing strength training, road cycling, [HYROX](https://www.hyresult.com/athlete/daniel-freytag) races, and trail running as I work my way toward longer mountain and **UTMB** trail events.  
+On my [blog](/blog/), I publish weeknotes on building systems, training, and everyday life.
 
 ![Daniel Freytag portrait, cycling, running, and travel](images/about/web-about-2024-q1-1@2x.webp)
 
@@ -77,9 +78,9 @@ When I'm not working on distributed systems, I train in the Black Forest foothil
 
 Need an experienced pair of hands for an infrastructure review, EU cloud migration, broadcast backend, or ongoing technical support?
 
-- **Email**: [`contact@frytg.com`](mailto:contact@frytg.com?subject=Project%20inquiry%20%E2%80%93%20frytg.digital)
-- **LinkedIn**: [`linkedin.com/in/frytg`](https://www.linkedin.com/in/frytg/)
-- **Fediverse / Matrix**: [`@FRYTG@beoriginal.social`](https://beoriginal.social/@FRYTG) · [all social channels](/social/)
+- **Email** [`contact@frytg.com`](mailto:contact@frytg.com?subject=Project%20inquiry%20%E2%80%93%20frytg.digital)
+- **LinkedIn** [`linkedin.com/in/frytg`](https://www.linkedin.com/in/frytg/)
+- **Fediverse / Matrix** [`@FRYTG@beoriginal.social`](https://beoriginal.social/@FRYTG) · [all social channels](/social/)
 
 [get in touch](/services/#contact) [email contact@frytg.com](mailto:contact@frytg.com?subject=Project%20inquiry%20%E2%80%93%20frytg.digital)
 {.cta-row}

@@ -64,22 +64,19 @@ keep production systems healthy through regular care. scheduled updates, securit
 
 ongoing care for existing infrastructure and services, including projects i didn't originally build.
 
-## how we can work together {#how-i-work .editorial-section}
+## how we can work together {#how-i-work}
 
 a focused project, a second pair of eyes, or ongoing support.
 
-- **build or improve**
-  a scoped piece of work, from understanding the problem through implementation and handover.
-- **review & advise**
-  an infrastructure review, architecture decision, or migration plan; clear findings and practical next steps.
-- **maintain & support**
-  regular time for keeping services healthy; scope and cadence agreed around what your team needs.
+- **build or improve** – a scoped piece of work, from understanding the problem through implementation and handover.
+- **review & advise** – an infrastructure review, architecture decision, or migration plan; clear findings and practical next steps.
+- **maintain & support** – regular time for keeping services healthy; scope and cadence agreed around what your team needs.
 
 decisions and documentation stay in your repository. standard tools, lean dependencies, and a handover your team can use; no setup that only i know how to run.
 
 project scope and timing are agreed up front. German or English; remote-first, with on-site workshops by arrangement.
 
-## let's talk about your project {#contact .editorial-section}
+## let's talk about your project {#contact}
 
 tell me what you're building, what needs to change, and when. a rough budget helps if you have one; a few lines are enough to check fit, scope, and availability.
 

@@ -29,7 +29,9 @@ At the same time, federated social networks (Fediverse) like Mastodon and Bluesk
 
 💼 **LinkedIn**: [`frytg`](https://www.linkedin.com/in/frytg/) - professional profile and work history
 
-👨🏼‍💻 **GitHub**: [`@FRYTG`](https://github.com/frytg) - home to all my development + open source projects as well as work-related stuff
+🐑 **Tangled**: [`frytg.digital`](https://tangled.org/frytg.digital) - git hosting for my projects, built on AT Protocol
+
+👨‍💻 **GitHub**: [`@FRYTG`](https://github.com/frytg) - home to all my development + open source projects as well as work-related stuff
 
 💌 **Good 'ol email**: [`contact@frytg.com`](mailto:contact@frytg.com) - if email is your thing
 

@@ -122,6 +122,19 @@
 			}
 		}
 
+		/* contact links stay a plain list; the column treatment is for offer tiles */
+		section[aria-labelledby='contact'] .editorial-list-lead + ul {
+			@apply block list-disc ps-6 my-5;
+
+			> li {
+				@apply my-2;
+
+				strong {
+					@apply inline mb-0 text-inherit font-semibold;
+				}
+			}
+		}
+
 		.editorial-media {
 			@apply my-8 max-w-xs;
 

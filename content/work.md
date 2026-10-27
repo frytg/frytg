@@ -25,7 +25,7 @@ Selected infrastructure, broadcast-tech, and backend engineering projects — fr
 - **Context**: Public radio broadcasters across [ARD](https://www.ard.de/) produce continuous live metadata — now-playing tracks, show schedules, moderation topics, and regional contributions — that need to reach listener apps like [ARD Sounds](https://www.ardsounds.de/), smart speakers, and web players in real time.
 - **Problem**: Each regional broadcaster historically operated different studio playout systems and delivery formats, making it slow and brittle for downstream platforms to consume a unified, low-latency stream of live radio metadata.
 - **What I built**: Together with the team at [SWR Audio Lab](https://github.com/swrlab), we built, operated, and open-sourced **[ARD Eventhub](https://github.com/swrlab/ard-eventhub)** ([public documentation](https://swrlab.github.io/ard-eventhub/)) — a central ingestion and distribution service that normalizes live studio events from participating ARD broadcasters and fans them out to downstream consumers with structured observability and automated deployment pipelines.
-- **Stack**: TypeScript, Node.js, containerized cloud infrastructure, structured logging and Datadog observability, OpenAPI, GitHub Actions CI/CD.
+- **Stack**: TypeScript, Node.js, containerized cloud infrastructure, structured logging and observability, OpenAPI, full CI/CD.
 - **Outcome**: Published as open source under [`swrlab/ard-eventhub`](https://github.com/swrlab/ard-eventhub) with public contributor documentation, powering live radio metadata across ARD's digital audio platforms. The system is currently also being migrated from public cloud to a sovereign, ARD-internal hosting environment.
 
 ### ARD RAKI — Responsible AI for ARD Popnacht {#ard-raki-popnacht .editorial-row}
@@ -64,7 +64,7 @@ Selected infrastructure, broadcast-tech, and backend engineering projects — fr
 
 ---
 
-## open source & side projects {.editorial-section}
+## open source & side projects
 
 Beyond client and broadcast systems, I publish open-source tools, reusable TypeScript packages, and experiments:
 
@@ -79,7 +79,7 @@ Beyond client and broadcast systems, I publish open-source tools, reusable TypeS
 
 ---
 
-## need something similar built or untangled? {.editorial-section}
+## need something similar built or untangled?
 
 I'm available for scoped consulting, architecture reviews, EU cloud migrations, and ongoing technical support.
 
