@@ -10,6 +10,7 @@ categories:
 tags:
   - weeknotes
   - work
+atUri: "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3myuxdxkz322t"
 ---
 
 a few months ago i upgraded myself on our token plan, since i was hitting the limits far too quickly.
