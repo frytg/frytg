@@ -70,6 +70,30 @@ Root-absolute site paths still work as plain paths:
 
 Prefer the filename form for peer posts in the same section — it survives slug/url changes better than hardcoding `/blog/...`, and editor preview can open the target `.md` file.
 
+## Editorial Pages
+
+`content/services.md` and `content/work.md` use `layout: 'editorial'`;
+`assets/css/editorial.css` owns their shared presentation. other pages keep the existing layout.
+
+- mark split headings with `{.editorial-row}` or `{#stable-link .editorial-row}`.
+  the build groups the heading and following content into a labelled section with a flexible body.
+- use `{.editorial-section}` for full-width chapters or contact sections; nested split headings work too.
+- a peer or higher-level heading ends the section. horizontal rules also end it; standalone image-pipeline media
+  stays outside split rows so photos keep their full-width placement.
+- everything else is inferred from position; no per-paragraph markers needed:
+  paragraph before `h1` → path, first paragraph after `h1` → intro, paragraph after the cta row → context;
+  in a row body the first paragraph → summary and the last → note; in a section body a paragraph before a
+  list → list-lead, an image-only paragraph → media, and the last → note. all other paragraphs use the
+  shared default. explicit `{.class}` markers still win over inference (e.g. `.cta-row`).
+- work-page wording and links stay in Markdown; layout markers don't change either.
+- run `just test`, `just lint`, and `just build`; the build also runs the editorial regression tests in
+  `.scripts/verify-editorial.ts`.
+  use `just preview` to check narrow and desktop layouts locally.
+- design reference: [dotfiles design system](https://tangled.org/frytg.digital/dotfiles/blob/main/context/DESIGN.md).
+
+mdx is not needed here: the `{#id .class}` heading markers plus positional inference cover this site's
+needs. mdx would make sense only if pages later need real components or embedded interactivity.
+
 ## Image Configuration
 
 Image paths in Markdown and front matter use the `assets/` convention — e.g. `images/blog/foo.jpg` resolves to `assets/images/blog/foo.jpg` at build time. That path is not relative to the Markdown file, so editor Markdown preview cannot find the files on its own.

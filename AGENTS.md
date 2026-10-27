@@ -22,6 +22,12 @@ Task runner: [just](https://github.com/casey/just). All project commands live in
 - `public/` — build output (do not edit by hand)
 - `.agents/skills/` — project skills. `seo-summaries` drafts five `seo_description` teasers from a blog post path and does not edit the file
 
+## Docs
+
+Website documentation — content authoring, editorial layout, image pipeline, deploy — lives in `WEB.md`. Write new docs about the site there, not here.
+
+`README.md` is the public GitHub index for the profile; keep it free of repo docs.
+
 ## Design
 
 Read [DESIGN.md](https://tangled.org/frytg.digital/dotfiles/blob/main/DESIGN.md) before changing UI, colors, typography, or layout. Match existing tokens and patterns; do not introduce new accent colors, shadows, or rounded components unless DESIGN.md is updated first.

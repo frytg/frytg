@@ -20,7 +20,7 @@ registry:
   nixpkgs: github:nixos/nixpkgs/nixos-unstable
 
 environment:
-  GIT_REMOTE_REPO: 'git@github.com:frytg/frytg-digital.git'
+  GIT_REMOTE_REPO: 'git@github.com:frytg/frytg.git'
 
 steps:
   - name: 'Mirror to GitHub'
