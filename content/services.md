@@ -112,7 +112,7 @@ The fastest way to start is a short email to check fit, scope, and timing.
 
 ### What to include in your message
 
-A few bullet points are plenty — no formal RFP needed:
+A few bullet points are plenty:
 
 1. **Project & context** — What are you building, migrating, or trying to stabilize?
 2. **Timeline** — When would you like to start, and is there a hard deadline or event date?
