@@ -10,7 +10,7 @@ sitemap:
   priority: 1
 ---
 
-# hello, i'm daniel,
+# hello, i'm daniel, {.word-reveal}
 
 DevOps & backend engineer for media, audio, and EU-hosted infrastructure. Based near Freiburg, and available for freelance projects.
 {.text-3xl .title-style}
@@ -35,6 +35,11 @@ Alongside my work in public broadcasting, I take on selected freelance work for 
 
 See all offers — including [responsible AI adoption & integration](/services/#responsible-ai-adoption-integration) and [maintenance & support](/services/#maintenance-retainers) — on [`/services/`](/services/), or browse recent architecture and engineering case studies on [`/work/`](/work/).
 
+---
+
+Always on, always changing. Good infrastructure does both, and nobody has to think about it.
+{.tagline-reveal .word-reveal}
+
 ## selected work {#selected-work .editorial-row}
 
 - **[ARD Eventhub](/work/#ard-eventhub-real-time-radio-metadata-distribution)** — Open-source service that collects what's on air across ARD radio and sends it to the listener apps ([GitHub](https://github.com/swrlab/ard-eventhub), [docs](https://swrlab.github.io/ard-eventhub/)).
@@ -43,7 +48,7 @@ See all offers — including [responsible AI adoption & integration](/services/#
 - **[Declarative Infrastructure as Code](/work/#declarative-iac)** — Servers and cloud resources described once in code and rebuildable on demand, from a large host down to a machine at home. In daily use on my own services ([Tangled](https://tangled.org/frytg.digital/locally)).
 - **[`feather-ai-proxy` & `feather-ai-chat`](/work/#feather-ai-proxy-chat-self-hosted-llm-gateway-native-client)** — A small self-hosted gateway to several AI providers, with a native app for Mac, iPad, and iPhone.
 
-## professional background {#professional-background .editorial-section}
+## background {#professional-background .editorial-section}
 
 For **7+ years at [SWR Audio Lab](https://www.swr.de/unternehmen/audiolab/index.html)**, that work has included real-time radio metadata distribution ([ARD Eventhub](https://github.com/swrlab/ard-eventhub)), [voice-assistant integrations for ARD Sounds](/work/#ard-sounds-voice-assistants), responsible AI services like [RAKI for ARD Popnacht](/work/#ard-raki-popnacht), and audio delivery pipelines.
 

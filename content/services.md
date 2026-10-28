@@ -12,7 +12,7 @@ sitemap:
 
 `/services`
 
-# build it well. keep it running.
+# build it well. keep it running. {.word-reveal}
 
 i help small teams build, improve, and maintain the systems behind their products. hands-on infrastructure, backend engineering, and modern websites; practical AI integration where it makes sense.
 
@@ -62,6 +62,11 @@ turn a useful AI idea into a working system with clear boundaries. i use new mod
 keep production systems healthy through regular care. scheduled updates, security patches, monitoring reviews, and backup restore checks; catching small problems before they become emergency projects.
 
 ongoing care for existing infrastructure and services, including projects i didn't originally build.
+
+---
+
+Built to change, not just to launch. Every system gets better with each release.
+{.tagline-reveal .word-reveal}
 
 ## how we can work together {#how-i-work}
 

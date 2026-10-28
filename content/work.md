@@ -12,7 +12,7 @@ sitemap:
 
 `/work`
 
-# selected work. shipped & running.
+# selected work. shipped & running. {.word-reveal}
 
 Selected infrastructure, broadcast-tech, and backend engineering projects — from public-broadcasting systems serving millions of listeners to responsible AI in live radio, voice-assistant platforms, declarative infrastructure, and self-hosted AI tools.
 
@@ -60,6 +60,11 @@ Selected infrastructure, broadcast-tech, and backend engineering projects — fr
   - **`feather-ai-chat`** — A native app for Mac, iPad, and iPhone, with iCloud chat sync, built from a shared written spec and checked with automated screenshots.
 - **Stack**: Go, Apple `container` / Docker, Tangled Spindles CI, Swift & SwiftUI, CloudKit, OpenRouter & Ollama.
 - **Outcome**: One small service and one address behind the coding tools and the Apple devices. Each caller gets their own key, and nothing locks you to one vendor.
+
+---
+
+None of these projects is finished. They run, they change, and listeners never notice.
+{.tagline-reveal .word-reveal}
 
 ---
 
