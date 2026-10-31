@@ -45,8 +45,12 @@ just build
 
 ## Sync to Bunny Storage
 
+`just deploy` syncs `public/` to the S3-compatible Bunny storage zone with rclone. The remote (`bunny`) and bucket come from `.env.s3.sops.yaml`, so there's no local rclone config. Preview first, then sync:
+
 ```bash
+just deploy --dry-run
 just deploy
+just ls-s3
 ```
 
 ## Exclude your own visits from Umami

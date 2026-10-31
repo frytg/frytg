@@ -6,6 +6,9 @@ _default:
 DEFAULT_SOPS_FILE := '.env.sops.yaml'
 SELECTED_SOPS_FILE := env('SOPS_ENV_FILE', DEFAULT_SOPS_FILE)
 
+# rclone remote `bunny` + bucket for the S3-compatible Bunny storage zone
+S3_SOPS_FILE := '.env.s3.sops.yaml'
+
 # run a command with the selected sops file (injecting environment variables)
 _env *args:
 	@echo "Running command with SOPS > {{ args }}"
@@ -101,12 +104,16 @@ publish:
 	just purge
 	just atproto-verify-build
 
-# sync to bunny storage
+# sync public/ to the S3 bunny storage zone (pass --dry-run to preview)
 [group('BUNNY')]
-deploy:
-	mkdir -p temp
+deploy *flags:
 	just verify-build
-	just _env "aube node .scripts/rsync-to-bunny-storage.ts"
+	@sops exec-env {{ S3_SOPS_FILE }} 'rclone sync ./public "bunny:$BUNNY_S3_BUCKET" --checksum --fast-list --delete-after --stats-one-line -v {{ flags }}'
+
+# list files in the S3 bunny storage zone
+[group('BUNNY')]
+ls-s3:
+	@sops exec-env {{ S3_SOPS_FILE }} 'rclone lsl "bunny:$BUNNY_S3_BUCKET"'
 
 # purge bunny pull zone cache
 [group('BUNNY')]
@@ -130,6 +137,7 @@ dev:
 [group('ENCRYPTION')]
 update-keys:
 	just _update-key .env.sops.yaml
+	just _update-key {{ S3_SOPS_FILE }}
 
 _update-key file:
 	sops updatekeys {{ file }}
@@ -138,6 +146,7 @@ _update-key file:
 [group('ENCRYPTION')]
 rotate-keys:
 	just _rotate-key .env.sops.yaml
+	just _rotate-key {{ S3_SOPS_FILE }}
 
 _rotate-key file:
 	sops rotate --in-place {{ file }}
