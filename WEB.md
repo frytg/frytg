@@ -49,6 +49,16 @@ just build
 just deploy
 ```
 
+## Exclude your own visits from Umami
+
+Umami skips tracking when the `umami.disabled` key is set in `localStorage`. The key is per origin, so set it once in each browser and on each host you use (`www.frytg.digital`, plus any preview host). Open the dev tools console on the site and run:
+
+```js
+localStorage.setItem('umami.disabled', 1)
+```
+
+To track your visits again, run `localStorage.removeItem('umami.disabled')`. Clearing site data also removes the key. See [Umami: exclude my own visits](https://docs.umami.is/docs/exclude-my-own-visits).
+
 ## Internal links between Markdown pages
 
 Sibling Markdown destinations resolve to page permalinks. Absolute URLs still open in a new tab with `rel="external noopener"`.

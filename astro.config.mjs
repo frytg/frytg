@@ -26,6 +26,8 @@ export default defineConfig({
 		},
 	},
 	vite: {
+		// Never inline scripts: the CSP has no 'unsafe-inline', and hashed /_astro/* files cache as immutable.
+		build: { assetsInlineLimit: 0 },
 		plugins: [tailwindcss()],
 	},
 })
