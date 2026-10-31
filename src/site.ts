@@ -11,6 +11,10 @@ export const site = {
 	availability: 'Currently taking on freelance projects',
 	ogImage: 'images/og-card/about-2024-Q1-A-2x1.jpg',
 	fathomSite: 'BCUBYJDW',
+	umami: {
+		scriptUrl: 'https://umami.frytg.digital/script.js',
+		websiteId: '25be392c-432d-4dc2-8bb0-15a4b0c4811d',
+	},
 	rssTitle: 'Blog Posts from Daniel Freytag',
 	rssLimit: 20,
 	menus: {

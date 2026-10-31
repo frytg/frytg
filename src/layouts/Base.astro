@@ -95,6 +95,9 @@ const escapedDescription = description
 		{import.meta.env.PROD && (
 			<script is:inline src="https://cdn.usefathom.com/script.js" data-site={site.fathomSite} defer></script>
 		)}
+		{import.meta.env.PROD && (
+			<script is:inline src={site.umami.scriptUrl} data-website-id={site.umami.websiteId} defer></script>
+		)}
 	</head>
 	<body>
 		<header class="site-header"><Header /></header>

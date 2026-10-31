@@ -27,6 +27,10 @@ This website takes privacy extremely seriously and does not store any cookies or
 
 ## Data Privacy/ Analytics
 
-This website uses Fathom analytics, a lightweight and privacy first tool. It is GDPR, CCPA, ePrivacy, PECR compliant and does not require cookies. For technical reasons server-side access logs for downloaded pages and assets are in place.
+This website uses Fathom analytics, a lightweight and privacy first tool. It is GDPR, CCPA, ePrivacy, PECR compliant and does not require cookies.
+
+In addition, this website uses a self-hosted instance of [Umami](https://github.com/umami-software/umami), an open-source, privacy-focused analytics tool. It runs on my own server, does not use cookies, does not collect personal data, and anonymizes all visitor data. No data is shared with third parties.
+
+For technical reasons server-side access logs for downloaded pages and assets are in place.
 
 These are used and analyzed to optimize the provided server and CDN capacities, but not for any kind of user capturing or similar.
