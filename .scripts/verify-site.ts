@@ -267,7 +267,7 @@ const main = async (): Promise<void> => {
 			rows.length !== anchors.length ||
 			!anchors.every((anchor) => html.includes(`aria-labelledby="${anchor}"`) && html.includes(`id="${anchor}"`)) ||
 			!html.includes('<picture>') ||
-			!html.includes('universal-activitymap.frytg.deno.net/github/frytg/default-auto?weeks=14')
+			!html.includes('universal-activitymap.frytg.workers.dev/github/frytg/default-auto?weeks=14')
 		) {
 			console.error('work page is missing labelled case studies, its photo, or the live chart')
 			failures += 1

@@ -72,9 +72,9 @@ None of these projects is finished. They run, they change, and listeners never n
 
 Beyond client and broadcast systems, I publish open-source tools, reusable TypeScript packages, and experiments:
 
-- **[Universal Activity Maps](https://tangled.org/frytg.digital/pkgy/tree/main/universal-activitymap)** — A small server that draws contribution charts for GitHub, Tangled, Mastodon, and Bluesky. Live at [`universal-activitymap.frytg.deno.net`](https://universal-activitymap.frytg.deno.net).
+- **[Universal Activity Maps](https://tangled.org/frytg.digital/pkgy/tree/main/universal-activitymap)** — A small server that draws contribution charts for GitHub, Tangled, Mastodon, and Bluesky. Live at [`universal-activitymap.frytg.workers.dev`](https://universal-activitymap.frytg.workers.dev).
 
-[![My GitHub contributions as an activity chart](https://universal-activitymap.frytg.deno.net/github/frytg/default-auto?weeks=14)](https://universal-activitymap.frytg.deno.net/github/frytg/default-auto?weeks=14)
+[![My GitHub contributions as an activity chart](https://universal-activitymap.frytg.workers.dev/github/frytg/default-auto?weeks=14)](https://universal-activitymap.frytg.workers.dev/github/frytg/default-auto?weeks=14)
 
 - **[`@frytg/*` utility packages on JSR](https://tangled.org/frytg.digital/utility)** — Small TypeScript libraries for Node, Bun, and Deno: [`@frytg/logger`](https://jsr.io/@frytg/logger) (a logger), [`@frytg/dates`](https://jsr.io/@frytg/dates) (date helpers), and [`@frytg/check-required-env`](https://jsr.io/@frytg/check-required-env) (a check that required settings are present before the app starts).
 - **[`frytg.digital/pkgy`](https://tangled.org/frytg.digital/pkgy)** — Everyday scripts, hardware experiments (ESPHome e-ink displays, M5Stack CoreInk), and small services hosted on Tangled.
