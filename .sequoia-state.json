@@ -185,6 +185,12 @@
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3myuxdxkz322t",
       "lastPublished": "2026-11-06T07:46:06.273Z",
       "slug": "2026-w43-weeknotes-no17"
+    },
+    "content/blog/2026-11-10-state-of-software-factory.md": {
+      "contentHash": "81dfc05955f8e442564cd108746ddabe20888e55701d2f6f14982a9d2f377b2a",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mzy7kugsjs2q",
+      "lastPublished": "2026-11-10T19:49:50.464Z",
+      "slug": "2026-11-10-state-of-software-factory"
     }
   },
   "publication": {

@@ -1,0 +1,26 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.55" d="M340 427V449L600 579V557L340 427Z" fill="#3E4939" style="fill:#3E4939;fill:color(display-p3 0.2431 0.2863 0.2235);fill-opacity:1;"/>
+<path opacity="0.35" d="M860 427V449L600 579V557L860 427Z" fill="#3E4939" style="fill:#3E4939;fill:color(display-p3 0.2431 0.2863 0.2235);fill-opacity:1;"/>
+<path d="M600 297L860 427L600 557L340 427L600 297Z" fill="#1D231B" style="fill:#1D231B;fill:color(display-p3 0.1137 0.1373 0.1059);fill-opacity:1;stroke:#3E4939;stroke:color(display-p3 0.2431 0.2863 0.2235);stroke-opacity:1;" stroke-width="2.5" stroke="#3E4939"/>
+<path opacity="0.55" d="M340 367V389L600 519V497L340 367Z" fill="#55634E" style="fill:#55634E;fill:color(display-p3 0.3333 0.3882 0.3059);fill-opacity:1;"/>
+<path opacity="0.35" d="M860 367V389L600 519V497L860 367Z" fill="#55634E" style="fill:#55634E;fill:color(display-p3 0.3333 0.3882 0.3059);fill-opacity:1;"/>
+<path d="M600 237L860 367L600 497L340 367L600 237Z" fill="#1D231B" style="fill:#1D231B;fill:color(display-p3 0.1137 0.1373 0.1059);fill-opacity:1;stroke:#55634E;stroke:color(display-p3 0.3333 0.3882 0.3059);stroke-opacity:1;" stroke-width="2.5" stroke="#55634E"/>
+<path opacity="0.55" d="M340 307V329L600 459V437L340 307Z" fill="#7B8A72" style="fill:#7B8A72;fill:color(display-p3 0.4824 0.5412 0.4471);fill-opacity:1;"/>
+<path opacity="0.35" d="M860 307V329L600 459V437L860 307Z" fill="#7B8A72" style="fill:#7B8A72;fill:color(display-p3 0.4824 0.5412 0.4471);fill-opacity:1;"/>
+<path d="M600 177L860 307L600 437L340 307L600 177Z" fill="#1D231B" style="fill:#1D231B;fill:color(display-p3 0.1137 0.1373 0.1059);fill-opacity:1;stroke:#7B8A72;stroke:color(display-p3 0.4824 0.5412 0.4471);stroke-opacity:1;" stroke-width="2.5" stroke="#7B8A72"/>
+<path opacity="0.55" d="M340 247V269L600 399V377L340 247Z" fill="#D7E2CC" style="fill:#D7E2CC;fill:color(display-p3 0.8431 0.8863 0.8000);fill-opacity:1;"/>
+<path opacity="0.35" d="M860 247V269L600 399V377L860 247Z" fill="#D7E2CC" style="fill:#D7E2CC;fill:color(display-p3 0.8431 0.8863 0.8000);fill-opacity:1;"/>
+<path d="M600 117L860 247L600 377L340 247L600 117Z" fill="#1D231B" style="fill:#1D231B;fill:color(display-p3 0.1137 0.1373 0.1059);fill-opacity:1;stroke:#D7E2CC;stroke:color(display-p3 0.8431 0.8863 0.8000);stroke-opacity:1;" stroke-width="2.5" stroke="#D7E2CC"/>
+<path opacity="0.55" d="M340 187V209L600 339V317L340 187Z" fill="#FFFF11" style="fill:#FFFF11;fill:color(display-p3 1.0000 1.0000 0.0667);fill-opacity:1;"/>
+<path opacity="0.35" d="M860 187V209L600 339V317L860 187Z" fill="#FFFF11" style="fill:#FFFF11;fill:color(display-p3 1.0000 1.0000 0.0667);fill-opacity:1;"/>
+<path d="M600 57L860 187L600 317L340 187L600 57Z" fill="#1D231B" style="fill:#1D231B;fill:color(display-p3 0.1137 0.1373 0.1059);fill-opacity:1;stroke:#FFFF11;stroke:color(display-p3 1.0000 1.0000 0.0667);stroke-opacity:1;" stroke-width="2.5" stroke="#FFFF11"/>
+<path d="M450 162L480 147L510 162L480 177L450 162Z" fill="#DDD9C0" style="fill:#DDD9C0;fill:color(display-p3 0.8667 0.8510 0.7529);fill-opacity:1;"/>
+<path opacity="0.6" d="M450 162V180L480 195V177L450 162Z" fill="#DDD9C0" style="fill:#DDD9C0;fill:color(display-p3 0.8667 0.8510 0.7529);fill-opacity:1;"/>
+<path opacity="0.35" d="M510 162V180L480 195V177L510 162Z" fill="#DDD9C0" style="fill:#DDD9C0;fill:color(display-p3 0.8667 0.8510 0.7529);fill-opacity:1;"/>
+<path d="M530 122L560 107L590 122L560 137L530 122Z" fill="#DDD9C0" style="fill:#DDD9C0;fill:color(display-p3 0.8667 0.8510 0.7529);fill-opacity:1;"/>
+<path opacity="0.6" d="M530 122V140L560 155V137L530 122Z" fill="#DDD9C0" style="fill:#DDD9C0;fill:color(display-p3 0.8667 0.8510 0.7529);fill-opacity:1;"/>
+<path opacity="0.35" d="M590 122V140L560 155V137L590 122Z" fill="#DDD9C0" style="fill:#DDD9C0;fill:color(display-p3 0.8667 0.8510 0.7529);fill-opacity:1;"/>
+<path d="M610 82L640 67L670 82L640 97L610 82Z" fill="#FFFF11" style="fill:#FFFF11;fill:color(display-p3 1.0000 1.0000 0.0667);fill-opacity:1;"/>
+<path opacity="0.6" d="M610 82V100L640 115V97L610 82Z" fill="#FFFF11" style="fill:#FFFF11;fill:color(display-p3 1.0000 1.0000 0.0667);fill-opacity:1;"/>
+<path opacity="0.35" d="M670 82V100L640 115V97L670 82Z" fill="#FFFF11" style="fill:#FFFF11;fill:color(display-p3 1.0000 1.0000 0.0667);fill-opacity:1;"/>
+</svg>
