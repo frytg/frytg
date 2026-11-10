@@ -52,6 +52,6 @@ const highlightClass = post.data.highlight_bold ? ' container-bold' : ''
 			<time datetime={publishedTime}>{formatDateHuman(post.data.date)}</time>
 		</p>
 		<Content />
-		<PostFooter atUri={post.data.atUri} tags={post.data.tags} />
+		<PostFooter atUri={post.data.atUri} disclaimer={post.data.disclaimer} tags={post.data.tags} />
 	</div>
 </Base>

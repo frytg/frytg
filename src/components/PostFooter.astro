@@ -4,13 +4,23 @@ import MetaLinks from './MetaLinks.astro'
 
 type Props = {
 	atUri?: string
+	disclaimer?: string
 	tags: string[]
 }
 
-const { atUri, tags } = Astro.props
+const { atUri, disclaimer, tags } = Astro.props
 ---
 
 <aside class="blog-post-footer">
+	{
+		disclaimer && (
+			<div class="blog-post-footer-section">
+				<h5 class="!text-sm !font-medium !text-gray/80 uppercase tracking-wider !mt-0 !mb-2">Disclaimer</h5>
+				<p class="text-meta mt-0 mb-0">{disclaimer}</p>
+			</div>
+		)
+	}
+
 	<div class="blog-post-footer-section">
 		<h5 class="!text-sm !font-medium !text-gray/80 uppercase tracking-wider !mt-0 !mb-2">Connect</h5>
 		<p class="text-meta mt-0 mb-0">

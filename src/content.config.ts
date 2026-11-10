@@ -38,6 +38,7 @@ const blog = defineCollection({
 		categories: z.array(z.string()).default([]),
 		atUri: z.string().optional(),
 		highlight_bold: z.boolean().optional(),
+		disclaimer: z.string().optional(),
 	}),
 })
 
