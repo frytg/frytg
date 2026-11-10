@@ -1,6 +1,6 @@
 # run `just` in the CLI to see the list of shortcuts
 _default:
-	just --list
+	@just --list
 
 # use a default sops file, or allow to be overridden by SOPS_ENV_FILE environment variable
 DEFAULT_SOPS_FILE := '.env.sops.yaml'
@@ -17,7 +17,7 @@ _env *args:
 # install toolchain (mise) + package dependencies (aube)
 [group('DEV-SETUP')]
 install:
-	mise install  
+	mise install
 	aube install --silent
 
 # update package dependencies
@@ -28,6 +28,7 @@ update:
 	aube update --silent
 	just format
 
+# lint JS/TS with oxlint
 [group('LOCAL')]
 lint:
 	aubx oxlint
@@ -37,6 +38,7 @@ lint:
 test:
 	aube node .scripts/verify-editorial.ts
 
+# auto-fix lint issues and format with oxfmt
 [group('LOCAL')]
 format:
 	aubx oxlint --fix
@@ -79,11 +81,13 @@ atproto-dry-run:
 atproto-verify-build:
 	aube node .scripts/verify-atproto-build.ts
 
-# publish blog posts to ATProto (Standard.site)
+# prepare cover images for ATProto records
 [group('ATP')]
 atproto-prepare-covers:
 	aube node .scripts/prepare-atproto-covers.ts
 
+# publish blog posts to ATProto (Standard.site)
+[group('ATP')]
 atproto-publish:
 	just atproto-prepare-covers
 	just atproto-verify-paths
@@ -94,7 +98,7 @@ atproto-publish:
 atproto-update-publication-icon:
 	just _env "aube node .scripts/atproto-update-publication-icon.ts"
 
-# full publish pipeline: ATProto init → publish → build → deploy → purge
+# full publish pipeline: ATProto publish → build → deploy → purge → verify
 [group('BUILD')]
 publish:
 	# just atproto-init
@@ -139,6 +143,7 @@ update-keys:
 	just _update-key .env.sops.yaml
 	just _update-key {{ S3_SOPS_FILE }}
 
+# re-encrypt one sops file with the current .sops.yaml keys
 _update-key file:
 	sops updatekeys {{ file }}
 
@@ -148,6 +153,7 @@ rotate-keys:
 	just _rotate-key .env.sops.yaml
 	just _rotate-key {{ S3_SOPS_FILE }}
 
+# rotate the data key of one sops file
 _rotate-key file:
 	sops rotate --in-place {{ file }}
 
