@@ -62,6 +62,21 @@
 }
 
 @layer base {
+	/* Shiki css-variables theme: maps syntax tokens to the site palette */
+	:root {
+		--astro-code-foreground: color-mix(in oklab, var(--color-white) 90%, transparent);
+		--astro-code-background: color-mix(in oklab, var(--color-dark-greeny) 80%, transparent);
+		--astro-code-token-constant: var(--color-yellow);
+		--astro-code-token-string: var(--color-gray);
+		--astro-code-token-comment: color-mix(in oklab, var(--color-gray) 50%, transparent);
+		--astro-code-token-keyword: var(--color-orange);
+		--astro-code-token-parameter: var(--astro-code-foreground);
+		--astro-code-token-function: var(--color-yellow);
+		--astro-code-token-string-expression: var(--color-gray);
+		--astro-code-token-punctuation: color-mix(in oklab, var(--color-white) 60%, transparent);
+		--astro-code-token-link: var(--color-yellow);
+	}
+
 	html {
 		@apply scroll-smooth antialiased;
 	}
@@ -188,7 +203,8 @@
 
 	pre {
 		@apply content-column;
-		@apply whitespace-pre-wrap break-words;
+		/* keep lines intact and scroll sideways instead of wrapping */
+		@apply whitespace-pre overflow-x-auto;
 		@apply my-6 p-4;
 		@apply bg-dark-greeny/80;
 		@apply border border-white/5;

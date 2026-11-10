@@ -19,6 +19,8 @@ export default defineConfig({
 			remarkPlugins: [remarkSiblingLinks, remarkImages],
 			rehypePlugins: [rehypeMarkup, rehypeEditorial],
 		}),
+		// token colors come from the --astro-code-* variables in assets/css/main.css
+		shikiConfig: { theme: 'css-variables' },
 	},
 	image: {
 		service: {
