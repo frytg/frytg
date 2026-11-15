@@ -191,6 +191,12 @@
       "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3mzy7kugsjs2q",
       "lastPublished": "2026-11-10T19:49:50.464Z",
       "slug": "2026-11-10-state-of-software-factory"
+    },
+    "content/blog/2026-w46-weeknotes-no18.md": {
+      "contentHash": "f5b72304f208d8cf4ed7a11c5883fe23d09ca48fcc0729396f4b500917743654",
+      "atUri": "at://did:plc:jttpxcpdum6st5hh6dwf6f72/site.standard.document/3n2dwjmhyns26",
+      "lastPublished": "2026-11-15T11:40:01.743Z",
+      "slug": "2026-w46-weeknotes-no18"
     }
   },
   "publication": {
